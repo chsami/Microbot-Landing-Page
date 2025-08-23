@@ -160,7 +160,11 @@
             </button>
             <div class="dropdown-content c-button c-button--large c-main-header__c-button py-2 py-sm-3 px-3 px-md-4"
                  id="dropdownContent">
-                <a id="launcher-hyperlink" href=""
+                <a id="launcher-hyperlink-windows" href=""
+                   target="_blank" rel="noreferrer noopener">Loading...</a>
+                <a id="launcher-hyperlink-linux" href=""
+                   target="_blank" rel="noreferrer noopener">Loading...</a>
+                <a id="launcher-hyperlink-mac" href=""
                    target="_blank" rel="noreferrer noopener">Loading...</a>
                 <hr />
                 <a id="microbot-hyperlink" href="#"
@@ -507,9 +511,21 @@
 
         fetch('https://microbot.cloud/api/version/launcher').then(async (result) => {
             const version = await result.text()
-            const microbotHyperLink = document.getElementById('launcher-hyperlink');
-            microbotHyperLink.innerText = 'Windows'
-            microbotHyperLink.href = `https://files.microbot.cloud/releases/microbot-launcher/Microbot%20Launcher%20Setup%20${version}.exe`
+            const microbotHyperLinkWindows = document.getElementById('launcher-hyperlink-windows');
+            const microbotHyperLinkLinux = document.getElementById('launcher-hyperlink-linux');
+            const microbotHyperLinkMac = document.getElementById('launcher-hyperlink-mac');
+
+            // Windows
+            microbotHyperLinkWindows.innerHTML = '<i class="fa fa-windows"></i> Windows';
+            microbotHyperLinkWindows.href = `https://files.microbot.cloud/releases/microbot-launcher/Microbot%20Launcher%20Setup%20${version}.exe`;
+
+            // Linux
+            microbotHyperLinkLinux.innerHTML = '<i class="fa fa-linux"></i> Linux';
+            microbotHyperLinkLinux.href = `https://files.microbot.cloud/releases/microbot-launcher/Microbot%20Launcher-${version}.AppImage`;
+
+            // Mac
+            microbotHyperLinkMac.innerHTML = '<i class="fa fa-apple"></i> Mac';
+            microbotHyperLinkMac.href = `https://files.microbot.cloud/releases/microbot-launcher/Microbot%20Launcher-${version}-arm64.dmg`;
         })
 
         var cookieBanner = document.getElementById('cookie-banner');

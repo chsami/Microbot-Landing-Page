@@ -387,10 +387,45 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 let allPlugins = []; // Store all plugins for searching
+let pluginInstallsMap = {}; // Store plugin install counts by name
+
+async function getPluginTotalInstalls(pluginNames) {
+    try {
+        const response = await fetch('https://microbot.cloud/api/PluginTelemetry/plugins-total-installs', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ PluginNames: pluginNames })
+        });
+        if (!response.ok) return {};
+        const result = await response.json();
+        // result is an array of { PluginName, TotalInstalls }
+        const map = {};
+        for (const dto of result) {
+            map[dto.pluginName] = dto.totalInstalls;
+        }
+        return map;
+    } catch (err) {
+        console.error('Telemetry error:', err);
+        return {};
+    }
+}
+
+function setSearchEnabled(enabled) {
+    const searchInput = document.getElementById('pluginSearch');
+    if (searchInput) {
+        searchInput.disabled = !enabled;
+        searchInput.style.opacity = enabled ? '1' : '0.5';
+        searchInput.style.cursor = enabled ? 'text' : 'not-allowed';
+    }
+}
 
 async function fetchPlugins() {
     const pluginsContainer = document.getElementById('pluginsContainer');
     const pluginsCount = document.getElementById('pluginsCount');
+
+    setSearchEnabled(false); // Disable search while loading
 
     try {
         const response = await fetch('https://chsami.github.io/Microbot-Hub/plugins.json');
@@ -403,6 +438,12 @@ async function fetchPlugins() {
         const plugins = await response.json();
         allPlugins = plugins.filter(plugin => !plugin.disable);
 
+        // Get plugin install counts
+        pluginInstallsMap = await getPluginTotalInstalls(allPlugins.map(p => p.internalName));
+
+        // Order plugins by totalInstalls descending
+        allPlugins.sort((a, b) => (pluginInstallsMap[b.internalName] || 0) - (pluginInstallsMap[a.internalName] || 0));
+
         // Create count-up animation for plugins count
         animatePluginCount(allPlugins.length);
 
@@ -411,6 +452,7 @@ async function fetchPlugins() {
 
         // Set up search functionality
         setupSearch();
+        setSearchEnabled(true); // Enable search after loading
 
     } catch (error) {
         console.error('Error fetching plugins:', error);
@@ -421,6 +463,7 @@ async function fetchPlugins() {
             </div>
         `;
         pluginsCount.textContent = 'Error loading plugins';
+        setSearchEnabled(false); // Keep search disabled on error
     }
 }
 
@@ -455,12 +498,7 @@ function displayPlugins(plugins) {
     const pluginsCount = document.getElementById('pluginsCount');
 
     // Update count for search results
-    if (plugins.length !== allPlugins.length) {
-        pluginsCount.innerHTML = `<span class="count-number">${plugins.length}</span> of ${allPlugins.length} plugins found`;
-    }
-
-    // No animation needed for the initial display or when returning to all plugins
-    // as it was already animated when the page loaded
+    pluginsCount.innerHTML = `<span class="count-number">${plugins.length}</span> of ${allPlugins.length} plugins found`;
 
     // Clear container
     pluginsContainer.innerHTML = '';
@@ -482,7 +520,7 @@ function displayPlugins(plugins) {
 
         // Add up to 3 cards per row
         for (let j = i; j < i + 3 && j < plugins.length; j++) {
-            const pluginCard = createPluginCard(plugins[j]);
+            const pluginCard = createPluginCard(plugins[j], pluginInstallsMap[plugins[j].internalName] || 0);
             rowContainer.appendChild(pluginCard);
         }
 
@@ -534,7 +572,7 @@ function performSearch() {
     displayPlugins(filtered);
 }
 
-function createPluginCard(plugin) {
+function createPluginCard(plugin, totalInstalls) {
     const card = document.createElement('a');
     card.className = 'plugin-card';
     card.href = `https://chsami.github.io/Microbot-Hub/${plugin.internalName}`;
@@ -567,6 +605,7 @@ function createPluginCard(plugin) {
             <div class="plugin-meta">
                 <div>
                     <span class="plugin-version">v${plugin.version}</span>
+                    <span class="plugin-installs" style="margin-left:8px;color:#ffd700;font-size:0.85em;">&#x1F4E6; ${totalInstalls} installs</span>
                 </div>
                 <div class="plugin-min-version">Min Client: ${plugin.minClientVersion}</div>
             </div>

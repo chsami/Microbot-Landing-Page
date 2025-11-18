@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>2.1.0 Release - Microbot</title>
@@ -15,16 +16,15 @@
 
     <link rel="stylesheet" href="../microbot/app.min.css">
     <link rel="stylesheet"
-          href="../microbot/341e4a57816af3ba440d891ca87450ff_framework.css.c1bcd9467a7eeb9006567801face652d.css"
-          media="all">
+        href="../microbot/341e4a57816af3ba440d891ca87450ff_framework.css.c1bcd9467a7eeb9006567801face652d.css"
+        media="all">
     <link rel="stylesheet"
-          href="../microbot/20446cf2d164adcc029377cb04d43d17_flags.css.be60c469fe9d673f833faaa74a81e375.css"
-          media="all">
+        href="../microbot/20446cf2d164adcc029377cb04d43d17_flags.css.be60c469fe9d673f833faaa74a81e375.css" media="all">
     <link rel="stylesheet"
-          href="../microbot/90eb5adf50a8c640f633d47fd7eb1778_core.css.730a336650d62c3b59570edc9065b630.css" media="all">
+        href="../microbot/90eb5adf50a8c640f633d47fd7eb1778_core.css.730a336650d62c3b59570edc9065b630.css" media="all">
     <link rel="stylesheet"
-          href="../microbot/5a0da001ccc2200dc5625c3f3934497d_core_responsive.css.1d08c9ed37ed1cae43d3985a3b2316ad.css"
-          media="all">
+        href="../microbot/5a0da001ccc2200dc5625c3f3934497d_core_responsive.css.1d08c9ed37ed1cae43d3985a3b2316ad.css"
+        media="all">
 
     <style>
         * {
@@ -85,9 +85,20 @@
             letter-spacing: 0.5px;
         }
 
-        .badge-new { background: #16a34a; color: white; }
-        .badge-removed { background: #dc2626; color: white; }
-        .badge-improved { background: #2563eb; color: white; }
+        .badge-new {
+            background: #16a34a;
+            color: white;
+        }
+
+        .badge-removed {
+            background: #dc2626;
+            color: white;
+        }
+
+        .badge-improved {
+            background: #2563eb;
+            color: white;
+        }
 
         .container {
             max-width: 1400px;
@@ -328,207 +339,238 @@
         }
 
         @media (max-width: 768px) {
-            .hero h1 { font-size: 36px; }
-            .hero .version { font-size: 48px; }
-            .hero .tagline { font-size: 18px; }
-            .section-title { font-size: 32px; }
-            .comparison { grid-template-columns: 1fr; }
-            .grid-3 { grid-template-columns: 1fr; }
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero .version {
+                font-size: 48px;
+            }
+
+            .hero .tagline {
+                font-size: 18px;
+            }
+
+            .section-title {
+                font-size: 32px;
+            }
+
+            .comparison {
+                grid-template-columns: 1fr;
+            }
+
+            .grid-3 {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
-<body style="background-color:#232323FF !important; background-image: none"
-      class="ipsApp ipsApp_front ipsClearfix ipsJS_has ipsApp_noTouch">
 
-<header class="c-header">
-    <div class="c-border-red mb-2"></div>
-    <nav class="c-nav navbar navbar-expand-sm py-2" style="flex-wrap:nowrap;justify-content: flex-start">
-        <div class="container align-items-stretch">
-            <a class="navbar-brand me-0 me-lg-3 me-xl-5" href="../index.html">
-                <img src="../microbot/logo.png" class="c-nav__logo" loading="lazy" alt="logo">
-            </a>
-            <div class="p-3 p-xl-0" style="line-height: 2rem;width: 100%;" id="navbarMenu">
-                <ul class="navbar-nav me-auto text-center text-xl-left gap-3 gap-xl-4">
-                    <li class="nav-item">
-                        <a class="nav-link" href="../index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://www.github.com/chsami/microbot" target="_blank">Github</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://discord.gg/zaGrfqFEWE" target="_blank">Discord</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://chatgpt.com/g/g-LM0fGeeXB-microbot-documentation" target="_blank">ChatGPT</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://paypal.me/MicrobotBE?country.x=BE" target="_blank">Donate</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../releases.html">Releases</a>
+<body style="background-color:#232323FF !important; background-image: none"
+    class="ipsApp ipsApp_front ipsClearfix ipsJS_has ipsApp_noTouch">
+
+    <header class="c-header">
+        <div class="c-border-red mb-2"></div>
+        <nav class="c-nav navbar navbar-expand-sm py-2" style="flex-wrap:nowrap;justify-content: flex-start">
+            <div class="container align-items-stretch">
+                <a class="navbar-brand me-0 me-lg-3 me-xl-5" href="../index.html">
+                    <img src="../microbot/logo.png" class="c-nav__logo" loading="lazy" alt="logo">
+                </a>
+                <div class="p-3 p-xl-0" style="line-height: 2rem;width: 100%;" id="navbarMenu">
+                    <ul class="navbar-nav me-auto text-center text-xl-left gap-3 gap-xl-4">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://www.github.com/chsami/microbot" target="_blank">Github</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://discord.gg/zaGrfqFEWE" target="_blank">Discord</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://chatgpt.com/g/g-LM0fGeeXB-microbot-documentation"
+                                target="_blank">ChatGPT</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://paypal.me/MicrobotBE?country.x=BE"
+                                target="_blank">Donate</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../releases.html">Releases</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <ul id="elMobileNav"
+                    class="ipsList_inline ipsResponsive_hideDesktop ipsResponsive_block my-auto d-flex gx-2">
+                    <li class="navbar-toggler my-auto py-3 position-relative" data-ipsdrawer="">
+                        <a href="#">
+                            <i class="fa fa-navicon"></i>
+                        </a>
                     </li>
                 </ul>
             </div>
+        </nav>
+    </header>
 
-            <ul id="elMobileNav" class="ipsList_inline ipsResponsive_hideDesktop ipsResponsive_block my-auto d-flex gx-2">
-                <li class="navbar-toggler my-auto py-3 position-relative" data-ipsdrawer="">
-                    <a href="#">
-                        <i class="fa fa-navicon"></i>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-</header>
-
-<!-- Hero Section -->
-<div class="hero">
-    <div class="version">v2.1.0</div>
-    <h1>Major Architecture Overhaul</h1>
-    <p class="tagline">A lighter client, a more reliable one, and a codebase that is easier to maintain and develop for.</p>
-    <div class="badge-row">
-        <span class="badge badge-new">Unified Caching</span>
-        <span class="badge badge-removed">Scheduler Removed</span>
-        <span class="badge badge-improved">Simplified Architecture</span>
-    </div>
-</div>
-
-<!-- Main Content -->
-<div class="container">
-
-    <!-- Quote -->
-    <div class="quote">
-        "As promised a few months ago, I started simplifying the client and stripping out anything that created unnecessary weight or complexity."
-    </div>
-
-    <!-- Key Changes -->
-    <h2 class="section-title">What's Changed</h2>
-    <p class="section-subtitle">Three major improvements that make Microbot faster, simpler, and more reliable</p>
-
-    <div class="grid-3">
-        <!-- Caching -->
-        <div class="card">
-            <span class="card-icon">🗄️</span>
-            <h3>Unified Caching</h3>
-            <p>Players, NPCs, Objects, GroundItems and PlayerState now have dedicated APIs with a unified interaction model.</p>
-            <ul>
-                <li>Replaced dual caching systems</li>
-                <li>Much faster lookups</li>
-                <li>Predictable results</li>
-                <li>Reliable developer toolset</li>
-                <li>Old API remains during transition</li>
-            </ul>
-        </div>
-
-        <!-- Scheduler -->
-        <div class="card">
-            <span class="card-icon">⏱️</span>
-            <h3>Scheduler Removal</h3>
-            <p>The scheduler became too complex and spread across too many places. Removed to allow clean progress.</p>
-            <ul>
-                <li>Breaking change for plugins</li>
-                <li>Reduced scattered logic</li>
-                <li>Simplified codebase</li>
-                <li>Will be redesigned later</li>
-                <li>Branch off to keep using</li>
-            </ul>
-        </div>
-
-        <!-- AutoLogin -->
-        <div class="card">
-            <span class="card-icon">🔐</span>
-            <h3>Profile System</h3>
-            <p>Moving worlds, breaks, and login flow into a single unified profile system for smoother setup.</p>
-            <ul>
-                <li>One profile for all settings</li>
-                <li>Guided setup flow</li>
-                <li>Pre-configured sessions</li>
-                <li>Predictable experience</li>
-                <li>No scattered configuration</li>
-            </ul>
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="version">v2.1.0</div>
+        <h1>Major Architecture Overhaul</h1>
+        <p class="tagline">A lighter client, a more reliable one, and a codebase that is easier to maintain and develop
+            for.</p>
+        <div class="badge-row">
+            <span class="badge badge-new">Unified Caching</span>
+            <span class="badge badge-removed">Scheduler Removed</span>
+            <span class="badge badge-improved">Simplified Architecture</span>
         </div>
     </div>
 
-    <!-- Caching Comparison -->
-    <h2 class="section-title" style="margin-top: 80px;">Caching: Before & After</h2>
-    <p class="section-subtitle">From complex dual systems to a single unified approach</p>
+    <!-- Main Content -->
+    <div class="container">
 
-    <div class="comparison">
-        <div class="comparison-box old">
-            <h4>❌ Old System</h4>
-            <ul>
-                <li>Two separate caching systems</li>
-                <li>High complexity</li>
-                <li>Difficult to trace issues</li>
-                <li>Inconsistent lookups</li>
-                <li>Heavy maintenance</li>
-                <li>Different APIs per entity</li>
-            </ul>
+        <!-- Quote -->
+        <div class="quote">
+            "As promised a few months ago, I started simplifying the client and stripping out anything that created
+            unnecessary weight or complexity."
         </div>
 
-        <div class="comparison-box new">
-            <h4>✓ New System</h4>
-            <ul>
-                <li>One unified system</li>
-                <li>Low complexity</li>
-                <li>Predictable behavior</li>
-                <li>Much faster lookups</li>
-                <li>Simplified maintenance</li>
-                <li>Consistent interaction model</li>
-            </ul>
+        <!-- Key Changes -->
+        <h2 class="section-title">What's Changed</h2>
+        <p class="section-subtitle">Three major improvements that make Microbot faster, simpler, and more reliable</p>
+
+        <div class="grid-3">
+            <!-- Caching -->
+            <div class="card">
+                <span class="card-icon">🗄️</span>
+                <h3>Unified Caching</h3>
+                <p>Players, NPCs, Objects, GroundItems and PlayerState now have dedicated APIs with a unified
+                    interaction model.</p>
+                <ul>
+                    <li>Replaced dual caching systems</li>
+                    <li>Much faster lookups</li>
+                    <li>Predictable results</li>
+                    <li>Reliable developer toolset</li>
+                    <li>Old API remains during transition</li>
+                </ul>
+            </div>
+
+            <!-- Scheduler -->
+            <div class="card">
+                <span class="card-icon">⏱️</span>
+                <h3>Scheduler Removal</h3>
+                <p>The scheduler became too complex and spread across too many places. Removed to allow clean progress.
+                </p>
+                <ul>
+                    <li>Breaking change for plugins</li>
+                    <li>Reduced scattered logic</li>
+                    <li>Simplified codebase</li>
+                    <li>Will be redesigned later</li>
+                    <li>Branch off to keep using</li>
+                </ul>
+            </div>
+
+            <!-- AutoLogin -->
+            <div class="card">
+                <span class="card-icon">🔐</span>
+                <h3>Profile System</h3>
+                <p>Moving worlds, breaks, and login flow into a single unified profile system for smoother setup.</p>
+                <ul>
+                    <li>One profile for all settings</li>
+                    <li>Guided setup flow</li>
+                    <li>Pre-configured sessions</li>
+                    <li>Predictable experience</li>
+                    <li>No scattered configuration</li>
+                </ul>
+            </div>
         </div>
-    </div>
 
-    <!-- Breaking Change Warning -->
-    <div class="warning-banner">
-        <strong>⚠️ Breaking Change Notice</strong>
-        Many plugins will require updates to work with v2.1.0 due to scheduler removal. Anyone who wants to keep using the old system can branch off. The goal is to move the project toward a cleaner and more solid foundation.
-    </div>
+        <!-- Caching Comparison -->
+        <h2 class="section-title" style="margin-top: 80px;">Caching: Before & After</h2>
+        <p class="section-subtitle">From complex dual systems to a single unified approach</p>
 
-    <!-- Philosophy -->
-    <h2 class="section-title" style="margin-top: 80px;">The Philosophy</h2>
-    <p class="section-subtitle">Building for the long run with simplicity at the core</p>
+        <div class="comparison">
+            <div class="comparison-box old">
+                <h4>❌ Old System</h4>
+                <ul>
+                    <li>Two separate caching systems</li>
+                    <li>High complexity</li>
+                    <li>Difficult to trace issues</li>
+                    <li>Inconsistent lookups</li>
+                    <li>Heavy maintenance</li>
+                    <li>Different APIs per entity</li>
+                </ul>
+            </div>
 
-    <div class="quote">
-        "Removing unused systems, reducing scattered logic and unifying the APIs should give us a client that behaves predictably and is far easier to reason about. A simpler foundation means fewer strange bugs, fewer edge cases and a smoother experience for both script creators and users."
-    </div>
-
-    <div class="grid-3">
-        <div class="card">
-            <span class="card-icon">🎯</span>
-            <h3>Predictable</h3>
-            <p>Client behaves consistently and as expected, making development and usage straightforward.</p>
+            <div class="comparison-box new">
+                <h4>✓ New System</h4>
+                <ul>
+                    <li>One unified system</li>
+                    <li>Low complexity</li>
+                    <li>Predictable behavior</li>
+                    <li>Much faster lookups</li>
+                    <li>Simplified maintenance</li>
+                    <li>Consistent interaction model</li>
+                </ul>
+            </div>
         </div>
 
-        <div class="card">
-            <span class="card-icon">🐛</span>
-            <h3>Fewer Bugs</h3>
-            <p>Simpler code means fewer edge cases and strange issues to debug and fix.</p>
+        <!-- Breaking Change Warning -->
+        <div class="warning-banner">
+            <strong>⚠️ Breaking Change Notice</strong>
+            Many plugins will require updates to work with v2.1.0 due to scheduler removal. Anyone who wants to keep
+            using the old system can branch off. The goal is to move the project toward a cleaner and more solid
+            foundation.
         </div>
 
-        <div class="card">
-            <span class="card-icon">⚡</span>
-            <h3>Faster</h3>
-            <p>Optimized systems and reduced overhead lead to better performance overall.</p>
+        <!-- Philosophy -->
+        <h2 class="section-title" style="margin-top: 80px;">The Philosophy</h2>
+        <p class="section-subtitle">Building for the long run with simplicity at the core</p>
+
+        <div class="quote">
+            "Removing unused systems, reducing scattered logic and unifying the APIs should give us a client that
+            behaves predictably and is far easier to reason about. A simpler foundation means fewer strange bugs, fewer
+            edge cases and a smoother experience for both script creators and users."
         </div>
-    </div>
 
-    <!-- CTA -->
-    <div class="cta">
-        <h2>Ready to Experience v2.1.0?</h2>
-        <p style="color: #aaa; font-size: 18px; margin-bottom: 10px;">Download the latest version and experience a cleaner, faster Microbot.</p>
-        <div class="cta-buttons">
-            <a href="https://github.com/chsami/microbot" target="_blank" class="btn btn-primary">Download v2.1.0</a>
-            <a href="https://discord.gg/zaGrfqFEWE" target="_blank" class="btn btn-secondary">Join Discord</a>
+        <div class="grid-3">
+            <div class="card">
+                <span class="card-icon">🎯</span>
+                <h3>Predictable</h3>
+                <p>Client behaves consistently and as expected, making development and usage straightforward.</p>
+            </div>
+
+            <div class="card">
+                <span class="card-icon">🐛</span>
+                <h3>Fewer Bugs</h3>
+                <p>Simpler code means fewer edge cases and strange issues to debug and fix.</p>
+            </div>
+
+            <div class="card">
+                <span class="card-icon">⚡</span>
+                <h3>Faster</h3>
+                <p>Optimized systems and reduced overhead lead to better performance overall.</p>
+            </div>
         </div>
-    </div>
 
-    <div class="footer-note">
-        <strong style="color: #ff6b35;">- The Microbot Team</strong><br>
-        Building the future of automation, one commit at a time.
-    </div>
+        <!-- CTA -->
+        <div class="cta">
+            <h2>Ready to Experience v2.1.0?</h2>
+            <p style="color: #aaa; font-size: 18px; margin-bottom: 10px;">Download the latest version and experience a
+                cleaner, faster Microbot.</p>
+            <div class="cta-buttons">
+                <a href="https://themicrobot.com" target="_blank" class="btn btn-primary">Download v2.1.0</a>
+                <a href="https://discord.gg/zaGrfqFEWE" target="_blank" class="btn btn-secondary">Join Discord</a>
+            </div>
+        </div>
 
-</div>
+        <div class="footer-note">
+            <strong style="color: #ff6b35;">- The Microbot Team</strong><br>
+            Building the future of automation, one commit at a time.
+        </div>
+
+    </div>
 
 </body>
+
 </html>

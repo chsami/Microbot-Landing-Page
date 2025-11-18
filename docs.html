@@ -246,22 +246,23 @@
                             <h3 class="text-xl font-semibold text-white">Old Way ❌</h3>
                             <span class="text-xs text-red-500 bg-red-500/10 px-3 py-1 rounded-full">Legacy</span>
                         </div>
-<pre><code class="language-java">// Verbose and hard to read
-NPC banker = null;
-for (NPC npc : client.getNpcs()) {
-    if (npc.getName() != null &&
-        npc.getName().equals("Banker")) {
-        if (banker == null ||
-            npc.getWorldLocation()
-               .distanceTo(player
-                 .getWorldLocation()) <
-            banker.getWorldLocation()
-               .distanceTo(player
-                 .getWorldLocation())) {
-            banker = npc;
-        }
-    }
-}</code></pre>
+<pre><code class="language-java">// Using legacy Rs2Npc API
+// Simple but limited
+NPC banker = Rs2Npc
+    .getNpc("Banker");
+
+// More complex queries get verbose
+NPC cow = Rs2Npc.getNpcs()
+    .stream()
+    .filter(npc -> npc.getName()
+        .equals("Cow"))
+    .filter(npc -> npc
+        .getInteracting() == null)
+    .min(Comparator.comparingInt(
+        npc -> npc.getWorldLocation()
+            .distanceTo(Rs2Player
+                .getWorldLocation())))
+    .orElse(null);</code></pre>
                     </div>
 
                     <!-- New Way -->
@@ -274,6 +275,12 @@ for (NPC npc : client.getNpcs()) {
 Rs2NpcModel banker =
     new Rs2NpcQueryable()
         .withName("Banker")
+        .nearest();
+
+// Complex queries stay readable
+Rs2NpcModel cow =
+    new Rs2NpcQueryable()
+        .withName("Cow")
         .where(npc ->
             !npc.isInteracting())
         .nearest();</code></pre>
@@ -731,15 +738,29 @@ new Rs2NpcQueryable()
                         <h4 class="font-semibold text-white mb-3">NPCs</h4>
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div>
-                                <p class="text-xs text-red-400 mb-2">Legacy:</p>
-<pre><code class="language-java">NPC npc = Rs2Npc
-  .getNpc("Banker");</code></pre>
+                                <p class="text-xs text-red-400 mb-2">Legacy Rs2Npc:</p>
+<pre><code class="language-java">// Simple query
+NPC npc = Rs2Npc
+  .getNpc("Banker");
+
+// With filter
+NPC npc = Rs2Npc
+  .getNearestNpc(
+    npc -> !npc.isInteracting());</code></pre>
                             </div>
                             <div>
                                 <p class="text-xs text-green-400 mb-2">Queryable:</p>
-<pre><code class="language-java">Rs2NpcModel npc =
+<pre><code class="language-java">// Simple query
+Rs2NpcModel npc =
   new Rs2NpcQueryable()
-    .withName("Banker");</code></pre>
+    .withName("Banker");
+
+// With filter
+Rs2NpcModel npc =
+  new Rs2NpcQueryable()
+    .where(npc ->
+      !npc.isInteracting())
+    .nearest();</code></pre>
                             </div>
                         </div>
                     </div>
@@ -748,17 +769,36 @@ new Rs2NpcQueryable()
                         <h4 class="font-semibold text-white mb-3">Ground Items</h4>
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div>
-                                <p class="text-xs text-red-400 mb-2">Legacy:</p>
+                                <p class="text-xs text-red-400 mb-2">Legacy Rs2GroundItem:</p>
 <pre><code class="language-java">TileItem item =
   Rs2GroundItem
-    .findItem("Coins");</code></pre>
+    .getGroundItem("Coins");</code></pre>
                             </div>
                             <div>
                                 <p class="text-xs text-green-400 mb-2">Queryable:</p>
 <pre><code class="language-java">Rs2TileItemModel item =
   new Rs2TileItemQueryable()
     .withName("Coins")
-    .first();</code></pre>
+    .nearest();</code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-900 p-6 rounded-lg border border-gray-800">
+                        <h4 class="font-semibold text-white mb-3">Tile Objects</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <p class="text-xs text-red-400 mb-2">Legacy Rs2GameObject:</p>
+<pre><code class="language-java">TileObject tree =
+  Rs2GameObject
+    .findObject("Tree");</code></pre>
+                            </div>
+                            <div>
+                                <p class="text-xs text-green-400 mb-2">Queryable:</p>
+<pre><code class="language-java">Rs2TileObjectModel tree =
+  new Rs2TileObjectQueryable()
+    .withName("Tree")
+    .nearest();</code></pre>
                             </div>
                         </div>
                     </div>

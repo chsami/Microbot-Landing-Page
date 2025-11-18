@@ -39,27 +39,23 @@ The **Queryable API** is a modern, fluent interface for querying game entities i
 ### Old Way (Legacy) ❌
 
 ```java
-// Verbose and hard to read
-NPC banker = null;
-for (NPC npc : client.getNpcs()) {
-    if (npc.getName() != null &&
-        npc.getName().equals("Banker") &&
-        !npc.getInteracting() != null) {
-        if (banker == null ||
-            npc.getWorldLocation().distanceTo(player.getWorldLocation()) <
-            banker.getWorldLocation().distanceTo(player.getWorldLocation())) {
-            banker = npc;
-        }
-    }
-}
+// Using legacy Rs2Npc API - Simple but limited
+NPC banker = Rs2Npc.getNpc("Banker");
 
-// Stream API - better but still verbose
+// More complex queries get verbose with Stream API
 NPC banker = Rs2Npc.getNpcs().stream()
     .filter(npc -> npc.getName() != null)
     .filter(npc -> npc.getName().equals("Banker"))
     .filter(npc -> npc.getInteracting() == null)
     .min(Comparator.comparingInt(npc ->
-        npc.getWorldLocation().distanceTo(player.getWorldLocation())))
+        npc.getWorldLocation().distanceTo(Rs2Player.getWorldLocation())))
+    .orElse(null);
+
+// Even simple filters become verbose
+NPC cow = Rs2Npc.getNpcs().stream()
+    .filter(npc -> npc.getName().equals("Cow"))
+    .filter(npc -> npc.getInteracting() == null)
+    .findFirst()
     .orElse(null);
 ```
 
@@ -804,17 +800,24 @@ Rs2NpcModel npc = new Rs2NpcQueryable()
 
 #### NPCs
 
-**Legacy:**
+**Legacy Rs2Npc:**
 ```java
-// Old way
+// Old way - simple queries
 NPC npc = Rs2Npc.getNpc("Banker");
 NPC nearest = Rs2Npc.getNearestNpc("Guard");
-List<NPC> npcs = Rs2Npc.getNpcs(NpcID.GUARD);
+
+// Old way - with filters gets verbose
+NPC npc = Rs2Npc.getNearestNpc(n -> n.getName().equals("Guard") && !n.isInteracting());
+
+// Old way - by ID
+List<NPC> npcs = Rs2Npc.getNpcs().stream()
+    .filter(npc -> npc.getId() == NpcID.GUARD)
+    .collect(Collectors.toList());
 ```
 
 **Queryable:**
 ```java
-// New way
+// New way - simple queries
 Rs2NpcModel npc = new Rs2NpcQueryable()
     .withName("Banker");
 
@@ -822,6 +825,13 @@ Rs2NpcModel nearest = new Rs2NpcQueryable()
     .withName("Guard")
     .nearest();
 
+// New way - with filters stays clean
+Rs2NpcModel npc = new Rs2NpcQueryable()
+    .withName("Guard")
+    .where(n -> !n.isInteracting())
+    .nearest();
+
+// New way - by ID
 List<Rs2NpcModel> npcs = new Rs2NpcQueryable()
     .withId(NpcID.GUARD)
     .toList();
@@ -829,11 +839,17 @@ List<Rs2NpcModel> npcs = new Rs2NpcQueryable()
 
 #### Ground Items
 
-**Legacy:**
+**Legacy Rs2GroundItem:**
 ```java
 // Old way
-TileItem item = Rs2GroundItem.findItem("Coins");
-TileItem nearest = Rs2GroundItem.getNearestItem("Dragon bones");
+TileItem item = Rs2GroundItem.getGroundItem("Coins");
+TileItem nearest = Rs2GroundItem.getNearestGroundItem("Dragon bones");
+
+// Old way - with filters
+TileItem valuable = Rs2GroundItem.getAllGroundItems().stream()
+    .filter(item -> item.getTotalValue() > 5000)
+    .findFirst()
+    .orElse(null);
 ```
 
 **Queryable:**
@@ -841,20 +857,32 @@ TileItem nearest = Rs2GroundItem.getNearestItem("Dragon bones");
 // New way
 Rs2TileItemModel item = new Rs2TileItemQueryable()
     .withName("Coins")
-    .first();
+    .nearest();
 
 Rs2TileItemModel nearest = new Rs2TileItemQueryable()
     .withName("Dragon bones")
+    .nearest();
+
+// New way - with filters stays clean
+Rs2TileItemModel valuable = new Rs2TileItemQueryable()
+    .where(item -> item.getTotalGeValue() > 5000)
     .nearest();
 ```
 
 #### Game Objects
 
-**Legacy:**
+**Legacy Rs2GameObject:**
 ```java
 // Old way
 TileObject tree = Rs2GameObject.findObject("Tree");
 TileObject nearest = Rs2GameObject.findObjectById(1234);
+
+// Old way - with distance
+TileObject bank = Rs2GameObject.getGameObjects().stream()
+    .filter(obj -> obj.getName().equals("Bank booth"))
+    .min(Comparator.comparingInt(obj ->
+        obj.getWorldLocation().distanceTo(Rs2Player.getWorldLocation())))
+    .orElse(null);
 ```
 
 **Queryable:**
@@ -867,29 +895,37 @@ Rs2TileObjectModel tree = new Rs2TileObjectQueryable()
 Rs2TileObjectModel nearest = new Rs2TileObjectQueryable()
     .withId(1234)
     .nearest();
+
+// New way - with distance stays clean
+Rs2TileObjectModel bank = new Rs2TileObjectQueryable()
+    .withName("Bank booth")
+    .nearest();
 ```
 
 ### Step-by-Step Migration
 
-**Step 1:** Replace direct method calls with queryable:
+**Step 1:** Replace Rs2Npc method calls with queryable:
 ```java
-// Before
+// Before (Rs2Npc)
 NPC banker = Rs2Npc.getNpc("Banker");
 
-// After
-Rs2NpcModel banker = new Rs2NpcQueryable().withName("Banker");
+// After (Queryable)
+Rs2NpcModel banker = new Rs2NpcQueryable()
+    .withName("Banker")
+    .nearest();
 ```
 
-**Step 2:** Add filters if needed:
+**Step 2:** Simplify complex stream queries:
 ```java
-// Before
+// Before (Rs2Npc with Stream API)
 NPC cow = Rs2Npc.getNpcs().stream()
     .filter(npc -> npc.getName().equals("Cow"))
     .filter(npc -> npc.getInteracting() == null)
-    .findFirst()
+    .min(Comparator.comparingInt(npc ->
+        npc.getWorldLocation().distanceTo(Rs2Player.getWorldLocation())))
     .orElse(null);
 
-// After
+// After (Queryable)
 Rs2NpcModel cow = new Rs2NpcQueryable()
     .withName("Cow")
     .where(npc -> !npc.isInteracting())
@@ -898,12 +934,12 @@ Rs2NpcModel cow = new Rs2NpcQueryable()
 
 **Step 3:** Update interaction methods:
 ```java
-// Before
+// Before (Rs2Npc)
 if (banker != null) {
     Rs2Npc.interact(banker, "Bank");
 }
 
-// After
+// After (Queryable)
 if (banker != null) {
     banker.click("Bank");
     // or

@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>2.1.0 Release - Microbot</title>
+
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="Microbot Free open source botting client based on runelite">
+
+    <meta property="og:site_name" content="Microbot">
+    <meta property="og:locale" content="en_US">
+    <meta name="theme-color" content="#2c2c2c">
+
+    <link rel="stylesheet" href="../microbot/app.min.css">
+    <link rel="stylesheet"
+          href="../microbot/341e4a57816af3ba440d891ca87450ff_framework.css.c1bcd9467a7eeb9006567801face652d.css"
+          media="all">
+    <link rel="stylesheet"
+          href="../microbot/20446cf2d164adcc029377cb04d43d17_flags.css.be60c469fe9d673f833faaa74a81e375.css"
+          media="all">
+    <link rel="stylesheet"
+          href="../microbot/90eb5adf50a8c640f633d47fd7eb1778_core.css.730a336650d62c3b59570edc9065b630.css" media="all">
+    <link rel="stylesheet"
+          href="../microbot/5a0da001ccc2200dc5625c3f3934497d_core_responsive.css.1d08c9ed37ed1cae43d3985a3b2316ad.css"
+          media="all">
+
+    <style>
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        @keyframes glow {
+            0%, 100% {
+                box-shadow: 0 0 20px rgba(255, 107, 53, 0.3);
+            }
+            50% {
+                box-shadow: 0 0 40px rgba(255, 107, 53, 0.6);
+            }
+        }
+
+        .animate-on-scroll {
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .section-header {
+            background: linear-gradient(135deg, #2c2c2c, #1a1a1a);
+            color: #fff;
+            padding: 25px;
+            margin: 40px 0 25px 0;
+            border-radius: 12px;
+            border-left: 5px solid #ff6b35;
+            animation: slideInLeft 0.6s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 107, 53, 0.1), transparent);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% {
+                left: -100%;
+            }
+            100% {
+                left: 100%;
+            }
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2c2c2c 100%);
+            padding: 60px 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid #ff6b35;
+            animation: glow 3s infinite;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 107, 53, 0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .hero-title {
+            font-size: 48px;
+            color: #ff6b35;
+            margin-bottom: 20px;
+            font-weight: bold;
+            position: relative;
+            z-index: 1;
+            text-shadow: 0 0 20px rgba(255, 107, 53, 0.5);
+        }
+
+        .hero-subtitle {
+            font-size: 24px;
+            color: #ccc;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .feature-box {
+            background: #1e1e1e;
+            border: 1px solid #333;
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 10px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-box:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
+            border-color: #ff6b35;
+        }
+
+        .feature-box::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, #ff6b35, #ff8c5a);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .feature-box:hover::after {
+            transform: scaleX(1);
+        }
+
+        .icon-box {
+            display: inline-block;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #ff6b35, #ff8c5a);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            margin-bottom: 15px;
+            animation: pulse 2s infinite;
+        }
+
+        .comparison-table {
+            width: 100%;
+            margin: 25px 0;
+            border-collapse: separate;
+            border-spacing: 0;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .comparison-table th {
+            background: linear-gradient(135deg, #ff6b35, #ff8c5a);
+            color: white;
+            padding: 15px;
+            font-weight: bold;
+            text-align: left;
+        }
+
+        .comparison-table td {
+            background: #1e1e1e;
+            color: #ccc;
+            padding: 15px;
+            border-bottom: 1px solid #333;
+        }
+
+        .comparison-table tr:hover td {
+            background: #252525;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+            margin: 5px;
+        }
+
+        .badge-removed {
+            background: #8b2635;
+            color: #ffa8a8;
+        }
+
+        .badge-new {
+            background: #16a34a;
+            color: #86efac;
+        }
+
+        .badge-improved {
+            background: #2563eb;
+            color: #93c5fd;
+        }
+
+        .timeline {
+            position: relative;
+            padding: 30px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, #ff6b35, #ff8c5a);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            margin: 40px 0;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            background: #ff6b35;
+            border-radius: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+            box-shadow: 0 0 20px rgba(255, 107, 53, 0.8);
+        }
+
+        .code-block {
+            background: #0d1117;
+            color: #c9d1d9;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            border: 1px solid #30363d;
+            overflow-x: auto;
+            margin: 15px 0;
+            position: relative;
+        }
+
+        .code-block::before {
+            content: 'CODE';
+            position: absolute;
+            top: 5px;
+            right: 10px;
+            font-size: 10px;
+            color: #666;
+            letter-spacing: 2px;
+        }
+
+        .warning-box {
+            background: #2d1b1b;
+            border: 2px solid #8b2635;
+            color: #ffa8a8;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            position: relative;
+            padding-left: 60px;
+        }
+
+        .warning-box::before {
+            content: '⚠️';
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 30px;
+        }
+
+        .info-box {
+            background: #1b2d3a;
+            border: 2px solid #2563eb;
+            color: #93c5fd;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            position: relative;
+            padding-left: 60px;
+        }
+
+        .info-box::before {
+            content: 'ℹ️';
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 30px;
+        }
+
+        .success-box {
+            background: #1b2d1b;
+            border: 2px solid #16a34a;
+            color: #86efac;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            position: relative;
+            padding-left: 60px;
+        }
+
+        .success-box::before {
+            content: '✅';
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 30px;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #1e1e1e, #2c2c2c);
+            border: 2px solid #ff6b35;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            margin: 15px;
+            flex: 1;
+            min-width: 200px;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(255, 107, 53, 0.4);
+        }
+
+        .stat-number {
+            font-size: 48px;
+            font-weight: bold;
+            color: #ff6b35;
+            margin: 10px 0;
+        }
+
+        .stat-label {
+            font-size: 16px;
+            color: #ccc;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff6b35, #ff8c5a);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(255, 107, 53, 0.4);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 107, 53, 0.6);
+            color: white;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #333;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 15px 0;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #ff6b35, #ff8c5a);
+            border-radius: 10px;
+            animation: progressAnimation 2s ease-in-out;
+        }
+
+        @keyframes progressAnimation {
+            from {
+                width: 0;
+            }
+        }
+
+        .quote-box {
+            background: linear-gradient(135deg, #2c2c2c, #1a1a1a);
+            border-left: 5px solid #ff6b35;
+            padding: 25px 30px;
+            margin: 30px 0;
+            font-style: italic;
+            font-size: 18px;
+            color: #ccc;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .feature-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin: 30px 0;
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 32px;
+            }
+            .hero-subtitle {
+                font-size: 18px;
+            }
+            .timeline::before {
+                left: 20px;
+            }
+            .timeline-item::before {
+                left: 20px;
+            }
+        }
+    </style>
+</head>
+<body style="background-color:#232323FF !important; background-image: none"
+      class="ipsApp ipsApp_front ipsClearfix ipsJS_has ipsApp_noTouch"
+      data-controller="core.front.core.app" data-message="" data-pageapp="" data-pagelocation="front" data-pagemodule=""
+      data-pagecontroller="">
+
+<header class="c-header">
+    <div class="c-border-red mb-2"></div>
+    <!-- Navigation Start -->
+    <nav class="c-nav navbar navbar-expand-sm py-2" style="flex-wrap:nowrap;justify-content: flex-start">
+        <div class="container align-items-stretch">
+            <a class="navbar-brand me-0 me-lg-3 me-xl-5" href="../index.html">
+                <img src="../microbot/logo.png" class="c-nav__logo" loading="lazy" alt="logo">
+            </a>
+            <div class="p-3 p-xl-0" style="line-height: 2rem;width: 100%;" id="navbarMenu">
+                <ul class="navbar-nav me-auto text-center text-xl-left gap-3 gap-xl-4">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://www.github.com/chsami/microbot" target="_blank">Github</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://discord.gg/zaGrfqFEWE" target="_blank">Discord</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://chatgpt.com/g/g-LM0fGeeXB-microbot-documentation"
+                           target="_blank">ChatGPT</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://paypal.me/MicrobotBE?country.x=BE" target="_blank">Donate</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../releases.html">Releases</a>
+                    </li>
+                </ul>
+            </div>
+
+            <ul id="elMobileNav"
+                class="ipsList_inline ipsResponsive_hideDesktop ipsResponsive_block my-auto d-flex gx-2"
+                data-controller="core.front.core.mobileNav" data-default="all">
+
+                <li class="navbar-toggler my-auto py-3 position-relative" data-ipsdrawer=""
+                    data-ipsdrawer-drawerelem="#elMobileDrawer">
+                    <a href="#">
+                        <i class="fa fa-navicon"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Navigation End -->
+</header>
+
+<section class="content-section container" style="max-width: 1200px; margin: 0 auto; padding: 20px;">
+
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <div class="hero-title">Microbot v2.1.0</div>
+        <div class="hero-subtitle">Major Architecture Overhaul</div>
+        <p style="font-size: 20px; color: #aaa; position: relative; z-index: 1; max-width: 800px; margin: 0 auto;">
+            A lighter client, a more reliable one, and a codebase that is easier to maintain and develop for.
+        </p>
+        <div style="margin-top: 30px; position: relative; z-index: 1;">
+            <span class="badge badge-new">Unified Caching</span>
+            <span class="badge badge-removed">Scheduler Removed</span>
+            <span class="badge badge-improved">Simplified Architecture</span>
+        </div>
+    </div>
+
+    <!-- Introduction -->
+    <div class="quote-box animate-on-scroll">
+        "As promised a few months ago, I started simplifying the client and stripping out anything that created
+        unnecessary weight or complexity. The goal is a lighter client, a more reliable one, and a codebase
+        that is easier to maintain and develop for."
+    </div>
+
+    <!-- Overview Stats -->
+    <div class="feature-grid">
+        <div class="stat-card animate-on-scroll">
+            <div style="font-size: 40px; margin-bottom: 10px;">🚀</div>
+            <div class="stat-label">Faster Startup</div>
+            <div class="stat-number">↑</div>
+        </div>
+        <div class="stat-card animate-on-scroll">
+            <div style="font-size: 40px; margin-bottom: 10px;">⚡</div>
+            <div class="stat-label">Better Performance</div>
+            <div class="stat-number">↑</div>
+        </div>
+        <div class="stat-card animate-on-scroll">
+            <div style="font-size: 40px; margin-bottom: 10px;">🎯</div>
+            <div class="stat-label">Code Simplicity</div>
+            <div class="stat-number">↑</div>
+        </div>
+    </div>
+
+    <!-- Caching Section -->
+    <div class="section-header">
+        <h2>🗄️ Unified Caching System</h2>
+    </div>
+
+    <div class="feature-box animate-on-scroll">
+        <div style="text-align: center; margin-bottom: 20px;">
+            <div class="icon-box" style="display: inline-flex;">
+                💾
+            </div>
+        </div>
+
+        <h3 style="color: #ff6b35; margin-bottom: 20px;">New Dedicated APIs & Unified Cache</h3>
+
+        <p style="font-size: 17px; line-height: 1.8; color: #ccc;">
+            Players, NPCs, Objects, GroundItems and PlayerState now each have a dedicated API, a cache and a unified
+            interaction model. Working with NPCs should feel the same as working with players or objects.
+        </p>
+
+        <div class="info-box">
+            <strong>Previous System:</strong> Two separate caching systems running simultaneously - the old system and
+            a newer one introduced by Vox and George. While the newer system improved performance in some cases, it
+            added significant complexity and maintenance overhead.
+        </div>
+
+        <div class="success-box">
+            <strong>New Unified System Benefits:</strong>
+            <ul style="margin: 10px 0; font-size: 16px;">
+                <li>✨ Much faster lookups</li>
+                <li>🎯 More predictable results</li>
+                <li>🛠️ More reliable toolset for developers</li>
+                <li>🔄 Flexible and consistent API</li>
+                <li>📦 Reduced complexity and easier debugging</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="feature-box animate-on-scroll">
+        <h4 style="color: #ff6b35; margin-bottom: 15px;">Before vs After</h4>
+
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Aspect</th>
+                    <th>Old System</th>
+                    <th>New System</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Cache Systems</strong></td>
+                    <td>2 separate systems (old + Vox/George)</td>
+                    <td>1 unified system</td>
+                </tr>
+                <tr>
+                    <td><strong>Complexity</strong></td>
+                    <td>High - difficult to trace issues</td>
+                    <td>Low - predictable behavior</td>
+                </tr>
+                <tr>
+                    <td><strong>Performance</strong></td>
+                    <td>Inconsistent lookups</td>
+                    <td>Much faster lookups</td>
+                </tr>
+                <tr>
+                    <td><strong>Maintenance</strong></td>
+                    <td>Heavy maintenance required</td>
+                    <td>Simplified maintenance</td>
+                </tr>
+                <tr>
+                    <td><strong>API Consistency</strong></td>
+                    <td>Different for each entity type</td>
+                    <td>Unified interaction model</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="feature-box animate-on-scroll">
+        <h4 style="color: #ff6b35; margin-bottom: 15px;">Developer Experience</h4>
+
+        <div class="grid-container">
+            <div style="background: #1a1a1a; padding: 20px; border-radius: 8px; border: 1px solid #333;">
+                <h5 style="color: #93c5fd; margin-bottom: 10px;">🎮 Players API</h5>
+                <p style="color: #aaa; font-size: 15px;">Dedicated cache and consistent methods for player interactions</p>
+            </div>
+            <div style="background: #1a1a1a; padding: 20px; border-radius: 8px; border: 1px solid #333;">
+                <h5 style="color: #93c5fd; margin-bottom: 10px;">👾 NPCs API</h5>
+                <p style="color: #aaa; font-size: 15px;">Same familiar patterns as Players - reduced learning curve</p>
+            </div>
+            <div style="background: #1a1a1a; padding: 20px; border-radius: 8px; border: 1px solid #333;">
+                <h5 style="color: #93c5fd; margin-bottom: 10px;">🏗️ Objects API</h5>
+                <p style="color: #aaa; font-size: 15px;">Unified approach to game object manipulation</p>
+            </div>
+            <div style="background: #1a1a1a; padding: 20px; border-radius: 8px; border: 1px solid #333;">
+                <h5 style="color: #93c5fd; margin-bottom: 10px;">💎 GroundItems API</h5>
+                <p style="color: #aaa; font-size: 15px;">Consistent caching for ground item detection</p>
+            </div>
+            <div style="background: #1a1a1a; padding: 20px; border-radius: 8px; border: 1px solid #333;">
+                <h5 style="color: #93c5fd; margin-bottom: 10px;">🎯 PlayerState API</h5>
+                <p style="color: #aaa; font-size: 15px;">Reliable player state tracking and management</p>
+            </div>
+        </div>
+
+        <div class="info-box" style="margin-top: 20px;">
+            <strong>Migration Notice:</strong> The old API will remain available during the transition period to ensure
+            plugins continue to work while developers update their code.
+        </div>
+    </div>
+
+    <!-- Scheduler Removal Section -->
+    <div class="section-header">
+        <h2>⏱️ Scheduler Removal</h2>
+    </div>
+
+    <div class="warning-box animate-on-scroll">
+        <strong>Breaking Change:</strong> This is a breaking change that will require updates if you want to continue
+        using Microbot. Anyone who wants to keep using the old scheduler can branch off.
+    </div>
+
+    <div class="feature-box animate-on-scroll">
+        <div style="text-align: center; margin-bottom: 20px;">
+            <div class="icon-box" style="display: inline-flex;">
+                🗑️
+            </div>
+        </div>
+
+        <h3 style="color: #ff6b35; margin-bottom: 20px;">Why Remove the Scheduler?</h3>
+
+        <div class="grid-container">
+            <div style="background: #2d1b1b; padding: 25px; border-radius: 8px; border: 2px solid #8b2635;">
+                <h5 style="color: #ffa8a8; margin-bottom: 15px;">❌ Problems with Old Scheduler</h5>
+                <ul style="color: #ffa8a8; font-size: 15px; line-height: 1.8;">
+                    <li>Too complex and spread across many places</li>
+                    <li>Required custom code in every plugin</li>
+                    <li>Did not align with simplicity philosophy</li>
+                    <li>Difficult to maintain and debug</li>
+                    <li>Created hidden dependencies</li>
+                </ul>
+            </div>
+
+            <div style="background: #1b2d1b; padding: 25px; border-radius: 8px; border: 2px solid #16a34a;">
+                <h5 style="color: #86efac; margin-bottom: 15px;">✅ Benefits of Removal</h5>
+                <ul style="color: #86efac; font-size: 15px; line-height: 1.8;">
+                    <li>Cleaner, more predictable codebase</li>
+                    <li>Reduced complexity for developers</li>
+                    <li>Allows rest of client to move forward</li>
+                    <li>Paves way for better design in future</li>
+                    <li>Aligns with project philosophy</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="info-box" style="margin-top: 25px;">
+            <strong>Future Plans:</strong> The scheduler will be redesigned in the future with a simpler, more
+            maintainable architecture. This removal is temporary to allow the core client to progress without
+            being held back by legacy complexity.
+        </div>
+    </div>
+
+    <div class="feature-box animate-on-scroll">
+        <h4 style="color: #ff6b35; margin-bottom: 15px;">Impact on Plugin Compatibility</h4>
+
+        <div class="progress-bar">
+            <div class="progress-fill" style="width: 70%;"></div>
+        </div>
+        <p style="text-align: center; color: #aaa; margin-top: 10px;">
+            <strong>~70%</strong> of plugins will require updates to work with v2.1.0
+        </p>
+
+        <div style="margin-top: 25px; padding: 20px; background: #1a1a1a; border-radius: 8px; border-left: 4px solid #ff6b35;">
+            <h5 style="color: #ff6b35; margin-bottom: 10px;">What This Means For You:</h5>
+            <p style="color: #ccc; font-size: 16px; line-height: 1.7;">
+                If you're currently using plugins that depend on the scheduler, they will need to be updated.
+                Plugin developers are encouraged to refactor their code to work without the scheduler. For users
+                who need the old functionality, you can continue using v2.0.x or create a custom branch.
+            </p>
+        </div>
+    </div>
+
+    <!-- AutoLogin & BreakHandler Section -->
+    <div class="section-header">
+        <h2>🔐 Simplified AutoLogin & BreakHandler</h2>
+    </div>
+
+    <div class="feature-box animate-on-scroll">
+        <div style="text-align: center; margin-bottom: 20px;">
+            <div class="icon-box" style="display: inline-flex;">
+                🎯
+            </div>
+        </div>
+
+        <h3 style="color: #ff6b35; margin-bottom: 20px;">Unified Profile System</h3>
+
+        <p style="font-size: 17px; line-height: 1.8; color: #ccc; margin-bottom: 20px;">
+            The logic for worlds, breaks and login flow currently lives in several separate places. The plan is to
+            move all of it into a single profile system. A profile will hold all settings such as playtimes, break
+            rules and world preferences.
+        </p>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="feature-box">
+                    <h4 style="color: #93c5fd;">📋 Before: Scattered Configuration</h4>
+                    <ul style="color: #aaa; font-size: 16px; line-height: 1.8;">
+                        <li>Login settings in one location</li>
+                        <li>Break rules in another</li>
+                        <li>World preferences elsewhere</li>
+                        <li>Playtimes configured separately</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="feature-box">
+                    <h4 style="color: #86efac;">✨ After: Single Profile System</h4>
+                    <ul style="color: #aaa; font-size: 16px; line-height: 1.8;">
+                        <li>All settings in one profile</li>
+                        <li>Guided setup flow</li>
+                        <li>Pre-configured before botting starts</li>
+                        <li>Smoother and more predictable experience</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="feature-box animate-on-scroll">
+        <h4 style="color: #ff6b35; margin-bottom: 20px;">How It Will Work</h4>
+
+        <div style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; margin: 25px 0;">
+            <div style="flex: 1; min-width: 250px; background: linear-gradient(135deg, #1a1a1a, #2c2c2c); padding: 25px; border-radius: 10px; border: 2px solid #ff6b35; text-align: center;">
+                <div style="font-size: 36px; margin-bottom: 10px;">1️⃣</div>
+                <h5 style="color: #ff6b35; margin-bottom: 10px;">Create Profile</h5>
+                <p style="color: #aaa; font-size: 15px;">Set up your botting profile with all preferences</p>
+            </div>
+
+            <div style="flex: 1; min-width: 250px; background: linear-gradient(135deg, #1a1a1a, #2c2c2c); padding: 25px; border-radius: 10px; border: 2px solid #ff6b35; text-align: center;">
+                <div style="font-size: 36px; margin-bottom: 10px;">2️⃣</div>
+                <h5 style="color: #ff6b35; margin-bottom: 10px;">Configure Once</h5>
+                <p style="color: #aaa; font-size: 15px;">Email, password, worlds, breaks - all in one place</p>
+            </div>
+
+            <div style="flex: 1; min-width: 250px; background: linear-gradient(135deg, #1a1a1a, #2c2c2c); padding: 25px; border-radius: 10px; border: 2px solid #ff6b35; text-align: center;">
+                <div style="font-size: 36px; margin-bottom: 10px;">3️⃣</div>
+                <h5 style="color: #ff6b35; margin-bottom: 10px;">Start Botting</h5>
+                <p style="color: #aaa; font-size: 15px;">Client knows everything it needs automatically</p>
+            </div>
+        </div>
+
+        <div class="success-box">
+            <strong>Result:</strong> A guided setup flow that prepares everything before you start botting. No more
+            hunting through different menus to configure your session!
+        </div>
+    </div>
+
+    <!-- Future Vision Section -->
+    <div class="section-header">
+        <h2>🚀 The Broader Vision</h2>
+    </div>
+
+    <div class="feature-box animate-on-scroll">
+        <h3 style="color: #ff6b35; text-align: center; margin-bottom: 30px;">Building for the Long Run</h3>
+
+        <div class="quote-box">
+            "All of this is part of a broader cleanup that I believe will pay off in the long run. Removing unused
+            systems, reducing scattered logic and unifying the APIs should give us a client that behaves predictably
+            and is far easier to reason about."
+        </div>
+
+        <div class="grid-container" style="margin-top: 30px;">
+            <div class="stat-card">
+                <div style="font-size: 50px; margin-bottom: 15px;">🎯</div>
+                <div class="stat-label" style="font-size: 18px; margin-bottom: 10px;">Predictable Behavior</div>
+                <p style="color: #aaa; font-size: 14px;">Client acts consistently and as expected</p>
+            </div>
+
+            <div class="stat-card">
+                <div style="font-size: 50px; margin-bottom: 15px;">🐛</div>
+                <div class="stat-label" style="font-size: 18px; margin-bottom: 10px;">Fewer Bugs</div>
+                <p style="color: #aaa; font-size: 14px;">Simpler code means fewer edge cases</p>
+            </div>
+
+            <div class="stat-card">
+                <div style="font-size: 50px; margin-bottom: 15px;">⚡</div>
+                <div class="stat-label" style="font-size: 18px; margin-bottom: 10px;">Better Performance</div>
+                <p style="color: #aaa; font-size: 14px;">Optimized systems run faster</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="feature-box animate-on-scroll">
+        <h4 style="color: #ff6b35; margin-bottom: 20px;">What This Means for Developers</h4>
+
+        <div class="grid-container">
+            <div style="padding: 20px; background: #1a1a1a; border-radius: 8px; border-left: 4px solid #16a34a;">
+                <h5 style="color: #86efac; margin-bottom: 10px;">✅ Less Hidden Work</h5>
+                <p style="color: #aaa; font-size: 15px;">
+                    No more tracking down issues caused by complex, intertwined systems
+                </p>
+            </div>
+
+            <div style="padding: 20px; background: #1a1a1a; border-radius: 8px; border-left: 4px solid #16a34a;">
+                <h5 style="color: #86efac; margin-bottom: 10px;">✅ Clearer Code</h5>
+                <p style="color: #aaa; font-size: 15px;">
+                    Easier to understand what's happening and why
+                </p>
+            </div>
+
+            <div style="padding: 20px; background: #1a1a1a; border-radius: 8px; border-left: 4px solid #16a34a;">
+                <h5 style="color: #86efac; margin-bottom: 10px;">✅ Faster Development</h5>
+                <p style="color: #aaa; font-size: 15px;">
+                    Build plugins faster with consistent, reliable APIs
+                </p>
+            </div>
+
+            <div style="padding: 20px; background: #1a1a1a; border-radius: 8px; border-left: 4px solid #16a34a;">
+                <h5 style="color: #86efac; margin-bottom: 10px;">✅ Better Debugging</h5>
+                <p style="color: #aaa; font-size: 15px;">
+                    Simpler architecture makes issues easier to trace
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="feature-box animate-on-scroll" style="background: linear-gradient(135deg, #1e1e1e, #2c2c2c); border: 3px solid #ff6b35;">
+        <h4 style="color: #ff6b35; text-align: center; margin-bottom: 20px; font-size: 24px;">The Path Forward</h4>
+
+        <p style="font-size: 18px; line-height: 1.8; color: #ccc; text-align: center; max-width: 800px; margin: 0 auto 20px auto;">
+            These changes take time, and some of them mean letting go of older ideas, but they move the project
+            toward a cleaner and more solid future.
+        </p>
+
+        <div class="info-box">
+            <strong>Philosophy:</strong> A simpler foundation means fewer strange bugs, fewer edge cases and a
+            smoother experience for both script creators and users.
+        </div>
+
+        <div style="text-align: center; margin-top: 30px;">
+            <div style="display: inline-block; background: linear-gradient(135deg, #2c2c2c, #1a1a1a); padding: 30px; border-radius: 15px; border: 2px solid #ff6b35;">
+                <div style="font-size: 48px; margin-bottom: 15px;">🎯</div>
+                <h4 style="color: #ff6b35; margin-bottom: 10px;">Core Mission</h4>
+                <p style="color: #ccc; font-size: 16px; max-width: 600px;">
+                    Build a client that is <strong style="color: #ff6b35;">light</strong>,
+                    <strong style="color: #ff6b35;">reliable</strong>, and
+                    <strong style="color: #ff6b35;">easy to develop for</strong>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Call to Action Section -->
+    <div class="hero-section" style="margin: 50px 0 30px 0;">
+        <div style="position: relative; z-index: 1;">
+            <h2 style="color: #fff; font-size: 36px; margin-bottom: 20px;">Ready to Experience v2.1.0?</h2>
+            <p style="font-size: 18px; color: #ccc; margin-bottom: 30px; max-width: 700px; margin-left: auto; margin-right: auto;">
+                Download the latest version and experience a faster, cleaner, and more reliable Microbot
+            </p>
+
+            <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                <a href="https://github.com/chsami/microbot" target="_blank" class="cta-button">
+                    📥 Download v2.1.0
+                </a>
+                <a href="https://discord.gg/zaGrfqFEWE" target="_blank" class="cta-button" style="background: linear-gradient(135deg, #5865F2, #7289DA);">
+                    💬 Join Discord
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Final Footer -->
+    <div class="feature-box" style="background: linear-gradient(135deg, #1a1a1a, #0a0a0a); border: 2px solid #ff6b35; margin: 40px 0 20px 0;">
+        <div style="text-align: center; padding: 30px;">
+            <div style="font-size: 28px; color: #ff6b35; margin-bottom: 20px; font-weight: bold;">
+                🎉 The Future is Simpler, Faster, Better 🎉
+            </div>
+
+            <h3 style="color: #fff; margin: 20px 0; font-size: 24px;">
+                Microbot v2.1.0 - Architecture for Tomorrow
+            </h3>
+
+            <p style="font-size: 18px; color: #ccc; line-height: 1.7; margin: 25px 0; max-width: 800px; margin-left: auto; margin-right: auto;">
+                This release represents a commitment to quality over complexity. By removing unnecessary systems
+                and unifying our approach, we're building a foundation that will serve the community for years to come.
+            </p>
+
+            <div class="progress-bar" style="max-width: 600px; margin: 30px auto;">
+                <div class="progress-fill" style="width: 100%;"></div>
+            </div>
+            <p style="color: #86efac; font-size: 16px; margin-top: 15px;">
+                <strong>100%</strong> Committed to Excellence
+            </p>
+
+            <div style="margin: 35px 0; padding: 25px 0; border-top: 1px solid #333; border-bottom: 1px solid #333;">
+                <div style="display: flex; justify-content: center; gap: 35px; flex-wrap: wrap; align-items: center;">
+                    <a href="https://github.com/chsami/microbot" target="_blank"
+                       style="color: #ff6b35; text-decoration: none; font-size: 17px; transition: all 0.3s ease;"
+                       onmouseover="this.style.color='#ffffff'; this.style.transform='translateY(-3px)'"
+                       onmouseout="this.style.color='#ff6b35'; this.style.transform='translateY(0)'">
+                        💻 Main Repository
+                    </a>
+                    <a href="https://github.com/chsami/microbot-hub" target="_blank"
+                       style="color: #ff6b35; text-decoration: none; font-size: 17px; transition: all 0.3s ease;"
+                       onmouseover="this.style.color='#ffffff'; this.style.transform='translateY(-3px)'"
+                       onmouseout="this.style.color='#ff6b35'; this.style.transform='translateY(0)'">
+                        🏛️ Plugin Hub
+                    </a>
+                    <a href="https://discord.gg/zaGrfqFEWE" target="_blank"
+                       style="color: #ff6b35; text-decoration: none; font-size: 17px; transition: all 0.3s ease;"
+                       onmouseover="this.style.color='#ffffff'; this.style.transform='translateY(-3px)'"
+                       onmouseout="this.style.color='#ff6b35'; this.style.transform='translateY(0)'">
+                        💬 Discord Community
+                    </a>
+                    <a href="https://chatgpt.com/g/g-LM0fGeeXB-microbot-documentation" target="_blank"
+                       style="color: #ff6b35; text-decoration: none; font-size: 17px; transition: all 0.3s ease;"
+                       onmouseover="this.style.color='#ffffff'; this.style.transform='translateY(-3px)'"
+                       onmouseout="this.style.color='#ff6b35'; this.style.transform='translateY(0)'">
+                        🤖 ChatGPT Docs
+                    </a>
+                </div>
+            </div>
+
+            <div style="margin-top: 25px;">
+                <div style="font-size: 20px; color: #ff6b35; font-weight: bold; margin-bottom: 10px;">
+                    - The Microbot Team 🤖
+                </div>
+                <div style="font-size: 15px; color: #888;">
+                    Building the future of automation, one commit at a time.
+                </div>
+            </div>
+
+            <div style="margin-top: 30px; padding: 20px; background: rgba(255, 107, 53, 0.1); border-radius: 10px; border: 1px solid rgba(255, 107, 53, 0.3);">
+                <p style="color: #ff6b35; font-size: 16px; margin: 0; font-style: italic;">
+                    "Simplicity is the ultimate sophistication." - Leonardo da Vinci
+                </p>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<script>
+    // Animate elements on scroll
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                setTimeout(() => {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }, index * 100);
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.animate-on-scroll').forEach((el) => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(el);
+    });
+
+    // Add smooth scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

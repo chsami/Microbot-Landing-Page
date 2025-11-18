@@ -1,5 +1,12 @@
 const releases = [
     {
+        date: new Date('11/18/2025'), //MM/dd/YYYY
+        version: '2.1.0',
+        title: '2.1.0 Release - Major Architecture Overhaul',
+        content: 'Unified caching system, scheduler removal, streamlined architecture. A lighter, faster, and more reliable client built for the future.',
+        author: 'Microbot Team'
+    },
+    {
         date: new Date('08/15/2025'), //MM/dd/YYYY
         version: '1.9.8',
         title: '1.9.8 Release - Introducing the Microbot Hub',

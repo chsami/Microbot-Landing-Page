@@ -209,28 +209,94 @@
                 <h1 class="text-4xl md:text-5xl font-bold mb-4 gradient-text">Queryable API Documentation</h1>
                 <p class="text-xl text-gray-400 mb-8">A modern, fluent interface for querying game entities in Microbot</p>
 
-                <div class="bg-gradient-to-r from-orange-500/10 to-orange-600/10 border-l-4 border-orange-500 p-6 rounded-r-lg mb-8">
-                    <p class="text-gray-300 leading-relaxed">
-                        The Queryable API provides a type-safe, chainable way to filter and find NPCs, players, ground items, and tile objects with minimal boilerplate code. It's designed to make your code more readable, maintainable, and less error-prone.
-                    </p>
+                <!-- What is Microbot -->
+                <div class="mb-12">
+                    <h2 class="text-2xl font-bold text-white mb-4">What is Microbot?</h2>
+                    <div class="bg-gradient-to-r from-orange-500/10 to-orange-600/10 border-l-4 border-orange-500 p-6 rounded-r-lg mb-6">
+                        <p class="text-gray-300 leading-relaxed mb-4">
+                            Microbot exists for one reason: <strong class="text-white">to fix the gaps in RuneLite and OSRS scripting that nobody else wanted to solve.</strong>
+                        </p>
+                        <p class="text-gray-300 leading-relaxed">
+                            The official ecosystem gives you either paid, closed-source bots with questionable quality and zero transparency—or RuneLite plugins that are stuck inside strict limitations and inconsistent APIs.
+                        </p>
+                    </div>
+
+                    <div class="bg-gray-900 border border-gray-800 rounded-lg p-6 mb-6">
+                        <h3 class="text-xl font-semibold text-orange-500 mb-4">Microbot sits in the middle</h3>
+                        <p class="text-gray-300 mb-4">A <strong class="text-white">free, open-source, community-driven</strong> automation framework that focuses on three things you don't get anywhere else:</p>
+
+                        <div class="space-y-4">
+                            <div class="flex gap-4">
+                                <div class="text-orange-500 text-2xl">1.</div>
+                                <div>
+                                    <h4 class="text-white font-semibold mb-1">A unified, predictable API for interacting with the game</h4>
+                                    <p class="text-gray-400 text-sm">NPCs, players, objects, ground items, tile data, pathing, interactions—<strong>one consistent system</strong> instead of ten inconsistent ones.</p>
+                                </div>
+                            </div>
+
+                            <div class="flex gap-4">
+                                <div class="text-orange-500 text-2xl">2.</div>
+                                <div>
+                                    <h4 class="text-white font-semibold mb-1">A clean scripting layer where anyone can write their own plugins</h4>
+                                    <p class="text-gray-400 text-sm"><strong>No paywalls, no obfuscated code, no hidden behavior.</strong> If someone wants to improve something, they can. If they want to fork it, they can.</p>
+                                </div>
+                            </div>
+
+                            <div class="flex gap-4">
+                                <div class="text-orange-500 text-2xl">3.</div>
+                                <div>
+                                    <h4 class="text-white font-semibold mb-1">A community project that pushes the technical side of OSRS farther</h4>
+                                    <p class="text-gray-400 text-sm">Better caching, better querying, better interaction logic, better web walking, better detection of state changes—things the classic RuneLite plugin model struggles with.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+                        <div class="bg-gradient-to-br from-green-900/20 to-green-800/10 border border-green-800/50 rounded-lg p-4">
+                            <div class="text-green-500 text-2xl mb-2">✓</div>
+                            <h4 class="text-white font-semibold mb-2">Easier for Developers</h4>
+                            <p class="text-gray-400 text-sm">Clean APIs, consistent patterns, full documentation</p>
+                        </div>
+                        <div class="bg-gradient-to-br from-blue-900/20 to-blue-800/10 border border-blue-800/50 rounded-lg p-4">
+                            <div class="text-blue-500 text-2xl mb-2">◉</div>
+                            <h4 class="text-white font-semibold mb-2">Transparent for Users</h4>
+                            <p class="text-gray-400 text-sm">Open source, community-reviewed, no hidden behavior</p>
+                        </div>
+                        <div class="bg-gradient-to-br from-purple-900/20 to-purple-800/10 border border-purple-800/50 rounded-lg p-4">
+                            <div class="text-purple-500 text-2xl mb-2">⚡</div>
+                            <h4 class="text-white font-semibold mb-2">Flexible to Grow</h4>
+                            <p class="text-gray-400 text-sm">Modular architecture that scales without becoming a mess</p>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-                    <div class="bg-gray-900 p-6 rounded-lg border border-gray-800">
-                        <h3 class="text-orange-500 font-semibold mb-2">📖 Readable</h3>
-                        <p class="text-gray-400 text-sm">Self-documenting code that's easy to understand</p>
+                <!-- About Queryable API -->
+                <div class="mb-8">
+                    <h2 class="text-2xl font-bold text-white mb-4">About the Queryable API</h2>
+                    <div class="bg-gradient-to-r from-orange-500/10 to-orange-600/10 border-l-4 border-orange-500 p-6 rounded-r-lg mb-6">
+                        <p class="text-gray-300 leading-relaxed">
+                            The Queryable API is Microbot's answer to inconsistent game entity querying. It provides a <strong class="text-white">type-safe, chainable way</strong> to filter and find NPCs, players, ground items, and tile objects with minimal boilerplate code. It's designed to make your code more readable, maintainable, and less error-prone.
+                        </p>
                     </div>
-                    <div class="bg-gray-900 p-6 rounded-lg border border-gray-800">
-                        <h3 class="text-orange-500 font-semibold mb-2">🚀 Fast Development</h3>
-                        <p class="text-gray-400 text-sm">Write less code, ship features faster</p>
-                    </div>
-                    <div class="bg-gray-900 p-6 rounded-lg border border-gray-800">
-                        <h3 class="text-orange-500 font-semibold mb-2">🐛 Fewer Bugs</h3>
-                        <p class="text-gray-400 text-sm">Type-safe operations prevent runtime errors</p>
-                    </div>
-                    <div class="bg-gray-900 p-6 rounded-lg border border-gray-800">
-                        <h3 class="text-orange-500 font-semibold mb-2">⚡ Performant</h3>
-                        <p class="text-gray-400 text-sm">Optimized internally for efficiency</p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="bg-gray-900 p-6 rounded-lg border border-gray-800">
+                            <h3 class="text-orange-500 font-semibold mb-2">📖 Readable</h3>
+                            <p class="text-gray-400 text-sm">Self-documenting code that's easy to understand</p>
+                        </div>
+                        <div class="bg-gray-900 p-6 rounded-lg border border-gray-800">
+                            <h3 class="text-orange-500 font-semibold mb-2">🚀 Fast Development</h3>
+                            <p class="text-gray-400 text-sm">Write less code, ship features faster</p>
+                        </div>
+                        <div class="bg-gray-900 p-6 rounded-lg border border-gray-800">
+                            <h3 class="text-orange-500 font-semibold mb-2">🐛 Fewer Bugs</h3>
+                            <p class="text-gray-400 text-sm">Type-safe operations prevent runtime errors</p>
+                        </div>
+                        <div class="bg-gray-900 p-6 rounded-lg border border-gray-800">
+                            <h3 class="text-orange-500 font-semibold mb-2">⚡ Performant</h3>
+                            <p class="text-gray-400 text-sm">Optimized internally for efficiency</p>
+                        </div>
                     </div>
                 </div>
             </section>

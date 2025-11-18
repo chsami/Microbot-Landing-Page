@@ -22,7 +22,41 @@
 
 ## Introduction
 
-The **Queryable API** is a modern, fluent interface for querying game entities in Microbot. It provides a type-safe, chainable way to filter and find NPCs, players, ground items, and tile objects with minimal boilerplate code.
+### What is Microbot?
+
+Microbot exists for one reason: **to fix the gaps in RuneLite and OSRS scripting that nobody else wanted to solve.**
+
+The official ecosystem gives you either:
+- Paid, closed-source bots with questionable quality and zero transparency
+- RuneLite plugins that are stuck inside strict limitations and inconsistent APIs
+
+**Microbot sits in the middle.** It's a free, open-source, community-driven automation framework that focuses on three things you don't get anywhere else:
+
+#### 1. A Unified, Predictable API for Interacting with the Game
+
+NPCs, players, objects, ground items, tile data, pathing, interactions—**one consistent system** instead of ten inconsistent ones.
+
+#### 2. A Clean Scripting Layer Where Anyone Can Write Their Own Plugins
+
+**No paywalls, no obfuscated code, no hidden behavior.** If someone wants to improve something, they can. If they want to fork it, they can.
+
+#### 3. A Community Project That Pushes the Technical Side of OSRS Farther
+
+Better caching, better querying, better interaction logic, better web walking, better detection of state changes—things the classic RuneLite plugin model struggles with.
+
+### Why Microbot Was Created
+
+Microbot exists because the creator needed to solve a real problem:
+
+RuneLite wasn't giving a clean way to automate complex behavior, and commercial bots weren't open or trustworthy. So an ecosystem was built that is:
+
+- ✓ **Easier for developers** - Clean APIs, consistent patterns, full documentation
+- ◉ **Transparent for users** - Open source, community-reviewed, no hidden behavior
+- ⚡ **Flexible to grow** - Modular architecture that scales without becoming a mess
+
+### About the Queryable API
+
+The **Queryable API** is Microbot's answer to inconsistent game entity querying. It provides a type-safe, chainable way to filter and find NPCs, players, ground items, and tile objects with minimal boilerplate code.
 
 ### Design Philosophy
 

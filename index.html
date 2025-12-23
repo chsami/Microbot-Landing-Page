@@ -59,12 +59,45 @@
             50% { transform: scale(1.05); }
             100% { transform: scale(1); }
         }
+
+        #snow {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 9999;
+        }
+
+        .snowflake {
+            position: absolute;
+            top: -10px;
+            width: var(--size);
+            height: var(--size);
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.45));
+            animation: snowfall var(--duration) linear infinite;
+            opacity: var(--opacity);
+        }
+
+        @keyframes snowfall {
+            to {
+                transform: translate3d(var(--drift), 110vh, 0);
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .snowflake {
+                animation: none;
+            }
+        }
     </style>
 
 </head>
 <body style="background-color:black !important;" class="ipsApp ipsApp_front ipsClearfix ipsJS_has ipsApp_noTouch"
       data-controller="core.front.core.app" data-message="" data-pageapp="" data-pagelocation="front" data-pagemodule=""
       data-pagecontroller="">
+<div id="snow" aria-hidden="true"></div>
 <header class="c-header">
     <!-- Event Start -->
     <div class="c-events-block py-2">
@@ -120,6 +153,9 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="plugins.html">Plugins</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="docs.html">API Docs<span class="new-badge">NEW</span></a>
                     </li>
                 </ul>
             </div>
@@ -406,6 +442,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="https://www.youtube.com/@eudora8057" target="_blank">Youtube</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="docs.html">API Docs</a>
+                </li>
             </ul>
         </div>
     </div>
@@ -619,6 +658,38 @@
         };
         document.head.appendChild(script);
     }
+</script>
+
+<script>
+    (function () {
+        const snowContainer = document.getElementById('snow');
+        if (!snowContainer) {
+            return;
+        }
+
+        function randomBetween(min, max) {
+            return Math.random() * (max - min) + min;
+        }
+
+        const flakeCount = 50;
+        for (let i = 0; i < flakeCount; i++) {
+            const flake = document.createElement('span');
+            const size = randomBetween(2, 5);
+            const duration = randomBetween(8, 18);
+            const drift = randomBetween(-30, 30);
+            const opacity = randomBetween(0.4, 0.95);
+
+            flake.className = 'snowflake';
+            flake.style.left = `${randomBetween(0, 100)}%`;
+            flake.style.animationDelay = `${-randomBetween(0, duration)}s`;
+            flake.style.setProperty('--size', `${size}px`);
+            flake.style.setProperty('--duration', `${duration}s`);
+            flake.style.setProperty('--drift', `${drift}px`);
+            flake.style.setProperty('--opacity', opacity.toFixed(2));
+
+            snowContainer.appendChild(flake);
+        }
+    })();
 </script>
 
 <script defer src="./libraries/carousel/carousel.js"></script>

@@ -3,139 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Queryable API Documentation - Microbot</title>
+    <title>Queryable API - Microbot</title>
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
-
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Prism.js for code highlighting -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
-
-    <!-- Custom styles -->
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-
-        * {
-            font-family: 'Inter', sans-serif;
-        }
-
-        body {
-            background-color: #0a0a0a;
-            color: #e5e5e5;
-        }
-
-        .sidebar {
-            background: linear-gradient(180deg, #1a1a1a 0%, #0f0f0f 100%);
-            border-right: 1px solid #2a2a2a;
-        }
-
-        .nav-link {
-            transition: all 0.2s ease;
-        }
-
-        .nav-link:hover {
-            background-color: #2a2a2a;
-            border-left: 3px solid #ff6b35;
-        }
-
-        .nav-link.active {
-            background-color: #2a2a2a;
-            border-left: 3px solid #ff6b35;
-            color: #ff6b35;
-        }
-
-        .content-section {
-            scroll-margin-top: 2rem;
-        }
-
-        code:not([class*="language-"]) {
-            background-color: #1e1e1e;
-            color: #ff6b35;
-            padding: 0.2rem 0.4rem;
-            border-radius: 0.25rem;
-            font-size: 0.875rem;
-        }
-
-        pre[class*="language-"] {
-            border-radius: 0.5rem;
-            margin: 1rem 0;
-        }
-
-        .gradient-text {
-            background: linear-gradient(135deg, #ff6b35, #ff8c5a);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .feature-badge {
-            background: linear-gradient(135deg, #ff6b35, #ff8c5a);
-            color: white;
-            font-size: 0.75rem;
-            padding: 0.25rem 0.75rem;
-            border-radius: 1rem;
-            font-weight: 600;
-        }
-
-        .comparison-card {
-            background: #1a1a1a;
-            border: 1px solid #2a2a2a;
-            border-radius: 0.5rem;
-            padding: 1.5rem;
-            transition: all 0.3s ease;
-        }
-
-        .comparison-card:hover {
-            border-color: #ff6b35;
-            transform: translateY(-2px);
-        }
-
-        .scrollbar-custom::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        .scrollbar-custom::-webkit-scrollbar-track {
-            background: #1a1a1a;
-        }
-
-        .scrollbar-custom::-webkit-scrollbar-thumb {
-            background: #3a3a3a;
-            border-radius: 4px;
-        }
-
-        .scrollbar-custom::-webkit-scrollbar-thumb:hover {
-            background: #4a4a4a;
-        }
-
-        #mobile-menu {
-            display: none;
-        }
-
-        #mobile-menu.show {
-            display: block;
-        }
-
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap');
+        * { font-family: 'Inter', sans-serif; }
+        code, pre { font-family: 'JetBrains Mono', monospace !important; }
+        body { background: #111; color: #ccc; }
+        .sidebar { background: #161616; border-right: 1px solid #222; }
+        .nav-link { color: #888; }
+        .nav-link:hover, .nav-link.active { color: #fff; }
+        .content-section { scroll-margin-top: 2rem; }
+        code:not([class*="language-"]) { background: #1a1a1a; color: #e5a06e; padding: 0.15rem 0.4rem; border-radius: 4px; font-size: 0.85em; }
+        pre[class*="language-"] { background: #0d0d0d !important; border-radius: 6px; margin: 1rem 0; font-size: 0.8rem; border: 1px solid #222; }
+        h1, h2, h3 { color: #fff; }
+        .card { background: #161616; border: 1px solid #222; border-radius: 6px; }
         @media (max-width: 768px) {
-            .sidebar {
-                position: fixed;
-                left: -100%;
-                transition: left 0.3s ease;
-                z-index: 1000;
-                width: 80%;
-                height: 100vh;
-            }
-
-            .sidebar.show {
-                left: 0;
-            }
+            .sidebar { position: fixed; left: -100%; transition: left 0.3s; z-index: 1000; width: 280px; height: 100vh; }
+            .sidebar.show { left: 0; }
         }
     </style>
 </head>
-<body class="bg-gray-950">
-    <!-- Mobile Menu Button -->
+<body>
     <div class="md:hidden fixed top-4 left-4 z-50">
-        <button id="mobile-menu-btn" class="bg-gray-800 p-3 rounded-lg text-white hover:bg-gray-700">
+        <button id="mobile-menu-btn" class="bg-neutral-800 p-2 rounded text-white">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
             </svg>
@@ -143,328 +36,162 @@
     </div>
 
     <div class="flex min-h-screen">
-        <!-- Sidebar Navigation -->
-        <aside id="sidebar" class="sidebar w-64 md:w-72 fixed md:sticky top-0 h-screen overflow-y-auto scrollbar-custom">
+        <aside id="sidebar" class="sidebar w-60 fixed md:sticky top-0 h-screen overflow-y-auto">
             <div class="p-6">
-                <!-- Logo/Header -->
                 <div class="mb-8">
-                    <a href="index.html" class="flex items-center space-x-2 mb-4">
-                        <svg class="w-8 h-8 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/>
-                        </svg>
-                        <span class="text-white font-semibold">Microbot Docs</span>
-                    </a>
-                    <h2 class="text-2xl font-bold gradient-text">Queryable API</h2>
-                    <p class="text-gray-400 text-sm mt-1">Version 2.1.0</p>
+                    <a href="index.html" class="text-white text-sm hover:text-neutral-400">← Back to Home</a>
+                    <h1 class="text-xl font-semibold mt-4">Queryable API</h1>
+                    <p class="text-neutral-500 text-xs mt-1">v2.2.0</p>
                 </div>
 
-                <!-- Navigation Menu -->
-                <nav class="space-y-1">
-                    <a href="#introduction" class="nav-link block px-4 py-2 text-gray-300 hover:text-white rounded-md text-sm">Introduction</a>
-                    <a href="#why-use" class="nav-link block px-4 py-2 text-gray-300 hover:text-white rounded-md text-sm">Why Use Queryable?</a>
-                    <a href="#core-concepts" class="nav-link block px-4 py-2 text-gray-300 hover:text-white rounded-md text-sm">Core Concepts</a>
-                    <a href="#getting-started" class="nav-link block px-4 py-2 text-gray-300 hover:text-white rounded-md text-sm">Getting Started</a>
+                <nav class="space-y-1 text-sm">
+                    <a href="#getting-started" class="nav-link block py-1.5">Getting Started</a>
+                    <a href="#core-concepts" class="nav-link block py-1.5">Core Concepts</a>
 
                     <div class="pt-4 pb-2">
-                        <p class="px-4 text-xs font-semibold text-gray-500 uppercase tracking-wider">Available Queryables</p>
+                        <p class="text-xs text-neutral-600 uppercase tracking-wide">Caches</p>
                     </div>
-                    <a href="#npc-queryable" class="nav-link block px-4 py-2 text-gray-300 hover:text-white rounded-md text-sm pl-6">NPCs</a>
-                    <a href="#item-queryable" class="nav-link block px-4 py-2 text-gray-300 hover:text-white rounded-md text-sm pl-6">Ground Items</a>
-                    <a href="#player-queryable" class="nav-link block px-4 py-2 text-gray-300 hover:text-white rounded-md text-sm pl-6">Players</a>
-                    <a href="#object-queryable" class="nav-link block px-4 py-2 text-gray-300 hover:text-white rounded-md text-sm pl-6">Tile Objects</a>
+                    <a href="#npc" class="nav-link block py-1.5 pl-3">Rs2NpcCache</a>
+                    <a href="#items" class="nav-link block py-1.5 pl-3">Rs2TileItemCache</a>
+                    <a href="#players" class="nav-link block py-1.5 pl-3">Rs2PlayerCache</a>
+                    <a href="#objects" class="nav-link block py-1.5 pl-3">Rs2TileObjectCache</a>
 
                     <div class="pt-4 pb-2">
-                        <p class="px-4 text-xs font-semibold text-gray-500 uppercase tracking-wider">Reference</p>
+                        <p class="text-xs text-neutral-600 uppercase tracking-wide">Reference</p>
                     </div>
-                    <a href="#api-reference" class="nav-link block px-4 py-2 text-gray-300 hover:text-white rounded-md text-sm">API Reference</a>
-                    <a href="#common-patterns" class="nav-link block px-4 py-2 text-gray-300 hover:text-white rounded-md text-sm">Common Patterns</a>
-                    <a href="#performance" class="nav-link block px-4 py-2 text-gray-300 hover:text-white rounded-md text-sm">Performance Tips</a>
-                    <a href="#migration" class="nav-link block px-4 py-2 text-gray-300 hover:text-white rounded-md text-sm">Migration Guide</a>
+                    <a href="#api" class="nav-link block py-1.5">API Reference</a>
+                    <a href="#patterns" class="nav-link block py-1.5">Common Patterns</a>
+                    <a href="#migration" class="nav-link block py-1.5">Migration Guide</a>
                 </nav>
 
-                <!-- Footer Links -->
-                <div class="mt-8 pt-8 border-t border-gray-800">
-                    <div class="space-y-2 text-sm">
-                        <a href="https://discord.gg/zaGrfqFEWE" target="_blank" class="flex items-center space-x-2 text-gray-400 hover:text-orange-500">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 71 55">
-                                <path d="M60.105 4.898A58.55 58.55 0 0 0 45.653.415a.22.22 0 0 0-.233.11 40.784 40.784 0 0 0-1.8 3.697c-5.456-.817-10.886-.817-16.23 0-.485-1.164-1.201-2.587-1.828-3.697a.228.228 0 0 0-.233-.11 58.386 58.386 0 0 0-14.451 4.483.207.207 0 0 0-.095.082C1.578 18.73-.944 32.144.293 45.39a.244.244 0 0 0 .093.167c6.073 4.46 11.955 7.167 17.729 8.962a.23.23 0 0 0 .249-.082 42.08 42.08 0 0 0 3.627-5.9.225.225 0 0 0-.123-.312 38.772 38.772 0 0 1-5.539-2.64.228.228 0 0 1-.022-.378c.372-.279.744-.569 1.1-.862a.22.22 0 0 1 .23-.03c11.619 5.304 24.198 5.304 35.68 0a.219.219 0 0 1 .233.027c.356.293.728.586 1.103.865a.228.228 0 0 1-.02.378 36.384 36.384 0 0 1-5.54 2.637.227.227 0 0 0-.121.315 47.249 47.249 0 0 0 3.624 5.897.225.225 0 0 0 .249.084c5.801-1.794 11.684-4.502 17.757-8.961a.228.228 0 0 0 .092-.164c1.48-15.315-2.48-28.618-10.497-40.412a.18.18 0 0 0-.093-.084zm-36.38 32.427c-3.497 0-6.38-3.211-6.38-7.156 0-3.944 2.827-7.156 6.38-7.156 3.583 0 6.438 3.24 6.382 7.156 0 3.945-2.827 7.156-6.381 7.156zm23.593 0c-3.498 0-6.38-3.211-6.38-7.156 0-3.944 2.826-7.156 6.38-7.156 3.582 0 6.437 3.24 6.38 7.156 0 3.945-2.798 7.156-6.38 7.156z"/>
-                            </svg>
-                            <span>Discord</span>
-                        </a>
-                        <a href="https://github.com/chsami/microbot" target="_blank" class="flex items-center space-x-2 text-gray-400 hover:text-orange-500">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                            </svg>
-                            <span>GitHub</span>
-                        </a>
-                    </div>
+                <div class="mt-8 pt-6 border-t border-neutral-800 text-xs space-y-2">
+                    <a href="https://discord.gg/zaGrfqFEWE" target="_blank" class="block text-neutral-500 hover:text-white">Discord</a>
+                    <a href="https://github.com/chsami/microbot" target="_blank" class="block text-neutral-500 hover:text-white">GitHub</a>
                 </div>
             </div>
         </aside>
 
-        <!-- Main Content -->
-        <main class="flex-1 md:ml-0 p-6 md:p-12 max-w-5xl">
-            <!-- Introduction -->
-            <section id="introduction" class="content-section mb-16">
-                <h1 class="text-4xl md:text-5xl font-bold mb-4 gradient-text">Queryable API Documentation</h1>
-                <p class="text-xl text-gray-400 mb-8">A modern, fluent interface for querying game entities in Microbot</p>
+        <main class="flex-1 p-8 md:p-16 max-w-4xl mx-auto">
 
-                <div class="bg-gradient-to-r from-orange-500/10 to-orange-600/10 border-l-4 border-orange-500 p-6 rounded-r-lg mb-8">
-                    <p class="text-gray-300 leading-relaxed">
-                        The Queryable API provides a type-safe, chainable way to filter and find NPCs, players, ground items, and tile objects with minimal boilerplate code. It's designed to make your code more readable, maintainable, and less error-prone.
+            <!-- Getting Started -->
+            <section id="getting-started" class="content-section mb-20">
+                <h1 class="text-3xl font-semibold mb-3">Queryable API</h1>
+                <p class="text-neutral-400 mb-8 text-lg">A fluent interface for querying game entities.</p>
+
+                <div class="card p-5 mb-8">
+                    <p class="text-neutral-300 text-sm leading-relaxed">
+                        The Queryable API provides a type-safe, chainable way to find NPCs, players, ground items, and tile objects. Inject the cache, call <code>query()</code>, chain filters, and execute.
                     </p>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-                    <div class="bg-gray-900 p-6 rounded-lg border border-gray-800">
-                        <h3 class="text-orange-500 font-semibold mb-2">📖 Readable</h3>
-                        <p class="text-gray-400 text-sm">Self-documenting code that's easy to understand</p>
-                    </div>
-                    <div class="bg-gray-900 p-6 rounded-lg border border-gray-800">
-                        <h3 class="text-orange-500 font-semibold mb-2">🚀 Fast Development</h3>
-                        <p class="text-gray-400 text-sm">Write less code, ship features faster</p>
-                    </div>
-                    <div class="bg-gray-900 p-6 rounded-lg border border-gray-800">
-                        <h3 class="text-orange-500 font-semibold mb-2">🐛 Fewer Bugs</h3>
-                        <p class="text-gray-400 text-sm">Type-safe operations prevent runtime errors</p>
-                    </div>
-                    <div class="bg-gray-900 p-6 rounded-lg border border-gray-800">
-                        <h3 class="text-orange-500 font-semibold mb-2">⚡ Performant</h3>
-                        <p class="text-gray-400 text-sm">Optimized internally for efficiency</p>
-                    </div>
-                </div>
-            </section>
+                <h3 class="text-lg font-medium mb-4">Quick Example</h3>
+<pre><code class="language-java">@Inject
+Rs2NpcCache rs2NpcCache;
 
-            <!-- Why Use Queryable -->
-            <section id="why-use" class="content-section mb-16">
-                <h2 class="text-3xl font-bold mb-6 text-white">Why Use Queryable API?</h2>
+Rs2NpcModel banker = rs2NpcCache.query()
+    .withName("Banker")
+    .where(npc -> !npc.isInteracting())
+    .nearest();</code></pre>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                    <!-- Old Way -->
-                    <div class="comparison-card">
-                        <div class="flex items-center justify-between mb-4">
-                            <h3 class="text-xl font-semibold text-white">Old Way ❌</h3>
-                            <span class="text-xs text-red-500 bg-red-500/10 px-3 py-1 rounded-full">Legacy</span>
-                        </div>
-<pre><code class="language-java">// Using legacy Rs2Npc API
-// Simple but limited
-NPC banker = Rs2Npc
-    .getNpc("Banker");
+                <h3 class="text-lg font-medium mt-10 mb-4">Setup</h3>
+<pre><code class="language-java">// Imports
+import net.runelite.client.plugins.microbot.api.npc.Rs2NpcCache;
+import net.runelite.client.plugins.microbot.api.tileitem.Rs2TileItemCache;
+import net.runelite.client.plugins.microbot.api.player.Rs2PlayerCache;
+import net.runelite.client.plugins.microbot.api.tileobject.Rs2TileObjectCache;
 
-// More complex queries get verbose
-NPC cow = Rs2Npc.getNpcs()
-    .stream()
-    .filter(npc -> npc.getName()
-        .equals("Cow"))
-    .filter(npc -> npc
-        .getInteracting() == null)
-    .min(Comparator.comparingInt(
-        npc -> npc.getWorldLocation()
-            .distanceTo(Rs2Player
-                .getWorldLocation())))
-    .orElse(null);</code></pre>
-                    </div>
-
-                    <!-- New Way -->
-                    <div class="comparison-card border-orange-500/50">
-                        <div class="flex items-center justify-between mb-4">
-                            <h3 class="text-xl font-semibold text-white">New Way ✅</h3>
-                            <span class="feature-badge">Queryable</span>
-                        </div>
-<pre><code class="language-java">// Clean, readable, and concise
-Rs2NpcModel banker =
-    new Rs2NpcQueryable()
-        .withName("Banker")
-        .nearest();
-
-// Complex queries stay readable
-Rs2NpcModel cow =
-    new Rs2NpcQueryable()
-        .withName("Cow")
-        .where(npc ->
-            !npc.isInteracting())
-        .nearest();</code></pre>
-                    </div>
-                </div>
+// Inject in your class
+@Inject Rs2NpcCache rs2NpcCache;
+@Inject Rs2TileItemCache rs2TileItemCache;
+@Inject Rs2PlayerCache rs2PlayerCache;
+@Inject Rs2TileObjectCache rs2TileObjectCache;</code></pre>
             </section>
 
             <!-- Core Concepts -->
-            <section id="core-concepts" class="content-section mb-16">
-                <h2 class="text-3xl font-bold mb-6 text-white">Core Concepts</h2>
+            <section id="core-concepts" class="content-section mb-20">
+                <h2 class="text-2xl font-semibold mb-6">Core Concepts</h2>
 
                 <div class="space-y-8">
                     <div>
-                        <h3 class="text-xl font-semibold mb-4 text-orange-500">1. Fluent Chaining</h3>
-                        <p class="text-gray-400 mb-4">Methods return the queryable itself, allowing you to chain multiple operations:</p>
-<pre><code class="language-java">new Rs2NpcQueryable()
-    .withName("Guard")           // Filter by name
-    .where(npc -> !npc.isInteracting())  // Custom filter
-    .within(15)                  // Within 15 tiles
-    .nearest();                  // Get nearest match</code></pre>
+                        <h3 class="font-medium mb-3">Dependency Injection</h3>
+                        <p class="text-neutral-400 text-sm mb-3">Always inject the cache first, then call <code>query()</code>:</p>
+<pre><code class="language-java">@Inject
+Rs2NpcCache rs2NpcCache;
+
+Rs2NpcModel npc = rs2NpcCache.query().withName("Guard").nearest();</code></pre>
                     </div>
 
                     <div>
-                        <h3 class="text-xl font-semibold mb-4 text-orange-500">2. Lazy Evaluation</h3>
-                        <p class="text-gray-400 mb-4">Queries are only executed when you call a terminal operation:</p>
-<pre><code class="language-java">// No execution yet - just building the query
-Rs2NpcQueryable query = new Rs2NpcQueryable()
+                        <h3 class="font-medium mb-3">Fluent Chaining</h3>
+                        <p class="text-neutral-400 text-sm mb-3">Chain multiple filters together:</p>
+<pre><code class="language-java">rs2NpcCache.query()
     .withName("Guard")
-    .within(10);
-
-// NOW it executes
-Rs2NpcModel guard = query.nearest();  // Terminal operation</code></pre>
+    .where(npc -> !npc.isInteracting())
+    .within(15)
+    .nearest();</code></pre>
                     </div>
 
                     <div>
-                        <h3 class="text-xl font-semibold mb-4 text-orange-500">3. Type Safety</h3>
-                        <p class="text-gray-400 mb-4">All operations are type-checked at compile time, preventing runtime errors:</p>
-<pre><code class="language-java">// Compile-time safety
-Rs2NpcModel npc = new Rs2NpcQueryable()
-    .withName("Banker")
-    .nearest();  // Returns Rs2NpcModel, not generic Object</code></pre>
+                        <h3 class="font-medium mb-3">Lazy Evaluation</h3>
+                        <p class="text-neutral-400 text-sm mb-3">Queries execute only when you call a terminal operation:</p>
+<pre><code class="language-java">var query = rs2NpcCache.query().withName("Guard").within(10);
+Rs2NpcModel guard = query.nearest();  // Executes here</code></pre>
                     </div>
                 </div>
             </section>
 
-            <!-- Getting Started -->
-            <section id="getting-started" class="content-section mb-16">
-                <h2 class="text-3xl font-bold mb-6 text-white">Getting Started</h2>
+            <!-- NPC Cache -->
+            <section id="npc" class="content-section mb-20">
+                <h2 class="text-2xl font-semibold mb-2">Rs2NpcCache</h2>
+                <p class="text-neutral-500 text-sm mb-6">Query NPCs in the game world</p>
 
-                <p class="text-gray-400 mb-6">Every query follows this simple pattern:</p>
+<pre><code class="language-java">@Inject Rs2NpcCache rs2NpcCache;
 
-                <div class="bg-gray-900 p-6 rounded-lg border border-gray-800 mb-6">
-<pre><code class="language-java">// 1. Create queryable
-new Rs2NpcQueryable()
-
-// 2. Add filters (optional, chainable)
-    .withName("name")
-    .where(entity -> condition)
-    .within(distance)
-
-// 3. Execute with terminal operation
-    .nearest();  // or first(), toList(), etc.</code></pre>
-                </div>
-
-                <h3 class="text-xl font-semibold mb-4 text-orange-500">Simple Examples</h3>
-
-                <div class="space-y-4">
-                    <div class="bg-gray-900 p-4 rounded-lg border border-gray-800">
-                        <p class="text-sm text-gray-500 mb-2">Find nearest NPC by name:</p>
-<pre><code class="language-java">Rs2NpcModel banker = new Rs2NpcQueryable()
+// Find nearest banker
+Rs2NpcModel banker = rs2NpcCache.query()
     .withName("Banker")
-    .nearest();</code></pre>
-                    </div>
+    .nearest();
 
-                    <div class="bg-gray-900 p-4 rounded-lg border border-gray-800">
-                        <p class="text-sm text-gray-500 mb-2">Find nearest ground item:</p>
-<pre><code class="language-java">Rs2TileItemModel coins = new Rs2TileItemQueryable()
-    .withName("Coins")
-    .nearest();</code></pre>
-                    </div>
-
-                    <div class="bg-gray-900 p-4 rounded-lg border border-gray-800">
-                        <p class="text-sm text-gray-500 mb-2">Find nearest player:</p>
-<pre><code class="language-java">Rs2PlayerModel player = new Rs2PlayerQueryable()
-    .withName("PlayerName")
-    .nearest();</code></pre>
-                    </div>
-
-                    <div class="bg-gray-900 p-4 rounded-lg border border-gray-800">
-                        <p class="text-sm text-gray-500 mb-2">Find nearest tree (tile object):</p>
-<pre><code class="language-java">Rs2TileObjectModel tree = new Rs2TileObjectQueryable()
-    .withName("Tree")
-    .nearest();</code></pre>
-                    </div>
-                </div>
-            </section>
-
-            <!-- NPC Queryable -->
-            <section id="npc-queryable" class="content-section mb-16">
-                <h2 class="text-3xl font-bold mb-6 text-white">Rs2NpcQueryable - NPC Queries</h2>
-
-                <div class="bg-gradient-to-r from-blue-500/10 to-blue-600/10 border-l-4 border-blue-500 p-4 rounded-r-lg mb-6">
-                    <p class="text-sm text-gray-300">
-                        <strong>Import:</strong> <code>net.runelite.client.plugins.microbot.api.npc.Rs2NpcQueryable</code>
-                    </p>
-                </div>
-
-                <h3 class="text-xl font-semibold mb-4 text-orange-500">Basic Examples</h3>
-
-                <div class="space-y-6">
-                    <div>
-                        <p class="text-gray-400 mb-3">Find nearest banker:</p>
-<pre><code class="language-java">Rs2NpcModel banker = new Rs2NpcQueryable()
-    .withName("Banker")
-    .nearest();</code></pre>
-                    </div>
-
-                    <div>
-                        <p class="text-gray-400 mb-3">Find all guards within 10 tiles:</p>
-<pre><code class="language-java">List&lt;Rs2NpcModel&gt; guards = new Rs2NpcQueryable()
+// Find all guards within 10 tiles
+List&lt;Rs2NpcModel&gt; guards = rs2NpcCache.query()
     .withName("Guard")
     .within(10)
-    .toList();</code></pre>
-                    </div>
+    .toList();
 
-                    <div>
-                        <p class="text-gray-400 mb-3">Find nearest non-interacting cow:</p>
-<pre><code class="language-java">Rs2NpcModel cow = new Rs2NpcQueryable()
-    .withName("Cow")
-    .where(npc -> !npc.isInteracting())
-    .nearest();</code></pre>
-                    </div>
-
-                    <div>
-                        <p class="text-gray-400 mb-3">Combat script example - find attackable enemy:</p>
-<pre><code class="language-java">Rs2NpcModel enemy = new Rs2NpcQueryable()
+// Find attackable enemy
+Rs2NpcModel enemy = rs2NpcCache.query()
     .withName("Goblin")
     .where(npc -> !npc.isInteracting())
     .where(npc -> npc.getHealthRatio() > 0)
-    .nearest(10);
+    .nearest(10);</code></pre>
 
-if (enemy != null && !Rs2Player.isInCombat()) {
-    enemy.click("Attack");
-    sleepUntil(() -> Rs2Player.isInCombat(), 2000);
-}</code></pre>
-                    </div>
-                </div>
-
-                <h3 class="text-xl font-semibold mt-8 mb-4 text-orange-500">Available Methods</h3>
-                <div class="bg-gray-900 p-6 rounded-lg border border-gray-800">
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li><code>npc.getName()</code> - Get NPC name</li>
-                        <li><code>npc.getId()</code> - Get NPC ID</li>
-                        <li><code>npc.isInteracting()</code> - Check if NPC is interacting</li>
-                        <li><code>npc.getHealthRatio()</code> - Get health ratio (0-30)</li>
-                        <li><code>npc.getAnimation()</code> - Get current animation ID</li>
-                        <li><code>npc.click("Action")</code> - Interact with NPC</li>
-                    </ul>
+                <h4 class="font-medium mt-8 mb-3 text-sm">Rs2NpcModel Methods</h4>
+                <div class="grid grid-cols-2 gap-2 text-sm">
+                    <code>npc.getName()</code>
+                    <code>npc.getId()</code>
+                    <code>npc.getWorldLocation()</code>
+                    <code>npc.isInteracting()</code>
+                    <code>npc.getHealthRatio()</code>
+                    <code>npc.getAnimation()</code>
+                    <code>npc.click("Action")</code>
+                    <code>npc.interact("Action")</code>
                 </div>
             </section>
 
-            <!-- Ground Item Queryable -->
-            <section id="item-queryable" class="content-section mb-16">
-                <h2 class="text-3xl font-bold mb-6 text-white">Rs2TileItemQueryable - Ground Items</h2>
+            <!-- TileItem Cache -->
+            <section id="items" class="content-section mb-20">
+                <h2 class="text-2xl font-semibold mb-2">Rs2TileItemCache</h2>
+                <p class="text-neutral-500 text-sm mb-6">Query ground items</p>
 
-                <div class="bg-gradient-to-r from-green-500/10 to-green-600/10 border-l-4 border-green-500 p-4 rounded-r-lg mb-6">
-                    <p class="text-sm text-gray-300">
-                        <strong>Import:</strong> <code>net.runelite.client.plugins.microbot.api.tileitem.Rs2TileItemQueryable</code>
-                    </p>
-                </div>
+<pre><code class="language-java">@Inject Rs2TileItemCache rs2TileItemCache;
 
-                <h3 class="text-xl font-semibold mb-4 text-orange-500">Basic Examples</h3>
-
-                <div class="space-y-6">
-                    <div>
-                        <p class="text-gray-400 mb-3">Find nearest coins:</p>
-<pre><code class="language-java">Rs2TileItemModel coins = new Rs2TileItemQueryable()
+// Find nearest coins
+Rs2TileItemModel coins = rs2TileItemCache.query()
     .withName("Coins")
-    .nearest();</code></pre>
-                    </div>
+    .nearest();
 
-                    <div>
-                        <p class="text-gray-400 mb-3">Find valuable loot:</p>
-<pre><code class="language-java">Rs2TileItemModel loot = new Rs2TileItemQueryable()
+// Find valuable loot
+Rs2TileItemModel loot = rs2TileItemCache.query()
     .where(item -> item.getTotalGeValue() >= 5000)
     .where(Rs2TileItemModel::isLootAble)
     .nearest(10);
@@ -472,333 +199,244 @@ if (enemy != null && !Rs2Player.isInCombat()) {
 if (loot != null) {
     loot.pickup();
 }</code></pre>
-                    </div>
 
-                    <div>
-                        <p class="text-gray-400 mb-3">Find items about to despawn:</p>
-<pre><code class="language-java">List&lt;Rs2TileItemModel&gt; despawning = new Rs2TileItemQueryable()
-    .where(item -> item.willDespawnWithin(30))  // 30 seconds
-    .where(item -> item.getTotalValue() > 1000)
-    .toList();</code></pre>
-                    </div>
-                </div>
-
-                <h3 class="text-xl font-semibold mt-8 mb-4 text-orange-500">Available Methods</h3>
-                <div class="bg-gray-900 p-6 rounded-lg border border-gray-800">
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li><code>item.getName()</code> - Get item name</li>
-                        <li><code>item.getQuantity()</code> - Get stack size</li>
-                        <li><code>item.getTotalValue()</code> - Get total value</li>
-                        <li><code>item.getTotalGeValue()</code> - Get total GE value</li>
-                        <li><code>item.isLootAble()</code> - Check if lootable</li>
-                        <li><code>item.pickup()</code> - Pick up the item</li>
-                        <li><code>item.willDespawnWithin(seconds)</code> - Check despawn time</li>
-                    </ul>
+                <h4 class="font-medium mt-8 mb-3 text-sm">Rs2TileItemModel Methods</h4>
+                <div class="grid grid-cols-2 gap-2 text-sm">
+                    <code>item.getName()</code>
+                    <code>item.getId()</code>
+                    <code>item.getQuantity()</code>
+                    <code>item.getTotalValue()</code>
+                    <code>item.getTotalGeValue()</code>
+                    <code>item.isLootAble()</code>
+                    <code>item.isStackable()</code>
+                    <code>item.pickup()</code>
                 </div>
             </section>
 
-            <!-- Player Queryable -->
-            <section id="player-queryable" class="content-section mb-16">
-                <h2 class="text-3xl font-bold mb-6 text-white">Rs2PlayerQueryable - Player Queries</h2>
+            <!-- Player Cache -->
+            <section id="players" class="content-section mb-20">
+                <h2 class="text-2xl font-semibold mb-2">Rs2PlayerCache</h2>
+                <p class="text-neutral-500 text-sm mb-6">Query other players</p>
 
-                <div class="bg-gradient-to-r from-purple-500/10 to-purple-600/10 border-l-4 border-purple-500 p-4 rounded-r-lg mb-6">
-                    <p class="text-sm text-gray-300">
-                        <strong>Import:</strong> <code>net.runelite.client.plugins.microbot.api.player.Rs2PlayerQueryable</code>
-                    </p>
-                </div>
+<pre><code class="language-java">@Inject Rs2PlayerCache rs2PlayerCache;
 
-                <h3 class="text-xl font-semibold mb-4 text-orange-500">Basic Examples</h3>
+// Find nearest player
+Rs2PlayerModel player = rs2PlayerCache.query().nearest();
 
-                <div class="space-y-6">
-                    <div>
-                        <p class="text-gray-400 mb-3">Find nearest player:</p>
-<pre><code class="language-java">Rs2PlayerModel player = new Rs2PlayerQueryable()
-    .nearest();</code></pre>
-                    </div>
-
-                    <div>
-                        <p class="text-gray-400 mb-3">Find player by name:</p>
-<pre><code class="language-java">Rs2PlayerModel target = new Rs2PlayerQueryable()
+// Find player by name
+Rs2PlayerModel target = rs2PlayerCache.query()
     .withName("PlayerName")
-    .nearest();</code></pre>
-                    </div>
+    .nearest();
 
-                    <div>
-                        <p class="text-gray-400 mb-3">Find all friends nearby:</p>
-<pre><code class="language-java">List&lt;Rs2PlayerModel&gt; friends = new Rs2PlayerQueryable()
+// Find all friends nearby
+List&lt;Rs2PlayerModel&gt; friends = rs2PlayerCache.query()
     .where(Rs2PlayerModel::isFriend)
     .within(20)
     .toList();</code></pre>
-                    </div>
+
+                <h4 class="font-medium mt-8 mb-3 text-sm">Rs2PlayerModel Methods</h4>
+                <div class="grid grid-cols-2 gap-2 text-sm">
+                    <code>player.getName()</code>
+                    <code>player.getCombatLevel()</code>
+                    <code>player.getHealthRatio()</code>
+                    <code>player.isFriend()</code>
+                    <code>player.isClanMember()</code>
+                    <code>player.isInteracting()</code>
                 </div>
             </section>
 
-            <!-- Tile Object Queryable -->
-            <section id="object-queryable" class="content-section mb-16">
-                <h2 class="text-3xl font-bold mb-6 text-white">Rs2TileObjectQueryable - Tile Objects</h2>
+            <!-- Object Cache -->
+            <section id="objects" class="content-section mb-20">
+                <h2 class="text-2xl font-semibold mb-2">Rs2TileObjectCache</h2>
+                <p class="text-neutral-500 text-sm mb-6">Query game objects (trees, rocks, banks, etc.)</p>
 
-                <div class="bg-gradient-to-r from-yellow-500/10 to-yellow-600/10 border-l-4 border-yellow-500 p-4 rounded-r-lg mb-6">
-                    <p class="text-sm text-gray-300">
-                        <strong>Import:</strong> <code>net.runelite.client.plugins.microbot.api.tileobject.Rs2TileObjectQueryable</code>
-                    </p>
-                </div>
+<pre><code class="language-java">@Inject Rs2TileObjectCache rs2TileObjectCache;
 
-                <h3 class="text-xl font-semibold mb-4 text-orange-500">Basic Examples</h3>
-
-                <div class="space-y-6">
-                    <div>
-                        <p class="text-gray-400 mb-3">Find nearest tree:</p>
-<pre><code class="language-java">Rs2TileObjectModel tree = new Rs2TileObjectQueryable()
+// Find nearest tree
+Rs2TileObjectModel tree = rs2TileObjectCache.query()
     .withName("Tree")
-    .nearest();</code></pre>
-                    </div>
+    .nearest();
 
-                    <div>
-                        <p class="text-gray-400 mb-3">Find nearest bank:</p>
-<pre><code class="language-java">Rs2TileObjectModel bank = new Rs2TileObjectQueryable()
+// Find nearest bank
+Rs2TileObjectModel bank = rs2TileObjectCache.query()
     .withNames("Bank booth", "Bank chest", "Bank")
     .nearest(20);
 
 if (bank != null && !Rs2Bank.isOpen()) {
     bank.click("Bank");
-    sleepUntil(() -> Rs2Bank.isOpen(), 5000);
 }</code></pre>
-                    </div>
 
-                    <div>
-                        <p class="text-gray-400 mb-3">Skilling script - find nearest available tree:</p>
-<pre><code class="language-java">Rs2TileObjectModel tree = new Rs2TileObjectQueryable()
-    .where(obj -> obj.getName() != null &&
-                  obj.getName().equals("Oak tree"))
-    .nearest(10);
-
-if (tree != null && !Rs2Player.isAnimating()) {
-    tree.click("Chop down");
-    sleepUntil(() -> Rs2Player.isAnimating(), 3000);
-}</code></pre>
-                    </div>
+                <h4 class="font-medium mt-8 mb-3 text-sm">Rs2TileObjectModel Methods</h4>
+                <div class="grid grid-cols-2 gap-2 text-sm">
+                    <code>obj.getName()</code>
+                    <code>obj.getId()</code>
+                    <code>obj.getWorldLocation()</code>
+                    <code>obj.click("Action")</code>
+                    <code>obj.interact("Action")</code>
                 </div>
             </section>
 
             <!-- API Reference -->
-            <section id="api-reference" class="content-section mb-16">
-                <h2 class="text-3xl font-bold mb-6 text-white">API Reference</h2>
+            <section id="api" class="content-section mb-20">
+                <h2 class="text-2xl font-semibold mb-6">API Reference</h2>
 
-                <h3 class="text-xl font-semibold mb-4 text-orange-500">Terminal Operations</h3>
-                <p class="text-gray-400 mb-6">These execute the query and return results:</p>
+                <h3 class="font-medium mb-4">Terminal Operations</h3>
+                <p class="text-neutral-400 text-sm mb-4">Execute the query and return results:</p>
 
-                <div class="space-y-6">
-                    <div class="bg-gray-900 p-6 rounded-lg border border-gray-800">
-                        <h4 class="font-semibold text-white mb-2"><code>nearest()</code></h4>
-                        <p class="text-gray-400 text-sm mb-3">Returns the nearest entity to the player.</p>
-<pre><code class="language-java">Rs2NpcModel npc = new Rs2NpcQueryable()
-    .withName("Guard")
-    .nearest();</code></pre>
+                <div class="space-y-4 mb-10">
+                    <div class="card p-4">
+                        <code class="text-white">nearest()</code>
+                        <p class="text-neutral-500 text-sm mt-1">Returns nearest entity to player</p>
                     </div>
-
-                    <div class="bg-gray-900 p-6 rounded-lg border border-gray-800">
-                        <h4 class="font-semibold text-white mb-2"><code>nearest(int maxDistance)</code></h4>
-                        <p class="text-gray-400 text-sm mb-3">Returns the nearest entity within max distance from player.</p>
-<pre><code class="language-java">Rs2NpcModel npc = new Rs2NpcQueryable()
-    .withName("Guard")
-    .nearest(10);  // Within 10 tiles</code></pre>
+                    <div class="card p-4">
+                        <code class="text-white">nearest(int maxDistance)</code>
+                        <p class="text-neutral-500 text-sm mt-1">Returns nearest within max distance</p>
                     </div>
-
-                    <div class="bg-gray-900 p-6 rounded-lg border border-gray-800">
-                        <h4 class="font-semibold text-white mb-2"><code>first()</code></h4>
-                        <p class="text-gray-400 text-sm mb-3">Returns the first matching entity (not necessarily nearest).</p>
-<pre><code class="language-java">Rs2NpcModel npc = new Rs2NpcQueryable()
-    .withName("Guard")
-    .first();</code></pre>
+                    <div class="card p-4">
+                        <code class="text-white">first()</code>
+                        <p class="text-neutral-500 text-sm mt-1">Returns first matching entity</p>
                     </div>
-
-                    <div class="bg-gray-900 p-6 rounded-lg border border-gray-800">
-                        <h4 class="font-semibold text-white mb-2"><code>toList()</code></h4>
-                        <p class="text-gray-400 text-sm mb-3">Returns all matching entities as a list.</p>
-<pre><code class="language-java">List&lt;Rs2NpcModel&gt; guards = new Rs2NpcQueryable()
-    .withName("Guard")
-    .toList();</code></pre>
+                    <div class="card p-4">
+                        <code class="text-white">withName(String name)</code>
+                        <p class="text-neutral-500 text-sm mt-1">Find nearest with exact name</p>
+                    </div>
+                    <div class="card p-4">
+                        <code class="text-white">withNames(String... names)</code>
+                        <p class="text-neutral-500 text-sm mt-1">Find nearest matching any name</p>
+                    </div>
+                    <div class="card p-4">
+                        <code class="text-white">withId(int id)</code>
+                        <p class="text-neutral-500 text-sm mt-1">Find nearest with specific ID</p>
+                    </div>
+                    <div class="card p-4">
+                        <code class="text-white">toList()</code>
+                        <p class="text-neutral-500 text-sm mt-1">Returns all matching entities</p>
                     </div>
                 </div>
 
-                <h3 class="text-xl font-semibold mt-8 mb-4 text-orange-500">Filter Operations</h3>
-                <p class="text-gray-400 mb-6">These filter entities and return the queryable for chaining:</p>
+                <h3 class="font-medium mb-4">Filter Operations</h3>
+                <p class="text-neutral-400 text-sm mb-4">Filter entities and return queryable for chaining:</p>
 
-                <div class="space-y-6">
-                    <div class="bg-gray-900 p-6 rounded-lg border border-gray-800">
-                        <h4 class="font-semibold text-white mb-2"><code>where(Predicate&lt;E&gt; predicate)</code></h4>
-                        <p class="text-gray-400 text-sm mb-3">Adds a custom filter using a lambda expression.</p>
-<pre><code class="language-java">new Rs2NpcQueryable()
-    .where(npc -> npc.getHealthRatio() > 0)
-    .where(npc -> !npc.isInteracting())
-    .nearest();</code></pre>
+                <div class="space-y-4">
+                    <div class="card p-4">
+                        <code class="text-white">where(Predicate&lt;E&gt; predicate)</code>
+                        <p class="text-neutral-500 text-sm mt-1">Add custom filter with lambda</p>
                     </div>
-
-                    <div class="bg-gray-900 p-6 rounded-lg border border-gray-800">
-                        <h4 class="font-semibold text-white mb-2"><code>within(int distance)</code></h4>
-                        <p class="text-gray-400 text-sm mb-3">Filters entities within distance from player.</p>
-<pre><code class="language-java">new Rs2NpcQueryable()
-    .withName("Guard")
-    .within(10)
-    .toList();</code></pre>
+                    <div class="card p-4">
+                        <code class="text-white">within(int distance)</code>
+                        <p class="text-neutral-500 text-sm mt-1">Filter within distance from player</p>
+                    </div>
+                    <div class="card p-4">
+                        <code class="text-white">within(WorldPoint anchor, int distance)</code>
+                        <p class="text-neutral-500 text-sm mt-1">Filter within distance from point</p>
                     </div>
                 </div>
             </section>
 
             <!-- Common Patterns -->
-            <section id="common-patterns" class="content-section mb-16">
-                <h2 class="text-3xl font-bold mb-6 text-white">Common Patterns</h2>
+            <section id="patterns" class="content-section mb-20">
+                <h2 class="text-2xl font-semibold mb-6">Common Patterns</h2>
 
-                <div class="grid grid-cols-1 gap-6">
-                    <div class="bg-gray-900 p-6 rounded-lg border border-gray-800">
-                        <h4 class="font-semibold text-orange-500 mb-3">Find by Multiple Names</h4>
-<pre><code class="language-java">Rs2NpcModel banker = new Rs2NpcQueryable()
-    .withNames("Banker", "Bank clerk", "Bank assistant");
+                <div class="space-y-8">
+                    <div>
+                        <h4 class="font-medium mb-3">Combat Script</h4>
+<pre><code class="language-java">Rs2NpcModel enemy = rs2NpcCache.query()
+    .withName("Goblin")
+    .where(npc -> !npc.isInteracting())
+    .where(npc -> npc.getHealthRatio() > 0)
+    .nearest(10);
+
+if (enemy != null && !Rs2Player.isInCombat()) {
+    enemy.click("Attack");
+}</code></pre>
+                    </div>
+
+                    <div>
+                        <h4 class="font-medium mb-3">Looting Script</h4>
+<pre><code class="language-java">Rs2TileItemModel loot = rs2TileItemCache.query()
+    .where(Rs2TileItemModel::isLootAble)
+    .where(item -> item.getTotalGeValue() >= 5000)
+    .nearest(15);
+
+if (loot != null) {
+    loot.pickup();
+}</code></pre>
+                    </div>
+
+                    <div>
+                        <h4 class="font-medium mb-3">Null Safety</h4>
+<pre><code class="language-java">Rs2NpcModel banker = rs2NpcCache.query()
+    .withName("Banker")
+    .nearest();
 
 if (banker != null) {
     banker.click("Bank");
 }</code></pre>
                     </div>
 
-                    <div class="bg-gray-900 p-6 rounded-lg border border-gray-800">
-                        <h4 class="font-semibold text-orange-500 mb-3">Complex Query with Multiple Filters</h4>
-<pre><code class="language-java">Rs2NpcModel target = new Rs2NpcQueryable()
-    .withName("Goblin")
-    .where(npc -> !npc.isInteracting())
-    .where(npc -> npc.getHealthRatio() > 0)
-    .where(npc -> npc.getAnimation() == -1)  // Not animating
-    .within(10)
-    .nearest();</code></pre>
-                    </div>
-
-                    <div class="bg-gray-900 p-6 rounded-lg border border-gray-800">
-                        <h4 class="font-semibold text-orange-500 mb-3">Reusable Predicates</h4>
-<pre><code class="language-java">// Define predicates
-Predicate&lt;Rs2NpcModel&gt; isAlive = npc -> npc.getHealthRatio() > 0;
+                    <div>
+                        <h4 class="font-medium mb-3">Reusable Predicates</h4>
+<pre><code class="language-java">Predicate&lt;Rs2NpcModel&gt; isAlive = npc -> npc.getHealthRatio() > 0;
 Predicate&lt;Rs2NpcModel&gt; notBusy = npc -> !npc.isInteracting();
-Predicate&lt;Rs2NpcModel&gt; notAnimating = npc -> npc.getAnimation() == -1;
 
-// Use them
-Rs2NpcModel target = new Rs2NpcQueryable()
+Rs2NpcModel target = rs2NpcCache.query()
     .withName("Cow")
     .where(isAlive)
     .where(notBusy)
-    .where(notAnimating)
     .nearest();</code></pre>
                     </div>
-                </div>
-            </section>
-
-            <!-- Performance Tips -->
-            <section id="performance" class="content-section mb-16">
-                <h2 class="text-3xl font-bold mb-6 text-white">Performance Tips</h2>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div class="bg-green-900/20 p-6 rounded-lg border border-green-800">
-                        <h3 class="text-green-500 font-semibold mb-4">✅ DO</h3>
-                        <ul class="space-y-3 text-sm text-gray-300">
-                            <li>• Use specific filters early</li>
-                            <li>• Limit search radius with <code>within()</code></li>
-                            <li>• Cache results when possible</li>
-                            <li>• Use method references</li>
-                            <li>• Add reasonable delays between queries</li>
-                        </ul>
-                    </div>
-
-                    <div class="bg-red-900/20 p-6 rounded-lg border border-red-800">
-                        <h3 class="text-red-500 font-semibold mb-4">❌ DON'T</h3>
-                        <ul class="space-y-3 text-sm text-gray-300">
-                            <li>• Query in tight loops without delays</li>
-                            <li>• Use expensive operations in filters</li>
-                            <li>• Create unnecessary intermediate lists</li>
-                            <li>• Forget null checks</li>
-                            <li>• Query without distance limits</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="mt-6 bg-gray-900 p-6 rounded-lg border border-gray-800">
-                    <h4 class="font-semibold text-orange-500 mb-3">Good Example</h4>
-<pre><code class="language-java">// Good - filters by name first, limits radius
-new Rs2NpcQueryable()
-    .withName("Guard")
-    .where(npc -> !npc.isInteracting())
-    .within(10)
-    .nearest();</code></pre>
                 </div>
             </section>
 
             <!-- Migration Guide -->
-            <section id="migration" class="content-section mb-16">
-                <h2 class="text-3xl font-bold mb-6 text-white">Migration Guide</h2>
-                <p class="text-gray-400 mb-6">Migrating from the legacy API is straightforward. Here are common conversions:</p>
+            <section id="migration" class="content-section mb-20">
+                <h2 class="text-2xl font-semibold mb-6">Migration Guide</h2>
+                <p class="text-neutral-400 text-sm mb-6">Migrating from the legacy API:</p>
 
                 <div class="space-y-6">
-                    <div class="bg-gray-900 p-6 rounded-lg border border-gray-800">
-                        <h4 class="font-semibold text-white mb-3">NPCs</h4>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <h4 class="font-medium mb-3">NPCs</h4>
+                        <div class="grid md:grid-cols-2 gap-4">
                             <div>
-                                <p class="text-xs text-red-400 mb-2">Legacy Rs2Npc:</p>
-<pre><code class="language-java">// Simple query
-NPC npc = Rs2Npc
-  .getNpc("Banker");
-
-// With filter
-NPC npc = Rs2Npc
-  .getNearestNpc(
-    npc -> !npc.isInteracting());</code></pre>
+                                <p class="text-xs text-neutral-500 mb-2">Legacy</p>
+<pre><code class="language-java">NPC npc = Rs2Npc.getNpc("Banker");
+NPC nearest = Rs2Npc.getNearestNpc("Guard");</code></pre>
                             </div>
                             <div>
-                                <p class="text-xs text-green-400 mb-2">Queryable:</p>
-<pre><code class="language-java">// Simple query
-Rs2NpcModel npc =
-  new Rs2NpcQueryable()
+                                <p class="text-xs text-neutral-500 mb-2">Queryable</p>
+<pre><code class="language-java">Rs2NpcModel npc = rs2NpcCache.query()
     .withName("Banker");
-
-// With filter
-Rs2NpcModel npc =
-  new Rs2NpcQueryable()
-    .where(npc ->
-      !npc.isInteracting())
-    .nearest();</code></pre>
+Rs2NpcModel nearest = rs2NpcCache.query()
+    .withName("Guard").nearest();</code></pre>
                             </div>
                         </div>
                     </div>
 
-                    <div class="bg-gray-900 p-6 rounded-lg border border-gray-800">
-                        <h4 class="font-semibold text-white mb-3">Ground Items</h4>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <h4 class="font-medium mb-3">Ground Items</h4>
+                        <div class="grid md:grid-cols-2 gap-4">
                             <div>
-                                <p class="text-xs text-red-400 mb-2">Legacy Rs2GroundItem:</p>
-<pre><code class="language-java">TileItem item =
-  Rs2GroundItem
-    .getGroundItem("Coins");</code></pre>
+                                <p class="text-xs text-neutral-500 mb-2">Legacy</p>
+<pre><code class="language-java">TileItem item = Rs2GroundItem.findItem("Coins");</code></pre>
                             </div>
                             <div>
-                                <p class="text-xs text-green-400 mb-2">Queryable:</p>
-<pre><code class="language-java">Rs2TileItemModel item =
-  new Rs2TileItemQueryable()
-    .withName("Coins")
-    .nearest();</code></pre>
+                                <p class="text-xs text-neutral-500 mb-2">Queryable</p>
+<pre><code class="language-java">Rs2TileItemModel item = rs2TileItemCache.query()
+    .withName("Coins").first();</code></pre>
                             </div>
                         </div>
                     </div>
 
-                    <div class="bg-gray-900 p-6 rounded-lg border border-gray-800">
-                        <h4 class="font-semibold text-white mb-3">Tile Objects</h4>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <h4 class="font-medium mb-3">Interactions</h4>
+                        <div class="grid md:grid-cols-2 gap-4">
                             <div>
-                                <p class="text-xs text-red-400 mb-2">Legacy Rs2GameObject:</p>
-<pre><code class="language-java">TileObject tree =
-  Rs2GameObject
-    .findObject("Tree");</code></pre>
+                                <p class="text-xs text-neutral-500 mb-2">Legacy</p>
+<pre><code class="language-java">Rs2Npc.interact(banker, "Bank");</code></pre>
                             </div>
                             <div>
-                                <p class="text-xs text-green-400 mb-2">Queryable:</p>
-<pre><code class="language-java">Rs2TileObjectModel tree =
-  new Rs2TileObjectQueryable()
-    .withName("Tree")
-    .nearest();</code></pre>
+                                <p class="text-xs text-neutral-500 mb-2">Queryable</p>
+<pre><code class="language-java">banker.click("Bank");</code></pre>
                             </div>
                         </div>
                     </div>
@@ -806,78 +444,42 @@ Rs2NpcModel npc =
             </section>
 
             <!-- Footer -->
-            <footer class="border-t border-gray-800 pt-8 mt-16">
-                <div class="flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
-                    <p>Microbot © 2024. Version 2.1.0</p>
-                    <div class="flex space-x-4 mt-4 md:mt-0">
-                        <a href="https://discord.gg/zaGrfqFEWE" target="_blank" class="hover:text-orange-500">Discord</a>
-                        <a href="https://github.com/chsami/microbot" target="_blank" class="hover:text-orange-500">GitHub</a>
-                        <a href="https://themicrobot.com" target="_blank" class="hover:text-orange-500">Website</a>
-                    </div>
-                </div>
+            <footer class="border-t border-neutral-800 pt-8 text-sm text-neutral-600">
+                <p>Microbot Queryable API v2.2.0 &middot; December 30, 2025</p>
             </footer>
         </main>
     </div>
 
-    <!-- Prism.js for code highlighting -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
-
-    <!-- Navigation and Mobile Menu Script -->
     <script>
-        // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                    // Close mobile menu if open
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                     document.getElementById('sidebar').classList.remove('show');
                 }
             });
         });
 
-        // Active navigation highlighting
         const sections = document.querySelectorAll('.content-section');
         const navLinks = document.querySelectorAll('.nav-link');
-
         window.addEventListener('scroll', () => {
             let current = '';
             sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (scrollY >= (sectionTop - 100)) {
+                if (scrollY >= section.offsetTop - 100) {
                     current = section.getAttribute('id');
                 }
             });
-
             navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === '#' + current) {
-                    link.classList.add('active');
-                }
+                link.classList.toggle('active', link.getAttribute('href') === '#' + current);
             });
         });
 
-        // Mobile menu toggle
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const sidebar = document.getElementById('sidebar');
-
-        mobileMenuBtn.addEventListener('click', () => {
-            sidebar.classList.toggle('show');
-        });
-
-        // Close sidebar when clicking outside on mobile
-        document.addEventListener('click', (e) => {
-            if (window.innerWidth < 768) {
-                if (!sidebar.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
-                    sidebar.classList.remove('show');
-                }
-            }
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+            document.getElementById('sidebar').classList.toggle('show');
         });
     </script>
 </body>

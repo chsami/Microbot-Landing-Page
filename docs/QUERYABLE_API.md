@@ -1,7 +1,7 @@
 # Queryable API Documentation
 
 **Version:** 2.2.0
-**Last Updated:** December 30, 2025
+**Last Updated:** January 4, 2026
 
 ---
 
@@ -16,7 +16,8 @@
 7. [Common Patterns](#common-patterns)
 8. [Advanced Usage](#advanced-usage)
 9. [Performance Tips](#performance-tips)
-10. [Migration Guide](#migration-guide)
+10. [Threading](#threading)
+11. [Migration Guide](#migration-guide)
 
 ---
 
@@ -138,16 +139,20 @@ public interface IEntityQueryable<Q, E> {
     Q within(int distance);               // Distance from player
     Q within(WorldPoint anchor, int distance); // Distance from point
     E first();                            // First match
+    E firstOnClientThread();              // First match (client thread safe)
     E nearest();                          // Nearest to player
+    E nearestOnClientThread();            // Nearest to player (client thread safe)
     E nearest(int maxDistance);           // Nearest within range
     E nearest(WorldPoint anchor, int maxDistance); // Nearest to point
-    E withName(String name);             // Find by name
-    E withNames(String... names);        // Find by multiple names
+    E withName(String name);             // Find by name (requires client thread)
+    E withNames(String... names);        // Find by multiple names (requires client thread)
     E withId(int id);                    // Find by ID
     E withIds(int... ids);               // Find by multiple IDs
     List<E> toList();                    // Get all matches
 }
 ```
+
+> **Note:** When using `withName()` or `withNames()`, always use `firstOnClientThread()` or `nearestOnClientThread()` as the terminal operation. See [Threading](#threading) for details.
 
 ### 4. Fluent Chaining
 
@@ -464,24 +469,57 @@ Returns the first matching entity (not necessarily nearest).
 
 ```java
 Rs2NpcModel npc = rs2NpcCache.query()
-    .withName("Guard")
+    .withId(NpcID.GUARD)
     .first();
+```
+
+#### `firstOnClientThread()`
+Returns the first matching entity, executing the query on the client thread. **Required when using `withName()` or `withNames()`**.
+
+```java
+Rs2NpcModel npc = rs2NpcCache.query()
+    .withName("Guard")
+    .firstOnClientThread();
+```
+
+#### `nearestOnClientThread()`
+Returns the nearest entity to the player, executing the query on the client thread. **Required when using `withName()` or `withNames()`**.
+
+```java
+Rs2NpcModel npc = rs2NpcCache.query()
+    .withName("Guard")
+    .nearestOnClientThread();
 ```
 
 #### `withName(String name)`
 Finds nearest entity with exact name (case-insensitive).
 
+> ⚠️ **Client Thread Required:** This method accesses widget data. Use `nearestOnClientThread()` or `firstOnClientThread()` instead, or wrap in `Microbot.getClientThread().invoke()`. See [Threading](#threading).
+
 ```java
+// ✅ Recommended - uses client thread variant
 Rs2NpcModel banker = rs2NpcCache.query()
-    .withName("Banker");  // Terminal operation
+    .withName("Banker")
+    .nearestOnClientThread();
+
+// Alternative - manual client thread invocation
+Rs2NpcModel banker = Microbot.getClientThread().invoke(() ->
+    rs2NpcCache.query()
+        .withName("Banker")
+        .nearest()
+);
 ```
 
 #### `withNames(String... names)`
 Finds nearest entity matching any of the names.
 
+> ⚠️ **Client Thread Required:** This method accesses widget data. Use `nearestOnClientThread()` or `firstOnClientThread()` instead, or wrap in `Microbot.getClientThread().invoke()`. See [Threading](#threading).
+
 ```java
+// ✅ Recommended - uses client thread variant
 Rs2NpcModel npc = rs2NpcCache.query()
-    .withNames("Banker", "Bank clerk", "Bank assistant");
+    .withNames("Banker", "Bank clerk", "Bank assistant")
+    .nearestOnClientThread();
 ```
 
 #### `withId(int id)`
@@ -885,6 +923,85 @@ Rs2NpcModel npc = rs2NpcCache.query()
 
 ---
 
+## Threading
+
+Scripts run on a scheduled executor thread, but certain RuneLite API calls (widgets, game objects, etc.) must run on the client thread. This is particularly important when using **name-based queries**.
+
+### Client Thread Requirement for Name Queries
+
+Queries that use `withName()` or `withNames()` internally access widget data and other client-thread-only resources. To safely execute these queries, use the client thread variants:
+
+- **`firstOnClientThread()`** - Returns the first matching entity (runs on client thread)
+- **`nearestOnClientThread()`** - Returns the nearest matching entity (runs on client thread)
+
+**Example:**
+```java
+@Inject
+Rs2NpcCache rs2NpcCache;
+
+// ❌ WRONG - May throw "must be called on client thread" error
+Rs2NpcModel banker = rs2NpcCache.query()
+    .withName("Banker")
+    .nearest();
+
+// ✅ CORRECT - Runs the query on the client thread
+Rs2NpcModel banker = rs2NpcCache.query()
+    .withName("Banker")
+    .nearestOnClientThread();
+
+// ✅ CORRECT - Using first variant
+Rs2NpcModel banker = rs2NpcCache.query()
+    .withName("Banker")
+    .firstOnClientThread();
+```
+
+### When to Use Client Thread Methods
+
+Use `firstOnClientThread()` or `nearestOnClientThread()` when your query includes:
+- `.withName(String name)` - filters by entity name
+- `.withNames(String... names)` - filters by multiple entity names
+
+These methods internally access widgets and other client-thread-only resources.
+
+### Manual Client Thread Invocation
+
+For more complex scenarios or when you need to perform multiple client-thread operations, use `Microbot.getClientThread().invoke()`:
+
+```java
+// For operations that return a value
+Rs2NpcModel banker = Microbot.getClientThread().invoke(() -> 
+    rs2NpcCache.query()
+        .withName("Banker")
+        .nearest()
+);
+
+// For void operations
+Microbot.getClientThread().invoke(() -> {
+    // Multiple client thread operations here
+    Rs2NpcModel npc = rs2NpcCache.query().withName("Guard").nearest();
+    if (npc != null) {
+        npc.click("Attack");
+    }
+});
+```
+
+### Other Client Thread Operations
+
+Beyond the Queryable API, always use `Microbot.getClientThread().invoke()` when accessing:
+- Widgets (`client.getWidget()`, `widget.isHidden()`)
+- Game objects that aren't cached
+- Player world view (`client.getLocalPlayer().getWorldView()`)
+- Varbits (`client.getVarbitValue()`)
+- `BoatLocation.fromLocal()` - accesses player world view internally
+- `TrialInfo.getCurrent()` - accesses widgets internally
+- `Rs2BoatCache.getLocalBoat()` - accesses player world view
+- `Rs2BoatModel.isNavigating()` - accesses varbits
+- `Rs2BoatModel.isMovingForward()` - accesses varbits
+- `Rs2BoatModel.getHeading()` - accesses varbits
+- Any RuneLite API that throws "must be called on client thread"
+
+---
+
 ## Migration Guide
 
 ### From Legacy API to Queryable API
@@ -1214,6 +1331,7 @@ if (npc != null && npc.getWorldLocation() != null) {
 - Cache query results when appropriate
 - Use method references when possible
 - Add distance limits to queries
+- **Use `nearestOnClientThread()` or `firstOnClientThread()` with name queries**
 
 ❌ **DON'T:**
 - Create queryables directly with `new`
@@ -1223,6 +1341,7 @@ if (npc != null && npc.getWorldLocation() != null) {
 - Create unnecessary intermediate lists
 - Use legacy API for new code
 - Query without distance limits
+- **Use `withName()`/`withNames()` without client thread methods**
 
 ---
 
@@ -1257,24 +1376,27 @@ import net.runelite.client.plugins.microbot.api.tileobject.models.Rs2TileObjectM
 ### Quick Examples
 
 ```java
-// Find nearest NPC
-rs2NpcCache.query().withName("Banker").nearest();
+// Find nearest NPC by name (use client thread method)
+rs2NpcCache.query().withName("Banker").nearestOnClientThread();
 
-// Find ground item
-rs2TileItemCache.query().withName("Coins").nearest();
+// Find ground item by name (use client thread method)
+rs2TileItemCache.query().withName("Coins").nearestOnClientThread();
 
-// Find player
-rs2PlayerCache.query().withName("PlayerName").nearest();
+// Find player by name (use client thread method)
+rs2PlayerCache.query().withName("PlayerName").nearestOnClientThread();
 
-// Find object
-rs2TileObjectCache.query().withName("Tree").nearest();
+// Find object by name (use client thread method)
+rs2TileObjectCache.query().withName("Tree").nearestOnClientThread();
 
-// Complex query
+// Find by ID (no client thread required)
+rs2NpcCache.query().withId(NpcID.BANKER).nearest();
+
+// Complex query with name (use client thread method)
 rs2NpcCache.query()
     .withName("Guard")
     .where(npc -> !npc.isInteracting())
     .within(10)
-    .nearest();
+    .nearestOnClientThread();
 ```
 
 ---
@@ -1288,6 +1410,6 @@ rs2NpcCache.query()
 
 ---
 
-**Last Updated:** December 30, 2025
+**Last Updated:** January 4, 2026
 **Microbot Version:** 2.2.0
 **For questions or issues, please visit our Discord community.**

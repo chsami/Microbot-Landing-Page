@@ -1,0 +1,85 @@
+# Microbot
+
+> Free open source OSRS automation client based on RuneLite
+
+## About
+
+Microbot is a free, open-source Old School RuneScape (OSRS) client built on top of RuneLite. It provides automation capabilities through a powerful plugin system, allowing users to create and run scripts for various in-game activities.
+
+## Key Features
+
+- **Free and Open Source**: Completely free to use with source code available on GitHub
+- **RuneLite-Based**: Built on the popular RuneLite client, ensuring compatibility and stability
+- **Plugin System**: Extensible architecture with community and built-in plugins
+- **Multi-Session Support**: Run multiple instances simultaneously at no cost
+- **Cross-Platform**: Available for Windows, macOS, and Linux
+- **Queryable API**: Fluent, type-safe API for querying game entities (NPCs, items, players, objects)
+- **Antiban Features**: Natural mouse movements, human-like patterns, and fatigue simulation
+
+## Featured Plugins
+
+- Wintertodt - Automated Wintertodt minigame
+- Fletching - Progressive fletching support
+- NMZ (Nightmare Zone) - Full automation with absorption/overload support
+- Vorkath - Ranged Vorkath with woox walk
+- Sand Crabs - Multiple spots with aggro reset
+- Mixology - Herblore minigame automation
+- Guardians of the Rift - Runecrafting minigame
+- Mining - Motherload Mine, PowerMiner support
+
+## Documentation
+
+- API Documentation: https://microbot.cloud/docs.html
+- Queryable API Guide: Fluent interface for querying NPCs, items, players, and tile objects
+- Plugin Development: Create custom plugins using the Microbot API
+
+## Queryable API Overview
+
+The Queryable API provides a type-safe, chainable way to find game entities:
+
+```java
+// Example: Find nearest banker NPC
+Rs2NpcModel banker = rs2NpcCache.query()
+    .withName("Banker")
+    .nearest();
+
+// Example: Find valuable ground items
+Rs2TileItemModel loot = rs2TileItemCache.query()
+    .where(item -> item.getTotalGeValue() >= 5000)
+    .nearest(10);
+```
+
+Available caches:
+- Rs2NpcCache - Query NPCs
+- Rs2TileItemCache - Query ground items
+- Rs2PlayerCache - Query players
+- Rs2TileObjectCache - Query game objects (trees, rocks, banks)
+
+## Links
+
+- Website: https://microbot.cloud
+- GitHub: https://github.com/chsami/microbot
+- Discord: https://discord.gg/zaGrfqFEWE
+- Plugins: https://microbot.cloud/plugins.html
+- Releases: https://microbot.cloud/releases.html
+- ChatGPT Assistant: https://chatgpt.com/g/g-LM0fGeeXB-microbot-documentation
+
+## Getting Started
+
+1. Download the launcher from https://microbot.cloud
+2. Available for Windows (.exe), Linux (.AppImage), and macOS (.dmg)
+3. Join the Discord community for support and plugin sharing
+
+## Technical Details
+
+- Built with Java
+- Uses RuneLite's plugin architecture
+- Supports dependency injection for API access
+- Thread-safe caching system for game entities
+
+## Contact
+
+- Discord Community: https://discord.gg/zaGrfqFEWE
+- GitHub Issues: https://github.com/chsami/microbot/issues
+- Donations: https://paypal.me/MicrobotBE
+

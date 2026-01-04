@@ -1,36 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Queryable API - Microbot</title>
+    <title>Queryable API Documentation - Microbot | OSRS Automation</title>
+    <meta name="description"
+        content="Microbot Queryable API documentation. A fluent, type-safe interface for querying NPCs, items, players, and game objects in Old School RuneScape automation scripts.">
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://microbot.cloud/docs.html">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Microbot">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:title" content="Queryable API Documentation - Microbot">
+    <meta property="og:description"
+        content="Microbot Queryable API documentation. A fluent, type-safe interface for querying NPCs, items, players, and game objects in Old School RuneScape automation scripts.">
+    <meta property="og:image" content="https://microbot.cloud/images/general/logo.png">
+    <meta property="og:url" content="https://microbot.cloud/docs.html">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Queryable API Documentation - Microbot">
+    <meta name="twitter:description"
+        content="Microbot Queryable API documentation. A fluent, type-safe interface for querying NPCs, items, players, and game objects in Old School RuneScape automation scripts.">
+    <meta name="twitter:image" content="https://microbot.cloud/images/general/logo.png">
+
+    <!-- Additional SEO -->
+    <meta name="keywords"
+        content="Microbot API, OSRS bot API, RuneLite plugin development, NPC query, game object query, automation scripting">
+    <meta name="author" content="Microbot">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#111111">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap');
-        * { font-family: 'Inter', sans-serif; }
-        code, pre { font-family: 'JetBrains Mono', monospace !important; }
-        body { background: #111; color: #ccc; }
-        .sidebar { background: #161616; border-right: 1px solid #222; }
-        .nav-link { color: #888; }
-        .nav-link:hover, .nav-link.active { color: #fff; }
-        .content-section { scroll-margin-top: 2rem; }
-        code:not([class*="language-"]) { background: #1a1a1a; color: #e5a06e; padding: 0.15rem 0.4rem; border-radius: 4px; font-size: 0.85em; }
-        pre[class*="language-"] { background: #0d0d0d !important; border-radius: 6px; margin: 1rem 0; font-size: 0.8rem; border: 1px solid #222; }
-        h1, h2, h3 { color: #fff; }
-        .card { background: #161616; border: 1px solid #222; border-radius: 6px; }
+
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+
+        code,
+        pre {
+            font-family: 'JetBrains Mono', monospace !important;
+        }
+
+        body {
+            background: #111;
+            color: #ccc;
+        }
+
+        .sidebar {
+            background: #161616;
+            border-right: 1px solid #222;
+        }
+
+        .nav-link {
+            color: #888;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: #fff;
+        }
+
+        .content-section {
+            scroll-margin-top: 2rem;
+        }
+
+        code:not([class*="language-"]) {
+            background: #1a1a1a;
+            color: #e5a06e;
+            padding: 0.15rem 0.4rem;
+            border-radius: 4px;
+            font-size: 0.85em;
+        }
+
+        pre[class*="language-"] {
+            background: #0d0d0d !important;
+            border-radius: 6px;
+            margin: 1rem 0;
+            font-size: 0.8rem;
+            border: 1px solid #222;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #fff;
+        }
+
+        .card {
+            background: #161616;
+            border: 1px solid #222;
+            border-radius: 6px;
+        }
+
         @media (max-width: 768px) {
-            .sidebar { position: fixed; left: -100%; transition: left 0.3s; z-index: 1000; width: 280px; height: 100vh; }
-            .sidebar.show { left: 0; }
+            .sidebar {
+                position: fixed;
+                left: -100%;
+                transition: left 0.3s;
+                z-index: 1000;
+                width: 280px;
+                height: 100vh;
+            }
+
+            .sidebar.show {
+                left: 0;
+            }
         }
     </style>
 </head>
+
 <body>
     <div class="md:hidden fixed top-4 left-4 z-50">
         <button id="mobile-menu-btn" class="bg-neutral-800 p-2 rounded text-white">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                </path>
             </svg>
         </button>
     </div>
@@ -60,13 +153,16 @@
                         <p class="text-xs text-neutral-600 uppercase tracking-wide">Reference</p>
                     </div>
                     <a href="#api" class="nav-link block py-1.5">API Reference</a>
+                    <a href="#threading" class="nav-link block py-1.5">Threading</a>
                     <a href="#patterns" class="nav-link block py-1.5">Common Patterns</a>
                     <a href="#migration" class="nav-link block py-1.5">Migration Guide</a>
                 </nav>
 
                 <div class="mt-8 pt-6 border-t border-neutral-800 text-xs space-y-2">
-                    <a href="https://discord.gg/zaGrfqFEWE" target="_blank" class="block text-neutral-500 hover:text-white">Discord</a>
-                    <a href="https://github.com/chsami/microbot" target="_blank" class="block text-neutral-500 hover:text-white">GitHub</a>
+                    <a href="https://discord.gg/zaGrfqFEWE" target="_blank"
+                        class="block text-neutral-500 hover:text-white">Discord</a>
+                    <a href="https://github.com/chsami/microbot" target="_blank"
+                        class="block text-neutral-500 hover:text-white">GitHub</a>
                 </div>
             </div>
         </aside>
@@ -80,21 +176,22 @@
 
                 <div class="card p-5 mb-8">
                     <p class="text-neutral-300 text-sm leading-relaxed">
-                        The Queryable API provides a type-safe, chainable way to find NPCs, players, ground items, and tile objects. Inject the cache, call <code>query()</code>, chain filters, and execute.
+                        The Queryable API provides a type-safe, chainable way to find NPCs, players, ground items, and
+                        tile objects. Inject the cache, call <code>query()</code>, chain filters, and execute.
                     </p>
                 </div>
 
                 <h3 class="text-lg font-medium mb-4">Quick Example</h3>
-<pre><code class="language-java">@Inject
+                <pre><code class="language-java">@Inject
 Rs2NpcCache rs2NpcCache;
 
 Rs2NpcModel banker = rs2NpcCache.query()
     .withName("Banker")
     .where(npc -> !npc.isInteracting())
-    .nearest();</code></pre>
+    .nearestOnClientThread();</code></pre>
 
                 <h3 class="text-lg font-medium mt-10 mb-4">Setup</h3>
-<pre><code class="language-java">// Imports
+                <pre><code class="language-java">// Imports
 import net.runelite.client.plugins.microbot.api.npc.Rs2NpcCache;
 import net.runelite.client.plugins.microbot.api.tileitem.Rs2TileItemCache;
 import net.runelite.client.plugins.microbot.api.player.Rs2PlayerCache;
@@ -114,28 +211,31 @@ import net.runelite.client.plugins.microbot.api.tileobject.Rs2TileObjectCache;
                 <div class="space-y-8">
                     <div>
                         <h3 class="font-medium mb-3">Dependency Injection</h3>
-                        <p class="text-neutral-400 text-sm mb-3">Always inject the cache first, then call <code>query()</code>:</p>
-<pre><code class="language-java">@Inject
+                        <p class="text-neutral-400 text-sm mb-3">Always inject the cache first, then call
+                            <code>query()</code>:
+                        </p>
+                        <pre><code class="language-java">@Inject
 Rs2NpcCache rs2NpcCache;
 
-Rs2NpcModel npc = rs2NpcCache.query().withName("Guard").nearest();</code></pre>
+Rs2NpcModel npc = rs2NpcCache.query().withName("Guard").nearestOnClientThread();</code></pre>
                     </div>
 
                     <div>
                         <h3 class="font-medium mb-3">Fluent Chaining</h3>
                         <p class="text-neutral-400 text-sm mb-3">Chain multiple filters together:</p>
-<pre><code class="language-java">rs2NpcCache.query()
+                        <pre><code class="language-java">rs2NpcCache.query()
     .withName("Guard")
     .where(npc -> !npc.isInteracting())
     .within(15)
-    .nearest();</code></pre>
+    .nearestOnClientThread();</code></pre>
                     </div>
 
                     <div>
                         <h3 class="font-medium mb-3">Lazy Evaluation</h3>
-                        <p class="text-neutral-400 text-sm mb-3">Queries execute only when you call a terminal operation:</p>
-<pre><code class="language-java">var query = rs2NpcCache.query().withName("Guard").within(10);
-Rs2NpcModel guard = query.nearest();  // Executes here</code></pre>
+                        <p class="text-neutral-400 text-sm mb-3">Queries execute only when you call a terminal
+                            operation:</p>
+                        <pre><code class="language-java">var query = rs2NpcCache.query().withName("Guard").within(10);
+Rs2NpcModel guard = query.nearestOnClientThread();  // Executes here</code></pre>
                     </div>
                 </div>
             </section>
@@ -145,12 +245,12 @@ Rs2NpcModel guard = query.nearest();  // Executes here</code></pre>
                 <h2 class="text-2xl font-semibold mb-2">Rs2NpcCache</h2>
                 <p class="text-neutral-500 text-sm mb-6">Query NPCs in the game world</p>
 
-<pre><code class="language-java">@Inject Rs2NpcCache rs2NpcCache;
+                <pre><code class="language-java">@Inject Rs2NpcCache rs2NpcCache;
 
-// Find nearest banker
+// Find nearest banker (uses client thread for name query)
 Rs2NpcModel banker = rs2NpcCache.query()
     .withName("Banker")
-    .nearest();
+    .nearestOnClientThread();
 
 // Find all guards within 10 tiles
 List&lt;Rs2NpcModel&gt; guards = rs2NpcCache.query()
@@ -163,7 +263,7 @@ Rs2NpcModel enemy = rs2NpcCache.query()
     .withName("Goblin")
     .where(npc -> !npc.isInteracting())
     .where(npc -> npc.getHealthRatio() > 0)
-    .nearest(10);</code></pre>
+    .nearestOnClientThread();</code></pre>
 
                 <h4 class="font-medium mt-8 mb-3 text-sm">Rs2NpcModel Methods</h4>
                 <div class="grid grid-cols-2 gap-2 text-sm">
@@ -183,14 +283,14 @@ Rs2NpcModel enemy = rs2NpcCache.query()
                 <h2 class="text-2xl font-semibold mb-2">Rs2TileItemCache</h2>
                 <p class="text-neutral-500 text-sm mb-6">Query ground items</p>
 
-<pre><code class="language-java">@Inject Rs2TileItemCache rs2TileItemCache;
+                <pre><code class="language-java">@Inject Rs2TileItemCache rs2TileItemCache;
 
-// Find nearest coins
+// Find nearest coins (uses client thread for name query)
 Rs2TileItemModel coins = rs2TileItemCache.query()
     .withName("Coins")
-    .nearest();
+    .nearestOnClientThread();
 
-// Find valuable loot
+// Find valuable loot (no name query, no client thread needed)
 Rs2TileItemModel loot = rs2TileItemCache.query()
     .where(item -> item.getTotalGeValue() >= 5000)
     .where(Rs2TileItemModel::isLootAble)
@@ -218,17 +318,17 @@ if (loot != null) {
                 <h2 class="text-2xl font-semibold mb-2">Rs2PlayerCache</h2>
                 <p class="text-neutral-500 text-sm mb-6">Query other players</p>
 
-<pre><code class="language-java">@Inject Rs2PlayerCache rs2PlayerCache;
+                <pre><code class="language-java">@Inject Rs2PlayerCache rs2PlayerCache;
 
-// Find nearest player
+// Find nearest player (no name query, no client thread needed)
 Rs2PlayerModel player = rs2PlayerCache.query().nearest();
 
-// Find player by name
+// Find player by name (uses client thread for name query)
 Rs2PlayerModel target = rs2PlayerCache.query()
     .withName("PlayerName")
-    .nearest();
+    .nearestOnClientThread();
 
-// Find all friends nearby
+// Find all friends nearby (no name query, no client thread needed)
 List&lt;Rs2PlayerModel&gt; friends = rs2PlayerCache.query()
     .where(Rs2PlayerModel::isFriend)
     .within(20)
@@ -250,17 +350,17 @@ List&lt;Rs2PlayerModel&gt; friends = rs2PlayerCache.query()
                 <h2 class="text-2xl font-semibold mb-2">Rs2TileObjectCache</h2>
                 <p class="text-neutral-500 text-sm mb-6">Query game objects (trees, rocks, banks, etc.)</p>
 
-<pre><code class="language-java">@Inject Rs2TileObjectCache rs2TileObjectCache;
+                <pre><code class="language-java">@Inject Rs2TileObjectCache rs2TileObjectCache;
 
-// Find nearest tree
+// Find nearest tree (uses client thread for name query)
 Rs2TileObjectModel tree = rs2TileObjectCache.query()
     .withName("Tree")
-    .nearest();
+    .nearestOnClientThread();
 
-// Find nearest bank
+// Find nearest bank (uses client thread for name query)
 Rs2TileObjectModel bank = rs2TileObjectCache.query()
     .withNames("Bank booth", "Bank chest", "Bank")
-    .nearest(20);
+    .nearestOnClientThread();
 
 if (bank != null && !Rs2Bank.isOpen()) {
     bank.click("Bank");
@@ -297,12 +397,24 @@ if (bank != null && !Rs2Bank.isOpen()) {
                         <p class="text-neutral-500 text-sm mt-1">Returns first matching entity</p>
                     </div>
                     <div class="card p-4">
+                        <code class="text-white">firstOnClientThread()</code>
+                        <p class="text-neutral-500 text-sm mt-1">Returns first entity (client thread safe). <span
+                                class="text-amber-500">Required for name queries.</span></p>
+                    </div>
+                    <div class="card p-4">
+                        <code class="text-white">nearestOnClientThread()</code>
+                        <p class="text-neutral-500 text-sm mt-1">Returns nearest entity (client thread safe). <span
+                                class="text-amber-500">Required for name queries.</span></p>
+                    </div>
+                    <div class="card p-4">
                         <code class="text-white">withName(String name)</code>
-                        <p class="text-neutral-500 text-sm mt-1">Find nearest with exact name</p>
+                        <p class="text-neutral-500 text-sm mt-1">Find nearest with exact name. <span
+                                class="text-amber-500">⚠️ Use with <code>nearestOnClientThread()</code></span></p>
                     </div>
                     <div class="card p-4">
                         <code class="text-white">withNames(String... names)</code>
-                        <p class="text-neutral-500 text-sm mt-1">Find nearest matching any name</p>
+                        <p class="text-neutral-500 text-sm mt-1">Find nearest matching any name. <span
+                                class="text-amber-500">⚠️ Use with <code>nearestOnClientThread()</code></span></p>
                     </div>
                     <div class="card p-4">
                         <code class="text-white">withId(int id)</code>
@@ -333,6 +445,78 @@ if (bank != null && !Rs2Bank.isOpen()) {
                 </div>
             </section>
 
+            <!-- Threading -->
+            <section id="threading" class="content-section mb-20">
+                <h2 class="text-2xl font-semibold mb-6">Threading</h2>
+                <p class="text-neutral-400 text-sm mb-6">Scripts run on a scheduled executor thread, but certain
+                    RuneLite API calls must run on the client thread.</p>
+
+                <div class="card p-5 mb-8 border-amber-900/50 bg-amber-950/20">
+                    <p class="text-amber-200 text-sm font-medium mb-2">⚠️ Client Thread Required</p>
+                    <p class="text-neutral-300 text-sm">Queries using <code>withName()</code> or
+                        <code>withNames()</code> access widget data. Use <code>nearestOnClientThread()</code> or
+                        <code>firstOnClientThread()</code> instead of <code>nearest()</code> or <code>first()</code>.
+                    </p>
+                </div>
+
+                <div class="space-y-8">
+                    <div>
+                        <h4 class="font-medium mb-3">Name Queries</h4>
+                        <pre><code class="language-java">// ❌ WRONG - May throw "must be called on client thread" error
+Rs2NpcModel banker = rs2NpcCache.query()
+    .withName("Banker")
+    .nearest();
+
+// ✅ CORRECT - Runs the query on the client thread
+Rs2NpcModel banker = rs2NpcCache.query()
+    .withName("Banker")
+    .nearestOnClientThread();
+
+// ✅ CORRECT - Using first variant
+Rs2NpcModel banker = rs2NpcCache.query()
+    .withName("Banker")
+    .firstOnClientThread();</code></pre>
+                    </div>
+
+                    <div>
+                        <h4 class="font-medium mb-3">Manual Client Thread Invocation</h4>
+                        <p class="text-neutral-400 text-sm mb-3">For complex scenarios or multiple client-thread
+                            operations:</p>
+                        <pre><code class="language-java">// For operations that return a value
+Rs2NpcModel banker = Microbot.getClientThread().invoke(() -> 
+    rs2NpcCache.query()
+        .withName("Banker")
+        .nearest()
+);
+
+// For void operations
+Microbot.getClientThread().invoke(() -> {
+    Rs2NpcModel npc = rs2NpcCache.query().withName("Guard").nearest();
+    if (npc != null) {
+        npc.click("Attack");
+    }
+});</code></pre>
+                    </div>
+
+                    <div>
+                        <h4 class="font-medium mb-3">Other Client Thread Operations</h4>
+                        <p class="text-neutral-400 text-sm mb-3">Always use
+                            <code>Microbot.getClientThread().invoke()</code> when accessing:
+                        </p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm">
+                            <code>client.getWidget()</code>
+                            <code>widget.isHidden()</code>
+                            <code>client.getVarbitValue()</code>
+                            <code>client.getLocalPlayer().getWorldView()</code>
+                            <code>BoatLocation.fromLocal()</code>
+                            <code>TrialInfo.getCurrent()</code>
+                            <code>Rs2BoatCache.getLocalBoat()</code>
+                            <code>Rs2BoatModel.isNavigating()</code>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             <!-- Common Patterns -->
             <section id="patterns" class="content-section mb-20">
                 <h2 class="text-2xl font-semibold mb-6">Common Patterns</h2>
@@ -340,11 +524,11 @@ if (bank != null && !Rs2Bank.isOpen()) {
                 <div class="space-y-8">
                     <div>
                         <h4 class="font-medium mb-3">Combat Script</h4>
-<pre><code class="language-java">Rs2NpcModel enemy = rs2NpcCache.query()
+                        <pre><code class="language-java">Rs2NpcModel enemy = rs2NpcCache.query()
     .withName("Goblin")
     .where(npc -> !npc.isInteracting())
     .where(npc -> npc.getHealthRatio() > 0)
-    .nearest(10);
+    .nearestOnClientThread();
 
 if (enemy != null && !Rs2Player.isInCombat()) {
     enemy.click("Attack");
@@ -353,10 +537,10 @@ if (enemy != null && !Rs2Player.isInCombat()) {
 
                     <div>
                         <h4 class="font-medium mb-3">Looting Script</h4>
-<pre><code class="language-java">Rs2TileItemModel loot = rs2TileItemCache.query()
+                        <pre><code class="language-java">Rs2TileItemModel loot = rs2TileItemCache.query()
     .where(Rs2TileItemModel::isLootAble)
     .where(item -> item.getTotalGeValue() >= 5000)
-    .nearest(15);
+    .nearest(15);  // No name query, no client thread needed
 
 if (loot != null) {
     loot.pickup();
@@ -365,9 +549,9 @@ if (loot != null) {
 
                     <div>
                         <h4 class="font-medium mb-3">Null Safety</h4>
-<pre><code class="language-java">Rs2NpcModel banker = rs2NpcCache.query()
+                        <pre><code class="language-java">Rs2NpcModel banker = rs2NpcCache.query()
     .withName("Banker")
-    .nearest();
+    .nearestOnClientThread();
 
 if (banker != null) {
     banker.click("Bank");
@@ -376,14 +560,14 @@ if (banker != null) {
 
                     <div>
                         <h4 class="font-medium mb-3">Reusable Predicates</h4>
-<pre><code class="language-java">Predicate&lt;Rs2NpcModel&gt; isAlive = npc -> npc.getHealthRatio() > 0;
+                        <pre><code class="language-java">Predicate&lt;Rs2NpcModel&gt; isAlive = npc -> npc.getHealthRatio() > 0;
 Predicate&lt;Rs2NpcModel&gt; notBusy = npc -> !npc.isInteracting();
 
 Rs2NpcModel target = rs2NpcCache.query()
     .withName("Cow")
     .where(isAlive)
     .where(notBusy)
-    .nearest();</code></pre>
+    .nearestOnClientThread();</code></pre>
                     </div>
                 </div>
             </section>
@@ -399,15 +583,17 @@ Rs2NpcModel target = rs2NpcCache.query()
                         <div class="grid md:grid-cols-2 gap-4">
                             <div>
                                 <p class="text-xs text-neutral-500 mb-2">Legacy</p>
-<pre><code class="language-java">NPC npc = Rs2Npc.getNpc("Banker");
+                                <pre><code class="language-java">NPC npc = Rs2Npc.getNpc("Banker");
 NPC nearest = Rs2Npc.getNearestNpc("Guard");</code></pre>
                             </div>
                             <div>
                                 <p class="text-xs text-neutral-500 mb-2">Queryable</p>
-<pre><code class="language-java">Rs2NpcModel npc = rs2NpcCache.query()
-    .withName("Banker");
+                                <pre><code class="language-java">Rs2NpcModel npc = rs2NpcCache.query()
+    .withName("Banker")
+    .nearestOnClientThread();
 Rs2NpcModel nearest = rs2NpcCache.query()
-    .withName("Guard").nearest();</code></pre>
+    .withName("Guard")
+    .nearestOnClientThread();</code></pre>
                             </div>
                         </div>
                     </div>
@@ -417,12 +603,13 @@ Rs2NpcModel nearest = rs2NpcCache.query()
                         <div class="grid md:grid-cols-2 gap-4">
                             <div>
                                 <p class="text-xs text-neutral-500 mb-2">Legacy</p>
-<pre><code class="language-java">TileItem item = Rs2GroundItem.findItem("Coins");</code></pre>
+                                <pre><code class="language-java">TileItem item = Rs2GroundItem.findItem("Coins");</code></pre>
                             </div>
                             <div>
                                 <p class="text-xs text-neutral-500 mb-2">Queryable</p>
-<pre><code class="language-java">Rs2TileItemModel item = rs2TileItemCache.query()
-    .withName("Coins").first();</code></pre>
+                                <pre><code class="language-java">Rs2TileItemModel item = rs2TileItemCache.query()
+    .withName("Coins")
+    .firstOnClientThread();</code></pre>
                             </div>
                         </div>
                     </div>
@@ -432,11 +619,11 @@ Rs2NpcModel nearest = rs2NpcCache.query()
                         <div class="grid md:grid-cols-2 gap-4">
                             <div>
                                 <p class="text-xs text-neutral-500 mb-2">Legacy</p>
-<pre><code class="language-java">Rs2Npc.interact(banker, "Bank");</code></pre>
+                                <pre><code class="language-java">Rs2Npc.interact(banker, "Bank");</code></pre>
                             </div>
                             <div>
                                 <p class="text-xs text-neutral-500 mb-2">Queryable</p>
-<pre><code class="language-java">banker.click("Bank");</code></pre>
+                                <pre><code class="language-java">banker.click("Bank");</code></pre>
                             </div>
                         </div>
                     </div>
@@ -445,13 +632,14 @@ Rs2NpcModel nearest = rs2NpcCache.query()
 
             <!-- Footer -->
             <footer class="border-t border-neutral-800 pt-8 text-sm text-neutral-600">
-                <p>Microbot Queryable API v2.2.0 &middot; December 30, 2025</p>
+                <p>Microbot Queryable API v2.2.0 &middot; January 4, 2026</p>
             </footer>
         </main>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
     <script>
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -483,4 +671,5 @@ Rs2NpcModel nearest = rs2NpcCache.query()
         });
     </script>
 </body>
+
 </html>

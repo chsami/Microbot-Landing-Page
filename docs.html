@@ -139,7 +139,8 @@
 
                 <nav class="space-y-1 text-sm">
                     <a href="#getting-started" class="nav-link block py-1.5">Getting Started</a>
-                    <a href="#core-concepts" class="nav-link block py-1.5">Core Concepts</a>
+                    <a href="#architecture" class="nav-link block py-1.5">Architecture</a>
+                    <a href="#usage-rules" class="nav-link block py-1.5">Usage Rules</a>
 
                     <div class="pt-4 pb-2">
                         <p class="text-xs text-neutral-600 uppercase tracking-wide">Caches</p>
@@ -148,14 +149,17 @@
                     <a href="#items" class="nav-link block py-1.5 pl-3">Rs2TileItemCache</a>
                     <a href="#players" class="nav-link block py-1.5 pl-3">Rs2PlayerCache</a>
                     <a href="#objects" class="nav-link block py-1.5 pl-3">Rs2TileObjectCache</a>
+                    <a href="#boats" class="nav-link block py-1.5 pl-3">Rs2BoatCache</a>
 
                     <div class="pt-4 pb-2">
                         <p class="text-xs text-neutral-600 uppercase tracking-wide">Reference</p>
                     </div>
                     <a href="#api" class="nav-link block py-1.5">API Reference</a>
                     <a href="#threading" class="nav-link block py-1.5">Threading</a>
+                    <a href="#worldview" class="nav-link block py-1.5">World View</a>
                     <a href="#patterns" class="nav-link block py-1.5">Common Patterns</a>
                     <a href="#migration" class="nav-link block py-1.5">Migration Guide</a>
+                    <a href="#deprecated" class="nav-link block py-1.5">Deprecated APIs</a>
                 </nav>
 
                 <div class="mt-8 pt-6 border-t border-neutral-800 text-xs space-y-2">
@@ -177,67 +181,144 @@
                 <div class="card p-5 mb-8">
                     <p class="text-neutral-300 text-sm leading-relaxed">
                         The Queryable API provides a type-safe, chainable way to find NPCs, players, ground items, and
-                        tile objects. Inject the cache, call <code>query()</code>, chain filters, and execute.
+                        tile objects. Access the cache via <code>Microbot.getRs2XxxCache()</code>, call <code>query()</code>, chain filters, and execute.
+                    </p>
+                    <p class="text-amber-400 text-sm mt-3">
+                        📚 <strong>Complete Documentation:</strong> See <code>api/QUERYABLE_API.md</code> for comprehensive guide
                     </p>
                 </div>
 
                 <h3 class="text-lg font-medium mb-4">Quick Example</h3>
-                <pre><code class="language-java">@Inject
-Rs2NpcCache rs2NpcCache;
-
-Rs2NpcModel banker = rs2NpcCache.query()
+                <pre><code class="language-java">// Access cache via Microbot static getter
+Rs2NpcModel banker = Microbot.getRs2NpcCache().query()
     .withName("Banker")
     .where(npc -> !npc.isInteracting())
     .nearestOnClientThread();</code></pre>
-
-                <h3 class="text-lg font-medium mt-10 mb-4">Setup</h3>
-                <pre><code class="language-java">// Imports
-import net.runelite.client.plugins.microbot.api.npc.Rs2NpcCache;
-import net.runelite.client.plugins.microbot.api.tileitem.Rs2TileItemCache;
-import net.runelite.client.plugins.microbot.api.player.Rs2PlayerCache;
-import net.runelite.client.plugins.microbot.api.tileobject.Rs2TileObjectCache;
-
-// Inject in your class
-@Inject Rs2NpcCache rs2NpcCache;
-@Inject Rs2TileItemCache rs2TileItemCache;
-@Inject Rs2PlayerCache rs2PlayerCache;
-@Inject Rs2TileObjectCache rs2TileObjectCache;</code></pre>
             </section>
 
-            <!-- Core Concepts -->
-            <section id="core-concepts" class="content-section mb-20">
-                <h2 class="text-2xl font-semibold mb-6">Core Concepts</h2>
+            <!-- Architecture -->
+            <section id="architecture" class="content-section mb-20">
+                <h2 class="text-2xl font-semibold mb-6">Singleton Architecture</h2>
 
-                <div class="space-y-8">
-                    <div>
-                        <h3 class="font-medium mb-3">Dependency Injection</h3>
-                        <p class="text-neutral-400 text-sm mb-3">Always inject the cache first, then call
-                            <code>query()</code>:
-                        </p>
-                        <pre><code class="language-java">@Inject
-Rs2NpcCache rs2NpcCache;
+                <div class="card p-5 mb-8">
+                    <p class="text-neutral-300 text-sm leading-relaxed">
+                        All caches are <code>@Singleton</code> classes injected via Guice and exposed through <code>Microbot</code> static getters.
+                    </p>
+                </div>
 
-Rs2NpcModel npc = rs2NpcCache.query().withName("Guard").nearestOnClientThread();</code></pre>
+                <h3 class="text-lg font-medium mb-4">Cache Structure</h3>
+                <pre><code class="language-java">@Singleton
+public final class Rs2NpcCache {
+    @Inject
+    public Rs2NpcCache(Client client, ClientThread clientThread) { ... }
+
+    public Stream&lt;Rs2NpcModel&gt; getStream() { ... }
+    public Rs2NpcQueryable query() { return new Rs2NpcQueryable(); }
+}</code></pre>
+
+                <p class="text-neutral-400 text-sm mt-6 mb-4">Each cache provides:</p>
+                <div class="space-y-2 text-sm">
+                    <div class="card p-3">
+                        <code class="text-white">getStream()</code>
+                        <span class="text-neutral-500 ml-2">- Direct access to the underlying stream</span>
                     </div>
-
-                    <div>
-                        <h3 class="font-medium mb-3">Fluent Chaining</h3>
-                        <p class="text-neutral-400 text-sm mb-3">Chain multiple filters together:</p>
-                        <pre><code class="language-java">rs2NpcCache.query()
-    .withName("Guard")
-    .where(npc -> !npc.isInteracting())
-    .within(15)
-    .nearestOnClientThread();</code></pre>
-                    </div>
-
-                    <div>
-                        <h3 class="font-medium mb-3">Lazy Evaluation</h3>
-                        <p class="text-neutral-400 text-sm mb-3">Queries execute only when you call a terminal
-                            operation:</p>
-                        <pre><code class="language-java">var query = rs2NpcCache.query().withName("Guard").within(10);
-Rs2NpcModel guard = query.nearestOnClientThread();  // Executes here</code></pre>
+                    <div class="card p-3">
+                        <code class="text-white">query()</code>
+                        <span class="text-neutral-500 ml-2">- Returns a fluent queryable interface for filtering</span>
                     </div>
                 </div>
+
+                <h3 class="text-lg font-medium mt-10 mb-4">Available Caches</h3>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm">
+                        <thead>
+                            <tr class="border-b border-neutral-800">
+                                <th class="text-left py-3 px-4 text-neutral-400">Cache</th>
+                                <th class="text-left py-3 px-4 text-neutral-400">Accessor</th>
+                                <th class="text-left py-3 px-4 text-neutral-400">Methods</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b border-neutral-800/50">
+                                <td class="py-3 px-4"><code>Rs2NpcCache</code></td>
+                                <td class="py-3 px-4"><code>Microbot.getRs2NpcCache()</code></td>
+                                <td class="py-3 px-4"><code>.query()</code>, <code>.getStream()</code></td>
+                            </tr>
+                            <tr class="border-b border-neutral-800/50">
+                                <td class="py-3 px-4"><code>Rs2PlayerCache</code></td>
+                                <td class="py-3 px-4"><code>Microbot.getRs2PlayerCache()</code></td>
+                                <td class="py-3 px-4"><code>.query()</code>, <code>.getStream()</code></td>
+                            </tr>
+                            <tr class="border-b border-neutral-800/50">
+                                <td class="py-3 px-4"><code>Rs2TileItemCache</code></td>
+                                <td class="py-3 px-4"><code>Microbot.getRs2TileItemCache()</code></td>
+                                <td class="py-3 px-4"><code>.query()</code>, <code>.getStream()</code></td>
+                            </tr>
+                            <tr class="border-b border-neutral-800/50">
+                                <td class="py-3 px-4"><code>Rs2TileObjectCache</code></td>
+                                <td class="py-3 px-4"><code>Microbot.getRs2TileObjectCache()</code></td>
+                                <td class="py-3 px-4"><code>.query()</code>, <code>.getStream()</code></td>
+                            </tr>
+                            <tr class="border-b border-neutral-800/50">
+                                <td class="py-3 px-4"><code>Rs2BoatCache</code></td>
+                                <td class="py-3 px-4"><code>Microbot.getRs2BoatCache()</code></td>
+                                <td class="py-3 px-4"><code>.getLocalBoat()</code>, <code>.getBoat(player)</code></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Usage Rules -->
+            <section id="usage-rules" class="content-section mb-20">
+                <h2 class="text-2xl font-semibold mb-6">Usage Rules</h2>
+
+                <div class="card p-5 mb-8 border-red-900/50 bg-red-950/20">
+                    <p class="text-red-200 text-sm font-medium mb-2">⚠️ CRITICAL</p>
+                    <p class="text-neutral-300 text-sm">Never instantiate caches or queryables directly. Always access via <code>Microbot.getRs2XxxCache()</code>.</p>
+                </div>
+
+                <h3 class="text-lg font-medium mb-4">✅ Correct Usage Pattern</h3>
+                <pre><code class="language-java">// ✅ CORRECT - Use cache.query() method
+Rs2NpcModel banker = Microbot.getRs2NpcCache().query()
+    .withName("Banker")
+    .where(npc -> !npc.isInteracting())
+    .nearestOnClientThread();
+
+// ✅ CORRECT - Ground items via cache
+Rs2TileItemModel loot = Microbot.getRs2TileItemCache().query()
+    .withName("Dragon bones")
+    .where(item -> item.getValue() > 1000)
+    .nearestOnClientThread();
+
+// ✅ CORRECT - Tile objects via cache
+Rs2TileObjectModel tree = Microbot.getRs2TileObjectCache().query()
+    .withName("Oak tree")
+    .nearestOnClientThread();
+tree.click("Chop down");
+
+// ✅ CORRECT - Direct stream access when needed
+Rs2NpcModel firstNpc = Microbot.getRs2NpcCache().getStream()
+    .filter(npc -> npc.getName() != null)
+    .findFirst()
+    .orElse(null);
+
+// ✅ CORRECT - Boat cache (direct methods, no queryable)
+Rs2BoatModel boat = Microbot.getRs2BoatCache().getLocalBoat();
+if (boat != null) {
+    boat.trimSails();
+    boat.navigate();
+}</code></pre>
+
+                <h3 class="text-lg font-medium mt-10 mb-4">❌ Wrong Usage</h3>
+                <pre><code class="language-java">// ❌ WRONG - Don't instantiate caches
+Rs2NpcCache cache = new Rs2NpcCache();
+
+// ❌ WRONG - Don't instantiate queryables directly
+Rs2NpcModel npc = new Rs2NpcQueryable().withName("Banker").nearest();
+
+// ❌ WRONG - Don't use deprecated static methods
+Rs2NpcModel npc = Rs2NpcCache.getNpcsStream().findFirst().orElse(null);</code></pre>
             </section>
 
             <!-- NPC Cache -->
@@ -245,21 +326,19 @@ Rs2NpcModel guard = query.nearestOnClientThread();  // Executes here</code></pre
                 <h2 class="text-2xl font-semibold mb-2">Rs2NpcCache</h2>
                 <p class="text-neutral-500 text-sm mb-6">Query NPCs in the game world</p>
 
-                <pre><code class="language-java">@Inject Rs2NpcCache rs2NpcCache;
-
-// Find nearest banker (uses client thread for name query)
-Rs2NpcModel banker = rs2NpcCache.query()
+                <pre><code class="language-java">// Find nearest banker (uses client thread for name query)
+Rs2NpcModel banker = Microbot.getRs2NpcCache().query()
     .withName("Banker")
     .nearestOnClientThread();
 
 // Find all guards within 10 tiles
-List&lt;Rs2NpcModel&gt; guards = rs2NpcCache.query()
+List&lt;Rs2NpcModel&gt; guards = Microbot.getRs2NpcCache().query()
     .withName("Guard")
     .within(10)
     .toList();
 
 // Find attackable enemy
-Rs2NpcModel enemy = rs2NpcCache.query()
+Rs2NpcModel enemy = Microbot.getRs2NpcCache().query()
     .withName("Goblin")
     .where(npc -> !npc.isInteracting())
     .where(npc -> npc.getHealthRatio() > 0)
@@ -283,15 +362,13 @@ Rs2NpcModel enemy = rs2NpcCache.query()
                 <h2 class="text-2xl font-semibold mb-2">Rs2TileItemCache</h2>
                 <p class="text-neutral-500 text-sm mb-6">Query ground items</p>
 
-                <pre><code class="language-java">@Inject Rs2TileItemCache rs2TileItemCache;
-
-// Find nearest coins (uses client thread for name query)
-Rs2TileItemModel coins = rs2TileItemCache.query()
+                <pre><code class="language-java">// Find nearest coins (uses client thread for name query)
+Rs2TileItemModel coins = Microbot.getRs2TileItemCache().query()
     .withName("Coins")
     .nearestOnClientThread();
 
 // Find valuable loot (no name query, no client thread needed)
-Rs2TileItemModel loot = rs2TileItemCache.query()
+Rs2TileItemModel loot = Microbot.getRs2TileItemCache().query()
     .where(item -> item.getTotalGeValue() >= 5000)
     .where(Rs2TileItemModel::isLootAble)
     .nearest(10);
@@ -318,18 +395,16 @@ if (loot != null) {
                 <h2 class="text-2xl font-semibold mb-2">Rs2PlayerCache</h2>
                 <p class="text-neutral-500 text-sm mb-6">Query other players</p>
 
-                <pre><code class="language-java">@Inject Rs2PlayerCache rs2PlayerCache;
-
-// Find nearest player (no name query, no client thread needed)
-Rs2PlayerModel player = rs2PlayerCache.query().nearest();
+                <pre><code class="language-java">// Find nearest player (no name query, no client thread needed)
+Rs2PlayerModel player = Microbot.getRs2PlayerCache().query().nearest();
 
 // Find player by name (uses client thread for name query)
-Rs2PlayerModel target = rs2PlayerCache.query()
+Rs2PlayerModel target = Microbot.getRs2PlayerCache().query()
     .withName("PlayerName")
     .nearestOnClientThread();
 
 // Find all friends nearby (no name query, no client thread needed)
-List&lt;Rs2PlayerModel&gt; friends = rs2PlayerCache.query()
+List&lt;Rs2PlayerModel&gt; friends = Microbot.getRs2PlayerCache().query()
     .where(Rs2PlayerModel::isFriend)
     .within(20)
     .toList();</code></pre>
@@ -350,15 +425,13 @@ List&lt;Rs2PlayerModel&gt; friends = rs2PlayerCache.query()
                 <h2 class="text-2xl font-semibold mb-2">Rs2TileObjectCache</h2>
                 <p class="text-neutral-500 text-sm mb-6">Query game objects (trees, rocks, banks, etc.)</p>
 
-                <pre><code class="language-java">@Inject Rs2TileObjectCache rs2TileObjectCache;
-
-// Find nearest tree (uses client thread for name query)
-Rs2TileObjectModel tree = rs2TileObjectCache.query()
+                <pre><code class="language-java">// Find nearest tree (uses client thread for name query)
+Rs2TileObjectModel tree = Microbot.getRs2TileObjectCache().query()
     .withName("Tree")
     .nearestOnClientThread();
 
 // Find nearest bank (uses client thread for name query)
-Rs2TileObjectModel bank = rs2TileObjectCache.query()
+Rs2TileObjectModel bank = Microbot.getRs2TileObjectCache().query()
     .withNames("Bank booth", "Bank chest", "Bank")
     .nearestOnClientThread();
 
@@ -373,6 +446,46 @@ if (bank != null && !Rs2Bank.isOpen()) {
                     <code>obj.getWorldLocation()</code>
                     <code>obj.click("Action")</code>
                     <code>obj.interact("Action")</code>
+                    <code>obj.isReachable()</code>
+                </div>
+            </section>
+
+            <!-- Boat Cache -->
+            <section id="boats" class="content-section mb-20">
+                <h2 class="text-2xl font-semibold mb-2">Rs2BoatCache</h2>
+                <p class="text-neutral-500 text-sm mb-6">Access boat information (Sailing content)</p>
+
+                <div class="card p-5 mb-6 border-blue-900/50 bg-blue-950/20">
+                    <p class="text-blue-200 text-sm">
+                        <strong>Note:</strong> Rs2BoatCache provides direct methods instead of a queryable interface.
+                    </p>
+                </div>
+
+                <pre><code class="language-java">// Get the local player's boat
+Rs2BoatModel boat = Microbot.getRs2BoatCache().getLocalBoat();
+
+// Get another player's boat
+Rs2BoatModel otherBoat = Microbot.getRs2BoatCache().getBoat(player);
+
+if (boat != null) {
+    boat.trimSails();
+    boat.navigate();
+    
+    // Check boat state
+    boolean isNavigating = boat.isNavigating();
+}</code></pre>
+
+                <h4 class="font-medium mt-8 mb-3 text-sm">Rs2BoatCache Methods</h4>
+                <div class="grid grid-cols-2 gap-2 text-sm">
+                    <code>getLocalBoat()</code>
+                    <code>getBoat(Player player)</code>
+                </div>
+
+                <h4 class="font-medium mt-6 mb-3 text-sm">Rs2BoatModel Methods</h4>
+                <div class="grid grid-cols-2 gap-2 text-sm">
+                    <code>boat.trimSails()</code>
+                    <code>boat.navigate()</code>
+                    <code>boat.isNavigating()</code>
                 </div>
             </section>
 
@@ -463,17 +576,17 @@ if (bank != null && !Rs2Bank.isOpen()) {
                     <div>
                         <h4 class="font-medium mb-3">Name Queries</h4>
                         <pre><code class="language-java">// ❌ WRONG - May throw "must be called on client thread" error
-Rs2NpcModel banker = rs2NpcCache.query()
+Rs2NpcModel banker = Microbot.getRs2NpcCache().query()
     .withName("Banker")
     .nearest();
 
 // ✅ CORRECT - Runs the query on the client thread
-Rs2NpcModel banker = rs2NpcCache.query()
+Rs2NpcModel banker = Microbot.getRs2NpcCache().query()
     .withName("Banker")
     .nearestOnClientThread();
 
 // ✅ CORRECT - Using first variant
-Rs2NpcModel banker = rs2NpcCache.query()
+Rs2NpcModel banker = Microbot.getRs2NpcCache().query()
     .withName("Banker")
     .firstOnClientThread();</code></pre>
                     </div>
@@ -484,14 +597,14 @@ Rs2NpcModel banker = rs2NpcCache.query()
                             operations:</p>
                         <pre><code class="language-java">// For operations that return a value
 Rs2NpcModel banker = Microbot.getClientThread().invoke(() -> 
-    rs2NpcCache.query()
+    Microbot.getRs2NpcCache().query()
         .withName("Banker")
         .nearest()
 );
 
 // For void operations
 Microbot.getClientThread().invoke(() -> {
-    Rs2NpcModel npc = rs2NpcCache.query().withName("Guard").nearest();
+    Rs2NpcModel npc = Microbot.getRs2NpcCache().query().withName("Guard").nearest();
     if (npc != null) {
         npc.click("Attack");
     }
@@ -517,6 +630,29 @@ Microbot.getClientThread().invoke(() -> {
                 </div>
             </section>
 
+            <!-- World View -->
+            <section id="worldview" class="content-section mb-20">
+                <h2 class="text-2xl font-semibold mb-6">Boat World View Support</h2>
+                <p class="text-neutral-400 text-sm mb-6">When on a boat, objects exist in a different world view. Use <code>.fromWorldView()</code> to query the player's current world view.</p>
+
+                <pre><code class="language-java">// Query objects in the boat's world view
+var sails = Microbot.getRs2TileObjectCache().query()
+    .fromWorldView()
+    .withName("Sails")
+    .nearestOnClientThread();
+
+// Reachability is automatically handled for same world view
+if (sails != null && sails.isReachable()) {
+    sails.click("Trim");
+}</code></pre>
+
+                <div class="card p-5 mt-6 border-blue-900/50 bg-blue-950/20">
+                    <p class="text-blue-200 text-sm">
+                        <strong>Tip:</strong> The <code>.fromWorldView()</code> method automatically uses the local player's current world view, which is essential when on boats or in other instanced areas.
+                    </p>
+                </div>
+            </section>
+
             <!-- Common Patterns -->
             <section id="patterns" class="content-section mb-20">
                 <h2 class="text-2xl font-semibold mb-6">Common Patterns</h2>
@@ -524,7 +660,7 @@ Microbot.getClientThread().invoke(() -> {
                 <div class="space-y-8">
                     <div>
                         <h4 class="font-medium mb-3">Combat Script</h4>
-                        <pre><code class="language-java">Rs2NpcModel enemy = rs2NpcCache.query()
+                        <pre><code class="language-java">Rs2NpcModel enemy = Microbot.getRs2NpcCache().query()
     .withName("Goblin")
     .where(npc -> !npc.isInteracting())
     .where(npc -> npc.getHealthRatio() > 0)
@@ -537,7 +673,7 @@ if (enemy != null && !Rs2Player.isInCombat()) {
 
                     <div>
                         <h4 class="font-medium mb-3">Looting Script</h4>
-                        <pre><code class="language-java">Rs2TileItemModel loot = rs2TileItemCache.query()
+                        <pre><code class="language-java">Rs2TileItemModel loot = Microbot.getRs2TileItemCache().query()
     .where(Rs2TileItemModel::isLootAble)
     .where(item -> item.getTotalGeValue() >= 5000)
     .nearest(15);  // No name query, no client thread needed
@@ -549,7 +685,7 @@ if (loot != null) {
 
                     <div>
                         <h4 class="font-medium mb-3">Null Safety</h4>
-                        <pre><code class="language-java">Rs2NpcModel banker = rs2NpcCache.query()
+                        <pre><code class="language-java">Rs2NpcModel banker = Microbot.getRs2NpcCache().query()
     .withName("Banker")
     .nearestOnClientThread();
 
@@ -563,7 +699,7 @@ if (banker != null) {
                         <pre><code class="language-java">Predicate&lt;Rs2NpcModel&gt; isAlive = npc -> npc.getHealthRatio() > 0;
 Predicate&lt;Rs2NpcModel&gt; notBusy = npc -> !npc.isInteracting();
 
-Rs2NpcModel target = rs2NpcCache.query()
+Rs2NpcModel target = Microbot.getRs2NpcCache().query()
     .withName("Cow")
     .where(isAlive)
     .where(notBusy)
@@ -588,10 +724,10 @@ NPC nearest = Rs2Npc.getNearestNpc("Guard");</code></pre>
                             </div>
                             <div>
                                 <p class="text-xs text-neutral-500 mb-2">Queryable</p>
-                                <pre><code class="language-java">Rs2NpcModel npc = rs2NpcCache.query()
+                                <pre><code class="language-java">Rs2NpcModel npc = Microbot.getRs2NpcCache().query()
     .withName("Banker")
     .nearestOnClientThread();
-Rs2NpcModel nearest = rs2NpcCache.query()
+Rs2NpcModel nearest = Microbot.getRs2NpcCache().query()
     .withName("Guard")
     .nearestOnClientThread();</code></pre>
                             </div>
@@ -607,7 +743,7 @@ Rs2NpcModel nearest = rs2NpcCache.query()
                             </div>
                             <div>
                                 <p class="text-xs text-neutral-500 mb-2">Queryable</p>
-                                <pre><code class="language-java">Rs2TileItemModel item = rs2TileItemCache.query()
+                                <pre><code class="language-java">Rs2TileItemModel item = Microbot.getRs2TileItemCache().query()
     .withName("Coins")
     .firstOnClientThread();</code></pre>
                             </div>
@@ -626,6 +762,42 @@ Rs2NpcModel nearest = rs2NpcCache.query()
                                 <pre><code class="language-java">banker.click("Bank");</code></pre>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Deprecated APIs -->
+            <section id="deprecated" class="content-section mb-20">
+                <h2 class="text-2xl font-semibold mb-6">Legacy Direct Cache Access (Deprecated)</h2>
+
+                <div class="card p-5 mb-8 border-amber-900/50 bg-amber-950/20">
+                    <p class="text-amber-200 text-sm font-medium mb-2">⚠️ Deprecated</p>
+                    <p class="text-neutral-300 text-sm">Static methods are deprecated and will be removed in future versions. Use <code>Microbot.getRs2XxxCache().getStream()</code> instead.</p>
+                </div>
+
+                <pre><code class="language-java">// ⚠️ DEPRECATED - Static methods are deprecated and will be removed
+// Use Microbot.getRs2XxxCache().getStream() instead
+
+Rs2NpcCache.getNpcsStream()           // deprecated → Microbot.getRs2NpcCache().getStream()
+Rs2PlayerCache.getPlayersStream()     // deprecated → Microbot.getRs2PlayerCache().getStream()
+Rs2TileItemCache.getTileItemsStream() // deprecated → Microbot.getRs2TileItemCache().getStream()
+Rs2TileObjectCache.getObjectsStream() // deprecated → Microbot.getRs2TileObjectCache().getStream()</code></pre>
+
+                <h3 class="text-lg font-medium mt-10 mb-4">Migration from Deprecated APIs</h3>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div>
+                        <p class="text-xs text-neutral-500 mb-2">Deprecated</p>
+                        <pre><code class="language-java">Rs2NpcCache.getNpcsStream()
+    .filter(npc -> npc.getName() != null)
+    .findFirst()
+    .orElse(null);</code></pre>
+                    </div>
+                    <div>
+                        <p class="text-xs text-neutral-500 mb-2">New API</p>
+                        <pre><code class="language-java">Microbot.getRs2NpcCache().getStream()
+    .filter(npc -> npc.getName() != null)
+    .findFirst()
+    .orElse(null);</code></pre>
                     </div>
                 </div>
             </section>

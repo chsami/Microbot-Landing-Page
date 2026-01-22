@@ -1,73 +1,23 @@
 <!DOCTYPE html>
 <html lang="en-US" dir="ltr" data-lt-installed="true">
-
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Microbot - Free Open Source OSRS Automation Client | RuneLite Based</title>
+    <title>Microbot - Free Open Source Client</title>
 
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-    <meta name="description"
-        content="Microbot is a free, open-source Old School RuneScape (OSRS) automation client based on RuneLite. Features powerful plugins, multi-session support, and cross-platform compatibility.">
+    <meta name="description" content="Microbot Free open source client based on runelite">
 
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://microbot.cloud/">
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
     <meta property="og:site_name" content="Microbot">
+
+
     <meta property="og:locale" content="en_US">
-    <meta property="og:title" content="Microbot - Free Open Source OSRS Automation Client">
-    <meta property="og:description"
-        content="Microbot is a free, open-source Old School RuneScape (OSRS) automation client based on RuneLite. Features powerful plugins, multi-session support, and cross-platform compatibility.">
-    <meta property="og:image" content="https://microbot.cloud/images/general/logo.png">
-    <meta property="og:url" content="https://microbot.cloud/">
 
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Microbot - Free Open Source OSRS Automation Client">
-    <meta name="twitter:description"
-        content="Microbot is a free, open-source Old School RuneScape (OSRS) automation client based on RuneLite. Features powerful plugins, multi-session support, and cross-platform compatibility.">
-    <meta name="twitter:image" content="https://microbot.cloud/images/general/logo.png">
 
-    <!-- Additional SEO -->
-    <meta name="keywords"
-        content="Microbot, OSRS, Old School RuneScape, RuneLite, automation, bot, client, free, open source, plugins">
-    <meta name="author" content="Microbot">
-    <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#2c2c2c">
-
-    <!-- Structured Data -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
-        "name": "Microbot",
-        "applicationCategory": "GameApplication",
-        "operatingSystem": "Windows, macOS, Linux",
-        "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "USD"
-        },
-        "description": "Microbot is a free, open-source Old School RuneScape (OSRS) automation client based on RuneLite. Features powerful plugins, multi-session support, and cross-platform compatibility.",
-        "url": "https://microbot.cloud",
-        "downloadUrl": "https://microbot.cloud",
-        "softwareVersion": "1.9.8",
-        "author": {
-            "@type": "Organization",
-            "name": "Microbot",
-            "url": "https://microbot.cloud"
-        },
-        "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "5",
-            "ratingCount": "1000"
-        }
-    }
-    </script>
 
 
     <link rel="stylesheet" href="./microbot/app.min.css">
@@ -75,18 +25,18 @@
 
 
     <link rel="stylesheet"
-        href="./microbot/341e4a57816af3ba440d891ca87450ff_framework.css.c1bcd9467a7eeb9006567801face652d.css"
-        media="all">
+          href="./microbot/341e4a57816af3ba440d891ca87450ff_framework.css.c1bcd9467a7eeb9006567801face652d.css"
+          media="all">
 
     <link rel="stylesheet"
-        href="./microbot/20446cf2d164adcc029377cb04d43d17_flags.css.be60c469fe9d673f833faaa74a81e375.css" media="all">
+          href="./microbot/20446cf2d164adcc029377cb04d43d17_flags.css.be60c469fe9d673f833faaa74a81e375.css" media="all">
 
     <link rel="stylesheet"
-        href="./microbot/90eb5adf50a8c640f633d47fd7eb1778_core.css.730a336650d62c3b59570edc9065b630.css" media="all">
+          href="./microbot/90eb5adf50a8c640f633d47fd7eb1778_core.css.730a336650d62c3b59570edc9065b630.css" media="all">
 
     <link rel="stylesheet"
-        href="./microbot/5a0da001ccc2200dc5625c3f3934497d_core_responsive.css.1d08c9ed37ed1cae43d3985a3b2316ad.css"
-        media="all">
+          href="./microbot/5a0da001ccc2200dc5625c3f3934497d_core_responsive.css.1d08c9ed37ed1cae43d3985a3b2316ad.css"
+          media="all">
 
     <style>
         .new-badge {
@@ -105,402 +55,50 @@
         }
 
         @keyframes pulse {
-            0% {
-                transform: scale(1);
-            }
-
-            50% {
-                transform: scale(1.05);
-            }
-
-            100% {
-                transform: scale(1);
-            }
-        }
-
-        #snow {
-            position: fixed;
-            inset: 0;
-            pointer-events: none;
-            overflow: hidden;
-            z-index: 9999;
-        }
-
-        .snowflake {
-            position: absolute;
-            top: -10px;
-            width: var(--size);
-            height: var(--size);
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 50%;
-            filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.45));
-            animation: snowfall var(--duration) linear infinite;
-            opacity: var(--opacity);
-        }
-
-        @keyframes snowfall {
-            to {
-                transform: translate3d(var(--drift), 110vh, 0);
-            }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            .snowflake {
-                animation: none;
-            }
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
         }
     </style>
 
 </head>
-
 <body style="background-color:black !important;" class="ipsApp ipsApp_front ipsClearfix ipsJS_has ipsApp_noTouch"
-    data-controller="core.front.core.app" data-message="" data-pageapp="" data-pagelocation="front" data-pagemodule=""
-    data-pagecontroller="">
-    <div id="snow" aria-hidden="true"></div>
-    <header class="c-header">
-        <!-- Event Start -->
-        <div class="c-events-block py-2">
-            <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between gap-2">
-                <div></div>
-                <a href="https://discord.gg/zaGrfqFEWE" target="_blank" rel="noreferrer noopener"
-                    class="c-events-block__right d-flex flex-row align-items-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" class="me-2" viewBox="0 0 71 55">
-                        <title>logo
-                            discord</title>
-                        <g fill="none" class="nc-icon-wrapper">
-                            <g clip-path="url(#clip0)">
-                                <path
-                                    d="M60.105 4.898A58.55 58.55 0 0 0 45.653.415a.22.22 0 0 0-.233.11 40.784 40.784 0 0 0-1.8 3.697c-5.456-.817-10.886-.817-16.23 0-.485-1.164-1.201-2.587-1.828-3.697a.228.228 0 0 0-.233-.11 58.386 58.386 0 0 0-14.451 4.483.207.207 0 0 0-.095.082C1.578 18.73-.944 32.144.293 45.39a.244.244 0 0 0 .093.167c6.073 4.46 11.955 7.167 17.729 8.962a.23.23 0 0 0 .249-.082 42.08 42.08 0 0 0 3.627-5.9.225.225 0 0 0-.123-.312 38.772 38.772 0 0 1-5.539-2.64.228.228 0 0 1-.022-.378c.372-.279.744-.569 1.1-.862a.22.22 0 0 1 .23-.03c11.619 5.304 24.198 5.304 35.68 0a.219.219 0 0 1 .233.027c.356.293.728.586 1.103.865a.228.228 0 0 1-.02.378 36.384 36.384 0 0 1-5.54 2.637.227.227 0 0 0-.121.315 47.249 47.249 0 0 0 3.624 5.897.225.225 0 0 0 .249.084c5.801-1.794 11.684-4.502 17.757-8.961a.228.228 0 0 0 .092-.164c1.48-15.315-2.48-28.618-10.497-40.412a.18.18 0 0 0-.093-.084zm-36.38 32.427c-3.497 0-6.38-3.211-6.38-7.156 0-3.944 2.827-7.156 6.38-7.156 3.583 0 6.438 3.24 6.382 7.156 0 3.945-2.827 7.156-6.381 7.156zm23.593 0c-3.498 0-6.38-3.211-6.38-7.156 0-3.944 2.826-7.156 6.38-7.156 3.582 0 6.437 3.24 6.38 7.156 0 3.945-2.798 7.156-6.38 7.156z"
-                                    fill="currentColor"></path>
-                            </g>
-                            <defs>
-                                <clippath id="clip0">
-                                    <path fill="currentColor" d="M0 0h71v55H0z"></path>
-                                </clippath>
-                            </defs>
+      data-controller="core.front.core.app" data-message="" data-pageapp="" data-pagelocation="front" data-pagemodule=""
+      data-pagecontroller="">
+<header class="c-header">
+    <!-- Event Start -->
+    <div class="c-events-block py-2">
+        <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between gap-2">
+            <div></div>
+            <a href="https://discord.gg/zaGrfqFEWE" target="_blank" rel="noreferrer noopener"
+               class="c-events-block__right d-flex flex-row align-items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24px" class="me-2" viewBox="0 0 71 55"><title>logo
+                    discord</title>
+                    <g fill="none" class="nc-icon-wrapper">
+                        <g clip-path="url(#clip0)">
+                            <path d="M60.105 4.898A58.55 58.55 0 0 0 45.653.415a.22.22 0 0 0-.233.11 40.784 40.784 0 0 0-1.8 3.697c-5.456-.817-10.886-.817-16.23 0-.485-1.164-1.201-2.587-1.828-3.697a.228.228 0 0 0-.233-.11 58.386 58.386 0 0 0-14.451 4.483.207.207 0 0 0-.095.082C1.578 18.73-.944 32.144.293 45.39a.244.244 0 0 0 .093.167c6.073 4.46 11.955 7.167 17.729 8.962a.23.23 0 0 0 .249-.082 42.08 42.08 0 0 0 3.627-5.9.225.225 0 0 0-.123-.312 38.772 38.772 0 0 1-5.539-2.64.228.228 0 0 1-.022-.378c.372-.279.744-.569 1.1-.862a.22.22 0 0 1 .23-.03c11.619 5.304 24.198 5.304 35.68 0a.219.219 0 0 1 .233.027c.356.293.728.586 1.103.865a.228.228 0 0 1-.02.378 36.384 36.384 0 0 1-5.54 2.637.227.227 0 0 0-.121.315 47.249 47.249 0 0 0 3.624 5.897.225.225 0 0 0 .249.084c5.801-1.794 11.684-4.502 17.757-8.961a.228.228 0 0 0 .092-.164c1.48-15.315-2.48-28.618-10.497-40.412a.18.18 0 0 0-.093-.084zm-36.38 32.427c-3.497 0-6.38-3.211-6.38-7.156 0-3.944 2.827-7.156 6.38-7.156 3.583 0 6.438 3.24 6.382 7.156 0 3.945-2.827 7.156-6.381 7.156zm23.593 0c-3.498 0-6.38-3.211-6.38-7.156 0-3.944 2.826-7.156 6.38-7.156 3.582 0 6.437 3.24 6.38 7.156 0 3.945-2.798 7.156-6.38 7.156z"
+                                  fill="currentColor"></path>
                         </g>
-                    </svg>
-                    <p class="mb-0">Join us on Discord</p>
-                </a>
-            </div>
+                        <defs>
+                            <clippath id="clip0">
+                                <path fill="currentColor" d="M0 0h71v55H0z"></path>
+                            </clippath>
+                        </defs>
+                    </g>
+                </svg>
+                <p class="mb-0">Join us on Discord</p>
+            </a>
         </div>
-        <div class="c-border-red mb-2"></div>
-        <!-- Event End --> <!-- Navigation Start -->
-        <nav class="c-nav navbar navbar-expand-sm py-2" style="flex-wrap:nowrap;justify-content: flex-start">
-            <div class="container align-items-stretch">
-                <a class="navbar-brand me-0 me-lg-3 me-xl-5" href="../index.html">
-                    <img src="./microbot/logo.png" class="c-nav__logo" loading="lazy" alt="logo">
-                </a>
-                <div class="p-3 p-xl-0" style="line-height: 2rem;width: 100%;" id="navbarMenu">
-                    <ul class="navbar-nav me-auto text-center text-xl-left gap-3 gap-xl-4">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="https://www.github.com/chsami/microbot" target="_blank">Github</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="https://discord.gg/zaGrfqFEWE" target="_blank">Discord</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="https://chatgpt.com/g/g-LM0fGeeXB-microbot-documentation"
-                                target="_blank">ChatGPT</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="https://paypal.me/MicrobotBE?country.x=BE"
-                                target="_blank">Donate</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="releases.html">Releases<span id="releases-badge" class="new-badge"
-                                    style="display: none;">NEW</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="plugins.html">Plugins</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="docs.html">API Docs<span class="new-badge">Coming soon</span></a>
-                        </li>
-                    </ul>
-                </div>
-
-
-                <ul id="elMobileNav"
-                    class="ipsList_inline ipsResponsive_hideDesktop ipsResponsive_block my-auto d-flex gx-2"
-                    data-controller="core.front.core.mobileNav" data-default="all">
-
-                    <li class="navbar-toggler my-auto py-3 position-relative" data-ipsdrawer=""
-                        data-ipsdrawer-drawerelem="#elMobileDrawer">
-                        <a href="#">
-                            <i class="fa fa-navicon"></i>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-        <!-- Navigation End -->
-    </header>
-
-    <main>
-        <section class="c-main-header c-main-header--home py-5 d-flex flex-column justify-content-center">
-            <div class="container">
-                <h1 class="c-main-header__title display-1 text-uppercase my-0">Microbot</h1>
-                <h1 class="c-main-header__title c-main-header__title--gold text-uppercase my-0">Open Source &
-                    Free</h1>
-                <h5 class="c-main-header__desc fw-normal text-faded c-font-family__primary mt-2 mt-lg-3 mb-3 mb-lg-5">
-                    The Best OpenSource OSRS Client </h5>
-                <h5 class="c-main-header__desc fw-normal text-faded c-font-family__primary mt-2 mt-lg-3 mb-3 mb-lg-5">
-                    Players Online <span id="counter" class="counter">0</span></h5>
-                <br />
-
-                <div class="dropdown">
-                    <button style="font-size:1.2rem !important;"
-                        class="c-button c-button--large c-main-header__c-button py-2 py-sm-3 px-3 px-md-4"
-                        id="downloadBtn">
-                        <i style="margin-right: 16px;" class="fa fa-download"></i> Download
-                    </button>
-                    <div style="width: 100%;"
-                        class="dropdown-content c-button c-button--large c-main-header__c-button py-2 py-sm-3 px-3 px-md-4"
-                        id="dropdownContent">
-                        <a id="launcher-hyperlink-windows" href="" target="_blank"
-                            rel="noreferrer noopener">Loading...</a>
-                        <a id="launcher-hyperlink-linux" href="" target="_blank"
-                            rel="noreferrer noopener">Loading...</a>
-                        <a id="launcher-hyperlink-mac" href="" target="_blank" rel="noreferrer noopener">Loading...</a>
-                        <hr />
-                        <a id="microbot-hyperlink" href="#" target="_blank" rel="noreferrer noopener">Loading...</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="c-section-area c-content-section mb-0" id="featured-content">
-            <div class="container">
-                <h2 class="c-section-heading text-center mx-auto">Featured Plugins</h2>
-
-                <div class="carousel-container">
-                    <div class="carousel-track">
-                        <div class="carousel-slide">
-                            <div class="plugin-card">
-                                <img src="./microbot/feature-1.jpg" alt="Wintertodt" loading="lazy">
-                                <div class="plugin-info">
-                                    <p class="c-text-secondary">Wintertodt</p>
-                                    <p class="c-text-faded">Chop, Fletch, Light, Build, Bank, Eats, All food supported!
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="carousel-slide">
-                            <div class="plugin-card">
-                                <img src="./microbot/feature-2.jpg" alt="Fletching" loading="lazy">
-                                <div class="plugin-info">
-                                    <p class="c-text-secondary">Fletching</p>
-                                    <p class="c-text-faded">Fletches logs, strings bows! Progressive fletching
-                                        supported!</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="carousel-slide">
-                            <div class="plugin-card">
-                                <img src="./microbot/feature-3.jpg" alt="NMZ" loading="lazy">
-                                <div class="plugin-info">
-                                    <p class="c-text-secondary">NMZ</p>
-                                    <p class="c-text-faded">Nightmarezone supports Orbs! Rock cake, absorption, overload
-                                        support. Special Attack support!</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="carousel-slide">
-                            <div class="plugin-card">
-                                <img src="./microbot/feature-4.jpg" alt="Vorkath" loading="lazy">
-                                <div class="plugin-info">
-                                    <p class="c-text-secondary">Vorkath</p>
-                                    <p class="c-text-faded">Ranged vorkath, woox walk, banking, multiple kills per trip,
-                                        sell items on ge, gets items back from death!</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="carousel-slide">
-                            <div class="plugin-card">
-                                <img src="./microbot/feature-5.png" alt="Sand Crabs" loading="lazy">
-                                <div class="plugin-info">
-                                    <p class="c-text-secondary">Sand Crabs</p>
-                                    <p class="c-text-faded">Multiple spots, Food support, Aggro reset</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="carousel-slide">
-                            <div class="plugin-card">
-                                <img src="./microbot/feature-6.jpg" alt="Antiban support" loading="lazy">
-                                <div class="plugin-info">
-                                    <p class="c-text-secondary">Antiban support</p>
-                                    <p class="c-text-faded">Natural Mouse movement, simulate mistakes, human like
-                                        patterns, fatigue and so much more!</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-slide">
-                            <div class="plugin-card">
-                                <img src="./images/featured/mixology.png" alt="Mixology" loading="lazy">
-                                <div class="plugin-info">
-                                    <p class="c-text-secondary">Mixology</p>
-                                    <p class="c-text-faded">Mixology, efficient methods, grinds and plays the minigame
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-slide">
-                            <div class="plugin-card">
-                                <img src="./images/featured/gotr.png" alt="Guardians of the rift" loading="lazy">
-                                <div class="plugin-info">
-                                    <p class="c-text-secondary">Guardians of the rift</p>
-                                    <p class="c-text-faded">Plays the guardians of the rift minigame!</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-slide">
-                            <div class="plugin-card">
-                                <img src="./images/featured/bots.jpg" alt="Bots" loading="lazy">
-                                <div class="plugin-info">
-                                    <p class="c-text-secondary">Multiple sessions for free</p>
-                                    <p class="c-text-faded">Open as many microbot instances as you want for free!</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-slide">
-                            <div class="plugin-card">
-                                <img src="./images/featured/mining.png" alt="Mining" loading="lazy">
-                                <div class="plugin-info">
-                                    <p class="c-text-secondary">Mining</p>
-                                    <p class="c-text-faded">Supports Motherload Mine, PowerMiner and many more!</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <button class="carousel-button carousel-button-prev">←</button>
-                    <button class="carousel-button carousel-button-next">→</button>
-
-                    <div class="carousel-dots"></div>
-                </div>
-
-                <h2 class="c-section-heading text-center mx-auto">And many more...</h2>
-            </div>
-        </section>
-
-        <div class="c-border-red"></div>
-        <section class="c-section-area c-discord-section overflow-hidden my-0" id="discord-content">
-            <div class="container">
-                <div class="row justify-content-center align-items-center g-4">
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <h2 class="c-section-heading mb-3 mb-sm-5">Discord</h2>
-                        <p class="c-text-faded my-4">Join us on the Microbot Community Discord Server.</p>
-                        <a href="https://discord.gg/zaGrfqFEWE" target="_blank" rel="noreferrer noopener"
-                            class="c-button c-button--discord py-2 py-sm-3 px-3 px-md-4">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24px" class="me-2" viewBox="0 0 71 55">
-                                <title>
-                                    logo discord</title>
-                                <g fill="none" class="nc-icon-wrapper">
-                                    <g clip-path="url(#clip0)">
-                                        <path
-                                            d="M60.105 4.898A58.55 58.55 0 0 0 45.653.415a.22.22 0 0 0-.233.11 40.784 40.784 0 0 0-1.8 3.697c-5.456-.817-10.886-.817-16.23 0-.485-1.164-1.201-2.587-1.828-3.697a.228.228 0 0 0-.233-.11 58.386 58.386 0 0 0-14.451 4.483.207.207 0 0 0-.095.082C1.578 18.73-.944 32.144.293 45.39a.244.244 0 0 0 .093.167c6.073 4.46 11.955 7.167 17.729 8.962a.23.23 0 0 0 .249-.082 42.08 42.08 0 0 0 3.627-5.9.225.225 0 0 0-.123-.312 38.772 38.772 0 0 1-5.539-2.64.228.228 0 0 1-.022-.378c.372-.279.744-.569 1.1-.862a.22.22 0 0 1 .23-.03c11.619 5.304 24.198 5.304 35.68 0a.219.219 0 0 1 .233.027c.356.293.728.586 1.103.865a.228.228 0 0 1-.02.378 36.384 36.384 0 0 1-5.54 2.637.227.227 0 0 0-.121.315 47.249 47.249 0 0 0 3.624 5.897.225.225 0 0 0 .249.084c5.801-1.794 11.684-4.502 17.757-8.961a.228.228 0 0 0 .092-.164c1.48-15.315-2.48-28.618-10.497-40.412a.18.18 0 0 0-.093-.084zm-36.38 32.427c-3.497 0-6.38-3.211-6.38-7.156 0-3.944 2.827-7.156 6.38-7.156 3.583 0 6.438 3.24 6.382 7.156 0 3.945-2.827 7.156-6.381 7.156zm23.593 0c-3.498 0-6.38-3.211-6.38-7.156 0-3.944 2.826-7.156 6.38-7.156 3.582 0 6.437 3.24 6.38 7.156 0 3.945-2.798 7.156-6.38 7.156z"
-                                            fill="currentColor"></path>
-                                    </g>
-                                    <defs>
-                                        <clippath id="clip0">
-                                            <path fill="currentColor" d="M0 0h71v55H0z"></path>
-                                        </clippath>
-                                    </defs>
-                                </g>
-                            </svg>
-                            Join us on Discord
-                        </a>
-                    </div>
-                    <div class="col-12 col-md-6 col-lg-3 offset-lg-1">
-                        <div class="position-relative" style="min-height: 300px;">
-                            <iframe src="https://discord.com/widget?id=1087718903985221642&theme=dark" width="350"
-                                height="500" allowtransparency="true"
-                                sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <div class="c-border-red"></div>
-    </main>
-
-
-    <div class="c-border-red"></div>
-    <footer class="c-footer pt-5">
-        <div class="container">
-            <div class="row justify-content-center align-items-start g-4">
-                <div class="text-center" style="width:20rem">
-                    <img src="./microbot/footer-logo.png" class="c-footer--logo" loading="lazy" alt="footer">
-                    <div class="c-content-divider mt-3 mb-3"></div>
-                    <ul class="d-flex align-items-center justify-content-center gap-4 m-auto text-center">
-                        <li>
-                            <a href="https://discord.gg/zaGrfqFEWE" target="_blank" rel="noreferrer noopener">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24px" viewBox="0 0 71 55">
-                                    <title>logo
-                                        discord</title>
-                                    <g fill="none" class="nc-icon-wrapper">
-                                        <g clip-path="url(#clip0)">
-                                            <path
-                                                d="M60.105 4.898A58.55 58.55 0 0 0 45.653.415a.22.22 0 0 0-.233.11 40.784 40.784 0 0 0-1.8 3.697c-5.456-.817-10.886-.817-16.23 0-.485-1.164-1.201-2.587-1.828-3.697a.228.228 0 0 0-.233-.11 58.386 58.386 0 0 0-14.451 4.483.207.207 0 0 0-.095.082C1.578 18.73-.944 32.144.293 45.39a.244.244 0 0 0 .093.167c6.073 4.46 11.955 7.167 17.729 8.962a.23.23 0 0 0 .249-.082 42.08 42.08 0 0 0 3.627-5.9.225.225 0 0 0-.123-.312 38.772 38.772 0 0 1-5.539-2.64.228.228 0 0 1-.022-.378c.372-.279.744-.569 1.1-.862a.22.22 0 0 1 .23-.03c11.619 5.304 24.198 5.304 35.68 0a.219.219 0 0 1 .233.027c.356.293.728.586 1.103.865a.228.228 0 0 1-.02.378 36.384 36.384 0 0 1-5.54 2.637.227.227 0 0 0-.121.315 47.249 47.249 0 0 0 3.624 5.897.225.225 0 0 0 .249.084c5.801-1.794 11.684-4.502 17.757-8.961a.228.228 0 0 0 .092-.164c1.48-15.315-2.48-28.618-10.497-40.412a.18.18 0 0 0-.093-.084zm-36.38 32.427c-3.497 0-6.38-3.211-6.38-7.156 0-3.944 2.827-7.156 6.38-7.156 3.583 0 6.438 3.24 6.382 7.156 0 3.945-2.827 7.156-6.381 7.156zm23.593 0c-3.498 0-6.38-3.211-6.38-7.156 0-3.944 2.826-7.156 6.38-7.156 3.582 0 6.437 3.24 6.38 7.156 0 3.945-2.798 7.156-6.38 7.156z"
-                                                fill="currentColor"></path>
-                                        </g>
-                                        <defs>
-                                            <clippath id="clip0">
-                                                <path fill="currentColor" d="M0 0h71v55H0z"></path>
-                                            </clippath>
-                                        </defs>
-                                    </g>
-                                </svg>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://github.com/chsami/microbot/releases" target="_blank"
-                                rel="noreferrer noopener">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24px" viewBox="0 0 16 16">
-                                    <title>data
-                                        download</title>
-                                    <g fill="currentColor" class="nc-icon-wrapper">
-                                        <path
-                                            d="M14,10a1,1,0,0,0-1,1v2H3V11a1,1,0,0,0-2,0v2a2,2,0,0,0,2,2H13a2,2,0,0,0,2-2V11A1,1,0,0,0,14,10Z">
-                                        </path>
-                                        <path data-color="color-2"
-                                            d="M7.293,10.707a1,1,0,0,0,1.414,0l4-4a1,1,0,1,0-1.414-1.414L9,7.586V2A1,1,0,0,0,7,2V7.586L4.707,5.293A1,1,0,0,0,3.293,6.707Z">
-                                        </path>
-                                    </g>
-                                </svg>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="c-footer-cc py-2 mt-5">
-            <div class="container">
-                <p class="text-center c-text-faded mb-0">Microbot © 2024. All Rights Reserved. - <a href="privacy.html"
-                        target="_blank">Privacy
-                        Policy</a> -
-                    <a href="terms.html" target="_blank">Terms of service</a>
-                </p>
-            </div>
-        </div>
-    </footer>
-
-
-    <div id="elMobileDrawer" class="ipsDrawer ipsHide">
-        <a href="#" class="ipsDrawer_close" data-action="close"><span>×</span></a>
-        <div class="ipsDrawer_menu">
-            <div class="ipsDrawer_content">
-
-
-                <ul class="ipsDrawer_list">
+    </div>
+    <div class="c-border-red mb-2"></div>
+    <!-- Event End -->      <!-- Navigation Start -->
+    <nav class="c-nav navbar navbar-expand-sm py-2" style="flex-wrap:nowrap;justify-content: flex-start">
+        <div class="container align-items-stretch">
+            <a class="navbar-brand me-0 me-lg-3 me-xl-5" href="../index.html">
+                <img src="./microbot/logo.png" class="c-nav__logo" loading="lazy" alt="logo">
+            </a>
+            <div class="p-3 p-xl-0" style="line-height: 2rem;width: 100%;" id="navbarMenu">
+                <ul class="navbar-nav me-auto text-center text-xl-left gap-3 gap-xl-4">
                     <li class="nav-item">
                         <a class="nav-link" href="#">Home</a>
                     </li>
@@ -512,86 +110,368 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="https://chatgpt.com/g/g-LM0fGeeXB-microbot-documentation"
-                            target="_blank">ChatGPT</a>
+                           target="_blank">ChatGPT</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="https://paypal.me/MicrobotBE?country.x=BE" target="_blank">Donate</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="https://www.youtube.com/@eudora8057" target="_blank">Youtube</a>
+                        <a class="nav-link" href="releases.html">Releases<span id="releases-badge" class="new-badge" style="display: none;">NEW</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="docs.html">API Docs</a>
+                        <a class="nav-link" href="plugins.html">Plugins</a>
+                    </li>
+                </ul>
+            </div>
+
+
+            <ul id="elMobileNav"
+                class="ipsList_inline ipsResponsive_hideDesktop ipsResponsive_block my-auto d-flex gx-2"
+                data-controller="core.front.core.mobileNav" data-default="all">
+
+                <li class="navbar-toggler my-auto py-3 position-relative" data-ipsdrawer=""
+                    data-ipsdrawer-drawerelem="#elMobileDrawer">
+                    <a href="#">
+                        <i class="fa fa-navicon"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Navigation End -->
+</header>
+
+<main>
+    <section class="c-main-header c-main-header--home py-5 d-flex flex-column justify-content-center">
+        <div class="container">
+            <h1 class="c-main-header__title display-1 text-uppercase my-0">Microbot</h1>
+            <h1 class="c-main-header__title c-main-header__title--gold text-uppercase my-0">Open Source &
+                Free</h1>
+            <h5 class="c-main-header__desc fw-normal text-faded c-font-family__primary mt-2 mt-lg-3 mb-3 mb-lg-5">
+                The Best OpenSource OSRS Client </h5>
+            <h5 class="c-main-header__desc fw-normal text-faded c-font-family__primary mt-2 mt-lg-3 mb-3 mb-lg-5">
+                Players Online <span id="counter" class="counter">0</span></h5>
+            <br/>
+
+        <div class="dropdown">
+            <button style="font-size:1.2rem !important;" class="c-button c-button--large c-main-header__c-button py-2 py-sm-3 px-3 px-md-4"
+                    id="downloadBtn">
+                <i style="margin-right: 16px;" class="fa fa-download"></i> Download
+            </button>
+            <div style="width: 100%;" class="dropdown-content c-button c-button--large c-main-header__c-button py-2 py-sm-3 px-3 px-md-4"
+                 id="dropdownContent">
+                <a id="launcher-hyperlink-windows" href=""
+                   target="_blank" rel="noreferrer noopener">Loading...</a>
+                <a id="launcher-hyperlink-linux" href=""
+                   target="_blank" rel="noreferrer noopener">Loading...</a>
+                <a id="launcher-hyperlink-mac" href=""
+                   target="_blank" rel="noreferrer noopener">Loading...</a>
+                <hr />
+                <a id="microbot-hyperlink" href="#"
+                   target="_blank"
+                   rel="noreferrer noopener">Loading...</a>
+            </div>
+        </div>
+        </div>
+    </section>
+    <section class="c-section-area c-content-section mb-0" id="featured-content">
+        <div class="container">
+            <h2 class="c-section-heading text-center mx-auto">Featured Plugins</h2>
+
+            <div class="carousel-container">
+                <div class="carousel-track">
+                    <div class="carousel-slide">
+                        <div class="plugin-card">
+                            <img src="./microbot/feature-1.jpg" alt="Wintertodt" loading="lazy">
+                            <div class="plugin-info">
+                                <p class="c-text-secondary">Wintertodt</p>
+                                <p class="c-text-faded">Chop, Fletch, Light, Build, Bank, Eats, All food supported!</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-slide">
+                        <div class="plugin-card">
+                            <img src="./microbot/feature-2.jpg" alt="Fletching" loading="lazy">
+                            <div class="plugin-info">
+                                <p class="c-text-secondary">Fletching</p>
+                                <p class="c-text-faded">Fletches logs, strings bows! Progressive fletching supported!</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-slide">
+                        <div class="plugin-card">
+                            <img src="./microbot/feature-3.jpg" alt="NMZ" loading="lazy">
+                            <div class="plugin-info">
+                                <p class="c-text-secondary">NMZ</p>
+                                <p class="c-text-faded">Nightmarezone supports Orbs! Rock cake, absorption, overload support. Special Attack support!</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-slide">
+                        <div class="plugin-card">
+                            <img src="./microbot/feature-4.jpg" alt="Vorkath" loading="lazy">
+                            <div class="plugin-info">
+                                <p class="c-text-secondary">Vorkath</p>
+                                <p class="c-text-faded">Ranged vorkath, woox walk, banking, multiple kills per trip, sell items on ge, gets items back from death!</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-slide">
+                        <div class="plugin-card">
+                            <img src="./microbot/feature-5.png" alt="Sand Crabs" loading="lazy">
+                            <div class="plugin-info">
+                                <p class="c-text-secondary">Sand Crabs</p>
+                                <p class="c-text-faded">Multiple spots, Food support, Aggro reset</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-slide">
+                        <div class="plugin-card">
+                            <img src="./microbot/feature-6.jpg" alt="Antiban support" loading="lazy">
+                            <div class="plugin-info">
+                                <p class="c-text-secondary">Antiban support</p>
+                                <p class="c-text-faded">Natural Mouse movement, simulate mistakes, human like patterns, fatigue and so much more!</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <div class="plugin-card">
+                            <img src="./images/featured/mixology.png" alt="Mixology" loading="lazy">
+                            <div class="plugin-info">
+                                <p class="c-text-secondary">Mixology</p>
+                                <p class="c-text-faded">Mixology, efficient methods, grinds and plays the minigame</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <div class="plugin-card">
+                            <img src="./images/featured/gotr.png" alt="Guardians of the rift" loading="lazy">
+                            <div class="plugin-info">
+                                <p class="c-text-secondary">Guardians of the rift</p>
+                                <p class="c-text-faded">Plays the guardians of the rift minigame!</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <div class="plugin-card">
+                            <img src="./images/featured/bots.jpg" alt="Bots" loading="lazy">
+                            <div class="plugin-info">
+                                <p class="c-text-secondary">Multiple sessions for free</p>
+                                <p class="c-text-faded">Open as many microbot instances as you want for free!</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <div class="plugin-card">
+                            <img src="./images/featured/mining.png" alt="Mining" loading="lazy">
+                            <div class="plugin-info">
+                                <p class="c-text-secondary">Mining</p>
+                                <p class="c-text-faded">Supports Motherload Mine, PowerMiner and many more!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="carousel-button carousel-button-prev">←</button>
+                <button class="carousel-button carousel-button-next">→</button>
+
+                <div class="carousel-dots"></div>
+            </div>
+
+            <h2 class="c-section-heading text-center mx-auto">And many more...</h2>
+        </div>
+    </section>
+
+    <div class="c-border-red"></div>
+    <section class="c-section-area c-discord-section overflow-hidden my-0" id="discord-content">
+        <div class="container">
+            <div class="row justify-content-center align-items-center g-4">
+                <div class="col-12 col-md-6 col-lg-4">
+                    <h2 class="c-section-heading mb-3 mb-sm-5">Discord</h2>
+                    <p class="c-text-faded my-4">Join us on the Microbot Community Discord Server.</p>
+                    <a href="https://discord.gg/zaGrfqFEWE" target="_blank" rel="noreferrer noopener"
+                       class="c-button c-button--discord py-2 py-sm-3 px-3 px-md-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24px" class="me-2" viewBox="0 0 71 55"><title>
+                            logo discord</title>
+                            <g fill="none" class="nc-icon-wrapper">
+                                <g clip-path="url(#clip0)">
+                                    <path d="M60.105 4.898A58.55 58.55 0 0 0 45.653.415a.22.22 0 0 0-.233.11 40.784 40.784 0 0 0-1.8 3.697c-5.456-.817-10.886-.817-16.23 0-.485-1.164-1.201-2.587-1.828-3.697a.228.228 0 0 0-.233-.11 58.386 58.386 0 0 0-14.451 4.483.207.207 0 0 0-.095.082C1.578 18.73-.944 32.144.293 45.39a.244.244 0 0 0 .093.167c6.073 4.46 11.955 7.167 17.729 8.962a.23.23 0 0 0 .249-.082 42.08 42.08 0 0 0 3.627-5.9.225.225 0 0 0-.123-.312 38.772 38.772 0 0 1-5.539-2.64.228.228 0 0 1-.022-.378c.372-.279.744-.569 1.1-.862a.22.22 0 0 1 .23-.03c11.619 5.304 24.198 5.304 35.68 0a.219.219 0 0 1 .233.027c.356.293.728.586 1.103.865a.228.228 0 0 1-.02.378 36.384 36.384 0 0 1-5.54 2.637.227.227 0 0 0-.121.315 47.249 47.249 0 0 0 3.624 5.897.225.225 0 0 0 .249.084c5.801-1.794 11.684-4.502 17.757-8.961a.228.228 0 0 0 .092-.164c1.48-15.315-2.48-28.618-10.497-40.412a.18.18 0 0 0-.093-.084zm-36.38 32.427c-3.497 0-6.38-3.211-6.38-7.156 0-3.944 2.827-7.156 6.38-7.156 3.583 0 6.438 3.24 6.382 7.156 0 3.945-2.827 7.156-6.381 7.156zm23.593 0c-3.498 0-6.38-3.211-6.38-7.156 0-3.944 2.826-7.156 6.38-7.156 3.582 0 6.437 3.24 6.38 7.156 0 3.945-2.798 7.156-6.38 7.156z"
+                                          fill="currentColor"></path>
+                                </g>
+                                <defs>
+                                    <clippath id="clip0">
+                                        <path fill="currentColor" d="M0 0h71v55H0z"></path>
+                                    </clippath>
+                                </defs>
+                            </g>
+                        </svg>
+                        Join us on Discord
+                    </a>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3 offset-lg-1">
+                    <div class="position-relative" style="min-height: 300px;">
+                        <iframe src="https://discord.com/widget?id=1087718903985221642&theme=dark" width="350"
+                                height="500" allowtransparency="true"
+                                sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="c-border-red"></div>
+</main>
+
+
+<div class="c-border-red"></div>
+<footer class="c-footer pt-5">
+    <div class="container">
+        <div class="row justify-content-center align-items-start g-4">
+            <div class="text-center" style="width:20rem">
+                <img src="./microbot/footer-logo.png" class="c-footer--logo" loading="lazy" alt="footer">
+                <div class="c-content-divider mt-3 mb-3"></div>
+                <ul class="d-flex align-items-center justify-content-center gap-4 m-auto text-center">
+                    <li>
+                        <a href="https://discord.gg/zaGrfqFEWE" target="_blank" rel="noreferrer noopener">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24px" viewBox="0 0 71 55"><title>logo
+                                discord</title>
+                                <g fill="none" class="nc-icon-wrapper">
+                                    <g clip-path="url(#clip0)">
+                                        <path d="M60.105 4.898A58.55 58.55 0 0 0 45.653.415a.22.22 0 0 0-.233.11 40.784 40.784 0 0 0-1.8 3.697c-5.456-.817-10.886-.817-16.23 0-.485-1.164-1.201-2.587-1.828-3.697a.228.228 0 0 0-.233-.11 58.386 58.386 0 0 0-14.451 4.483.207.207 0 0 0-.095.082C1.578 18.73-.944 32.144.293 45.39a.244.244 0 0 0 .093.167c6.073 4.46 11.955 7.167 17.729 8.962a.23.23 0 0 0 .249-.082 42.08 42.08 0 0 0 3.627-5.9.225.225 0 0 0-.123-.312 38.772 38.772 0 0 1-5.539-2.64.228.228 0 0 1-.022-.378c.372-.279.744-.569 1.1-.862a.22.22 0 0 1 .23-.03c11.619 5.304 24.198 5.304 35.68 0a.219.219 0 0 1 .233.027c.356.293.728.586 1.103.865a.228.228 0 0 1-.02.378 36.384 36.384 0 0 1-5.54 2.637.227.227 0 0 0-.121.315 47.249 47.249 0 0 0 3.624 5.897.225.225 0 0 0 .249.084c5.801-1.794 11.684-4.502 17.757-8.961a.228.228 0 0 0 .092-.164c1.48-15.315-2.48-28.618-10.497-40.412a.18.18 0 0 0-.093-.084zm-36.38 32.427c-3.497 0-6.38-3.211-6.38-7.156 0-3.944 2.827-7.156 6.38-7.156 3.583 0 6.438 3.24 6.382 7.156 0 3.945-2.827 7.156-6.381 7.156zm23.593 0c-3.498 0-6.38-3.211-6.38-7.156 0-3.944 2.826-7.156 6.38-7.156 3.582 0 6.437 3.24 6.38 7.156 0 3.945-2.798 7.156-6.38 7.156z"
+                                              fill="currentColor"></path>
+                                    </g>
+                                    <defs>
+                                        <clippath id="clip0">
+                                            <path fill="currentColor" d="M0 0h71v55H0z"></path>
+                                        </clippath>
+                                    </defs>
+                                </g>
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/chsami/microbot/releases" target="_blank" rel="noreferrer noopener">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24px" viewBox="0 0 16 16"><title>data
+                                download</title>
+                                <g fill="currentColor" class="nc-icon-wrapper">
+                                    <path d="M14,10a1,1,0,0,0-1,1v2H3V11a1,1,0,0,0-2,0v2a2,2,0,0,0,2,2H13a2,2,0,0,0,2-2V11A1,1,0,0,0,14,10Z"></path>
+                                    <path data-color="color-2"
+                                          d="M7.293,10.707a1,1,0,0,0,1.414,0l4-4a1,1,0,1,0-1.414-1.414L9,7.586V2A1,1,0,0,0,7,2V7.586L4.707,5.293A1,1,0,0,0,3.293,6.707Z"></path>
+                                </g>
+                            </svg>
+                        </a>
                     </li>
                 </ul>
             </div>
         </div>
     </div>
-
-    <!-- Cookie Consent Banner -->
-    <div id="cookie-banner" class="cookie-banner">
-        <p>
-            We use cookies to improve your experience, analyze site usage, and assist in our marketing efforts. By using
-            this site, you consent to the use of cookies, including Google Analytics.
-            Read more in our <a href="privacy.html" target="_blank">Privacy Policy</a>.
-        </p>
-        <button id="accept-cookies" class="btn">Accept</button>
-        <button id="decline-cookies" class="btn">Decline</button>
+    <div class="c-footer-cc py-2 mt-5">
+        <div class="container">
+            <p class="text-center c-text-faded mb-0">Microbot © 2024. All Rights Reserved. - <a href="privacy.html"
+                                                                                                target="_blank">Privacy
+                Policy</a> -
+                <a href="terms.html"
+                   target="_blank">Terms of service</a></p>
+        </div>
     </div>
+</footer>
 
-    <script type="text/javascript">
+
+<div id="elMobileDrawer" class="ipsDrawer ipsHide">
+    <a href="#" class="ipsDrawer_close" data-action="close"><span>×</span></a>
+    <div class="ipsDrawer_menu">
+        <div class="ipsDrawer_content">
 
 
-        const url = window.location.href;
+            <ul class="ipsDrawer_list">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://www.github.com/chsami/microbot" target="_blank">Github</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://discord.gg/zaGrfqFEWE" target="_blank">Discord</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://chatgpt.com/g/g-LM0fGeeXB-microbot-documentation" target="_blank">ChatGPT</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://paypal.me/MicrobotBE?country.x=BE" target="_blank">Donate</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://www.youtube.com/@eudora8057" target="_blank">Youtube</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
 
-        // Extract the query string part
-        const queryString = url.split('?')[1];
+<!-- Cookie Consent Banner -->
+<div id="cookie-banner" class="cookie-banner">
+    <p>
+        We use cookies to improve your experience, analyze site usage, and assist in our marketing efforts. By using
+        this site, you consent to the use of cookies, including Google Analytics.
+        Read more in our <a href="privacy.html" target="_blank">Privacy Policy</a>.
+    </p>
+    <button id="accept-cookies" class="btn">Accept</button>
+    <button id="decline-cookies" class="btn">Decline</button>
+</div>
 
-        // Split the query string into individual parameters
-        const params = queryString?.split('&');
+<script type="text/javascript">
 
-        // Iterate over each parameter
-        params?.forEach(param => {
-            const [key, value] = param.split('=');
-            if (key === "source") {
-                if (value.toLowerCase().includes("launcher")) {
-                    document.getElementById('downloadBtn').outerHTML = "<p>Thanks for being part of the Microbot Community!</p>"
-                }
+
+    const url = window.location.href;
+
+    // Extract the query string part
+    const queryString = url.split('?')[1];
+
+    // Split the query string into individual parameters
+    const params = queryString?.split('&');
+
+    // Iterate over each parameter
+    params?.forEach(param => {
+        const [key, value] = param.split('=');
+        if (key === "source") {
+            if (value.toLowerCase().includes("launcher")) {
+                document.getElementById('downloadBtn').outerHTML = "<p>Thanks for being part of the Microbot Community!</p>"
             }
-        });
-
-    </script>
-
-
-    <script>
-        function animateCounter(element, start, end, duration) {
-            let startTime = null;
-
-            function animation(currentTime) {
-                if (startTime === null) startTime = currentTime;
-                const elapsedTime = currentTime - startTime;
-
-                const progress = Math.min(elapsedTime / duration, 1);
-                const value = Math.floor(progress * (end - start) + start);
-                element.innerText = value;
-
-                if (progress < 1) {
-                    requestAnimationFrame(animation);
-                } else {
-                    element.innerText = end; // Ensure the final value matches the target
-                }
-            }
-
-            requestAnimationFrame(animation);
         }
-    </script>
+    });
+
+</script>
 
 
-    <span
-        style="visibility: hidden; position: absolute; top: -300px; width: 1px; height: 1px; overflow: hidden; left: -300px;"><span
-            class="ipsLoading ipsLoading_noAnim" style="display: block;"></span></span>
-</body>
+<script>
+    function animateCounter(element, start, end, duration) {
+        let startTime = null;
 
+        function animation(currentTime) {
+            if (startTime === null) startTime = currentTime;
+            const elapsedTime = currentTime - startTime;
+
+            const progress = Math.min(elapsedTime / duration, 1);
+            const value = Math.floor(progress * (end - start) + start);
+            element.innerText = value;
+
+            if (progress < 1) {
+                requestAnimationFrame(animation);
+            } else {
+                element.innerText = end; // Ensure the final value matches the target
+            }
+        }
+
+        requestAnimationFrame(animation);
+    }
+</script>
+
+
+<span style="visibility: hidden; position: absolute; top: -300px; width: 1px; height: 1px; overflow: hidden; left: -300px;"><span
+        class="ipsLoading ipsLoading_noAnim" style="display: block;"></span></span></body>
 </html>
 
 
@@ -713,7 +593,7 @@
         // Import releases data from release.js
         const script = document.createElement('script');
         script.src = './microbot/releases/release.js';
-        script.onload = function () {
+        script.onload = function() {
             // Check if any release is within the past 7 days
             const currentDate = new Date();
             let hasNewRelease = false;
@@ -739,38 +619,6 @@
         };
         document.head.appendChild(script);
     }
-</script>
-
-<script>
-    (function () {
-        const snowContainer = document.getElementById('snow');
-        if (!snowContainer) {
-            return;
-        }
-
-        function randomBetween(min, max) {
-            return Math.random() * (max - min) + min;
-        }
-
-        const flakeCount = 50;
-        for (let i = 0; i < flakeCount; i++) {
-            const flake = document.createElement('span');
-            const size = randomBetween(2, 5);
-            const duration = randomBetween(8, 18);
-            const drift = randomBetween(-30, 30);
-            const opacity = randomBetween(0.4, 0.95);
-
-            flake.className = 'snowflake';
-            flake.style.left = `${randomBetween(0, 100)}%`;
-            flake.style.animationDelay = `${-randomBetween(0, duration)}s`;
-            flake.style.setProperty('--size', `${size}px`);
-            flake.style.setProperty('--duration', `${duration}s`);
-            flake.style.setProperty('--drift', `${drift}px`);
-            flake.style.setProperty('--opacity', opacity.toFixed(2));
-
-            snowContainer.appendChild(flake);
-        }
-    })();
 </script>
 
 <script defer src="./libraries/carousel/carousel.js"></script>

@@ -681,20 +681,26 @@
     document.addEventListener("DOMContentLoaded", function () {
 
         fetch('https://microbot.cloud/api/session/count').then(async (result) => {
+            if (!result.ok) return
             const playerCount = await result.json()
+            if (!Number.isFinite(playerCount)) return
             const counterElement = document.getElementById('counter');
             animateCounter(counterElement, 0, playerCount, 1000); // Animate from 0 to 1000 in 2 seconds
         })
 
         fetch('https://microbot.cloud/api/version/client').then(async (result) => {
-            const version = await result.text()
+            if (!result.ok) return
+            const version = (await result.text()).trim()
+            if (!/^[0-9][0-9A-Za-z.-]*$/.test(version)) return
             const microbotHyperLink = document.getElementById('microbot-hyperlink');
             microbotHyperLink.innerText = 'jar-' + version
             microbotHyperLink.href = `https://files.microbot.cloud/releases/microbot/stable/microbot-${version}.jar`
         })
 
         fetch('https://microbot.cloud/api/version/launcher').then(async (result) => {
-            const version = await result.text()
+            if (!result.ok) return
+            const version = (await result.text()).trim()
+            if (!/^[0-9][0-9A-Za-z.-]*$/.test(version)) return
             const microbotHyperLinkWindows = document.getElementById('launcher-hyperlink-windows');
             const microbotHyperLinkLinux = document.getElementById('launcher-hyperlink-linux');
             const microbotHyperLinkMac = document.getElementById('launcher-hyperlink-mac');

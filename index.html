@@ -59,6 +59,120 @@
             50% { transform: scale(1.05); }
             100% { transform: scale(1); }
         }
+        .c-top-plugins {
+            max-width: 1100px;
+            margin: 64px auto 0;
+        }
+
+        .c-top-plugins__intro {
+            text-align: center;
+            color: #b9b9b9;
+            margin-bottom: 32px;
+        }
+
+        .c-top-plugins__grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+            gap: 14px;
+        }
+
+        .c-top-plugin {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 16px 18px;
+            background: linear-gradient(180deg, #161514 0%, #0c0c0c 100%);
+            border: 1px solid #2e2d2c;
+            color: #d2d2d2;
+            text-decoration: none;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+
+        .c-top-plugin:hover {
+            border-color: #8b1010;
+            color: #d2d2d2;
+            transform: translateY(-2px);
+        }
+
+        .c-top-plugin__rank {
+            flex: none;
+            width: 44px;
+            height: 44px;
+            display: grid;
+            place-items: center;
+            border: 1px solid #8b1010;
+            background: rgba(139, 16, 16, 0.2);
+            font-family: Cinzel, serif;
+            font-weight: 800;
+            font-size: 18px;
+            color: #ffb13b;
+        }
+
+        .c-top-plugin__body {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .c-top-plugin__name {
+            display: block;
+            font-size: 16px;
+            font-weight: 700;
+            color: #fff;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .c-top-plugin__meta {
+            display: block;
+            font-size: 13px;
+            color: #9a9a9a;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .c-top-plugin__installs {
+            text-align: right;
+        }
+
+        .c-top-plugin__count {
+            display: block;
+            font-size: 16px;
+            font-weight: 800;
+            color: #ffb13b;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .c-top-plugin__label {
+            font-size: 12px;
+            color: #9a9a9a;
+        }
+
+        .c-top-plugins__cta {
+            display: flex;
+            justify-content: center;
+            margin-top: 28px;
+        }
+
+        .c-top-plugins__button {
+            display: inline-flex;
+            align-items: center;
+            min-height: 50px;
+            padding: 0 26px;
+            border: 2px solid #8b1010;
+            color: #fff;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            text-decoration: none;
+            transition: background 0.2s ease;
+        }
+
+        .c-top-plugins__button:hover {
+            background: rgba(139, 16, 16, 0.35);
+            color: #fff;
+        }
     </style>
 
 </head>
@@ -284,6 +398,14 @@
             </div>
 
             <h2 class="c-section-heading text-center mx-auto">And many more...</h2>
+
+            <div class="c-top-plugins" id="top-plugins" hidden>
+                <p class="c-top-plugins__intro">The most installed plugins on the Microbot Hub.</p>
+                <div class="c-top-plugins__grid" id="top-plugins-grid"></div>
+                <div class="c-top-plugins__cta">
+                    <a href="plugins.html" class="c-top-plugins__button" id="top-plugins-browse">Browse all plugins</a>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -493,6 +615,68 @@
     }
 </script>
 
+<script>
+    document.addEventListener("DOMContentLoaded", async function () {
+        const section = document.getElementById('top-plugins');
+        const grid = document.getElementById('top-plugins-grid');
+        try {
+            const pluginsResponse = await fetch('https://chsami.github.io/Microbot-Hub/plugins.json');
+            if (!pluginsResponse.ok) return;
+            const plugins = (await pluginsResponse.json()).filter(plugin => !plugin.disable);
+
+            const installsResponse = await fetch('https://microbot.cloud/api/PluginTelemetry/plugins-total-installs', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({PluginNames: plugins.map(plugin => plugin.internalName)})
+            });
+            if (!installsResponse.ok) return;
+            const installs = {};
+            for (const dto of await installsResponse.json()) {
+                installs[dto.pluginName] = dto.totalInstalls;
+            }
+
+            const top = plugins
+                .filter(plugin => installs[plugin.internalName] > 0)
+                .sort((a, b) => installs[b.internalName] - installs[a.internalName])
+                .slice(0, 6);
+            if (top.length === 0) return;
+
+            const element = (tag, className, text) => {
+                const node = document.createElement(tag);
+                node.className = className;
+                if (text !== undefined) node.textContent = text;
+                return node;
+            };
+
+            top.forEach((plugin, index) => {
+                const card = element('a', 'c-top-plugin');
+                card.href = `https://chsami.github.io/Microbot-Hub/${encodeURIComponent(plugin.internalName)}`;
+                card.target = '_blank';
+                card.rel = 'noopener noreferrer';
+
+                const body = element('span', 'c-top-plugin__body');
+                body.append(
+                    element('span', 'c-top-plugin__name', plugin.name.trim()),
+                    element('span', 'c-top-plugin__meta', `by ${(plugin.authors || []).join(', ') || 'Unknown'} · v${plugin.version}`)
+                );
+
+                const count = element('span', 'c-top-plugin__installs');
+                count.append(
+                    element('span', 'c-top-plugin__count', installs[plugin.internalName].toLocaleString('en-US')),
+                    element('span', 'c-top-plugin__label', 'installs')
+                );
+
+                card.append(element('span', 'c-top-plugin__rank', String(index + 1)), body, count);
+                grid.appendChild(card);
+            });
+
+            document.getElementById('top-plugins-browse').textContent = `Browse all ${plugins.length} plugins`;
+            section.hidden = false;
+        } catch (err) {
+            console.error('Top plugins error:', err);
+        }
+    });
+</script>
 <script>
     document.addEventListener("DOMContentLoaded", function () {
 

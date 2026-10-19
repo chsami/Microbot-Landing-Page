@@ -453,47 +453,64 @@ const PLUGIN_CATEGORIES = [
     { id: 'mining', label: 'Mining', tags: ['mining', 'mine', 'ore', 'motherlode', 'mlm', 'mining guild'] },
     { id: 'minigames', label: 'Minigames', tags: ['minigame', 'minigames', 'gotr', 'guardians of the rift', 'wintertodt', 'tempoross', 'pest control', 'barrows', 'tob', 'theatre', 'raids', 'colosseum', 'fortis', 'mta', 'nmz', 'tol', 'tears of guthix', 'royal titans', 'gauntlet', 'doom of mokhaiotl', 'mokha', 'zmi'] },
     { id: 'money-making', label: 'Money Making', tags: ['money making', 'moneymaking', 'mm', 'ge', 'grand exchange', 'flip', 'flipping', 'buy', 'buyer', 'money', 'shopper', 'seller'] },
-    { id: 'skilling', label: 'Skilling', tags: ['skilling', 'skills', 'smithing', 'cooking', 'firemaking', 'crafting', 'fletching', 'herblore', 'runecraft', 'runecrafting', 'farming', 'construction', 'agility', 'thieving', 'hunter', 'prayer', 'magic', 'tanning'] }
+    { id: 'skilling', label: 'Skilling', tags: ['skilling', 'skills', 'smithing', 'cooking', 'firemaking', 'crafting', 'fletching', 'herblore', 'runecraft', 'runecrafting', 'farming', 'construction', 'agility', 'thieving', 'tanning'] }
 ];
 const selectedCategories = new Set();
 
 function categoriesFor(plugin) {
     const tags = (plugin.tags || []).map(tag => tag.toLowerCase().trim());
+    const name = ` ${plugin.name.toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim()} `;
     return PLUGIN_CATEGORIES
-        .filter(category => tags.some(tag => category.tags.includes(tag)))
+        .filter(category => tags.some(tag => category.tags.includes(tag))
+            || category.tags.some(keyword => name.includes(` ${keyword} `)))
         .map(category => category.id);
 }
 
 function renderCategoryFilters() {
     const container = document.getElementById('categoryFilters');
-    container.innerHTML = '';
+    if (container.childElementCount > 0) {
+        updateCategoryChips();
+        return;
+    }
 
-    const addChip = (label, pressed, onClick) => {
+    const addChip = (label, categoryId, onClick) => {
         const chip = document.createElement('button');
         chip.type = 'button';
         chip.className = 'category-chip';
+        chip.dataset.category = categoryId;
         chip.textContent = label;
-        chip.setAttribute('aria-pressed', String(pressed));
         chip.addEventListener('click', onClick);
         container.appendChild(chip);
     };
 
-    addChip('All', selectedCategories.size === 0, () => {
+    addChip('All', '', () => {
         selectedCategories.clear();
-        renderCategoryFilters();
+        updateCategoryChips();
         performSearch();
     });
 
     for (const category of PLUGIN_CATEGORIES) {
-        addChip(category.label, selectedCategories.has(category.id), () => {
+        addChip(category.label, category.id, () => {
             if (selectedCategories.has(category.id)) {
                 selectedCategories.delete(category.id);
             } else {
                 selectedCategories.add(category.id);
             }
-            renderCategoryFilters();
+            updateCategoryChips();
             performSearch();
         });
+    }
+
+    updateCategoryChips();
+}
+
+function updateCategoryChips() {
+    const chips = document.querySelectorAll('#categoryFilters .category-chip');
+    for (const chip of chips) {
+        const pressed = chip.dataset.category === ''
+            ? selectedCategories.size === 0
+            : selectedCategories.has(chip.dataset.category);
+        chip.setAttribute('aria-pressed', String(pressed));
     }
 }
 

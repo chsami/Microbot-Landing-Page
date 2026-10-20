@@ -2,126 +2,57 @@
 <html lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>1.9.8 Release - Microbot</title>
-
+    <title>Microbot 1.9.8 release notes</title>
     <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <meta name="description" content="Microbot Free open source botting client based on runelite">
-
+    <meta name="description" content="Revolutionary plugin ecosystem launch! Separate repository for community plugins, streamlined development workflow, and comprehensive documentation system.">
+    <link rel="canonical" href="https://microbot.cloud/releases/1.9.8.html">
+    <meta property="og:type" content="article">
     <meta property="og:site_name" content="Microbot">
     <meta property="og:locale" content="en_US">
-    <meta name="theme-color" content="#2c2c2c">
-
-    <link rel="stylesheet" href="../microbot/app.min.css">
-    <link rel="stylesheet"
-          href="../microbot/341e4a57816af3ba440d891ca87450ff_framework.css.c1bcd9467a7eeb9006567801face652d.css"
-          media="all">
-    <link rel="stylesheet"
-          href="../microbot/20446cf2d164adcc029377cb04d43d17_flags.css.be60c469fe9d673f833faaa74a81e375.css"
-          media="all">
-    <link rel="stylesheet"
-          href="../microbot/90eb5adf50a8c640f633d47fd7eb1778_core.css.730a336650d62c3b59570edc9065b630.css" media="all">
-    <link rel="stylesheet"
-          href="../microbot/5a0da001ccc2200dc5625c3f3934497d_core_responsive.css.1d08c9ed37ed1cae43d3985a3b2316ad.css"
-          media="all">
-
-    <style>
-        .section-header {
-            background: linear-gradient(135deg, #2c2c2c, #1a1a1a);
-            color: #fff;
-            padding: 20px;
-            margin: 30px 0 20px 0;
-            border-radius: 10px;
-            border-left: 5px solid #ff6b35;
-        }
-
-        .feature-box {
-            background: #1e1e1e;
-            border: 1px solid #333;
-            padding: 20px;
-            margin: 15px 0;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-        }
-
-        .feature-box:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(255, 107, 53, 0.2);
-        }
-
-        .code-block {
-            background: #0d1117;
-            color: #c9d1d9;
-            padding: 15px;
-            border-radius: 6px;
-            font-family: 'Courier New', monospace;
-            border: 1px solid #30363d;
-            overflow-x: auto;
-            margin: 10px 0;
-        }
-
-        .step-number {
-            display: inline-block;
-            background: #ff6b35;
-            color: white;
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            text-align: center;
-            line-height: 30px;
-            margin-right: 10px;
-            font-weight: bold;
-        }
-
-        .warning-box {
-            background: #2d1b1b;
-            border: 1px solid #8b2635;
-            color: #ffa8a8;
-            padding: 15px;
-            border-radius: 6px;
-            margin: 15px 0;
-        }
-
-        .info-box {
-            background: #1b2d3a;
-            border: 1px solid #2563eb;
-            color: #93c5fd;
-            padding: 15px;
-            border-radius: 6px;
-            margin: 15px 0;
-        }
-
-        .success-box {
-            background: #1b2d1b;
-            border: 1px solid #16a34a;
-            color: #86efac;
-            padding: 15px;
-            border-radius: 6px;
-            margin: 15px 0;
-        }
-
-        .image-showcase {
-            text-align: center;
-            margin: 25px 0;
-        }
-
-        .image-showcase img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-        }
-    </style>
+    <meta property="og:title" content="Microbot 1.9.8 release notes">
+    <meta property="og:description" content="Revolutionary plugin ecosystem launch! Separate repository for community plugins, streamlined development workflow, and comprehensive documentation system.">
+    <meta property="og:image" content="https://microbot.cloud/images/general/logo.png">
+    <meta property="og:url" content="https://microbot.cloud/releases/1.9.8.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Microbot 1.9.8 release notes">
+    <meta name="twitter:description" content="Revolutionary plugin ecosystem launch! Separate repository for community plugins, streamlined development workflow, and comprehensive documentation system.">
+    <meta name="theme-color" content="#0e0e0e">
+    <link rel="stylesheet" href="../microbot/app.min.css" media="all">
+    <link rel="stylesheet" href="../microbot/341e4a57816af3ba440d891ca87450ff_framework.css.c1bcd9467a7eeb9006567801face652d.css" media="all">
+    <link rel="stylesheet" href="../microbot/20446cf2d164adcc029377cb04d43d17_flags.css.be60c469fe9d673f833faaa74a81e375.css" media="all">
+    <link rel="stylesheet" href="../microbot/90eb5adf50a8c640f633d47fd7eb1778_core.css.730a336650d62c3b59570edc9065b630.css" media="all">
+    <link rel="stylesheet" href="../microbot/5a0da001ccc2200dc5625c3f3934497d_core_responsive.css.1d08c9ed37ed1cae43d3985a3b2316ad.css" media="all">
+    <link rel="stylesheet" href="../microbot/releases/releases.css">
 </head>
-<body style="background-color:#232323FF !important; background-image: none"
-      class="ipsApp ipsApp_front ipsClearfix ipsJS_has ipsApp_noTouch"
-      data-controller="core.front.core.app" data-message="" data-pageapp="" data-pagelocation="front" data-pagemodule=""
-      data-pagecontroller="">
-
+<body style="background-color:black !important;" class="rn-page ipsApp ipsApp_front ipsClearfix ipsJS_has ipsApp_noTouch">
 <header class="c-header">
+    <!-- Event Start -->
+    <div class="c-events-block py-2">
+        <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between gap-2">
+            <div></div>
+            <a href="https://discord.gg/zaGrfqFEWE" target="_blank" rel="noreferrer noopener"
+               class="c-events-block__right d-flex flex-row align-items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24px" class="me-2" viewBox="0 0 71 55"><title>logo
+                    discord</title>
+                    <g fill="none" class="nc-icon-wrapper">
+                        <g clip-path="url(#clip0)">
+                            <path d="M60.105 4.898A58.55 58.55 0 0 0 45.653.415a.22.22 0 0 0-.233.11 40.784 40.784 0 0 0-1.8 3.697c-5.456-.817-10.886-.817-16.23 0-.485-1.164-1.201-2.587-1.828-3.697a.228.228 0 0 0-.233-.11 58.386 58.386 0 0 0-14.451 4.483.207.207 0 0 0-.095.082C1.578 18.73-.944 32.144.293 45.39a.244.244 0 0 0 .093.167c6.073 4.46 11.955 7.167 17.729 8.962a.23.23 0 0 0 .249-.082 42.08 42.08 0 0 0 3.627-5.9.225.225 0 0 0-.123-.312 38.772 38.772 0 0 1-5.539-2.64.228.228 0 0 1-.022-.378c.372-.279.744-.569 1.1-.862a.22.22 0 0 1 .23-.03c11.619 5.304 24.198 5.304 35.68 0a.219.219 0 0 1 .233.027c.356.293.728.586 1.103.865a.228.228 0 0 1-.02.378 36.384 36.384 0 0 1-5.54 2.637.227.227 0 0 0-.121.315 47.249 47.249 0 0 0 3.624 5.897.225.225 0 0 0 .249.084c5.801-1.794 11.684-4.502 17.757-8.961a.228.228 0 0 0 .092-.164c1.48-15.315-2.48-28.618-10.497-40.412a.18.18 0 0 0-.093-.084zm-36.38 32.427c-3.497 0-6.38-3.211-6.38-7.156 0-3.944 2.827-7.156 6.38-7.156 3.583 0 6.438 3.24 6.382 7.156 0 3.945-2.827 7.156-6.381 7.156zm23.593 0c-3.498 0-6.38-3.211-6.38-7.156 0-3.944 2.826-7.156 6.38-7.156 3.582 0 6.437 3.24 6.38 7.156 0 3.945-2.798 7.156-6.38 7.156z"
+                                  fill="currentColor"></path>
+                        </g>
+                        <defs>
+                            <clippath id="clip0">
+                                <path fill="currentColor" d="M0 0h71v55H0z"></path>
+                            </clippath>
+                        </defs>
+                    </g>
+                </svg>
+                <p class="mb-0">Join us on Discord</p>
+            </a>
+        </div>
+    </div>
     <div class="c-border-red mb-2"></div>
-    <!-- Navigation Start -->
+    <!-- Event End -->      <!-- Navigation Start -->
     <nav class="c-nav navbar navbar-expand-sm py-2" style="flex-wrap:nowrap;justify-content: flex-start">
         <div class="container align-items-stretch">
             <a class="navbar-brand me-0 me-lg-3 me-xl-5" href="../index.html">
@@ -148,6 +79,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="../releases.html">Releases</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../plugins.html">Plugins</a>
+                    </li>
                 </ul>
             </div>
 
@@ -167,313 +101,180 @@
     <!-- Navigation End -->
 </header>
 
-<section class="content-section container">
-    <h1 style="color: #ff6b35; text-align: center; margin: 30px 0;"> Microbot v1.9.8 - Introducing the Microbot Hub</h1>
-    <div class="text-muted text-center" style="font-size: 18px; margin-bottom: 30px;">A revolutionary approach to plugin development and community contributions</div>
-
-    <!-- What is the Microbot Hub -->
-    <div class="section-header">
-        <h2> What is the Microbot Hub?</h2>
-    </div>
-
-    <div class="feature-box">
-        <p style="font-size: 16px; line-height: 1.6;">
-            The <strong>Microbot Hub</strong> is a dedicated, separate repository designed specifically for community-created plugins and scripts.
-            Think of it as the Grand Exchange for Microbot plugins - a centralized marketplace where developers can share,
-            discover, and collaborate on custom automation solutions.
-        </p>
-
-        <div class="info-box">
-            <strong>Key Purpose:</strong> Prevent bloating of the main Microbot client while fostering rapid community innovation
+<main>
+    <section class="rn-hero">
+        <div class="container">
+            <div class="rn-eyebrow">Release notes</div>
+            <h1>Microbot 1.9.8</h1>
+            <p class="rn-tagline">Introducing the Microbot Hub</p>
+            <div class="rn-meta">
+                <span><strong>August 15, 2025</strong></span>
+                <span>by Microbot Team</span>
+            </div>
+            <div class="rn-actions">
+                <a class="c-button c-button--primary" href="../index.html">Download Microbot</a>
+                <a class="c-button" href="../releases.html">All releases</a>
+            </div>
         </div>
-    </div>
+    </section>
 
-    <!-- Why the Hub Exists -->
-    <div class="section-header">
-        <h2>Why Does the Microbot Hub Exist?</h2>
-    </div>
-
-    <div class="feature-box">
-        <h4>🎯 Core Design Philosophy</h4>
-        <ul style="font-size: 16px; line-height: 1.8;">
-            <li><strong>Lean Main Client:</strong> Keep the core Microbot client small, stable, and focused on essential functionality</li>
-            <li><strong>Rapid Innovation:</strong> Enable community developers to create and share plugins without waiting for main client updates</li>
-            <li><strong>Quality Control:</strong> Separate experimental/community plugins from production-ready core features</li>
-            <li><strong>Scalability:</strong> Allow unlimited plugin growth without impacting main client performance</li>
-        </ul>
-    </div>
-
-    <div class="success-box">
-        <strong>✅ Result:</strong> A stable, fast core client with an unlimited ecosystem of community plugins
-    </div>
-    <!-- Contribution Guidelines -->
-    <div class="section-header">
-        <h2>🤝 Contribution Guidelines</h2>
-    </div>
-
-    <div class="feature-box">
-        <h4>🍴 Fork and Branch Management</h4>
-
-        <div style="margin: 20px 0;">
-            <p><span class="step-number">1</span><strong>Fork the Repository</strong></p>
-            <div class="code-block">git clone https://github.com/YourUsername/microbot-hub.git
+    <div class="rn-shell">
+        <div class="rn-layout">
+        <aside class="rn-toc" aria-label="In this release">
+            <div class="rn-toc-title">In this release</div>
+            <ol>
+                <li><a href="#why">Why the Hub exists</a></li>
+                <li><a href="#contributing">Contributing a plugin</a></li>
+                <li><a href="#troubleshooting">Troubleshooting</a></li>
+                <li><a href="#principles">Design principles</a></li>
+                <li><a href="#get-started">Get started</a></li>
+            </ol>
+        </aside>
+        <article class="rn-article">
+            <details class="rn-toc-mobile">
+                <summary>In this release</summary>
+                <ol>
+                <li><a href="#why">Why the Hub exists</a></li>
+                <li><a href="#contributing">Contributing a plugin</a></li>
+                <li><a href="#troubleshooting">Troubleshooting</a></li>
+                <li><a href="#principles">Design principles</a></li>
+                <li><a href="#get-started">Get started</a></li>
+                </ol>
+            </details>
+<p class="rn-lede">The Microbot Hub is a separate repository built for community plugins and scripts. Think of it as the Grand Exchange for Microbot plugins: one place where developers share, discover and work on automation together, while the core client stays small and stable.</p>
+<h2 id="why">Why the Hub exists</h2>
+<p>Every plugin that lived inside the main client made it bigger, slower to build and harder to keep stable. The Hub moves community plugins out of the client so both can move at their own pace.</p>
+<ul>
+<li><strong>A lean main client.</strong> The core keeps only essential, battle-tested features, which means faster start-up, lower memory use and fewer crashes.</li>
+<li><strong>Faster plugin updates.</strong> Developers can ship a plugin fix without waiting for the next client release.</li>
+<li><strong>Clear quality lines.</strong> Experimental and community plugins live apart from production-ready core features.</li>
+<li><strong>Room to grow.</strong> The plugin list can keep growing without making the client heavier for everyone.</li>
+</ul>
+<h2 id="contributing">Contributing a plugin</h2>
+<h3>1. Fork and branch</h3>
+<pre><code>git clone https://github.com/YourUsername/microbot-hub.git
 cd microbot-hub
-git checkout -b feature/your-plugin-name
-# or
-git checkout -b fix/issue-description</div>
-        </div>
-
-        <div style="margin: 20px 0;">
-            <p><span class="step-number">2</span><strong>Make Focused Changes</strong></p>
-            <div class="info-box">
-                <strong>💡 Tip:</strong> Keep changes focused on a single plugin or feature. Avoid massive pull requests that touch multiple plugins.
-            </div>
-        </div>
-
-        <div style="margin: 20px 0;">
-            <p><span class="step-number">3</span><strong>Test Thoroughly</strong></p>
-            <ul style="margin-left: 40px; font-size: 16px;">
-                <li>Test in multiple game scenarios</li>
-                <li>Verify edge cases</li>
-                <li>Check for memory leaks</li>
-                <li>Ensure compatibility with other plugins</li>
-            </ul>
-        </div>
-
-        <div style="margin: 20px 0;">
-            <p><span class="step-number">4</span><strong>Submit Pull Request</strong></p>
-            <div class="code-block">git add .
-git commit -m "Add: Awesome new plugin for XYZ"
-git push origin feature/your-plugin-name</div>
-        </div>
-    </div>
-
-    <div class="feature-box">
-        <h4>✅ Pull Request Checklist</h4>
-        <ul style="font-size: 16px; line-height: 1.8;">
-            <li>[ ] Code follows project style guidelines</li>
-            <li>[ ] Plugin has been tested extensively</li>
-            <li>[ ] Documentation is complete and accurate</li>
-            <li>[ ] No hardcoded values or magic numbers</li>
-            <li>[ ] Proper error handling implemented</li>
-            <li>[ ] Screenshots/GIFs included if applicable</li>
-        </ul>
-    </div>
-
-    <!-- Troubleshooting -->
-    <div class="section-header">
-        <h2>🔧 Troubleshooting Common Issues</h2>
-    </div>
-
-    <div class="feature-box">
-        <h4>☕ Java Version Mismatches</h4>
-        <div class="warning-box">
-            <strong>Problem:</strong> "Unsupported class file major version" error
-        </div>
-        <div class="success-box">
-            <strong>Solution:</strong>
-            <div class="code-block"># Check your Java version
-java -version
-
-# Set JAVA_HOME to correct JDK
+git checkout -b feature/your-plugin-name</code></pre>
+<p>Use <code>fix/issue-description</code> for bug fixes.</p>
+<h3>2. Keep changes focused</h3>
+<p>One plugin or one feature per pull request. Large pull requests that touch several plugins are hard to review and slow to merge.</p>
+<h3>3. Test thoroughly</h3>
+<ul>
+<li>Run the plugin in the situations players will actually use it in.</li>
+<li>Check edge cases, such as a full inventory, death, or a world hop mid-task.</li>
+<li>Watch for memory leaks on long sessions.</li>
+<li>Make sure it still works alongside other popular plugins.</li>
+</ul>
+<h3>4. Open a pull request</h3>
+<pre><code>git add .
+git commit -m "Add: new plugin for XYZ"
+git push origin feature/your-plugin-name</code></pre>
+<div class="rn-note">
+<span class="rn-note-title">Pull request checklist</span>
+<ul>
+<li>Code follows the project style.</li>
+<li>The plugin has been tested in game.</li>
+<li>Documentation is complete and accurate.</li>
+<li>No hard-coded values or magic numbers.</li>
+<li>Errors are handled instead of crashing the script.</li>
+<li>Screenshots or GIFs are included where they help.</li>
+</ul>
+</div>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<h3>"Unsupported class file major version"</h3>
+<p>Gradle is running on the wrong Java version. Point it at JDK 11:</p>
+<pre><code>java -version
 export JAVA_HOME=/path/to/java11
-
-# Verify Gradle is using correct Java
-./gradlew -version</div>
-        </div>
-    </div>
-
-    <div class="feature-box">
-        <h4>🔌 Missing Plugin Dependencies</h4>
-        <div class="warning-box">
-            <strong>Problem:</strong> Plugin fails to load due to missing dependencies
-        </div>
-        <div class="success-box">
-            <strong>Solution:</strong>
-            <ul style="font-size: 16px;">
-                <li>Check dependencies.txt in plugin folder</li>
-                <li>Install missing libraries: <code>./gradlew build --refresh-dependencies</code></li>
-                <li>Verify all required plugins are enabled</li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="feature-box">
-        <h4>🏗️ Build Failures</h4>
-        <div class="warning-box">
-            <strong>Problem:</strong> Gradle build fails with compilation errors
-        </div>
-        <div class="success-box">
-            <strong>Solution:</strong>
-            <div class="code-block"># Clean build cache
-./gradlew clean
-
-# Update dependencies
+./gradlew -version</code></pre>
+<h3>A plugin fails to load because of missing dependencies</h3>
+<ul>
+<li>Check <code>dependencies.txt</code> in the plugin folder.</li>
+<li>Refresh them with <code>./gradlew build --refresh-dependencies</code>.</li>
+<li>Make sure any plugins it depends on are enabled.</li>
+</ul>
+<h3>The build fails with compilation errors</h3>
+<pre><code>./gradlew clean
 ./gradlew build --refresh-dependencies
+./gradlew compileJava --info</code></pre>
+<h2 id="principles">Design principles</h2>
+<h3>Keep the main client lean</h3>
+<p>Only essential features belong in the core. That keeps start-up fast, memory low and the client easy to maintain.</p>
+<h3>Make iteration quick</h3>
+<p>Hub developers can ship updates straight away, try new ideas and act on player feedback quickly.</p>
+<h3>Keep setup simple</h3>
+<p>Cloning and building the Hub should take one command, need almost no configuration and be friendly to first-time contributors.</p>
+<h2 id="get-started">Get started</h2>
+<p>Ready to build something? Visit the <a href="https://github.com/chsami/microbot-hub" rel="noopener" target="_blank">Microbot Hub repository</a>, browse the <a href="../plugins.html">plugins</a> already there, or come and talk it through on <a href="https://discord.gg/zaGrfqFEWE" rel="noopener" target="_blank">Discord</a>.</p>
 
-# Check for syntax errors
-./gradlew compileJava --info</div>
+<nav class="rn-pager" aria-label="More releases">
+    <a class="rn-pager-prev" href="1.6.6.html"><small>Previous release</small><span>1.6.6</span></a>
+    <a class="rn-pager-next" href="2.6.35.html"><small>Next release</small><span>2.6.35</span></a>
+</nav>
+        </article>
         </div>
     </div>
+</main>
 
-    <!-- Design Goals -->
-    <div class="section-header">
-        <h2>🎯 Design Goals and Philosophy</h2>
-    </div>
-
-    <div class="feature-box">
-        <h4>🏛️ Architecture Principles</h4>
-
-        <div style="margin: 20px 0;">
-            <h5>1. 🪶 Maintain a Lean Main Client</h5>
-            <p style="margin-left: 20px; font-size: 16px;">
-                The core Microbot client contains only essential, battle-tested features. This ensures:
-            </p>
-            <ul style="margin-left: 40px; font-size: 16px;">
-                <li>Faster startup times</li>
-                <li>Lower memory usage</li>
-                <li>Improved stability</li>
-                <li>Easier maintenance</li>
-            </ul>
-        </div>
-
-        <div style="margin: 20px 0;">
-            <h5>2. ⚡ Enable Quick Iteration</h5>
-            <p style="margin-left: 20px; font-size: 16px;">
-                The Hub allows developers to:
-            </p>
-            <ul style="margin-left: 40px; font-size: 16px;">
-                <li>Deploy updates immediately</li>
-                <li>Experiment with new features</li>
-                <li>Get community feedback quickly</li>
-                <li>Iterate based on user needs</li>
-            </ul>
-        </div>
-
-        <div style="margin: 20px 0;">
-            <h5>3. 🛠️ Keep Setup Simple</h5>
-            <p style="margin-left: 20px; font-size: 16px;">
-                Development environment setup should be:
-            </p>
-            <ul style="margin-left: 40px; font-size: 16px;">
-                <li>One-command clone and build</li>
-                <li>Minimal configuration required</li>
-                <li>Clear documentation</li>
-                <li>Beginner-friendly</li>
-            </ul>
-        </div>
-    </div>
-
-    <!-- Conclusion -->
-    <div class="feature-box">
-        <p style="font-size: 18px; line-height: 1.6; text-align: center;">
-            The Microbot Hub represents a new era in botting client development. By separating community innovation from core stability,
-            we've created an environment where everyone wins:
-        </p>
-
-        <div style="display: flex; justify-content: space-around; margin: 30px 0; flex-wrap: wrap;">
-            <div style="text-align: center; margin: 10px; min-width: 200px;">
-                <div style="font-size: 48px;">👩‍💻</div>
-                <h5>Developers</h5>
-                <p>Rapid iteration and community feedback</p>
-            </div>
-            <div style="text-align: center; margin: 10px; min-width: 200px;">
-                <div style="font-size: 48px;">👥</div>
-                <h5>Users</h5>
-                <p>Access to cutting-edge plugins and features</p>
-            </div>
-            <div style="text-align: center; margin: 10px; min-width: 200px;">
-                <div style="font-size: 48px;">🏛️</div>
-                <h5>Project</h5>
-                <p>Stable core with unlimited extensibility</p>
-            </div>
-        </div>
-
-        <div style="text-align: center; margin: 30px 0;">
-            <p style="font-size: 16px;">
-                Ready to contribute? Visit the
-                <a href="https://github.com/chsami/microbot-hub" target="_blank" style="color: #ff6b35;">Microbot Hub Repository</a>
-                and start building the future of automation!
-            </p>
-        </div>
-    </div>
-
-    <!-- Final Section with improved footer -->
-    <div class="section-header" style="margin-top: 50px;">
-        <h2>🎉 Join the Community Revolution!</h2>
-    </div>
-
-    <div class="feature-box">
-        <p style="font-size: 18px; line-height: 1.6; text-align: center;">
-            The Microbot Hub represents a new era in botting client development. By separating community innovation from core stability,
-            we've created an environment where everyone wins:
-        </p>
-
-        <div style="display: flex; justify-content: space-around; margin: 30px 0; flex-wrap: wrap;">
-            <div style="text-align: center; margin: 10px; min-width: 200px;">
-                <div style="font-size: 48px;">👩‍💻</div>
-                <h5>Developers</h5>
-                <p>Rapid iteration and community feedback</p>
-            </div>
-            <div style="text-align: center; margin: 10px; min-width: 200px;">
-                <div style="font-size: 48px;">👥</div>
-                <h5>Users</h5>
-                <p>Access to cutting-edge plugins and features</p>
-            </div>
-            <div style="text-align: center; margin: 10px; min-width: 200px;">
-                <div style="font-size: 48px;">🏛️</div>
-                <h5>Project</h5>
-                <p>Stable core with unlimited extensibility</p>
-            </div>
-        </div>
-
-        <div style="text-align: center; margin: 30px 0;">
-            <p style="font-size: 16px;">
-                Ready to contribute? Visit the
-                <a href="https://github.com/chsami/microbot-hub" target="_blank" style="color: #ff6b35;">Microbot Hub Repository</a>
-                and start building the future of automation!
-            </p>
-        </div
-    </div>
-
-    <!-- Enhanced Footer -->
-    <div class="feature-box" style="background: linear-gradient(135deg, #1a1a1a, #0a0a0a); border: 2px solid #ff6b35; margin: 40px 0 20px 0;">
-        <div style="text-align: center; padding: 20px;">
-            <div style="font-size: 24px; color: #ff6b35; margin-bottom: 15px;">
-                🚀 The Future is Here! 🚀
-            </div>
-            <h3 style="color: #fff; margin: 15px 0; font-size: 22px;">
-                Microbot v1.9.8 - The Hub Revolution
-            </h3>
-            <p style="font-size: 18px; color: #ccc; line-height: 1.6; margin: 20px 0;">
-                Community-driven development has never been easier.<br/>
-                <span style="color: #ff6b35; font-weight: bold;">Happy developing and happy scaping!</span> 🎮
-            </p>
-
-            <div style="margin: 25px 0; padding: 20px 0; border-top: 1px solid #333; border-bottom: 1px solid #333;">
-                <div style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; align-items: center;">
-                    <a href="https://github.com/chsami/microbot" target="_blank" style="color: #ff6b35; text-decoration: none; font-size: 16px; transition: all 0.3s ease;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#ff6b35'">
-                        💻 Main Repository
-                    </a>
-                    <a href="https://github.com/chsami/microbot-hub" target="_blank" style="color: #ff6b35; text-decoration: none; font-size: 16px; transition: all 0.3s ease;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#ff6b35'">
-                        🏛️ Plugin Hub
-                    </a>
-                    <a href="https://discord.gg/zaGrfqFEWE" target="_blank" style="color: #ff6b35; text-decoration: none; font-size: 16px; transition: all 0.3s ease;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#ff6b35'">
-                        💬 Discord Community
-                    </a>
-                </div>
-            </div>
-
-            <div style="font-size: 18px; color: #ff6b35; font-weight: bold; margin-top: 20px;">
-                - The Microbot Team 🤖
-            </div>
-            <div style="font-size: 14px; color: #888; margin-top: 10px;">
-                Opensource automation for the community, by the community.
+<footer class="c-footer pt-5">
+    <div class="container">
+        <div class="row justify-content-center align-items-start g-4">
+            <div class="text-center" style="width:20rem">
+                <img src="../microbot/logo.png" class="c-footer--logo" loading="lazy" alt="footer">
+                <div class="c-content-divider mt-3 mb-3"></div>
+                <ul class="d-flex align-items-center justify-content-center gap-4 m-auto text-center">
+                    <li>
+                        <a href="https://discord.gg/zaGrfqFEWE" target="_blank" rel="noreferrer noopener">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24px" viewBox="0 0 71 55"><title>logo
+                                discord</title>
+                                <g fill="none" class="nc-icon-wrapper">
+                                    <g clip-path="url(#clip0)">
+                                        <path d="M60.105 4.898A58.55 58.55 0 0 0 45.653.415a.22.22 0 0 0-.233.11 40.784 40.784 0 0 0-1.8 3.697c-5.456-.817-10.886-.817-16.23 0-.485-1.164-1.201-2.587-1.828-3.697a.228.228 0 0 0-.233-.11 58.386 58.386 0 0 0-14.451 4.483.207.207 0 0 0-.095.082C1.578 18.73-.944 32.144.293 45.39a.244.244 0 0 0 .093.167c6.073 4.46 11.955 7.167 17.729 8.962a.23.23 0 0 0 .249-.082 42.08 42.08 0 0 0 3.627-5.9.225.225 0 0 0-.123-.312 38.772 38.772 0 0 1-5.539-2.64.228.228 0 0 1-.022-.378c.372-.279.744-.569 1.1-.862a.22.22 0 0 1 .23-.03c11.619 5.304 24.198 5.304 35.68 0a.219.219 0 0 1 .233.027c.356.293.728.586 1.103.865a.228.228 0 0 1-.02.378 36.384 36.384 0 0 1-5.54 2.637.227.227 0 0 0-.121.315 47.249 47.249 0 0 0 3.624 5.897.225.225 0 0 0 .249.084c5.801-1.794 11.684-4.502 17.757-8.961a.228.228 0 0 0 .092-.164c1.48-15.315-2.48-28.618-10.497-40.412a.18.18 0 0 0-.093-.084zm-36.38 32.427c-3.497 0-6.38-3.211-6.38-7.156 0-3.944 2.827-7.156 6.38-7.156 3.583 0 6.438 3.24 6.382 7.156 0 3.945-2.827 7.156-6.381 7.156zm23.593 0c-3.498 0-6.38-3.211-6.38-7.156 0-3.944 2.826-7.156 6.38-7.156 3.582 0 6.437 3.24 6.38 7.156 0 3.945-2.798 7.156-6.38 7.156z"
+                                              fill="currentColor"></path>
+                                    </g>
+                                    <defs>
+                                        <clippath id="clip0">
+                                            <path fill="currentColor" d="M0 0h71v55H0z"></path>
+                                        </clippath>
+                                    </defs>
+                                </g>
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/chsami/microbot/releases" target="_blank" rel="noreferrer noopener">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24px" viewBox="0 0 16 16"><title>data
+                                download</title>
+                                <g fill="currentColor" class="nc-icon-wrapper">
+                                    <path d="M14,10a1,1,0,0,0-1,1v2H3V11a1,1,0,0,0-2,0v2a2,2,0,0,0,2,2H13a2,2,0,0,0,2-2V11A1,1,0,0,0,14,10Z"></path>
+                                    <path data-color="color-2"
+                                          d="M7.293,10.707a1,1,0,0,0,1.414,0l4-4a1,1,0,1,0-1.414-1.414L9,7.586V2A1,1,0,0,0,7,2V7.586L4.707,5.293A1,1,0,0,0,3.293,6.707Z"></path>
+                                </g>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
-
-</section>
-
+    <div class="c-footer-cc py-2 mt-5">
+        <div class="container">
+            <p class="text-center c-text-faded mb-0">Microbot © 2026. All Rights Reserved. - <a href="../privacy.html"
+                                                                                                target="_blank">Privacy
+                Policy</a> -
+                <a href="../terms.html"
+                   target="_blank">Terms of service</a></p>
+        </div>
+    </div>
+</footer>
+<script>
+    document.querySelectorAll('.rn-article img, .rn-article video').forEach(function (m) {
+        function hide() {
+            var box = m.closest('.rn-gallery') && m.closest('.rn-gallery').children.length > 1 ? m : (m.closest('figure') || m);
+            box.style.display = 'none';
+        }
+        if (m.tagName === 'IMG' && m.complete && m.naturalWidth === 0 && m.getAttribute('src')) hide();
+        m.addEventListener('error', hide);
+    });
+</script>
 </body>
 </html>

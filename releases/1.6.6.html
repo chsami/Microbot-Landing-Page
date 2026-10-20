@@ -2,51 +2,57 @@
 <html lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>1.6.6 Release - Microbot</title>
-
+    <title>Microbot 1.6.6 release notes</title>
     <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-
-    <meta name="description" content="Microbot Free open source botting client based on runelite">
-
-
+    <meta name="description" content="Holiday event and script improvements!">
+    <link rel="canonical" href="https://microbot.cloud/releases/1.6.6.html">
+    <meta property="og:type" content="article">
     <meta property="og:site_name" content="Microbot">
-
-
     <meta property="og:locale" content="en_US">
-
-
-    <meta name="theme-color" content="#2c2c2c">
-
-
-    <link rel="stylesheet" href="../microbot/app.min.css">
-
-
-    <link rel="stylesheet"
-          href="../microbot/341e4a57816af3ba440d891ca87450ff_framework.css.c1bcd9467a7eeb9006567801face652d.css"
-          media="all">
-
-    <link rel="stylesheet"
-          href="../microbot/20446cf2d164adcc029377cb04d43d17_flags.css.be60c469fe9d673f833faaa74a81e375.css"
-          media="all">
-
-    <link rel="stylesheet"
-          href="../microbot/90eb5adf50a8c640f633d47fd7eb1778_core.css.730a336650d62c3b59570edc9065b630.css" media="all">
-
-    <link rel="stylesheet"
-          href="../microbot/5a0da001ccc2200dc5625c3f3934497d_core_responsive.css.1d08c9ed37ed1cae43d3985a3b2316ad.css"
-          media="all">
-
+    <meta property="og:title" content="Microbot 1.6.6 release notes">
+    <meta property="og:description" content="Holiday event and script improvements!">
+    <meta property="og:image" content="https://microbot.cloud/images/general/logo.png">
+    <meta property="og:url" content="https://microbot.cloud/releases/1.6.6.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Microbot 1.6.6 release notes">
+    <meta name="twitter:description" content="Holiday event and script improvements!">
+    <meta name="theme-color" content="#0e0e0e">
+    <link rel="stylesheet" href="../microbot/app.min.css" media="all">
+    <link rel="stylesheet" href="../microbot/341e4a57816af3ba440d891ca87450ff_framework.css.c1bcd9467a7eeb9006567801face652d.css" media="all">
+    <link rel="stylesheet" href="../microbot/20446cf2d164adcc029377cb04d43d17_flags.css.be60c469fe9d673f833faaa74a81e375.css" media="all">
+    <link rel="stylesheet" href="../microbot/90eb5adf50a8c640f633d47fd7eb1778_core.css.730a336650d62c3b59570edc9065b630.css" media="all">
+    <link rel="stylesheet" href="../microbot/5a0da001ccc2200dc5625c3f3934497d_core_responsive.css.1d08c9ed37ed1cae43d3985a3b2316ad.css" media="all">
+    <link rel="stylesheet" href="../microbot/releases/releases.css">
 </head>
-<body style="background-color:#232323FF !important; background-image: none"
-      class="ipsApp ipsApp_front ipsClearfix ipsJS_has ipsApp_noTouch"
-      data-controller="core.front.core.app" data-message="" data-pageapp="" data-pagelocation="front" data-pagemodule=""
-      data-pagecontroller="">
-
+<body style="background-color:black !important;" class="rn-page ipsApp ipsApp_front ipsClearfix ipsJS_has ipsApp_noTouch">
 <header class="c-header">
+    <!-- Event Start -->
+    <div class="c-events-block py-2">
+        <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between gap-2">
+            <div></div>
+            <a href="https://discord.gg/zaGrfqFEWE" target="_blank" rel="noreferrer noopener"
+               class="c-events-block__right d-flex flex-row align-items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24px" class="me-2" viewBox="0 0 71 55"><title>logo
+                    discord</title>
+                    <g fill="none" class="nc-icon-wrapper">
+                        <g clip-path="url(#clip0)">
+                            <path d="M60.105 4.898A58.55 58.55 0 0 0 45.653.415a.22.22 0 0 0-.233.11 40.784 40.784 0 0 0-1.8 3.697c-5.456-.817-10.886-.817-16.23 0-.485-1.164-1.201-2.587-1.828-3.697a.228.228 0 0 0-.233-.11 58.386 58.386 0 0 0-14.451 4.483.207.207 0 0 0-.095.082C1.578 18.73-.944 32.144.293 45.39a.244.244 0 0 0 .093.167c6.073 4.46 11.955 7.167 17.729 8.962a.23.23 0 0 0 .249-.082 42.08 42.08 0 0 0 3.627-5.9.225.225 0 0 0-.123-.312 38.772 38.772 0 0 1-5.539-2.64.228.228 0 0 1-.022-.378c.372-.279.744-.569 1.1-.862a.22.22 0 0 1 .23-.03c11.619 5.304 24.198 5.304 35.68 0a.219.219 0 0 1 .233.027c.356.293.728.586 1.103.865a.228.228 0 0 1-.02.378 36.384 36.384 0 0 1-5.54 2.637.227.227 0 0 0-.121.315 47.249 47.249 0 0 0 3.624 5.897.225.225 0 0 0 .249.084c5.801-1.794 11.684-4.502 17.757-8.961a.228.228 0 0 0 .092-.164c1.48-15.315-2.48-28.618-10.497-40.412a.18.18 0 0 0-.093-.084zm-36.38 32.427c-3.497 0-6.38-3.211-6.38-7.156 0-3.944 2.827-7.156 6.38-7.156 3.583 0 6.438 3.24 6.382 7.156 0 3.945-2.827 7.156-6.381 7.156zm23.593 0c-3.498 0-6.38-3.211-6.38-7.156 0-3.944 2.826-7.156 6.38-7.156 3.582 0 6.437 3.24 6.38 7.156 0 3.945-2.798 7.156-6.38 7.156z"
+                                  fill="currentColor"></path>
+                        </g>
+                        <defs>
+                            <clippath id="clip0">
+                                <path fill="currentColor" d="M0 0h71v55H0z"></path>
+                            </clippath>
+                        </defs>
+                    </g>
+                </svg>
+                <p class="mb-0">Join us on Discord</p>
+            </a>
+        </div>
+    </div>
     <div class="c-border-red mb-2"></div>
-    <!-- Navigation Start -->
+    <!-- Event End -->      <!-- Navigation Start -->
     <nav class="c-nav navbar navbar-expand-sm py-2" style="flex-wrap:nowrap;justify-content: flex-start">
         <div class="container align-items-stretch">
             <a class="navbar-brand me-0 me-lg-3 me-xl-5" href="../index.html">
@@ -73,9 +79,11 @@
                     <li class="nav-item">
                         <a class="nav-link" href="../releases.html">Releases</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../plugins.html">Plugins</a>
+                    </li>
                 </ul>
             </div>
-
 
             <ul id="elMobileNav"
                 class="ipsList_inline ipsResponsive_hideDesktop ipsResponsive_block my-auto d-flex gx-2"
@@ -93,396 +101,305 @@
     <!-- Navigation End -->
 </header>
 
-<section class="content-section container">
-    <h3 id="release-title"></h3>
-    <div id="release-subtitle" class="text-muted"></div>
-    <br/>
-    <p>Download <a href="https://themicrobot.com"><u>here</u></a></p>
-    <br/>
-
-    <img src="https://oldschool.runescape.wiki/images/2024_Christmas_event_location.png?fd0c5" />
-
-    <message-content _ngcontent-ng-c1082539059="" class="model-response-text ng-star-inserted" _nghost-ng-c2156892898="" id="message-content-id-r_fb70d774be2cefbe" style="height: auto;"><div _ngcontent-ng-c2156892898="" class="markdown markdown-main-panel response-optimization" id="model-response-message-contentr_fb70d774be2cefbe" dir="ltr" style="--animation-duration: 400ms; --fade-animation-function: linear;"><h3 data-sourcepos="1:1-1:58">Summary of Development Activity (Dec 12 - Dec 26, 2024)</h3><p data-sourcepos="3:1-3:109">This is a summary of the development activity for the past two weeks on the project. Here are the key points:</p><p data-sourcepos="5:1-5:37"><strong>New features and functionalities:</strong></p><ul data-sourcepos="7:1-18:0">
-        <li data-sourcepos="7:1-7:55">Added support for the Moonlight moth plugin (lhndl93)</li>
-        <li data-sourcepos="8:1-8:70">Streamlined auto-completion of the Holiday Event (chsami, higgles55)</li>
-        <li data-sourcepos="9:1-9:57">Improved antiban support for various plugins (See1Duck)</li>
-        <li data-sourcepos="10:1-10:113">Added functionalities to the AIO Fighter plugin (See1Duck) - item ID handling, bank navigation, logging options</li>
-        <li data-sourcepos="11:1-11:73">Added support for NPC Contact spell in Mahogany Homes plugin (See1Duck)</li>
-        <li data-sourcepos="12:1-12:57">Implemented "Auto-Drop" option in QoL Plugin (See1Duck)</li>
-        <li data-sourcepos="13:1-13:62">Added support for gem bag in Amethyst Mine Plugin (See1Duck)</li>
-        <li data-sourcepos="14:1-14:59">Added "ignorecollision" feature in collision map (chsami)</li>
-        <li data-sourcepos="15:1-15:43">Added support for Magic Carpet (g-mason0)</li>
-        <li data-sourcepos="16:1-16:108">Introduced a new AIO Magic Plugin (g-mason0) - includes spell casting, rune management, antiban activities</li>
-        <li data-sourcepos="17:1-18:0">Implemented support for using non-consumable teleports only (g-mason0)</li>
-    </ul><p data-sourcepos="19:1-19:31"><strong>Bug fixes and improvements:</strong></p><ul data-sourcepos="21:1-50:0">
-        <li data-sourcepos="21:1-21:68">Fixed various bugs in the Holiday Event plugin (higges55, lhndl93)</li>
-        <li data-sourcepos="22:1-22:59">Fixed calculations in checkIdleLogout function (See1Duck)</li>
-        <li data-sourcepos="23:1-23:54">Fixed Scroll Up function in Natural Mouse (See1Duck)</li>
-        <li data-sourcepos="24:1-24:75">Fixed npcContact method to check visibility before interaction (See1Duck)</li>
-        <li data-sourcepos="25:1-25:42">Added method to empty gem bag (See1Duck)</li>
-        <li data-sourcepos="26:1-26:60">Increased timeout timer in Varrock Anvil Plugin (See1Duck)</li>
-        <li data-sourcepos="27:1-27:36">Fixed NeverLogOut logic (See1Duck)</li>
-        <li data-sourcepos="28:1-28:69">Adjusted gem bag check threshold in AmethystMiningScript (See1Duck)</li>
-        <li data-sourcepos="29:1-29:56">Updated banking logic in AIO Fighter Plugin (See1Duck)</li>
-        <li data-sourcepos="30:1-30:56">Fixed snow collector functionality (higges55, lhndl93)</li>
-        <li data-sourcepos="31:1-31:72">Added ring of forging for iron bar in AutoSmeltingScript (DrDeath4eva)</li>
-        <li data-sourcepos="32:1-32:62">Implemented functionality to handle Varrock manhole (chsami)</li>
-        <li data-sourcepos="33:1-33:56">Improved banking logic in webwalker plugins (g-mason0)</li>
-        <li data-sourcepos="34:1-34:51">Added support for stop plugin on death (g-mason0)</li>
-        <li data-sourcepos="35:1-35:67">Fixed restricted tiles near staircase in Draynor Manor (g-mason0)</li>
-        <li data-sourcepos="36:1-36:118">Implemented various functionalities in Firemaking QoL features (See1Duck) - quick log lighting, firemaking logs enum</li>
-        <li data-sourcepos="37:1-37:110">Integrated state management for AIO Fighter (See1Duck) - state tracking, banking/combat/looting improvements</li>
-        <li data-sourcepos="38:1-38:64">Improved uncharged cell handling in GOTR bot script (See1Duck)</li>
-        <li data-sourcepos="39:1-39:62">Updated teleportation handling in bot pathfinding (See1Duck)</li>
-        <li data-sourcepos="40:1-40:62">Added plank sack support to Mahogany Homes script (See1Duck)</li>
-        <li data-sourcepos="41:1-41:69">Fixed issue detecting blood essence in runecrafting bots (See1Duck)</li>
-        <li data-sourcepos="42:1-42:37">Updated birdhunter plugin (lhndl93)</li>
-        <li data-sourcepos="43:1-43:36">Introduced Prayer Helper (lhndl93)</li>
-        <li data-sourcepos="44:1-44:47">Fixed logic in autosmelting plugin (g-mason0)</li>
-        <li data-sourcepos="45:1-45:62">Added support for Baba Yaga's house on lunar isle (g-mason0)</li>
-        <li data-sourcepos="46:1-46:47">Improved webwalker functionalities (g-mason0)</li>
-        <li data-sourcepos="47:1-47:52">Added sleepUntil method with reset action (chsami)</li>
-        <li data-sourcepos="48:1-48:67">Added farming cape support and magic secateurs (yairtu, g-mason0)</li>
-        <li data-sourcepos="49:1-50:0">Improved handling of teleport spells (g-mason0)</li>
-    </ul><p data-sourcepos="51:1-51:34"><strong>Code refactoring and cleanups:</strong></p><ul data-sourcepos="53:1-57:0">
-        <li data-sourcepos="53:1-53:49">Removed deprecated methods (See1Duck, g-mason0)</li>
-        <li data-sourcepos="54:1-54:68">Refactored functionalities in various plugins (See1Duck, g-mason0)</li>
-        <li data-sourcepos="55:1-55:65">Updated comments and documentation (chsami, See1Duck, g-mason0)</li>
-        <li data-sourcepos="56:1-57:0">Reorganized configuration files (g-mason0)</li>
-    </ul><p data-sourcepos="58:1-58:174">This summary highlights the significant progress made on the project in the past two weeks. New features were added, bugs were fixed, and code improvements were implemented.</p></div></message-content>
-
-    <p>That's all for version 1.6.6.<br/> Happy scaping!!</p>
-    - Mocrosoft <br/>
-
-    <h1>New commits (102)</h1>
-    <section class="commits">
-
-        <ul class='commit-list'>                <li class='commit'>
-            <a href='https://github.com/chsami/microbot/commit/0b2ca93f70b87985b21e703181f884016fe5f247' class='commit-link' target='_blank'>AutoSmeltingScript.java - added ring of forging for iron bar</a>
-        </li>                <li class='commit'>
-            <a href='https://github.com/chsami/microbot/commit/b13f9c2e2bb698a83c266ac7799a9fba9b50454c' class='commit-link' target='_blank'>Merge remote-tracking branch 'origin/development' into development</a>
-        </li>                <li class='commit'>
-            <a href='https://github.com/chsami/microbot/commit/06953ed24e75e36804ce9b484ea327b210ac371b' class='commit-link' target='_blank'>ignorecollision feature added in collisionmap + some web walker fixes (dwarf cannon quest area)</a>
-        </li>                <li class='commit'>
-            <a href='https://github.com/chsami/microbot/commit/ba1072ad91c085af828098ac1a6014ab5b2906a1' class='commit-link' target='_blank'>Merge pull request #577 from lhndl93/bluedragondebug</a>
-        </li>                <li class='commit'>
-            <a href='https://github.com/chsami/microbot/commit/1a4002675bac264274b038dc9b0cc0e44f1cb568' class='commit-link' target='_blank'>Merge pull request #575 from higgles55/development</a>
-        </li>                <li class='commit'>
-            <a href='https://github.com/chsami/microbot/commit/2580f0fe3909fa8f2041cb373ca9e918f666f399' class='commit-link' target='_blank'>Merge remote-tracking branch 'origin/development' into development</a>
-        </li>                <li class='commit'>
-            <a href='https://github.com/chsami/microbot/commit/5cda6dbbf3eb6b307de7af4d1a26ab65b041f025' class='commit-link' target='_blank'>reset starttime when script is shutdown</a>
-        </li>                <li class='commit'>
-            <a href='https://github.com/chsami/microbot/commit/99d3f4017ef022a427da3aaac28e02d37527d2b5' class='commit-link' target='_blank'>Merge pull request #573 from g-mason0/development</a>
-        </li>                <li class='commit'>
-            <a href='https://github.com/chsami/microbot/commit/2b0283e4f9e6a4fd38fad955af7d1f42b470f85c' class='commit-link' target='_blank'>Merge pull request #574 from higgles55/development</a>
-        </li>                <li class='commit'>
-            <a href='https://github.com/chsami/microbot/commit/7cceb6cc088647af3803bfdfa3ebd7f7985c36b8' class='commit-link' target='_blank'>MageTrainingArenaScript graveyard room fix</a>
-        </li>                <li class='commit'>
-            <a href='https://github.com/chsami/microbot/commit/741cb2ce1475204e0d779c9d536cd26ebd8f2cfa' class='commit-link' target='_blank'>Merge remote-tracking branch 'origin/development' into development</a>
-        </li>                <li class='commit'>
-            <a href='https://github.com/chsami/microbot/commit/f13a37e26975ae6471ef25ff9425e95d99b81891' class='commit-link' target='_blank'>disable teleports for mta script</a>
-        </li>                <li class='commit'>
-            <a href='https://github.com/chsami/microbot/commit/626d514ba34f7c0bc1a715c1fb57b9a08521cb30' class='commit-link' target='_blank'>Merge pull request #572 from higgles55/development</a>
-        </li>                <li class='commit'>
-            <a href='https://github.com/chsami/microbot/commit/a9bbc48fc7153e60e31ef932df9f36b6875fc5d1' class='commit-link' target='_blank'>Merge pull request #571 from lhndl93/moonlight-moth</a>
-        </li>                <li class='commit'>
-            <a href='https://github.com/chsami/microbot/commit/14cca0fd51b8891262a90fafdd80b88fddb44cc7' class='commit-link' target='_blank'>Merge pull request #566 from g-mason0/development</a>
-        </li>                <li class='commit'>
-            <a href='https://github.com/chsami/microbot/commit/31c3727944918e83448c7440b9dc05164a533a98' class='commit-link' target='_blank'>Merge remote-tracking branch 'origin/development' into development</a>
-        </li>                <li class='commit'>
-            <a href='https://github.com/chsami/microbot/commit/8d3bb4fe1ba959279d72f8f5fbfdd44422b39753' class='commit-link' target='_blank'>1.6.5.2</a>
-        </li>                <li class='commit'>
-            <a href='https://github.com/chsami/microbot/commit/8754798c24974cc923dcd92b96b0894531b88a9a' class='commit-link' target='_blank'>Merge pull request #567 from higgles55/development</a>
-        </li>                <li class='commit'>
-            <a href='https://github.com/chsami/microbot/commit/eca632244f7f0897961c0d4f88e470634f075b4e' class='commit-link' target='_blank'>Merge remote-tracking branch 'runelite/master' into development</a>
-        </li>                <li class='commit'>
-            <a href='https://github.com/chsami/microbot/commit/7f3e0d86e0f8ffc95b56d238cddef688475b2d5b' class='commit-link' target='_blank'>Guardians of the rift -> repairWithCordelia</a>
-        </li>                <li class='commit'>
-            <a href='https://github.com/chsami/microbot/commit/c0acb690ca2f711f87ce8c16b7c3587a639ca902' class='commit-link' target='_blank'>1.6.5.1</a>
-        </li>                <li class='commit'>
-            <a href='https://github.com/chsami/microbot/commit/8503dd129811351b98de3193fb62391d953e85f4' class='commit-link' target='_blank'>gotr 1.1.4 fix hugemine portal issue</a>
-        </li>                <li class='commit'>
-            <a href='https://github.com/chsami/microbot/commit/ddd8f43790a1a2a9f30f6f836201a6e3bf0efca1' class='commit-link' target='_blank'>bump 1.6.5</a>
-        </li>                <li class='commit'>
-            <a href='https://github.com/chsami/microbot/commit/9c3c07e901533563c359dd59307cabe47a248443' class='commit-link' target='_blank'>Merge remote-tracking branch 'runelite/master' into development</a>
-        </li>                <li class='commit'>
-            <a href='https://github.com/chsami/microbot/commit/c875cb6d376d1d94aaf31a6f3b3a4647f2775b2d' class='commit-link' target='_blank'>Merge remote-tracking branch 'origin/development' into development</a>
-        </li>                <li class='commit'>
-            <a href='https://github.com/chsami/microbot/commit/cf6189bdac87c7cbab995fb06c428c51508bc837' class='commit-link' target='_blank'>AttackNpcScript lowercase npc name matching</a>
-        </li>                <li class='commit'>
-            <a href='https://github.com/chsami/microbot/commit/9dfa7fc0ee7e998fe81b68166b2a4dcbbb25d5dd' class='commit-link' target='_blank'>Merge pull request #561 from yairtu/development</a>
-        </li>                <li class='commit'>
-            <a href='https://github.com/chsami/microbot/commit/26a9ca9cb20d2a003f9de6bfc0f69ee89d5a804c' class='commit-link' target='_blank'>Merge pull request #560 from yairtu/development</a>
-        </li>                <li class='commit'>
-            <a href='https://github.com/chsami/microbot/commit/2680ae685b5d1ba24896d3b6087561ce5589e61f' class='commit-link' target='_blank'>Merge pull request #556 from g-mason0/development</a>
-        </li>                <li class='commit'>
-            <a href='https://github.com/chsami/microbot/commit/e98d6f71868aa18d80969dc7b6bb96c185964341' class='commit-link' target='_blank'>Merge pull request #541 from lhndl93/tormented</a>
-        </li>                <li class='commit'>
-            <a href='https://github.com/chsami/microbot/commit/ccbba8ecc6571e0820fb2b45ba1ff916315ab6d5' class='commit-link' target='_blank'>Merge pull request #554 from Hosea-MP/update-widget-inspector</a>
-        </li>                <li class='commit'>
-            <a href='https://github.com/chsami/microbot/commit/afe7d5bf514a76d9480d5aad1b9d033403bb5c0d' class='commit-link' target='_blank'>Merge pull request #559 from See1Duck/development</a>
-        </li>            </ul>
-        </li>        <li>
-        <div class='author'>Author: lhndl93</div>
-        <ul class='commit-list'>                <li class='commit'>
-            <a href='https://github.com/chsami/microbot/commit/b247df5ab41339d94c92b7d5a73e6eab7fc1a026' class='commit-link' target='_blank'>Added some more loggin options to help with issues going forward as I can't replicate an issue someone is having.</a>
-        </li>                <li class='commit'>
-            <a href='https://github.com/chsami/microbot/commit/45ab5fecce7b6eb2162773a266a1d7deb6d8e5c7' class='commit-link' target='_blank'>Moonlight moth plugin</a>
-        </li>                <li class='commit'>
-            <a href='https://github.com/chsami/microbot/commit/7f2d2150562ffc0ce319481bca5dad7381f95211' class='commit-link' target='_blank'>Removed the getClosest</a>
-        </li>            </ul>
-    </li>        <li>
-        <div class='author'>Author: Higgles55</div>
-        <ul class='commit-list'>                <li class='commit'>
-            <a href='https://github.com/chsami/microbot/commit/ccb943fc0bc22b59d00d7c47ffff2c16dc057aac' class='commit-link' target='_blank'>better logging and total reset of steps if invitations missing after certain case</a>
-        </li>                <li class='commit'>
-            <a href='https://github.com/chsami/microbot/commit/85bfc9b8f0a0ba3f7a4c7d2ec5e40ddb67e66b09' class='commit-link' target='_blank'>sir amik invite repeat wasn't disntinguihsed from the 3 other invites</a>
-        </li>                <li class='commit'>
-            <a href='https://github.com/chsami/microbot/commit/80d2142c805d61503e59a436d9cc226acca23c60' class='commit-link' target='_blank'>final fixes to holiday event after rigorous testing</a>
-        </li>                <li class='commit'>
-            <a href='https://github.com/chsami/microbot/commit/ef49c46472f9ce1461a5d8b551768c533bb933c1' class='commit-link' target='_blank'>Merge branch 'chsami:development' into development</a>
-        </li>                <li class='commit'>
-            <a href='https://github.com/chsami/microbot/commit/f8fa3e7af16dd934ba9e3428bd7d101ef4780a1b' class='commit-link' target='_blank'>Overlay updated from V1.0.0 to Christmas 2024 - Pop-up to continue plugin or not when cutscene starts - extra and longer sleeps and dialogue cycles</a>
-        </li>                <li class='commit'>
-            <a href='https://github.com/chsami/microbot/commit/85fe261fe029f62f9cc347ae0b47d4d80af73345' class='commit-link' target='_blank'>Streamlines auto-completion of Holiday Event by modifying party-pete worldpoint, adding more dialouge cycles and sleeps to deal with glitchy cutscenes</a>
-        </li>                <li class='commit'>
-            <a href='https://github.com/chsami/microbot/commit/339ee038aa96f2b22c42df5619b5e7f0bd92bea5' class='commit-link' target='_blank'>this plugin holds the current holiday event</a>
-        </li>            </ul>
-    </li>        <li>
-        <div class='author'>Author: g-mason0</div>
-        <ul class='commit-list'>                <li class='commit'>
-            <a href='https://github.com/chsami/microbot/commit/25dd6f6f44a9cabd151ef6d8ae63ce6f87eb2301' class='commit-link' target='_blank'>fix: removed grand exchange teleport from tablet, there really isn't a good way to handle this</a>
-        </li>                <li class='commit'>
-            <a href='https://github.com/chsami/microbot/commit/6c0d47f8118c39a7e312624613fb2b6d33e79b6c' class='commit-link' target='_blank'>fix: make waitForInventoryChanges more efficient by using multiple sleepUntils</a>
-        </li>                <li class='commit'>
-            <a href='https://github.com/chsami/microbot/commit/f2d35b471cbeae3fb8378486b106d2319dc6faa4' class='commit-link' target='_blank'>fix: add waitForInventoryChanges to banking</a>
-        </li>                <li class='commit'>
-            <a href='https://github.com/chsami/microbot/commit/b3486b7a8cfbfdf36b42b25d47d36282be2a4ed8' class='commit-link' target='_blank'>chore: fix climb up asgarnian ice dungeon ladder</a>
-        </li>                <li class='commit'>
-            <a href='https://github.com/chsami/microbot/commit/fb95849bd007610ca948ceab0ea64a1eeabf90cc' class='commit-link' target='_blank'>fix: added logic to pathfinder config, Rs2Magic & Rs2Walker to handle teleport spells with multiple destinations</a>
-        </li>                <li class='commit'>
-            <a href='https://github.com/chsami/microbot/commit/3b3e754dcb44f159aca4ed2f05c8e6e5e6e59c5f' class='commit-link' target='_blank'>chore: update menu options for Grand Exchange Teleport when using teleport tabs</a>
-        </li>                <li class='commit'>
-            <a href='https://github.com/chsami/microbot/commit/10581479d893b6d4cc7bac994c2a85a060b545e2' class='commit-link' target='_blank'>feat: add isInCutscene method</a>
-        </li>                <li class='commit'>
-            <a href='https://github.com/chsami/microbot/commit/d00f2894b5f819838964c7759accd852c303a9da' class='commit-link' target='_blank'>feat: add isMembers field to transport tsvs in order to provide more granular control over each transport that requires members chore: add isMembers to various transports that require membership chore: add transports for doors & stairs inside of the cooks guild</a>
-        </li>                <li class='commit'>
-            <a href='https://github.com/chsami/microbot/commit/1767cc4ff54f32c9daf8eac51ac4dba96ee05fb9' class='commit-link' target='_blank'>fix: use any NPC named chicken when doing mageguide</a>
-        </li>                <li class='commit'>
-            <a href='https://github.com/chsami/microbot/commit/313ae8213ad5ebbd1fd0112818d65881b6158bca' class='commit-link' target='_blank'>fix: add return statement inbetween crafting & banking</a>
-        </li>                <li class='commit'>
-            <a href='https://github.com/chsami/microbot/commit/3d51c8fff5c930bfcc2b4332170e9e5952078b64' class='commit-link' target='_blank'>fix: add doors inside of cooking guild</a>
-        </li>                <li class='commit'>
-            <a href='https://github.com/chsami/microbot/commit/5613e7e5dd1511cdc2b8797c468686d5ac6b65ac' class='commit-link' target='_blank'>fix: increase duration of ring of dueling to not prefer it when standing inside of ferox enclave</a>
-        </li>                <li class='commit'>
-            <a href='https://github.com/chsami/microbot/commit/43ccfe5590d4b75b41ded0d665b311f1841ae8b8' class='commit-link' target='_blank'>fix: add agility shortcuts in Zanaris near Cosmic Rune Altar</a>
-        </li>                <li class='commit'>
-            <a href='https://github.com/chsami/microbot/commit/61300e910dee19997c13b94ef541d1308234a163' class='commit-link' target='_blank'>feat: add AntiBan methods to GlassblowingScript</a>
-        </li>                <li class='commit'>
-            <a href='https://github.com/chsami/microbot/commit/82f3f4e786af1ba606973cfeeadcef420edc9677' class='commit-link' target='_blank'>fix: use travel interact option when interacting with spirit tree to fix null error</a>
-        </li>                <li class='commit'>
-            <a href='https://github.com/chsami/microbot/commit/82c93dd0c2f78913e45f2e10c202f801490dc761' class='commit-link' target='_blank'>fix: use GEM.NONE instead of using a null for no-gem required, fixes hanging when using gold</a>
-        </li>                <li class='commit'>
-            <a href='https://github.com/chsami/microbot/commit/dabf9ae54b7b533647dd627e3da4430514e6520c' class='commit-link' target='_blank'>fix: add dust battlestaff to list of safe items</a>
-        </li>                <li class='commit'>
-            <a href='https://github.com/chsami/microbot/commit/9c0a7a2daa526b2b67b06ec6a4b71b35783e6523' class='commit-link' target='_blank'>fix: leverage configured staff, if not then try to findSuitableFireStaff</a>
-        </li>                <li class='commit'>
-            <a href='https://github.com/chsami/microbot/commit/403c0c4a38680afdff00ef2eea74d1681c301b91' class='commit-link' target='_blank'>fix: take into consideration that gold items do not have a configured gem</a>
-        </li>                <li class='commit'>
-            <a href='https://github.com/chsami/microbot/commit/828f2bef09765914516e2e6db0b518530d021e08' class='commit-link' target='_blank'>fix: made banking logic more robust to help with resuming the plugin chore: removed some debug messages</a>
-        </li>                <li class='commit'>
-            <a href='https://github.com/chsami/microbot/commit/6ca4e5eec0ddbb695b65eeea68b9364d15e709f5' class='commit-link' target='_blank'>fix: made playerdetectionscript more thread safe fix: made fleeing logic more robust by switching worlds after fleeing chore: cleaned up logic to be more human readable</a>
-        </li>                <li class='commit'>
-            <a href='https://github.com/chsami/microbot/commit/8688cba999869de2a6a2bf9a20528005e9828c88' class='commit-link' target='_blank'>feat: add jewelry plugin</a>
-        </li>                <li class='commit'>
-            <a href='https://github.com/chsami/microbot/commit/32240352762f8f06aa87c12c87999c38200b4244' class='commit-link' target='_blank'>fix: moved player detection into its own script thread instead of being nested into the thread when charging air orbs. this should prevent any blocking actions (sleepUntils) from preventing us determining if we are near dangerous players</a>
-        </li>                <li class='commit'>
-            <a href='https://github.com/chsami/microbot/commit/67f4bd86e5d5b58fd947465e13611e9cbaf43eb5' class='commit-link' target='_blank'>fix: add small wait when using teleportation portal</a>
-        </li>                <li class='commit'>
-            <a href='https://github.com/chsami/microbot/commit/613f8949a3b160466ca1e76101c2698f744d3e01' class='commit-link' target='_blank'>fix: update getPlayersInCombatRange to include both local player's wilderness/combat levels as well as the other players wilderness/combat levels to ensure that both parties can attack each other</a>
-        </li>                <li class='commit'>
-            <a href='https://github.com/chsami/microbot/commit/d9d66d43cb8630ec86124c42297f76632080e465' class='commit-link' target='_blank'>fix: mapped out ferox enclave to properly return players wilderness level</a>
-        </li>                <li class='commit'>
-            <a href='https://github.com/chsami/microbot/commit/10ba4df0c99c9778ff6884458e7f5952fecbaa5a' class='commit-link' target='_blank'>feat: add support for ring of dueling & drinking from pool of refreshment for air orb plugin</a>
-        </li>                <li class='commit'>
-            <a href='https://github.com/chsami/microbot/commit/d586419a327bc350cf3def96a946868e8c448016' class='commit-link' target='_blank'>fix: use direct menu entries for soul-wars portal instead of handling dialogue</a>
-        </li>                <li class='commit'>
-            <a href='https://github.com/chsami/microbot/commit/b1e8f973f57905577f8b588b828bec4c02fa3925' class='commit-link' target='_blank'>fix: adjust transports & pathfinder config to add pathing between ferox & edgeville via soul wars portal chore: updated Rs2Walker to use Rs2Random over Random feat: add hasQuestion & sleepUntilHasQuestion methods</a>
-        </li>            </ul>
-    </li>        <li>
-        <div class='author'>Author: HINDL93</div>
-        <ul class='commit-list'>                <li class='commit'>
-            <a href='https://github.com/chsami/microbot/commit/9200afd1d1afbfeadd59089ad707cba23a9e8c4b' class='commit-link' target='_blank'>Merge branch 'chsami:development' into development</a>
-        </li>                <li class='commit'>
-            <a href='https://github.com/chsami/microbot/commit/c41aa57b9369f795644ba6cbe932508f0f8da954' class='commit-link' target='_blank'>Added getClosestNpc to the Rs2Npc Class.</a>
-        </li>                <li class='commit'>
-            <a href='https://github.com/chsami/microbot/commit/d84840c9f1df7f86aba5716254b5d7cf7e62e00e' class='commit-link' target='_blank'>Auto hop on player detection</a>
-        </li>            </ul>
-    </li>        <li>
-        <div class='author'>Author: Jordan Atwood</div>
-        <ul class='commit-list'>                <li class='commit'>
-            <a href='https://github.com/chsami/microbot/commit/00e6d98fd5b65f218802fd6d08aeabeec12c20cc' class='commit-link' target='_blank'>item stats: Fix equipment item container check NPE</a>
-        </li>                <li class='commit'>
-            <a href='https://github.com/chsami/microbot/commit/8174d810a40aeb4b19e6cfb792f2782c63607786' class='commit-link' target='_blank'>item stats: Apply Sunlit bracers healing buff</a>
-        </li>            </ul>
-    </li>        <li>
-        <div class='author'>Author: Max Weber</div>
-        <ul class='commit-list'>                <li class='commit'>
-            <a href='https://github.com/chsami/microbot/commit/1e05bdfd51db230db0066fa424857e8e32954e97' class='commit-link' target='_blank'>gpu: reload textures on js5 resync</a>
-        </li>                <li class='commit'>
-            <a href='https://github.com/chsami/microbot/commit/903a641732c52f7b71dad221dd25305ae8a91111' class='commit-link' target='_blank'>gpu: do not crash with too many textures</a>
-        </li>                <li class='commit'>
-            <a href='https://github.com/chsami/microbot/commit/697f85a2f64eba26fc62e0f922c6cf096a81f549' class='commit-link' target='_blank'>gpu: add TEXTURE_COUNT constant</a>
-        </li>                <li class='commit'>
-            <a href='https://github.com/chsami/microbot/commit/d23c1e6ab98542f6e379b1ec8be5d7c73b817e45' class='commit-link' target='_blank'>gpu: increase texture limit</a>
-        </li>            </ul>
-    </li>        <li>
-        <div class='author'>Author: RuneLite updater</div>
-        <ul class='commit-list'>                <li class='commit'>
-            <a href='https://github.com/chsami/microbot/commit/fc29d39ad4d52341da6748460959e099e0e28652' class='commit-link' target='_blank'>Bump for 1.10.47-SNAPSHOT</a>
-        </li>                <li class='commit'>
-            <a href='https://github.com/chsami/microbot/commit/d5d6a8d08cfe67bce2ecaca0bf86d8f8c3e3d782' class='commit-link' target='_blank'>Release 1.10.46</a>
-        </li>            </ul>
-    </li>        <li>
-        <div class='author'>Author: Chris</div>
-        <ul class='commit-list'>                <li class='commit'>
-            <a href='https://github.com/chsami/microbot/commit/88265ef7be3d8c36a419966ecd89e7c38d0b96f0' class='commit-link' target='_blank'>timetracking: account for leagues farmtick being 1 minute rather than 5 (#18585)</a>
-        </li>            </ul>
-    </li>        <li>
-        <div class='author'>Author: Yt</div>
-        <ul class='commit-list'>                <li class='commit'>
-            <a href='https://github.com/chsami/microbot/commit/ffd7ce2422db1ed5b4b43c45215dc1b369532a2d' class='commit-link' target='_blank'>removed gearing method</a>
-        </li>                <li class='commit'>
-            <a href='https://github.com/chsami/microbot/commit/1e3402cc70d4c8354cc51bd86aeefd76e23c3c14' class='commit-link' target='_blank'>remove unused imports, changed banking, added farming outfit support</a>
-        </li>                <li class='commit'>
-            <a href='https://github.com/chsami/microbot/commit/e50060ec82829c580b2d2db88e963352812d80e0' class='commit-link' target='_blank'>remove unused variables and comments</a>
-        </li>                <li class='commit'>
-            <a href='https://github.com/chsami/microbot/commit/598144b5e688ebf197808fd26580a15999640ef4' class='commit-link' target='_blank'>adding zamorak's grape farmer</a>
-        </li>            </ul>
-    </li>        <li>
-        <div class='author'>Author: LlemonDuck</div>
-        <ul class='commit-list'>                <li class='commit'>
-            <a href='https://github.com/chsami/microbot/commit/210c0c3d8fa1ac5a9d2f04e6f3d09a47cfa03bba' class='commit-link' target='_blank'>entityhider: selectively hide party members</a>
-        </li>            </ul>
-    </li>        <li>
-        <div class='author'>Author: SexyPinata</div>
-        <ul class='commit-list'>                <li class='commit'>
-            <a href='https://github.com/chsami/microbot/commit/d6abc6e3ec478f1edc79ffe3c79de38f07980785' class='commit-link' target='_blank'>## Antiban - **Added** tooltips to the settings to explain what each setting does. - **Added** a new button to the settings to apply universal settings to handle plugins that don't have antiban implemented yet. - **Fixed** micro breaks out of bounds exception by applying a validation check inside the UI update method. - **Updated** Antiban Duck: now wearing a Santa hat and ready for the holidays!</a>
-        </li>                <li class='commit'>
-            <a href='https://github.com/chsami/microbot/commit/6294710bc87d699a0e4037992896e61de16a8069' class='commit-link' target='_blank'>## New Plugin: Arceuus Runecrafting - **Added** support to craft blood runes at the Arceuus altar. - **Upcoming**: Soul rune support coming soon.</a>
-        </li>                <li class='commit'>
-            <a href='https://github.com/chsami/microbot/commit/eae03d14c671bf6a0eb4a009281c3fcc91dd5f71' class='commit-link' target='_blank'>## Fishing Plugin - **Added** support for the Leagues tool.</a>
-        </li>                <li class='commit'>
-            <a href='https://github.com/chsami/microbot/commit/4665a2a04dc4db10c03322ec82c860572dc6ead6' class='commit-link' target='_blank'>## Stall Thieving Plugin - **Fixed** unnecessary click on the stall when it's already being thieved.</a>
-        </li>                <li class='commit'>
-            <a href='https://github.com/chsami/microbot/commit/83a9490b000a74854f168da967927f67bf6314b3' class='commit-link' target='_blank'>## Natural Mouse - **Ensures** mouse movement and clicks always run on their own thread to avoid blocking the main thread, preventing client freezes and failed clicks.</a>
-        </li>                <li class='commit'>
-            <a href='https://github.com/chsami/microbot/commit/fabe4af7b7aee2fb7a988b9848cef83e8e116d51' class='commit-link' target='_blank'>## Rs2Player Class - **Fixed** issue where it would attempt to drink noted potions instead of unnoted potions.</a>
-        </li>                <li class='commit'>
-            <a href='https://github.com/chsami/microbot/commit/ff0661483cd57c8bd5f1741d5be80493ec198c1f' class='commit-link' target='_blank'>## Woodcutting Plugin - **Adjusted** minor delay changes for the arrowshaft option.</a>
-        </li>                <li class='commit'>
-            <a href='https://github.com/chsami/microbot/commit/c5d5269736b4b9c513688d9f01109d7c05280409' class='commit-link' target='_blank'>## Fletching Plugin - **Fixed** issue where the plugin would close the bank interface unnecessarily.</a>
-        </li>                <li class='commit'>
-            <a href='https://github.com/chsami/microbot/commit/e91da842ed67e00d408fc235da7e744c8c1a36fe' class='commit-link' target='_blank'>## Motherlode Mine Plugin - **Fixed** pathing issue when using the upper level. - **Reworked**: Simplified the plugin's code to make it more efficient.</a>
-        </li>                <li class='commit'>
-            <a href='https://github.com/chsami/microbot/commit/198f77d270de058ba1f6bf7cffa6c6bee6f0e661' class='commit-link' target='_blank'>## QoL Plugin - **Updated**: Replaced a deprecated method in the API.</a>
-        </li>                <li class='commit'>
-            <a href='https://github.com/chsami/microbot/commit/f9c66bfc34582103ee72e01d7e6519d95f93ed85' class='commit-link' target='_blank'>## Rs2Inventory Class - **Updated**: Replaced a deprecated method in the API.</a>
-        </li>                <li class='commit'>
-            <a href='https://github.com/chsami/microbot/commit/f4c805e96c10beceff290029613ce0c50d72da22' class='commit-link' target='_blank'>Dev tools: Fixing extreme render lag</a>
-        </li>                <li class='commit'>
-            <a href='https://github.com/chsami/microbot/commit/1905c24ddefbe33298b3f9d1d4d742891b118981' class='commit-link' target='_blank'>Antiban duck ready for xmas</a>
-        </li>            </ul>
-    </li>        <li>
-        <div class='author'>Author: Adam</div>
-        <ul class='commit-list'>                <li class='commit'>
-            <a href='https://github.com/chsami/microbot/commit/a5827f8e093542363000dede9796fb4d408ee31a' class='commit-link' target='_blank'>api: add DynamicObject.getModelZbuf()</a>
-        </li>            </ul>
-    </li>    </ul>
-
-
-
+<main>
+    <section class="rn-hero">
+        <div class="container">
+            <div class="rn-eyebrow">Release notes</div>
+            <h1>Microbot 1.6.6</h1>
+            <p class="rn-tagline">Holiday event and script improvements</p>
+            <div class="rn-meta">
+                <span><strong>December 27, 2024</strong></span>
+                <span>by Mocrosoft</span>
+            </div>
+            <div class="rn-actions">
+                <a class="c-button c-button--primary" href="../index.html">Download Microbot</a>
+                <a class="c-button" href="../releases.html">All releases</a>
+            </div>
+        </div>
     </section>
-</section>
-</body>
 
-<style>
-    .content-section h1 {
-        border-bottom: 1px solid #dc8a00;
-        padding-bottom: 10px;
-        display: inline-block;
-        width: auto;
-        font-weight: 700;
-        font-size: 24px;
-    }
+    <div class="rn-shell">
+        <div class="rn-layout">
+        <aside class="rn-toc" aria-label="In this release">
+            <div class="rn-toc-title">In this release</div>
+            <ol>
+                <li><a href="#summary-of-development-activity-dec-12-dec-26-2024">Summary of Development Activity (Dec 12 - Dec 26, 2024)</a></li>
+                <li><a href="#commits">All commits</a></li>
+            </ol>
+        </aside>
+        <article class="rn-article">
+            <details class="rn-toc-mobile">
+                <summary>In this release</summary>
+                <ol>
+                <li><a href="#summary-of-development-activity-dec-12-dec-26-2024">Summary of Development Activity (Dec 12 - Dec 26, 2024)</a></li>
+                <li><a href="#commits">All commits</a></li>
+                </ol>
+            </details>
+<figure class="rn-figure"><img loading="lazy" referrerpolicy="no-referrer" src="https://oldschool.runescape.wiki/images/2024_Christmas_event_location.png?fd0c5"/></figure>
+<h2 id="summary-of-development-activity-dec-12-dec-26-2024">Summary of Development Activity (Dec 12 - Dec 26, 2024)</h2><p>This is a summary of the development activity for the past two weeks on the project. Here are the key points:</p><p><strong>New features and functionalities:</strong></p><ul>
+<li>Added support for the Moonlight moth plugin (lhndl93)</li>
+<li>Streamlined auto-completion of the Holiday Event (chsami, higgles55)</li>
+<li>Improved antiban support for various plugins (See1Duck)</li>
+<li>Added functionalities to the AIO Fighter plugin (See1Duck) - item ID handling, bank navigation, logging options</li>
+<li>Added support for NPC Contact spell in Mahogany Homes plugin (See1Duck)</li>
+<li>Implemented "Auto-Drop" option in QoL Plugin (See1Duck)</li>
+<li>Added support for gem bag in Amethyst Mine Plugin (See1Duck)</li>
+<li>Added "ignorecollision" feature in collision map (chsami)</li>
+<li>Added support for Magic Carpet (g-mason0)</li>
+<li>Introduced a new AIO Magic Plugin (g-mason0) - includes spell casting, rune management, antiban activities</li>
+<li>Implemented support for using non-consumable teleports only (g-mason0)</li>
+</ul><p><strong>Bug fixes and improvements:</strong></p><ul>
+<li>Fixed various bugs in the Holiday Event plugin (higges55, lhndl93)</li>
+<li>Fixed calculations in checkIdleLogout function (See1Duck)</li>
+<li>Fixed Scroll Up function in Natural Mouse (See1Duck)</li>
+<li>Fixed npcContact method to check visibility before interaction (See1Duck)</li>
+<li>Added method to empty gem bag (See1Duck)</li>
+<li>Increased timeout timer in Varrock Anvil Plugin (See1Duck)</li>
+<li>Fixed NeverLogOut logic (See1Duck)</li>
+<li>Adjusted gem bag check threshold in AmethystMiningScript (See1Duck)</li>
+<li>Updated banking logic in AIO Fighter Plugin (See1Duck)</li>
+<li>Fixed snow collector functionality (higges55, lhndl93)</li>
+<li>Added ring of forging for iron bar in AutoSmeltingScript (DrDeath4eva)</li>
+<li>Implemented functionality to handle Varrock manhole (chsami)</li>
+<li>Improved banking logic in webwalker plugins (g-mason0)</li>
+<li>Added support for stop plugin on death (g-mason0)</li>
+<li>Fixed restricted tiles near staircase in Draynor Manor (g-mason0)</li>
+<li>Implemented various functionalities in Firemaking QoL features (See1Duck) - quick log lighting, firemaking logs enum</li>
+<li>Integrated state management for AIO Fighter (See1Duck) - state tracking, banking/combat/looting improvements</li>
+<li>Improved uncharged cell handling in GOTR bot script (See1Duck)</li>
+<li>Updated teleportation handling in bot pathfinding (See1Duck)</li>
+<li>Added plank sack support to Mahogany Homes script (See1Duck)</li>
+<li>Fixed issue detecting blood essence in runecrafting bots (See1Duck)</li>
+<li>Updated birdhunter plugin (lhndl93)</li>
+<li>Introduced Prayer Helper (lhndl93)</li>
+<li>Fixed logic in autosmelting plugin (g-mason0)</li>
+<li>Added support for Baba Yaga's house on lunar isle (g-mason0)</li>
+<li>Improved webwalker functionalities (g-mason0)</li>
+<li>Added sleepUntil method with reset action (chsami)</li>
+<li>Added farming cape support and magic secateurs (yairtu, g-mason0)</li>
+<li>Improved handling of teleport spells (g-mason0)</li>
+</ul><p><strong>Code refactoring and cleanups:</strong></p><ul>
+<li>Removed deprecated methods (See1Duck, g-mason0)</li>
+<li>Refactored functionalities in various plugins (See1Duck, g-mason0)</li>
+<li>Updated comments and documentation (chsami, See1Duck, g-mason0)</li>
+<li>Reorganized configuration files (g-mason0)</li>
+</ul><p>This summary highlights the significant progress made on the project in the past two weeks. New features were added, bugs were fixed, and code improvements were implemented.</p>
+<div class="rn-signoff">That's all for version 1.6.6. Happy scaping!! — Mocrosoft</div>
+<details class="rn-commits" id="commits">
+    <summary>All 102 commits</summary>
+    <div class="rn-commits-body">
+        <div class="rn-commits-author">Other commits</div>
+        <ul>
+            <li><a href="https://github.com/chsami/microbot/commit/0b2ca93f70b87985b21e703181f884016fe5f247" target="_blank" rel="noopener">AutoSmeltingScript.java - added ring of forging for iron bar</a></li>
+            <li><a href="https://github.com/chsami/microbot/commit/b13f9c2e2bb698a83c266ac7799a9fba9b50454c" target="_blank" rel="noopener">Merge remote-tracking branch &#x27;origin/development&#x27; into development</a></li>
+            <li><a href="https://github.com/chsami/microbot/commit/06953ed24e75e36804ce9b484ea327b210ac371b" target="_blank" rel="noopener">ignorecollision feature added in collisionmap + some web walker fixes (dwarf cannon quest area)</a></li>
+            <li><a href="https://github.com/chsami/microbot/commit/ba1072ad91c085af828098ac1a6014ab5b2906a1" target="_blank" rel="noopener">Merge pull request #577 from lhndl93/bluedragondebug</a></li>
+            <li><a href="https://github.com/chsami/microbot/commit/1a4002675bac264274b038dc9b0cc0e44f1cb568" target="_blank" rel="noopener">Merge pull request #575 from higgles55/development</a></li>
+            <li><a href="https://github.com/chsami/microbot/commit/2580f0fe3909fa8f2041cb373ca9e918f666f399" target="_blank" rel="noopener">Merge remote-tracking branch &#x27;origin/development&#x27; into development</a></li>
+            <li><a href="https://github.com/chsami/microbot/commit/5cda6dbbf3eb6b307de7af4d1a26ab65b041f025" target="_blank" rel="noopener">reset starttime when script is shutdown</a></li>
+            <li><a href="https://github.com/chsami/microbot/commit/99d3f4017ef022a427da3aaac28e02d37527d2b5" target="_blank" rel="noopener">Merge pull request #573 from g-mason0/development</a></li>
+            <li><a href="https://github.com/chsami/microbot/commit/2b0283e4f9e6a4fd38fad955af7d1f42b470f85c" target="_blank" rel="noopener">Merge pull request #574 from higgles55/development</a></li>
+            <li><a href="https://github.com/chsami/microbot/commit/7cceb6cc088647af3803bfdfa3ebd7f7985c36b8" target="_blank" rel="noopener">MageTrainingArenaScript graveyard room fix</a></li>
+            <li><a href="https://github.com/chsami/microbot/commit/741cb2ce1475204e0d779c9d536cd26ebd8f2cfa" target="_blank" rel="noopener">Merge remote-tracking branch &#x27;origin/development&#x27; into development</a></li>
+            <li><a href="https://github.com/chsami/microbot/commit/f13a37e26975ae6471ef25ff9425e95d99b81891" target="_blank" rel="noopener">disable teleports for mta script</a></li>
+            <li><a href="https://github.com/chsami/microbot/commit/626d514ba34f7c0bc1a715c1fb57b9a08521cb30" target="_blank" rel="noopener">Merge pull request #572 from higgles55/development</a></li>
+            <li><a href="https://github.com/chsami/microbot/commit/a9bbc48fc7153e60e31ef932df9f36b6875fc5d1" target="_blank" rel="noopener">Merge pull request #571 from lhndl93/moonlight-moth</a></li>
+            <li><a href="https://github.com/chsami/microbot/commit/14cca0fd51b8891262a90fafdd80b88fddb44cc7" target="_blank" rel="noopener">Merge pull request #566 from g-mason0/development</a></li>
+            <li><a href="https://github.com/chsami/microbot/commit/31c3727944918e83448c7440b9dc05164a533a98" target="_blank" rel="noopener">Merge remote-tracking branch &#x27;origin/development&#x27; into development</a></li>
+            <li><a href="https://github.com/chsami/microbot/commit/8d3bb4fe1ba959279d72f8f5fbfdd44422b39753" target="_blank" rel="noopener">1.6.5.2</a></li>
+            <li><a href="https://github.com/chsami/microbot/commit/8754798c24974cc923dcd92b96b0894531b88a9a" target="_blank" rel="noopener">Merge pull request #567 from higgles55/development</a></li>
+            <li><a href="https://github.com/chsami/microbot/commit/eca632244f7f0897961c0d4f88e470634f075b4e" target="_blank" rel="noopener">Merge remote-tracking branch &#x27;runelite/master&#x27; into development</a></li>
+            <li><a href="https://github.com/chsami/microbot/commit/7f3e0d86e0f8ffc95b56d238cddef688475b2d5b" target="_blank" rel="noopener">Guardians of the rift -&gt; repairWithCordelia</a></li>
+            <li><a href="https://github.com/chsami/microbot/commit/c0acb690ca2f711f87ce8c16b7c3587a639ca902" target="_blank" rel="noopener">1.6.5.1</a></li>
+            <li><a href="https://github.com/chsami/microbot/commit/8503dd129811351b98de3193fb62391d953e85f4" target="_blank" rel="noopener">gotr 1.1.4 fix hugemine portal issue</a></li>
+            <li><a href="https://github.com/chsami/microbot/commit/ddd8f43790a1a2a9f30f6f836201a6e3bf0efca1" target="_blank" rel="noopener">bump 1.6.5</a></li>
+            <li><a href="https://github.com/chsami/microbot/commit/9c3c07e901533563c359dd59307cabe47a248443" target="_blank" rel="noopener">Merge remote-tracking branch &#x27;runelite/master&#x27; into development</a></li>
+            <li><a href="https://github.com/chsami/microbot/commit/c875cb6d376d1d94aaf31a6f3b3a4647f2775b2d" target="_blank" rel="noopener">Merge remote-tracking branch &#x27;origin/development&#x27; into development</a></li>
+            <li><a href="https://github.com/chsami/microbot/commit/cf6189bdac87c7cbab995fb06c428c51508bc837" target="_blank" rel="noopener">AttackNpcScript lowercase npc name matching</a></li>
+            <li><a href="https://github.com/chsami/microbot/commit/9dfa7fc0ee7e998fe81b68166b2a4dcbbb25d5dd" target="_blank" rel="noopener">Merge pull request #561 from yairtu/development</a></li>
+            <li><a href="https://github.com/chsami/microbot/commit/26a9ca9cb20d2a003f9de6bfc0f69ee89d5a804c" target="_blank" rel="noopener">Merge pull request #560 from yairtu/development</a></li>
+            <li><a href="https://github.com/chsami/microbot/commit/2680ae685b5d1ba24896d3b6087561ce5589e61f" target="_blank" rel="noopener">Merge pull request #556 from g-mason0/development</a></li>
+            <li><a href="https://github.com/chsami/microbot/commit/e98d6f71868aa18d80969dc7b6bb96c185964341" target="_blank" rel="noopener">Merge pull request #541 from lhndl93/tormented</a></li>
+            <li><a href="https://github.com/chsami/microbot/commit/ccbba8ecc6571e0820fb2b45ba1ff916315ab6d5" target="_blank" rel="noopener">Merge pull request #554 from Hosea-MP/update-widget-inspector</a></li>
+            <li><a href="https://github.com/chsami/microbot/commit/afe7d5bf514a76d9480d5aad1b9d033403bb5c0d" target="_blank" rel="noopener">Merge pull request #559 from See1Duck/development</a></li>
+        </ul>
+        <div class="rn-commits-author">lhndl93</div>
+        <ul>
+            <li><a href="https://github.com/chsami/microbot/commit/b247df5ab41339d94c92b7d5a73e6eab7fc1a026" target="_blank" rel="noopener">Added some more loggin options to help with issues going forward as I can&#x27;t replicate an issue someone is having.</a></li>
+            <li><a href="https://github.com/chsami/microbot/commit/45ab5fecce7b6eb2162773a266a1d7deb6d8e5c7" target="_blank" rel="noopener">Moonlight moth plugin</a></li>
+            <li><a href="https://github.com/chsami/microbot/commit/7f2d2150562ffc0ce319481bca5dad7381f95211" target="_blank" rel="noopener">Removed the getClosest</a></li>
+        </ul>
+        <div class="rn-commits-author">Higgles55</div>
+        <ul>
+            <li><a href="https://github.com/chsami/microbot/commit/ccb943fc0bc22b59d00d7c47ffff2c16dc057aac" target="_blank" rel="noopener">better logging and total reset of steps if invitations missing after certain case</a></li>
+            <li><a href="https://github.com/chsami/microbot/commit/85bfc9b8f0a0ba3f7a4c7d2ec5e40ddb67e66b09" target="_blank" rel="noopener">sir amik invite repeat wasn&#x27;t disntinguihsed from the 3 other invites</a></li>
+            <li><a href="https://github.com/chsami/microbot/commit/80d2142c805d61503e59a436d9cc226acca23c60" target="_blank" rel="noopener">final fixes to holiday event after rigorous testing</a></li>
+            <li><a href="https://github.com/chsami/microbot/commit/ef49c46472f9ce1461a5d8b551768c533bb933c1" target="_blank" rel="noopener">Merge branch &#x27;chsami:development&#x27; into development</a></li>
+            <li><a href="https://github.com/chsami/microbot/commit/f8fa3e7af16dd934ba9e3428bd7d101ef4780a1b" target="_blank" rel="noopener">Overlay updated from V1.0.0 to Christmas 2024 - Pop-up to continue plugin or not when cutscene starts - extra and longer sleeps and dialogue cycles</a></li>
+            <li><a href="https://github.com/chsami/microbot/commit/85fe261fe029f62f9cc347ae0b47d4d80af73345" target="_blank" rel="noopener">Streamlines auto-completion of Holiday Event by modifying party-pete worldpoint, adding more dialouge cycles and sleeps to deal with glitchy cutscenes</a></li>
+            <li><a href="https://github.com/chsami/microbot/commit/339ee038aa96f2b22c42df5619b5e7f0bd92bea5" target="_blank" rel="noopener">this plugin holds the current holiday event</a></li>
+        </ul>
+        <div class="rn-commits-author">g-mason0</div>
+        <ul>
+            <li><a href="https://github.com/chsami/microbot/commit/25dd6f6f44a9cabd151ef6d8ae63ce6f87eb2301" target="_blank" rel="noopener">fix: removed grand exchange teleport from tablet, there really isn&#x27;t a good way to handle this</a></li>
+            <li><a href="https://github.com/chsami/microbot/commit/6c0d47f8118c39a7e312624613fb2b6d33e79b6c" target="_blank" rel="noopener">fix: make waitForInventoryChanges more efficient by using multiple sleepUntils</a></li>
+            <li><a href="https://github.com/chsami/microbot/commit/f2d35b471cbeae3fb8378486b106d2319dc6faa4" target="_blank" rel="noopener">fix: add waitForInventoryChanges to banking</a></li>
+            <li><a href="https://github.com/chsami/microbot/commit/b3486b7a8cfbfdf36b42b25d47d36282be2a4ed8" target="_blank" rel="noopener">chore: fix climb up asgarnian ice dungeon ladder</a></li>
+            <li><a href="https://github.com/chsami/microbot/commit/fb95849bd007610ca948ceab0ea64a1eeabf90cc" target="_blank" rel="noopener">fix: added logic to pathfinder config, Rs2Magic &amp; Rs2Walker to handle teleport spells with multiple destinations</a></li>
+            <li><a href="https://github.com/chsami/microbot/commit/3b3e754dcb44f159aca4ed2f05c8e6e5e6e59c5f" target="_blank" rel="noopener">chore: update menu options for Grand Exchange Teleport when using teleport tabs</a></li>
+            <li><a href="https://github.com/chsami/microbot/commit/10581479d893b6d4cc7bac994c2a85a060b545e2" target="_blank" rel="noopener">feat: add isInCutscene method</a></li>
+            <li><a href="https://github.com/chsami/microbot/commit/d00f2894b5f819838964c7759accd852c303a9da" target="_blank" rel="noopener">feat: add isMembers field to transport tsvs in order to provide more granular control over each transport that requires members chore: add isMembers to various transports that require membership chore: add transports for doors &amp; stairs inside of the cooks guild</a></li>
+            <li><a href="https://github.com/chsami/microbot/commit/1767cc4ff54f32c9daf8eac51ac4dba96ee05fb9" target="_blank" rel="noopener">fix: use any NPC named chicken when doing mageguide</a></li>
+            <li><a href="https://github.com/chsami/microbot/commit/313ae8213ad5ebbd1fd0112818d65881b6158bca" target="_blank" rel="noopener">fix: add return statement inbetween crafting &amp; banking</a></li>
+            <li><a href="https://github.com/chsami/microbot/commit/3d51c8fff5c930bfcc2b4332170e9e5952078b64" target="_blank" rel="noopener">fix: add doors inside of cooking guild</a></li>
+            <li><a href="https://github.com/chsami/microbot/commit/5613e7e5dd1511cdc2b8797c468686d5ac6b65ac" target="_blank" rel="noopener">fix: increase duration of ring of dueling to not prefer it when standing inside of ferox enclave</a></li>
+            <li><a href="https://github.com/chsami/microbot/commit/43ccfe5590d4b75b41ded0d665b311f1841ae8b8" target="_blank" rel="noopener">fix: add agility shortcuts in Zanaris near Cosmic Rune Altar</a></li>
+            <li><a href="https://github.com/chsami/microbot/commit/61300e910dee19997c13b94ef541d1308234a163" target="_blank" rel="noopener">feat: add AntiBan methods to GlassblowingScript</a></li>
+            <li><a href="https://github.com/chsami/microbot/commit/82f3f4e786af1ba606973cfeeadcef420edc9677" target="_blank" rel="noopener">fix: use travel interact option when interacting with spirit tree to fix null error</a></li>
+            <li><a href="https://github.com/chsami/microbot/commit/82c93dd0c2f78913e45f2e10c202f801490dc761" target="_blank" rel="noopener">fix: use GEM.NONE instead of using a null for no-gem required, fixes hanging when using gold</a></li>
+            <li><a href="https://github.com/chsami/microbot/commit/dabf9ae54b7b533647dd627e3da4430514e6520c" target="_blank" rel="noopener">fix: add dust battlestaff to list of safe items</a></li>
+            <li><a href="https://github.com/chsami/microbot/commit/9c0a7a2daa526b2b67b06ec6a4b71b35783e6523" target="_blank" rel="noopener">fix: leverage configured staff, if not then try to findSuitableFireStaff</a></li>
+            <li><a href="https://github.com/chsami/microbot/commit/403c0c4a38680afdff00ef2eea74d1681c301b91" target="_blank" rel="noopener">fix: take into consideration that gold items do not have a configured gem</a></li>
+            <li><a href="https://github.com/chsami/microbot/commit/828f2bef09765914516e2e6db0b518530d021e08" target="_blank" rel="noopener">fix: made banking logic more robust to help with resuming the plugin chore: removed some debug messages</a></li>
+            <li><a href="https://github.com/chsami/microbot/commit/6ca4e5eec0ddbb695b65eeea68b9364d15e709f5" target="_blank" rel="noopener">fix: made playerdetectionscript more thread safe fix: made fleeing logic more robust by switching worlds after fleeing chore: cleaned up logic to be more human readable</a></li>
+            <li><a href="https://github.com/chsami/microbot/commit/8688cba999869de2a6a2bf9a20528005e9828c88" target="_blank" rel="noopener">feat: add jewelry plugin</a></li>
+            <li><a href="https://github.com/chsami/microbot/commit/32240352762f8f06aa87c12c87999c38200b4244" target="_blank" rel="noopener">fix: moved player detection into its own script thread instead of being nested into the thread when charging air orbs. this should prevent any blocking actions (sleepUntils) from preventing us determining if we are near dangerous players</a></li>
+            <li><a href="https://github.com/chsami/microbot/commit/67f4bd86e5d5b58fd947465e13611e9cbaf43eb5" target="_blank" rel="noopener">fix: add small wait when using teleportation portal</a></li>
+            <li><a href="https://github.com/chsami/microbot/commit/613f8949a3b160466ca1e76101c2698f744d3e01" target="_blank" rel="noopener">fix: update getPlayersInCombatRange to include both local player&#x27;s wilderness/combat levels as well as the other players wilderness/combat levels to ensure that both parties can attack each other</a></li>
+            <li><a href="https://github.com/chsami/microbot/commit/d9d66d43cb8630ec86124c42297f76632080e465" target="_blank" rel="noopener">fix: mapped out ferox enclave to properly return players wilderness level</a></li>
+            <li><a href="https://github.com/chsami/microbot/commit/10ba4df0c99c9778ff6884458e7f5952fecbaa5a" target="_blank" rel="noopener">feat: add support for ring of dueling &amp; drinking from pool of refreshment for air orb plugin</a></li>
+            <li><a href="https://github.com/chsami/microbot/commit/d586419a327bc350cf3def96a946868e8c448016" target="_blank" rel="noopener">fix: use direct menu entries for soul-wars portal instead of handling dialogue</a></li>
+            <li><a href="https://github.com/chsami/microbot/commit/b1e8f973f57905577f8b588b828bec4c02fa3925" target="_blank" rel="noopener">fix: adjust transports &amp; pathfinder config to add pathing between ferox &amp; edgeville via soul wars portal chore: updated Rs2Walker to use Rs2Random over Random feat: add hasQuestion &amp; sleepUntilHasQuestion methods</a></li>
+        </ul>
+        <div class="rn-commits-author">HINDL93</div>
+        <ul>
+            <li><a href="https://github.com/chsami/microbot/commit/9200afd1d1afbfeadd59089ad707cba23a9e8c4b" target="_blank" rel="noopener">Merge branch &#x27;chsami:development&#x27; into development</a></li>
+            <li><a href="https://github.com/chsami/microbot/commit/c41aa57b9369f795644ba6cbe932508f0f8da954" target="_blank" rel="noopener">Added getClosestNpc to the Rs2Npc Class.</a></li>
+            <li><a href="https://github.com/chsami/microbot/commit/d84840c9f1df7f86aba5716254b5d7cf7e62e00e" target="_blank" rel="noopener">Auto hop on player detection</a></li>
+        </ul>
+        <div class="rn-commits-author">Jordan Atwood</div>
+        <ul>
+            <li><a href="https://github.com/chsami/microbot/commit/00e6d98fd5b65f218802fd6d08aeabeec12c20cc" target="_blank" rel="noopener">item stats: Fix equipment item container check NPE</a></li>
+            <li><a href="https://github.com/chsami/microbot/commit/8174d810a40aeb4b19e6cfb792f2782c63607786" target="_blank" rel="noopener">item stats: Apply Sunlit bracers healing buff</a></li>
+        </ul>
+        <div class="rn-commits-author">Max Weber</div>
+        <ul>
+            <li><a href="https://github.com/chsami/microbot/commit/1e05bdfd51db230db0066fa424857e8e32954e97" target="_blank" rel="noopener">gpu: reload textures on js5 resync</a></li>
+            <li><a href="https://github.com/chsami/microbot/commit/903a641732c52f7b71dad221dd25305ae8a91111" target="_blank" rel="noopener">gpu: do not crash with too many textures</a></li>
+            <li><a href="https://github.com/chsami/microbot/commit/697f85a2f64eba26fc62e0f922c6cf096a81f549" target="_blank" rel="noopener">gpu: add TEXTURE_COUNT constant</a></li>
+            <li><a href="https://github.com/chsami/microbot/commit/d23c1e6ab98542f6e379b1ec8be5d7c73b817e45" target="_blank" rel="noopener">gpu: increase texture limit</a></li>
+        </ul>
+        <div class="rn-commits-author">RuneLite updater</div>
+        <ul>
+            <li><a href="https://github.com/chsami/microbot/commit/fc29d39ad4d52341da6748460959e099e0e28652" target="_blank" rel="noopener">Bump for 1.10.47-SNAPSHOT</a></li>
+            <li><a href="https://github.com/chsami/microbot/commit/d5d6a8d08cfe67bce2ecaca0bf86d8f8c3e3d782" target="_blank" rel="noopener">Release 1.10.46</a></li>
+        </ul>
+        <div class="rn-commits-author">Chris</div>
+        <ul>
+            <li><a href="https://github.com/chsami/microbot/commit/88265ef7be3d8c36a419966ecd89e7c38d0b96f0" target="_blank" rel="noopener">timetracking: account for leagues farmtick being 1 minute rather than 5 (#18585)</a></li>
+        </ul>
+        <div class="rn-commits-author">Yt</div>
+        <ul>
+            <li><a href="https://github.com/chsami/microbot/commit/ffd7ce2422db1ed5b4b43c45215dc1b369532a2d" target="_blank" rel="noopener">removed gearing method</a></li>
+            <li><a href="https://github.com/chsami/microbot/commit/1e3402cc70d4c8354cc51bd86aeefd76e23c3c14" target="_blank" rel="noopener">remove unused imports, changed banking, added farming outfit support</a></li>
+            <li><a href="https://github.com/chsami/microbot/commit/e50060ec82829c580b2d2db88e963352812d80e0" target="_blank" rel="noopener">remove unused variables and comments</a></li>
+            <li><a href="https://github.com/chsami/microbot/commit/598144b5e688ebf197808fd26580a15999640ef4" target="_blank" rel="noopener">adding zamorak&#x27;s grape farmer</a></li>
+        </ul>
+        <div class="rn-commits-author">LlemonDuck</div>
+        <ul>
+            <li><a href="https://github.com/chsami/microbot/commit/210c0c3d8fa1ac5a9d2f04e6f3d09a47cfa03bba" target="_blank" rel="noopener">entityhider: selectively hide party members</a></li>
+        </ul>
+        <div class="rn-commits-author">SexyPinata</div>
+        <ul>
+            <li><a href="https://github.com/chsami/microbot/commit/d6abc6e3ec478f1edc79ffe3c79de38f07980785" target="_blank" rel="noopener">## Antiban - **Added** tooltips to the settings to explain what each setting does. - **Added** a new button to the settings to apply universal settings to handle plugins that don&#x27;t have antiban implemented yet. - **Fixed** micro breaks out of bounds exception by applying a validation check inside the UI update method. - **Updated** Antiban Duck: now wearing a Santa hat and ready for the holidays!</a></li>
+            <li><a href="https://github.com/chsami/microbot/commit/6294710bc87d699a0e4037992896e61de16a8069" target="_blank" rel="noopener">## New Plugin: Arceuus Runecrafting - **Added** support to craft blood runes at the Arceuus altar. - **Upcoming**: Soul rune support coming soon.</a></li>
+            <li><a href="https://github.com/chsami/microbot/commit/eae03d14c671bf6a0eb4a009281c3fcc91dd5f71" target="_blank" rel="noopener">## Fishing Plugin - **Added** support for the Leagues tool.</a></li>
+            <li><a href="https://github.com/chsami/microbot/commit/4665a2a04dc4db10c03322ec82c860572dc6ead6" target="_blank" rel="noopener">## Stall Thieving Plugin - **Fixed** unnecessary click on the stall when it&#x27;s already being thieved.</a></li>
+            <li><a href="https://github.com/chsami/microbot/commit/83a9490b000a74854f168da967927f67bf6314b3" target="_blank" rel="noopener">## Natural Mouse - **Ensures** mouse movement and clicks always run on their own thread to avoid blocking the main thread, preventing client freezes and failed clicks.</a></li>
+            <li><a href="https://github.com/chsami/microbot/commit/fabe4af7b7aee2fb7a988b9848cef83e8e116d51" target="_blank" rel="noopener">## Rs2Player Class - **Fixed** issue where it would attempt to drink noted potions instead of unnoted potions.</a></li>
+            <li><a href="https://github.com/chsami/microbot/commit/ff0661483cd57c8bd5f1741d5be80493ec198c1f" target="_blank" rel="noopener">## Woodcutting Plugin - **Adjusted** minor delay changes for the arrowshaft option.</a></li>
+            <li><a href="https://github.com/chsami/microbot/commit/c5d5269736b4b9c513688d9f01109d7c05280409" target="_blank" rel="noopener">## Fletching Plugin - **Fixed** issue where the plugin would close the bank interface unnecessarily.</a></li>
+            <li><a href="https://github.com/chsami/microbot/commit/e91da842ed67e00d408fc235da7e744c8c1a36fe" target="_blank" rel="noopener">## Motherlode Mine Plugin - **Fixed** pathing issue when using the upper level. - **Reworked**: Simplified the plugin&#x27;s code to make it more efficient.</a></li>
+            <li><a href="https://github.com/chsami/microbot/commit/198f77d270de058ba1f6bf7cffa6c6bee6f0e661" target="_blank" rel="noopener">## QoL Plugin - **Updated**: Replaced a deprecated method in the API.</a></li>
+            <li><a href="https://github.com/chsami/microbot/commit/f9c66bfc34582103ee72e01d7e6519d95f93ed85" target="_blank" rel="noopener">## Rs2Inventory Class - **Updated**: Replaced a deprecated method in the API.</a></li>
+            <li><a href="https://github.com/chsami/microbot/commit/f4c805e96c10beceff290029613ce0c50d72da22" target="_blank" rel="noopener">Dev tools: Fixing extreme render lag</a></li>
+            <li><a href="https://github.com/chsami/microbot/commit/1905c24ddefbe33298b3f9d1d4d742891b118981" target="_blank" rel="noopener">Antiban duck ready for xmas</a></li>
+        </ul>
+        <div class="rn-commits-author">Adam</div>
+        <ul>
+            <li><a href="https://github.com/chsami/microbot/commit/a5827f8e093542363000dede9796fb4d408ee31a" target="_blank" rel="noopener">api: add DynamicObject.getModelZbuf()</a></li>
+        </ul>
+    </div>
+</details>
+<nav class="rn-pager" aria-label="More releases">
+    <a class="rn-pager-prev" href="1.6.5.html"><small>Previous release</small><span>1.6.5</span></a>
+    <a class="rn-pager-next" href="1.9.8.html"><small>Next release</small><span>1.9.8</span></a>
+</nav>
+        </article>
+        </div>
+    </div>
+</main>
 
-
-    .content-section {
-        margin: auto;
-        width: 80%;
-        max-width: 1000px;
-    }
-
-    p {
-        font-size: 1.0rem;
-        line-height: 2;
-    }
-
-
-    ul {
-        list-style-type: none;
-        padding: 0;
-    }
-
-    li {
-        margin: 10px 0;
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-    }
-
-    .author {
-        font-size: 1.5rem;
-        font-weight: bold;
-        color: #db7806;
-        padding: 8px;
-    }
-
-    .commit-list {
-        padding-left: 20px;
-    }
-
-    .commit {
-        margin-top: 5px;
-    }
-
-    .commits {
-        padding-bottom: 16px;
-    }
-
-    img {
-        max-width: 100%;
-        height: auto;
-    }
-    .title {
-        color: red !important;
-    }
-</style>
-
-
-<script async=false defer=false async src="../libraries/timeago/index.js"></script>
-<script async=false defer=false async src="../microbot/releases/release.js"></script>
-
+<footer class="c-footer pt-5">
+    <div class="container">
+        <div class="row justify-content-center align-items-start g-4">
+            <div class="text-center" style="width:20rem">
+                <img src="../microbot/logo.png" class="c-footer--logo" loading="lazy" alt="footer">
+                <div class="c-content-divider mt-3 mb-3"></div>
+                <ul class="d-flex align-items-center justify-content-center gap-4 m-auto text-center">
+                    <li>
+                        <a href="https://discord.gg/zaGrfqFEWE" target="_blank" rel="noreferrer noopener">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24px" viewBox="0 0 71 55"><title>logo
+                                discord</title>
+                                <g fill="none" class="nc-icon-wrapper">
+                                    <g clip-path="url(#clip0)">
+                                        <path d="M60.105 4.898A58.55 58.55 0 0 0 45.653.415a.22.22 0 0 0-.233.11 40.784 40.784 0 0 0-1.8 3.697c-5.456-.817-10.886-.817-16.23 0-.485-1.164-1.201-2.587-1.828-3.697a.228.228 0 0 0-.233-.11 58.386 58.386 0 0 0-14.451 4.483.207.207 0 0 0-.095.082C1.578 18.73-.944 32.144.293 45.39a.244.244 0 0 0 .093.167c6.073 4.46 11.955 7.167 17.729 8.962a.23.23 0 0 0 .249-.082 42.08 42.08 0 0 0 3.627-5.9.225.225 0 0 0-.123-.312 38.772 38.772 0 0 1-5.539-2.64.228.228 0 0 1-.022-.378c.372-.279.744-.569 1.1-.862a.22.22 0 0 1 .23-.03c11.619 5.304 24.198 5.304 35.68 0a.219.219 0 0 1 .233.027c.356.293.728.586 1.103.865a.228.228 0 0 1-.02.378 36.384 36.384 0 0 1-5.54 2.637.227.227 0 0 0-.121.315 47.249 47.249 0 0 0 3.624 5.897.225.225 0 0 0 .249.084c5.801-1.794 11.684-4.502 17.757-8.961a.228.228 0 0 0 .092-.164c1.48-15.315-2.48-28.618-10.497-40.412a.18.18 0 0 0-.093-.084zm-36.38 32.427c-3.497 0-6.38-3.211-6.38-7.156 0-3.944 2.827-7.156 6.38-7.156 3.583 0 6.438 3.24 6.382 7.156 0 3.945-2.827 7.156-6.381 7.156zm23.593 0c-3.498 0-6.38-3.211-6.38-7.156 0-3.944 2.826-7.156 6.38-7.156 3.582 0 6.437 3.24 6.38 7.156 0 3.945-2.798 7.156-6.38 7.156z"
+                                              fill="currentColor"></path>
+                                    </g>
+                                    <defs>
+                                        <clippath id="clip0">
+                                            <path fill="currentColor" d="M0 0h71v55H0z"></path>
+                                        </clippath>
+                                    </defs>
+                                </g>
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/chsami/microbot/releases" target="_blank" rel="noreferrer noopener">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24px" viewBox="0 0 16 16"><title>data
+                                download</title>
+                                <g fill="currentColor" class="nc-icon-wrapper">
+                                    <path d="M14,10a1,1,0,0,0-1,1v2H3V11a1,1,0,0,0-2,0v2a2,2,0,0,0,2,2H13a2,2,0,0,0,2-2V11A1,1,0,0,0,14,10Z"></path>
+                                    <path data-color="color-2"
+                                          d="M7.293,10.707a1,1,0,0,0,1.414,0l4-4a1,1,0,1,0-1.414-1.414L9,7.586V2A1,1,0,0,0,7,2V7.586L4.707,5.293A1,1,0,0,0,3.293,6.707Z"></path>
+                                </g>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="c-footer-cc py-2 mt-5">
+        <div class="container">
+            <p class="text-center c-text-faded mb-0">Microbot © 2026. All Rights Reserved. - <a href="../privacy.html"
+                                                                                                target="_blank">Privacy
+                Policy</a> -
+                <a href="../terms.html"
+                   target="_blank">Terms of service</a></p>
+        </div>
+    </div>
+</footer>
 <script>
-    window.addEventListener('load', function () {
-        const title = document.querySelector(('#release-title'))
-        const subTitle = document.querySelector(('#release-subtitle'))
-        const release = releases.find(x => x.version === '1.6.6')
-        title.innerHTML = release.version + ' Release'
-        subTitle.innerHTML = format(release.date) + ' by ' + release.author
-    })
-
+    document.querySelectorAll('.rn-article img, .rn-article video').forEach(function (m) {
+        function hide() {
+            var box = m.closest('.rn-gallery') && m.closest('.rn-gallery').children.length > 1 ? m : (m.closest('figure') || m);
+            box.style.display = 'none';
+        }
+        if (m.tagName === 'IMG' && m.complete && m.naturalWidth === 0 && m.getAttribute('src')) hide();
+        m.addEventListener('error', hide);
+    });
 </script>
-
 </body>
 </html>

@@ -1,5 +1,12 @@
 const releases = [
     {
+        date: new Date('10/20/2026'), //MM/dd/YYYY
+        version: '2.6.35',
+        title: '2.6.35 Release - Quick prayers are back',
+        content: 'Quick prayers work again in every plugin, AIO Fighter skips world-spawned loot, Firecape can farm another cape, plus Auto Mining, Clue Solver and stability fixes.',
+        author: 'Microbot Team'
+    },
+    {
         date: new Date('08/15/2025'), //MM/dd/YYYY
         version: '1.9.8',
         title: '1.9.8 Release - Introducing the Microbot Hub',

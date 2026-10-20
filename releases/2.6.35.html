@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>2.6.35 Release - Microbot</title>
+
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="Microbot 2.6.35: quick prayers work again, AIO Fighter skips world-spawned loot, and fixes for Firecape, Zulrah, KBD, Auto Mining and more.">
+    <link rel="canonical" href="https://microbot.cloud/releases/2.6.35.html">
+
+    <meta property="og:site_name" content="Microbot">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:title" content="Microbot 2.6.35 - Quick prayers are back">
+    <meta property="og:description" content="Quick prayers work again, AIO Fighter skips world-spawned loot, plus plugin and stability fixes.">
+    <meta property="og:url" content="https://microbot.cloud/releases/2.6.35.html">
+    <meta name="theme-color" content="#2c2c2c">
+
+    <link rel="stylesheet" href="../microbot/app.min.css">
+    <link rel="stylesheet"
+          href="../microbot/341e4a57816af3ba440d891ca87450ff_framework.css.c1bcd9467a7eeb9006567801face652d.css"
+          media="all">
+    <link rel="stylesheet"
+          href="../microbot/20446cf2d164adcc029377cb04d43d17_flags.css.be60c469fe9d673f833faaa74a81e375.css"
+          media="all">
+    <link rel="stylesheet"
+          href="../microbot/90eb5adf50a8c640f633d47fd7eb1778_core.css.730a336650d62c3b59570edc9065b630.css" media="all">
+    <link rel="stylesheet"
+          href="../microbot/5a0da001ccc2200dc5625c3f3934497d_core_responsive.css.1d08c9ed37ed1cae43d3985a3b2316ad.css"
+          media="all">
+
+    <style>
+        .section-header {
+            background: linear-gradient(135deg, #2c2c2c, #1a1a1a);
+            color: #fff;
+            padding: 20px;
+            margin: 30px 0 20px 0;
+            border-radius: 10px;
+            border-left: 5px solid #ff6b35;
+        }
+
+        h1, .section-header h2 {
+            line-height: 1.25;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 26px;
+            }
+
+            .section-header h2 {
+                font-size: 22px;
+            }
+        }
+
+        .feature-box {
+            background: #1e1e1e;
+            border: 1px solid #333;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 8px;
+            color: #ddd;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .info-box {
+            background: #1b2d3a;
+            border: 1px solid #2563eb;
+            color: #93c5fd;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 15px 0;
+        }
+
+        .success-box {
+            background: #1b2d1b;
+            border: 1px solid #16a34a;
+            color: #86efac;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 15px 0;
+        }
+
+        .compare {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+
+        .compare-card {
+            flex: 1 1 260px;
+            background: #151515;
+            border: 1px solid #333;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .compare-card h5 {
+            margin-bottom: 12px;
+        }
+
+        .compare-card.before h5 {
+            color: #ffa8a8;
+        }
+
+        .compare-card.after h5 {
+            color: #86efac;
+        }
+
+        .compare-card p {
+            color: #aaa;
+            font-size: 14px;
+            margin: 12px 0 0 0;
+        }
+
+        .settings-panel {
+            max-width: 380px;
+            margin: 20px auto;
+            background: #2b2b2b;
+            border: 1px solid #3c3c3c;
+            border-radius: 6px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 13px;
+            color: #c6c6c6;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+        }
+
+        .settings-panel .panel-title {
+            padding: 8px 12px;
+            border-bottom: 1px solid #3c3c3c;
+            color: #ff981f;
+            font-weight: bold;
+        }
+
+        .settings-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 7px 12px;
+        }
+
+        .settings-row.highlight {
+            background: rgba(255, 107, 53, 0.15);
+            outline: 1px solid #ff6b35;
+        }
+
+        .settings-row .new-tag {
+            background: #ff6b35;
+            color: #fff;
+            border-radius: 4px;
+            font-size: 10px;
+            padding: 1px 5px;
+            margin-left: 6px;
+        }
+
+        .checkbox {
+            width: 14px;
+            height: 14px;
+            border: 1px solid #777;
+            border-radius: 2px;
+            display: inline-block;
+            position: relative;
+        }
+
+        .checkbox.on {
+            background: #ff981f;
+            border-color: #ff981f;
+        }
+
+        .checkbox.on::after {
+            content: "";
+            position: absolute;
+            left: 4px;
+            top: 1px;
+            width: 4px;
+            height: 8px;
+            border: solid #2b2b2b;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+
+        .caption {
+            text-align: center;
+            color: #888;
+            font-size: 13px;
+            margin-top: -8px;
+        }
+
+        .plugin-list li {
+            margin-bottom: 10px;
+        }
+
+        .version-pill {
+            background: #333;
+            color: #ff6b35;
+            border-radius: 10px;
+            padding: 1px 8px;
+            font-size: 13px;
+            margin-left: 4px;
+        }
+    </style>
+</head>
+<body style="background-color:#232323FF !important; background-image: none"
+      class="ipsApp ipsApp_front ipsClearfix ipsJS_has ipsApp_noTouch"
+      data-controller="core.front.core.app" data-message="" data-pageapp="" data-pagelocation="front" data-pagemodule=""
+      data-pagecontroller="">
+
+<header class="c-header">
+    <div class="c-border-red mb-2"></div>
+    <nav class="c-nav navbar navbar-expand-sm py-2" style="flex-wrap:nowrap;justify-content: flex-start">
+        <div class="container align-items-stretch">
+            <a class="navbar-brand me-0 me-lg-3 me-xl-5" href="../index.html">
+                <img src="../microbot/logo.png" class="c-nav__logo" loading="lazy" alt="logo">
+            </a>
+            <div class="p-3 p-xl-0" style="line-height: 2rem;width: 100%;" id="navbarMenu">
+                <ul class="navbar-nav me-auto text-center text-xl-left gap-3 gap-xl-4">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://www.github.com/chsami/microbot" target="_blank">Github</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://discord.gg/zaGrfqFEWE" target="_blank">Discord</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://chatgpt.com/g/g-LM0fGeeXB-microbot-documentation"
+                           target="_blank">ChatGPT</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://paypal.me/MicrobotBE?country.x=BE" target="_blank">Donate</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../releases.html">Releases</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../plugins.html">Plugins</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<section class="content-section container">
+    <h1 style="color: #ff6b35; text-align: center; margin: 30px 0 10px 0;">Microbot v2.6.35 - Quick prayers are back</h1>
+    <div class="text-muted text-center" style="font-size: 18px; margin-bottom: 30px;">October 20, 2026</div>
+
+    <div class="section-header">
+        <h2>🙏 Quick prayers work again</h2>
+    </div>
+
+    <div class="feature-box">
+        <p>
+            Say you set Protect from Melee as your quick prayer, start AIO Fighter at Hill Giants with
+            <strong>Prayer Style: Always On</strong>, and watch your character tank every hit with the prayer orb dark.
+            You weren't doing anything wrong. Since a game update in October 2025, every plugin that used the
+            quick-prayer orb was clicking a part of the minimap that does nothing.
+        </p>
+        <p>
+            2.6.35 clicks the real orb again. Anything that turns quick prayers on or off works again, including
+            AIO Fighter, Slayer, Pest Control, Giant Mole and Vire Watch.
+        </p>
+
+        <div class="compare">
+            <div class="compare-card before">
+                <h5>Before (2.6.34 and older)</h5>
+                <svg width="120" height="120" viewBox="0 0 120 120" role="img" aria-label="Prayer orb staying off">
+                    <circle cx="60" cy="60" r="44" fill="#1a1a1a" stroke="#555" stroke-width="4"/>
+                    <circle cx="60" cy="60" r="34" fill="#2a3340"/>
+                    <path d="M60 38 L60 82 M44 52 L76 52" stroke="#6b7a8c" stroke-width="7" stroke-linecap="round"/>
+                    <path d="M92 20 L106 34 M106 20 L92 34" stroke="#f87171" stroke-width="5" stroke-linecap="round"/>
+                </svg>
+                <p>The plugin clicks next to the orb. Quick prayers stay off.</p>
+            </div>
+            <div class="compare-card after">
+                <h5>After (2.6.35)</h5>
+                <svg width="120" height="120" viewBox="0 0 120 120" role="img" aria-label="Prayer orb turning on">
+                    <circle cx="60" cy="60" r="44" fill="#1a1a1a" stroke="#ff981f" stroke-width="4"/>
+                    <circle cx="60" cy="60" r="34" fill="#3fb6ff"/>
+                    <path d="M60 38 L60 82 M44 52 L76 52" stroke="#ffffff" stroke-width="7" stroke-linecap="round"/>
+                    <path d="M90 28 L97 35 L110 20" stroke="#4ade80" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <p>The plugin clicks the Quick-prayers orb. Your prayers light up.</p>
+            </div>
+        </div>
+
+        <div class="info-box">
+            <strong>Tip:</strong> quick prayers only turn on if you've picked some. Right-click the prayer orb, choose
+            <em>Setup</em>, and select the prayers you want before starting a plugin that uses them.
+        </div>
+    </div>
+
+    <div class="section-header">
+        <h2>⚔️ AIO Fighter 2.2.10</h2>
+    </div>
+
+    <div class="feature-box">
+        <h4>Skip World Spawns</h4>
+        <p>
+            If you fight somewhere the game respawns items on the ground, like coins or bones, AIO Fighter used to
+            run off mid-fight to grab them, because they looked like any other loot. The new
+            <strong>Skip World Spawns</strong> setting, on by default, ignores those items. Drops from your kills,
+            and from other players' kills once they become visible to you, are still picked up.
+        </p>
+
+        <div class="settings-panel" role="img" aria-label="AIO Fighter loot settings with Skip World Spawns enabled">
+            <div class="panel-title">Loot</div>
+            <div class="settings-row"><span>Only Loot My Items</span><span class="checkbox"></span></div>
+            <div class="settings-row highlight"><span>Skip World Spawns<span class="new-tag">NEW</span></span><span class="checkbox on"></span></div>
+            <div class="settings-row"><span>Force Loot</span><span class="checkbox"></span></div>
+            <div class="settings-row"><span>High alch profitable</span><span class="checkbox"></span></div>
+        </div>
+        <p class="caption">AIO Fighter → Loot section</p>
+
+        <h4 style="margin-top: 25px;">Flick prayers no longer switch off your own prayers</h4>
+        <p>
+            With <strong>Perfect Lazy Flick</strong> or <strong>Mixed Lazy Flick</strong> selected, every hit you took
+            turned off all your prayers, even with <em>Use prayer</em> unticked. If you'd turned on Piety yourself
+            and let AIO Fighter handle only attacking, Piety switched off on the first hit. Now flick styles only reset
+            prayers when prayer handling is on and you're fighting an NPC.
+        </p>
+
+        <div class="success-box">
+            <strong>Looting things you didn't ask for?</strong> Check these three settings first:
+            <ul style="margin: 10px 0 0 0;">
+                <li><em>Scatter Ashes</em> and <em>Bury Bones</em> pick up every ash or bone, whatever the price limits say.</li>
+                <li>The minimum price counts everything of that item on one tile. Three 1,500 gp heads stacked on one
+                    tile count as 4,500 gp.</li>
+                <li>Names in the item list match parts of names, so <code>dragon</code> also matches <em>Ensouled dragon head</em>.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section-header">
+        <h2>🧩 Other plugin updates</h2>
+    </div>
+
+    <div class="feature-box">
+        <ul class="plugin-list">
+            <li><strong>Firecape</strong><span class="version-pill">0.3.74</span>: a new <em>After exit</em> setting.
+                Leave it on <em>Log out</em>, or choose <em>Get another cape</em> to bank, regear and start another
+                attempt after leaving the cave or respawning.</li>
+            <li><strong>Firecape, Zulrah and KBD</strong><span class="version-pill">0.3.74 · 1.10.19 · 1.1.8</span>:
+                when you run out of a required supply, they log out cleanly and tell you which supply ran out. These three need client 2.6.32 or newer.</li>
+            <li><strong>Auto Mining</strong><span class="version-pill">1.0.15</span>: progressive mode with banking
+                deposits again instead of walking between the bank and the mine with a full inventory. Starting far from
+                the chosen mine, or levelling up into a new one, no longer makes it walk back and forth without mining.
+                A blank keep list no longer stalls drop mode.</li>
+            <li><strong>Clue Solver</strong><span class="version-pill">1.0.8</span>: cipher clues no longer crash the
+                solver while it works out where to walk.</li>
+            <li><strong>Guardians of the Rift</strong><span class="version-pill">1.5.11</span> and
+                <strong>Sulphur Nagua</strong><span class="version-pill">2.0.4</span>: no more crashes while the
+                game is loading after a portal, teleport or hop.</li>
+        </ul>
+    </div>
+
+    <div class="section-header">
+        <h2>🛠️ Client stability fixes</h2>
+    </div>
+
+    <div class="feature-box">
+        <ul>
+            <li>The walker no longer crashes when your position is briefly unknown during a teleport or region load,
+                or when a route is cleared while its destination marker is being drawn.</li>
+            <li>The Inventory Setups panel no longer errors while redrawing after a setup or section is removed.</li>
+            <li>Special attack and ground-item helpers handle a missing spec bar or a logged-out player without
+                crashing the running plugin.</li>
+            <li>Looking up an item by a name that doesn't exist, for example a typo in a Grand Exchange setting, now
+                returns "not found" instead of crashing.</li>
+        </ul>
+    </div>
+
+    <div class="feature-box" style="background: linear-gradient(135deg, #1a1a1a, #0a0a0a); border: 2px solid #ff6b35; text-align: center;">
+        <h3 style="color: #fff; margin: 10px 0;">How to update</h3>
+        <p>
+            Restart Microbot to pick up client 2.6.35. Plugin updates show up in the Microbot Hub panel inside the client.
+        </p>
+        <p>
+            <a href="https://github.com/chsami/Microbot/releases/tag/2.6.35" target="_blank" style="color: #ff6b35;">Client release on GitHub</a>
+            &nbsp;·&nbsp;
+            <a href="../plugins.html" style="color: #ff6b35;">Browse plugins</a>
+            &nbsp;·&nbsp;
+            <a href="https://discord.gg/zaGrfqFEWE" target="_blank" style="color: #ff6b35;">Report a problem on Discord</a>
+        </p>
+        <div style="font-size: 16px; color: #ff6b35; font-weight: bold; margin-top: 15px;">- The Microbot Team</div>
+    </div>
+</section>
+
+</body>
+</html>

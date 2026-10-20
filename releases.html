@@ -198,7 +198,7 @@
         const isNew = (Date.now() - latest.date.getTime()) < 7 * 24 * 60 * 60 * 1000;
         document.getElementById('rn-featured').outerHTML =
             '<a class="rn-featured" href="releases/' + esc(latest.version) + '.html">' +
-            '<div class="rn-featured-version">' + esc(latest.version) + '</div>' +
+            '<div class="rn-featured-version">' + (latest.icon ? '<img class="rn-sprite" src="' + esc(latest.icon) + '" alt="">' : '') + esc(latest.version) + '</div>' +
             '<div>' +
             '<span class="rn-featured-label">' + (isNew ? 'New release' : 'Latest release') + '</span>' +
             '<h2>' + esc(headline(latest)) + '</h2>' +
@@ -207,7 +207,7 @@
             '</div></a>';
         document.getElementById('rn-timeline').innerHTML = sorted.slice(1).map(r =>
             '<li><a href="releases/' + esc(r.version) + '.html">' +
-            '<div class="rn-timeline-version">' + esc(r.version) + '<span class="rn-timeline-date">' + fmt(r.date) + '</span></div>' +
+            '<div class="rn-timeline-version">' + (r.icon ? '<img class="rn-sprite" src="' + esc(r.icon) + '" alt="">' : '') + '<div>' + esc(r.version) + '<span class="rn-timeline-date">' + fmt(r.date) + '</span></div></div>' +
             '<div><h3>' + esc(headline(r)) + '</h3>' + (summary(r) ? '<p>' + esc(summary(r)) + '</p>' : '') + '</div>' +
             '<span class="rn-timeline-arrow" aria-hidden="true">&rarr;</span>' +
             '</a></li>').join('');

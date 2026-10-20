@@ -104,6 +104,7 @@
 <main>
     <section class="rn-hero">
         <div class="container">
+            <div>
             <div class="rn-eyebrow">Release notes</div>
             <h1>Microbot 2.6.35</h1>
             <p class="rn-tagline">Quick prayers are back</p>
@@ -115,6 +116,8 @@
                 <a class="c-button c-button--primary" href="../index.html">Download Microbot</a>
                 <a class="c-button" href="../releases.html">All releases</a>
             </div>
+            </div>
+            <div class="rn-hero-art"><img class="rn-sprite" src="../images/releases/icons/prayer-orb.png" alt=""></div>
         </div>
     </section>
 
@@ -143,25 +146,17 @@
             </details>
 <p class="rn-lede">Quick prayers work again in every plugin that uses them, AIO Fighter stops chasing items that spawn on the ground, and Firecape can now farm cape after cape. This release ships Microbot client 2.6.35 together with updates to eight Hub plugins.</p>
 <h2 id="quick-prayers">Quick prayers work again</h2>
-<p>Say you set Protect from Melee as your quick prayer, start AIO Fighter at Hill Giants with <strong>Prayer Style: Always On</strong>, and watch your character tank every hit with the prayer orb dark. You weren't doing anything wrong. Since a game update in October 2025, every plugin that used the quick-prayer orb was clicking a part of the minimap that does nothing.</p>
+<p>Say you set <img alt="" class="rn-sprite rn-inline-icon" src="../images/releases/2.6.35/protect-from-melee.png"/>Protect from Melee as your quick prayer, start AIO Fighter at Hill Giants with <strong>Prayer Style: Always On</strong>, and watch your character tank every hit with the prayer orb dark. You weren't doing anything wrong. Since a game update in October 2025, every plugin that used the quick-prayer orb was clicking a part of the minimap that does nothing.</p>
 <p>2.6.35 clicks the real orb again. Anything that turns quick prayers on or off works again, including AIO Fighter, Slayer, Pest Control, Giant Mole and Vire Watch.</p>
 <div class="rn-compare">
 <div class="is-before">
 <div class="rn-compare-label">2.6.34 and older</div>
-<svg aria-label="Prayer orb staying off" height="112" role="img" viewbox="0 0 120 120" width="112">
-<circle cx="60" cy="60" fill="#141210" r="44" stroke="#4a443c" stroke-width="4"></circle>
-<circle cx="60" cy="60" fill="#262a2f" r="34"></circle>
-<path d="M60 38 L60 82 M44 52 L76 52" stroke="#5d6670" stroke-linecap="round" stroke-width="7"></path>
-</svg>
+<img alt="Quick-prayers orb, inactive" class="rn-sprite rn-orb" src="../images/releases/2.6.35/prayer-orb-off.png"/>
 <p>The plugin clicks beside the orb. Quick prayers stay off.</p>
 </div>
 <div class="is-after">
 <div class="rn-compare-label">2.6.35</div>
-<svg aria-label="Prayer orb turning on" height="112" role="img" viewbox="0 0 120 120" width="112">
-<circle cx="60" cy="60" fill="#141210" r="44" stroke="#ffb13b" stroke-width="4"></circle>
-<circle cx="60" cy="60" fill="#3fb6ff" r="34"></circle>
-<path d="M60 38 L60 82 M44 52 L76 52" stroke="#ffffff" stroke-linecap="round" stroke-width="7"></path>
-</svg>
+<img alt="Quick-prayers orb, active" class="rn-sprite rn-orb" src="../images/releases/2.6.35/prayer-orb-on.png"/>
 <p>The plugin clicks the Quick-prayers orb. Your prayers light up.</p>
 </div>
 </div>
@@ -180,48 +175,55 @@
 <div class="rn-settings-row"><span>High alch profitable</span><span class="rn-box"></span></div>
 </div>
 <p class="rn-caption">AIO Fighter settings, Loot section</p>
-<h3>Flick styles leave your own prayers alone</h3>
+<div aria-label="Examples of world spawns that are now skipped" class="rn-items">
+<div class="rn-item is-skipped"><span class="rn-item-slot"><img alt="" class="rn-sprite" src="../images/releases/2.6.35/coins.png"/></span><span><strong>Coins</strong>world spawn, skipped</span></div>
+<div class="rn-item is-skipped"><span class="rn-item-slot"><img alt="" class="rn-sprite" src="../images/releases/2.6.35/big-bones.png"/></span><span><strong>Bones</strong>world spawn, skipped</span></div>
+<div class="rn-item"><span class="rn-item-slot"><img alt="" class="rn-sprite" src="../images/releases/2.6.35/ensouled-giant-head.png"/></span><span><strong>Your drops</strong>still looted</span></div>
+</div>
+<h3><img alt="" class="rn-sprite rn-inline-icon" src="../images/releases/2.6.35/piety.png"/>Flick styles leave your own prayers alone</h3>
 <p>With <strong>Perfect Lazy Flick</strong> or <strong>Mixed Lazy Flick</strong> selected, every hit you took turned off all your prayers, even with <em>Use prayer</em> unticked. If you'd turned on Piety yourself and let AIO Fighter handle only attacking, Piety switched off on the first hit. Flick styles now only reset prayers when prayer handling is on and you're fighting an NPC.</p>
 <div class="rn-note">
 <span class="rn-note-title">Looting things you didn't ask for?</span>
 <ul>
-<li><em>Scatter Ashes</em> and <em>Bury Bones</em> pick up every ash or bone, whatever the price limits say.</li>
-<li>The minimum price counts everything of that item on one tile. Three 1,500 gp heads on one tile count as 4,500 gp.</li>
-<li>Names in the item list match parts of names, so <code>dragon</code> also matches <em>Ensouled dragon head</em>.</li>
+<li><img alt="" class="rn-sprite rn-inline-icon" src="../images/releases/2.6.35/ashes.png"/><em>Scatter Ashes</em> and <em>Bury Bones</em> pick up every ash or bone, whatever the price limits say.</li>
+<li><img alt="" class="rn-sprite rn-inline-icon" src="../images/releases/2.6.35/ensouled-giant-head.png"/>The minimum price counts everything of that item on one tile. Three 1,500 gp heads on one tile count as 4,500 gp.</li>
+<li><img alt="" class="rn-sprite rn-inline-icon" src="../images/releases/2.6.35/clue-scroll-elite.png"/>Names in the item list match parts of names, so <code>dragon</code> also matches <em>Ensouled dragon head</em>.</li>
 </ul>
 </div>
 <h2 id="plugins">Other plugin updates</h2>
 <div class="rn-plugin-list">
 <div class="rn-plugin">
-<div class="rn-plugin-name">Firecape<span class="rn-plugin-version">0.3.74</span></div>
+<div class="rn-plugin-name"><span class="rn-plugin-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.35/fire-cape.png"/></span><span>Firecape<span class="rn-plugin-version">0.3.74</span></span></div>
 <div class="rn-plugin-body"><p>A new <em>After exit</em> setting. Leave it on <em>Log out</em>, or choose <em>Get another cape</em> to bank, regear and start another attempt after leaving the cave or respawning.</p></div>
 </div>
 <div class="rn-plugin">
-<div class="rn-plugin-name">Firecape, Zulrah, KBD<span class="rn-plugin-version">0.3.74 · 1.10.19 · 1.1.8</span></div>
+<div class="rn-plugin-name"><span class="rn-plugin-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.35/king-black-dragon.png"/></span><span>Firecape, Zulrah, KBD<span class="rn-plugin-version">0.3.74 · 1.10.19 · 1.1.8</span></span></div>
 <div class="rn-plugin-body"><p>When you run out of a required supply, they log out cleanly and tell you which supply ran out. These three need client 2.6.32 or newer.</p></div>
 </div>
 <div class="rn-plugin">
-<div class="rn-plugin-name">Auto Mining<span class="rn-plugin-version">1.0.15</span></div>
+<div class="rn-plugin-name"><span class="rn-plugin-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.35/rune-pickaxe.png"/></span><span>Auto Mining<span class="rn-plugin-version">1.0.15</span></span></div>
 <div class="rn-plugin-body"><p>Progressive mode with banking deposits again instead of walking between the bank and the mine with a full inventory. Starting far from the chosen mine, or levelling up into a new one, no longer makes it walk back and forth without mining. A blank keep list no longer stalls drop mode.</p></div>
 </div>
 <div class="rn-plugin">
-<div class="rn-plugin-name">Clue Solver<span class="rn-plugin-version">1.0.8</span></div>
+<div class="rn-plugin-name"><span class="rn-plugin-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.35/clue-scroll-elite.png"/></span><span>Clue Solver<span class="rn-plugin-version">1.0.8</span></span></div>
 <div class="rn-plugin-body"><p>Cipher clues no longer crash the solver while it works out where to walk.</p></div>
 </div>
 <div class="rn-plugin">
-<div class="rn-plugin-name">Guardians of the Rift, Sulphur Nagua<span class="rn-plugin-version">1.5.11 · 2.0.4</span></div>
+<div class="rn-plugin-name"><span class="rn-plugin-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.35/guardian-essence.png"/></span><span>Guardians of the Rift, Sulphur Nagua<span class="rn-plugin-version">1.5.11 · 2.0.4</span></span></div>
 <div class="rn-plugin-body"><p>No more crashes while the game is loading after a portal, teleport or world hop.</p></div>
 </div>
 </div>
 <h2 id="client">Client stability</h2>
-<ul>
-<li>The walker no longer crashes when your position is briefly unknown during a teleport or region load, or when a route is cleared while its destination marker is being drawn.</li>
-<li>The Inventory Setups panel no longer errors while redrawing after a setup or section is removed.</li>
-<li>Special attack and ground-item helpers handle a missing spec bar or a logged-out player without crashing the running plugin.</li>
-<li>Looking up an item by a name that doesn't exist, for example a typo in a Grand Exchange setting, now returns "not found" instead of crashing.</li>
+<ul class="rn-iconlist">
+<li><span class="rn-li-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.35/world-map.png"/></span>The walker no longer crashes when your position is briefly unknown during a teleport or region load, or when a route is cleared while its destination marker is being drawn.</li>
+<li><span class="rn-li-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.35/bank.png"/></span>The Inventory Setups panel no longer errors while redrawing after a setup or section is removed.</li>
+<li><span class="rn-li-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.35/special-attack-orb.png"/></span>Special attack and ground-item helpers handle a missing spec bar or a logged-out player without crashing the running plugin.</li>
+<li><span class="rn-li-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.35/coins.png"/></span>Looking up an item by a name that doesn't exist, for example a typo in a Grand Exchange setting, now returns "not found" instead of crashing.</li>
 </ul>
 <h2 id="update">How to update</h2>
 <p>Restart Microbot to pick up client 2.6.35. Plugin updates show up in the Microbot Hub panel inside the client. Something not working? Tell us on <a href="https://discord.gg/zaGrfqFEWE" rel="noopener" target="_blank">Discord</a>.</p>
+<p class="rn-credit">Game images © Jagex Ltd., via the <a href="https://oldschool.runescape.wiki" rel="noopener" target="_blank">Old School RuneScape Wiki</a>.</p>
+
 
 <nav class="rn-pager" aria-label="More releases">
     <a class="rn-pager-prev" href="1.9.8.html"><small>Previous release</small><span>1.9.8</span></a>

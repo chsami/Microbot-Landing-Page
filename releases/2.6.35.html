@@ -5,18 +5,18 @@
     <title>Microbot 2.6.35 release notes</title>
     <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Quick prayers work again in every plugin, AIO Fighter skips world-spawned loot, Firecape can farm another cape, plus Auto Mining, Clue Solver and stability fixes.">
+    <meta name="description" content="Quick prayers work again in every plugin, AIO Fighter stays in its fight area and skips world-spawned loot, Firecape can farm another cape, plus Auto Mining, Clue Solver and stability fixes.">
     <link rel="canonical" href="https://microbot.cloud/releases/2.6.35.html">
     <meta property="og:type" content="article">
     <meta property="og:site_name" content="Microbot">
     <meta property="og:locale" content="en_US">
     <meta property="og:title" content="Microbot 2.6.35 release notes">
-    <meta property="og:description" content="Quick prayers work again in every plugin, AIO Fighter skips world-spawned loot, Firecape can farm another cape, plus Auto Mining, Clue Solver and stability fixes.">
+    <meta property="og:description" content="Quick prayers work again in every plugin, AIO Fighter stays in its fight area and skips world-spawned loot, Firecape can farm another cape, plus Auto Mining, Clue Solver and stability fixes.">
     <meta property="og:image" content="https://microbot.cloud/images/general/logo.png">
     <meta property="og:url" content="https://microbot.cloud/releases/2.6.35.html">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Microbot 2.6.35 release notes">
-    <meta name="twitter:description" content="Quick prayers work again in every plugin, AIO Fighter skips world-spawned loot, Firecape can farm another cape, plus Auto Mining, Clue Solver and stability fixes.">
+    <meta name="twitter:description" content="Quick prayers work again in every plugin, AIO Fighter stays in its fight area and skips world-spawned loot, Firecape can farm another cape, plus Auto Mining, Clue Solver and stability fixes.">
     <meta name="theme-color" content="#0e0e0e">
     <link rel="stylesheet" href="../microbot/app.min.css" media="all">
     <link rel="stylesheet" href="../microbot/341e4a57816af3ba440d891ca87450ff_framework.css.c1bcd9467a7eeb9006567801face652d.css" media="all">
@@ -127,7 +127,7 @@
             <div class="rn-toc-title">In this release</div>
             <ol>
                 <li><a href="#quick-prayers">Quick prayers work again</a></li>
-                <li><a href="#aio-fighter">AIO Fighter 2.2.10</a></li>
+                <li><a href="#aio-fighter">AIO Fighter 2.2.11</a></li>
                 <li><a href="#plugins">Other plugin updates</a></li>
                 <li><a href="#client">Client stability</a></li>
                 <li><a href="#update">How to update</a></li>
@@ -138,13 +138,13 @@
                 <summary>In this release</summary>
                 <ol>
                 <li><a href="#quick-prayers">Quick prayers work again</a></li>
-                <li><a href="#aio-fighter">AIO Fighter 2.2.10</a></li>
+                <li><a href="#aio-fighter">AIO Fighter 2.2.11</a></li>
                 <li><a href="#plugins">Other plugin updates</a></li>
                 <li><a href="#client">Client stability</a></li>
                 <li><a href="#update">How to update</a></li>
                 </ol>
             </details>
-<p class="rn-lede">Quick prayers work again in every plugin that uses them, AIO Fighter stops chasing items that spawn on the ground, and Firecape can now farm cape after cape. This release ships Microbot client 2.6.35 together with updates to eight Hub plugins.</p>
+<p class="rn-lede">Quick prayers work again in every plugin that uses them, AIO Fighter stops wandering off after loot, and Firecape can now farm cape after cape. This release ships Microbot client 2.6.35 together with updates to eight Hub plugins.</p>
 <h2 id="quick-prayers">Quick prayers work again</h2>
 <p>Say you set <img alt="" class="rn-sprite rn-inline-icon" src="../images/releases/2.6.35/protect-from-melee.png"/>Protect from Melee as your quick prayer, start AIO Fighter at Hill Giants with <strong>Prayer Style: Always On</strong>, and watch your character tank every hit with the prayer orb dark. You weren't doing anything wrong. Since a game update in October 2025, every plugin that used the quick-prayer orb was clicking a part of the minimap that does nothing.</p>
 <p>2.6.35 clicks the real orb again. Anything that turns quick prayers on or off works again, including AIO Fighter, Slayer, Pest Control, Giant Mole and Vire Watch.</p>
@@ -164,7 +164,10 @@
 <span class="rn-note-title">Before you start</span>
 <p>Quick prayers only turn on if you've picked some. Right-click the prayer orb, choose <em>Setup</em>, and select the prayers you want before starting a plugin that uses them.</p>
 </div>
-<h2 id="aio-fighter">AIO Fighter 2.2.10</h2>
+<h2 id="aio-fighter">AIO Fighter 2.2.11</h2>
+<h3><img alt="" class="rn-sprite rn-inline-icon" src="../images/releases/2.6.35/big-bones.png"/>Looting stays inside your fight area</h3>
+<p>Say you start AIO Fighter in the Lumbridge cow field with <strong>Attack Radius</strong> 10 and <strong>Bury Bones</strong> on. AIO Fighter measured loot range from wherever your character was standing, not from where you started. It would pick up bones 9 tiles east, then count anything within 10 tiles of <em>that</em> spot as in range, and so on. After a few kills you could be halfway to the river, picking up other players' bones.</p>
+<p>Since 2.2.11, AIO Fighter only loots inside your fight area: within your Attack Radius of the center tile. That's where you started the plugin, or the tile you picked with <strong>Manual Center Tile</strong>. Items outside the area are left on the ground, and it no longer eats food to make room for them.</p>
 <h3>Skip World Spawns</h3>
 <p>If you fight somewhere the game respawns items on the ground, like coins or bones, AIO Fighter used to run off mid-fight to grab them, because they looked like any other loot. The new <strong>Skip World Spawns</strong> setting, on by default, ignores those items. Drops from your kills, and from other players' kills once they become visible to you, are still picked up.</p>
 <div aria-label="AIO Fighter loot settings with Skip World Spawns enabled" class="rn-settings" role="img">

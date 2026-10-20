@@ -4,7 +4,7 @@ const releases = [
         version: '2.6.35',
         icon: 'images/releases/icons/prayer-orb.png',
         title: '2.6.35 Release - Quick prayers are back',
-        content: 'Quick prayers work again in every plugin, AIO Fighter skips world-spawned loot, Firecape can farm another cape, plus Auto Mining, Clue Solver and stability fixes.',
+        content: 'Quick prayers work again in every plugin, AIO Fighter stays in its fight area and skips world-spawned loot, Firecape can farm another cape, plus Auto Mining, Clue Solver and stability fixes.',
         author: 'Microbot Team'
     },
     {

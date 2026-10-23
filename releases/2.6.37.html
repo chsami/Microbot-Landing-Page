@@ -5,18 +5,18 @@
     <title>Microbot 2.6.37 release notes</title>
     <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Get a Discord or email alert when your bot freezes, errors or logs out, a first-start tour, Quest Helper auto-play and walker fixes, plus Guardians of the Rift, Barrows and Slayer updates.">
+    <meta name="description" content="Get a Discord or email alert when your bot freezes, errors or logs out, a first-start tour, Quest Helper auto-play and walker fixes, plus updates to 12 Hub plugins, including net traps for Salamanders.">
     <link rel="canonical" href="https://microbot.cloud/releases/2.6.37.html">
     <meta property="og:type" content="article">
     <meta property="og:site_name" content="Microbot">
     <meta property="og:locale" content="en_US">
     <meta property="og:title" content="Microbot 2.6.37 release notes">
-    <meta property="og:description" content="Get a Discord or email alert when your bot freezes, errors or logs out, a first-start tour, Quest Helper auto-play and walker fixes, plus Guardians of the Rift, Barrows and Slayer updates.">
+    <meta property="og:description" content="Get a Discord or email alert when your bot freezes, errors or logs out, a first-start tour, Quest Helper auto-play and walker fixes, plus updates to 12 Hub plugins, including net traps for Salamanders.">
     <meta property="og:image" content="https://microbot.cloud/images/general/logo.png">
     <meta property="og:url" content="https://microbot.cloud/releases/2.6.37.html">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Microbot 2.6.37 release notes">
-    <meta name="twitter:description" content="Get a Discord or email alert when your bot freezes, errors or logs out, a first-start tour, Quest Helper auto-play and walker fixes, plus Guardians of the Rift, Barrows and Slayer updates.">
+    <meta name="twitter:description" content="Get a Discord or email alert when your bot freezes, errors or logs out, a first-start tour, Quest Helper auto-play and walker fixes, plus updates to 12 Hub plugins, including net traps for Salamanders.">
     <meta name="theme-color" content="#0e0e0e">
     <link rel="stylesheet" href="../microbot/app.min.css" media="all">
     <link rel="stylesheet" href="../microbot/341e4a57816af3ba440d891ca87450ff_framework.css.c1bcd9467a7eeb9006567801face652d.css" media="all">
@@ -132,6 +132,7 @@
                 <li><a href="#walker">Walker fixes</a></li>
                 <li><a href="#launcher">Launcher 3.2.15</a></li>
                 <li><a href="#plugins">Plugin updates</a></li>
+                <li><a href="#hub-oct-23">Hub update, October 23</a></li>
                 <li><a href="#client">Client</a></li>
                 <li><a href="#update">How to update</a></li>
             </ol>
@@ -146,11 +147,12 @@
                 <li><a href="#walker">Walker fixes</a></li>
                 <li><a href="#launcher">Launcher 3.2.15</a></li>
                 <li><a href="#plugins">Plugin updates</a></li>
+                <li><a href="#hub-oct-23">Hub update, October 23</a></li>
                 <li><a href="#client">Client</a></li>
                 <li><a href="#update">How to update</a></li>
                 </ol>
             </details>
-<p class="rn-lede">Your bot can now tell you when something goes wrong, even when you're away from your PC. New players get a short tour of the client, Quest Helper auto-play gets through quests it used to get stuck in, and the walker stops trying the same locked door over and over. This release ships Microbot client 2.6.37 (on RuneLite 1.13.3) and launcher 3.2.15, together with updates to three Hub plugins.</p>
+<p class="rn-lede">Your bot can now tell you when something goes wrong, even when you're away from your PC. New players get a short tour of the client, Quest Helper auto-play gets through quests it used to get stuck in, and the walker stops trying the same locked door over and over. This release ships Microbot client 2.6.37 (on RuneLite 1.13.3) and launcher 3.2.15, together with updates to three Hub plugins. A Hub update on October 23 fixes nine more, including Salamanders, which now set traps with the new net trap item.</p>
 <h2 id="alerts">Bot alerts</h2>
 <p>Say you leave Guardians of the Rift running and go to work. An hour later the client freezes, or the game logs you out and nothing logs you back in. Until now you only found out when you got home. With bot alerts, microbot.cloud sends you a Discord message or an email when:</p>
 <ul class="rn-iconlist">
@@ -209,6 +211,48 @@
 <div class="rn-plugin-body"><p>With prayer flicking on and two melee monsters hitting on the same tick, <img alt="" class="rn-sprite rn-inline-icon" src="../images/releases/2.6.37/protect-from-melee.png"/>Protect from Melee was clicked twice, which turned it off right before the hits. It's now clicked once.</p></div>
 </div>
 </div>
+<h2 id="hub-oct-23">Hub update, October 23</h2>
+<p>Nine more plugins were updated on October 23. You don't need a new client: restart Microbot, or update them from the Plugin Hub panel.</p>
+<div class="rn-plugin-list">
+<div class="rn-plugin">
+<div class="rn-plugin-name"><span class="rn-plugin-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.37/black-salamander.png"/></span><span>Salamanders<span class="rn-plugin-version">1.1.0</span></span></div>
+<div class="rn-plugin-body"><p>Since the October 7 game update, a net trap is set with the new stackable <strong>net trap</strong> item instead of a rope and a small fishing net. The plugin kept banking for ropes and nets, so it couldn't set a single trap. It now withdraws net traps and picks up the ones that fall on the ground. Your withdraw setting carries over.</p></div>
+</div>
+<div class="rn-plugin">
+<div class="rn-plugin-name"><span class="rn-plugin-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.37/fire-cape.png"/></span><span>Firecape<span class="rn-plugin-version">0.3.75</span></span></div>
+<div class="rn-plugin-body"><p>With <em>After exit &gt; Get another cape</em> on, the second attempt stopped writing its trace, so a failed run had no trace to share with us. Every attempt now keeps its own trace.</p></div>
+</div>
+<div class="rn-plugin">
+<div class="rn-plugin-name"><span class="rn-plugin-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.37/flax.png"/></span><span>Crafting<span class="rn-plugin-version">1.0.3</span></span></div>
+<div class="rn-plugin-body"><p>If you started the flax spinner without picking a spinning location, it threw hundreds of errors in a few minutes. It now waits and tells you to choose a location in the Crafting settings, and starts spinning as soon as you do.</p></div>
+</div>
+<p>The next six fixes are for the moments when the game briefly doesn't know where you are: a loading screen, a world hop, or the end of a Fishing Trawler round. These plugins used to stop with an error or skip the rest of what they were doing. Now they wait a tick and carry on.</p>
+<div class="rn-plugin">
+<div class="rn-plugin-name"><span class="rn-plugin-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.37/angler-hat.png"/></span><span>Fishing Trawler<span class="rn-plugin-version">1.0.2</span></span></div>
+<div class="rn-plugin-body"><p>No longer errors at the ship's ladder when a round ends and the boat loads back to the dock.</p></div>
+</div>
+<div class="rn-plugin">
+<div class="rn-plugin-name"><span class="rn-plugin-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.37/rune-scimitar.png"/></span><span>Sand Crabs<span class="rn-plugin-version">1.5.8</span></span></div>
+<div class="rn-plugin-body"><p>No longer errors when you hop worlds or log out while it checks for other players on your spot. It also asks the game for your position once a tick instead of six times.</p></div>
+</div>
+<div class="rn-plugin">
+<div class="rn-plugin-name"><span class="rn-plugin-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.37/ourania-teleport.png"/></span><span>Ourania<span class="rn-plugin-version">1.4.7</span></span></div>
+<div class="rn-plugin-body"><p>No longer casts Ourania Teleport over and over during a loading screen while resetting.</p></div>
+</div>
+<div class="rn-plugin">
+<div class="rn-plugin-name"><span class="rn-plugin-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.37/small-salvage.png"/></span><span>Sailing<span class="rn-plugin-version">2.2.59</span></span></div>
+<div class="rn-plugin-body"><p>Salvaging and the wreck distance on the overlay skip that tick instead of throwing an error.</p></div>
+</div>
+<div class="rn-plugin">
+<div class="rn-plugin-name"><span class="rn-plugin-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.37/absorption.png"/></span><span>Nightmare Zone<span class="rn-plugin-version">2.4.5</span></span></div>
+<div class="rn-plugin-body"><p>Keeps drinking overloads and absorptions on that tick instead of skipping them all because the walk back to the centre failed.</p></div>
+</div>
+<div class="rn-plugin">
+<div class="rn-plugin-name"><span class="rn-plugin-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.37/combat.png"/></span><span>AIO Fighter<span class="rn-plugin-version">2.2.12</span></span></div>
+<div class="rn-plugin-body"><p>Starts even when you turn it on before your position is known, instead of failing with "Unable to start plugin".</p></div>
+</div>
+</div>
+<p>On the <a href="../plugins.html">Plugins page</a>, 52 plugins, including Guardians of the Rift and Giants' Foundry, opened a "404" page when you clicked them, because they had no written guide. Every plugin now opens a page with its description, version, the client version it needs and how to install it. If you know a plugin well and want to write its guide, the page tells you how.</p>
 <h2 id="client">Client</h2>
 <ul class="rn-iconlist">
 <li><span class="rn-li-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.37/settings.png"/></span>Right-click the log console for <em>Copy</em>, <em>Copy all</em>, <em>Select all</em> and <em>Clear</em>, so you can paste a log into Discord without fiddling with Ctrl+C.</li>

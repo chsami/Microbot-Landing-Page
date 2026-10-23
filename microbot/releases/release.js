@@ -4,7 +4,7 @@ const releases = [
         version: '2.6.37',
         icon: 'images/releases/icons/warning-letter.png',
         title: '2.6.37 Release - Bot alerts are here',
-        content: 'Get a Discord or email alert when your bot freezes, errors or logs out, a first-start tour, Quest Helper auto-play and walker fixes, plus Guardians of the Rift, Barrows and Slayer updates.',
+        content: 'Get a Discord or email alert when your bot freezes, errors or logs out, a first-start tour, Quest Helper auto-play and walker fixes, plus updates to 12 Hub plugins, including net traps for Salamanders.',
         author: 'Microbot Team'
     },
     {

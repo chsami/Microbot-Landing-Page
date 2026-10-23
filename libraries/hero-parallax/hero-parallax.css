@@ -1,0 +1,28 @@
+body.has-hero-3d {
+    position: relative;
+    z-index: 0;
+}
+
+.c-hero-3d {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.c-hero-3d canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1.4s ease;
+}
+
+.c-hero-3d.is-live canvas {
+    opacity: 1;
+}

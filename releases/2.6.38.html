@@ -5,18 +5,18 @@
     <title>Microbot 2.6.38 release notes</title>
     <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Bank's BankStander and AutoBankStander can make divine potions again, run stays off when you turn it off, breaks can wait for a safe spot, plus Huey Prayer and Flipper fixes.">
+    <meta name="description" content="Bank's BankStander and AutoBankStander can make divine potions again, run stays off when you turn it off, breaks can wait for a safe spot, plus Huey Prayer and Flipper fixes and launcher 3.2.17 with a setup guide.">
     <link rel="canonical" href="https://microbot.cloud/releases/2.6.38.html">
     <meta property="og:type" content="article">
     <meta property="og:site_name" content="Microbot">
     <meta property="og:locale" content="en_US">
     <meta property="og:title" content="Microbot 2.6.38 release notes">
-    <meta property="og:description" content="Bank's BankStander and AutoBankStander can make divine potions again, run stays off when you turn it off, breaks can wait for a safe spot, plus Huey Prayer and Flipper fixes.">
+    <meta property="og:description" content="Bank's BankStander and AutoBankStander can make divine potions again, run stays off when you turn it off, breaks can wait for a safe spot, plus Huey Prayer and Flipper fixes and launcher 3.2.17 with a setup guide.">
     <meta property="og:image" content="https://microbot.cloud/images/general/logo.png">
     <meta property="og:url" content="https://microbot.cloud/releases/2.6.38.html">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Microbot 2.6.38 release notes">
-    <meta name="twitter:description" content="Bank's BankStander and AutoBankStander can make divine potions again, run stays off when you turn it off, breaks can wait for a safe spot, plus Huey Prayer and Flipper fixes.">
+    <meta name="twitter:description" content="Bank's BankStander and AutoBankStander can make divine potions again, run stays off when you turn it off, breaks can wait for a safe spot, plus Huey Prayer and Flipper fixes and launcher 3.2.17 with a setup guide.">
     <meta name="theme-color" content="#0e0e0e">
     <link rel="stylesheet" href="../microbot/app.min.css" media="all">
     <link rel="stylesheet" href="../microbot/341e4a57816af3ba440d891ca87450ff_framework.css.c1bcd9467a7eeb9006567801face652d.css" media="all">
@@ -129,6 +129,7 @@
                 <li><a href="#bankstanders">Divine potions in the bank standers</a></li>
                 <li><a href="#run">Run stays off</a></li>
                 <li><a href="#breaks">Breaks that wait for a safe spot</a></li>
+                <li><a href="#launcher">Launcher 3.2.17</a></li>
                 <li><a href="#plugins">Plugin updates</a></li>
                 <li><a href="#client">Client</a></li>
                 <li><a href="#update">How to update</a></li>
@@ -141,12 +142,13 @@
                 <li><a href="#bankstanders">Divine potions in the bank standers</a></li>
                 <li><a href="#run">Run stays off</a></li>
                 <li><a href="#breaks">Breaks that wait for a safe spot</a></li>
+                <li><a href="#launcher">Launcher 3.2.17</a></li>
                 <li><a href="#plugins">Plugin updates</a></li>
                 <li><a href="#client">Client</a></li>
                 <li><a href="#update">How to update</a></li>
                 </ol>
             </details>
-<p class="rn-lede">The bank standers can make divine potions again. You can now turn run off and the walker leaves it off, and plugins can ask the Break Handler to wait until they're somewhere safe before a break. This release ships Microbot client 2.6.38 (on RuneLite 1.13.3), together with fixes to two Hub plugins: Huey Prayer and Flipper.</p>
+<p class="rn-lede">The bank standers can make divine potions again. You can now turn run off and the walker leaves it off, and plugins can ask the Break Handler to wait until they're somewhere safe before a break. This release ships Microbot client 2.6.38 (on RuneLite 1.13.3), together with fixes to two Hub plugins, Huey Prayer and Flipper, and launcher 3.2.17, which walks new players through their first launch.</p>
 <h2 id="bankstanders">Divine potions in the bank standers</h2>
 <p>Say you set up Bank's BankStander or AutoBankStander for <img alt="" class="rn-sprite rn-inline-icon" src="../images/releases/2.6.38/divine-super-combat.png"/>divine super combat potions: 27 super combat potions and 108 <img alt="" class="rn-sprite rn-inline-icon" src="../images/releases/2.6.38/crystal-dust.png"/>crystal dust per trip. The first trip went fine. From the second trip on, the plugin took out 27 crystal dust instead of 108, which is only enough for six potions, and it kept doing that trip after trip.</p>
 <div class="rn-compare">
@@ -167,6 +169,10 @@
 <h2 id="breaks">Breaks that wait for a safe spot</h2>
 <p>Until now, when a break started, the Break Handler paused your plugin wherever it was, even halfway through something risky. Plugins can now ask the Break Handler to wait until they reach a safe spot, for example to heal and step away from an NPC first. The Break Handler waits up to two minutes. If the plugin isn't ready by then, the break is called off rather than started somewhere unsafe.</p>
 <p>Plugins only get this once their author adds it, and plugins that don't use it take breaks exactly as before.</p>
+<h2 id="launcher">Launcher 3.2.17</h2>
+<p>The first time you open the launcher, a setup guide walks you through it in six steps. It starts by asking which account you have, Jagex, normal or Microbot, then shows how to add your Jagex characters, what client RAM and the proxy are for, and how to stay safe. Each step lights up the button it talks about, and <strong>Show me</strong> lets you click it yourself before you come back to the same step. If you added two characters, say Zezima and Lynx Titan, the guide lists them once you're back from the Jagex login. Tick <em>Don't show this again on startup</em> if you don't need it.</p>
+<p>Under Client RAM there's a new <strong>Spoof hardware IDs</strong> option, on by default. Each account then sends its own random random.dat seed when it logs in, instead of the one stored on your computer. Pick a setting for each account and keep it: switching it for an account that has already logged in sends both values. A change applies the next time you start a client.</p>
+<p>The launcher also looks a bit tidier: the logo is now a slim header at the top of the sidebar, so the account list moves up, and the scrollbars match the dark and gold theme instead of the default grey ones.</p>
 <h2 id="plugins">Plugin updates</h2>
 <div class="rn-plugin-list">
 <div class="rn-plugin">
@@ -187,7 +193,7 @@
 <li><span class="rn-li-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.38/settings.png"/></span>For plugin developers: the client starts from an IDE on macOS and on a fresh profile without crashing.</li>
 </ul>
 <h2 id="update">How to update</h2>
-<p>Restart Microbot to pick up client 2.6.38. Plugin updates show up in the Microbot Hub panel inside the client. Something not working? Tell us on <a href="https://discord.gg/zaGrfqFEWE" rel="noopener" target="_blank">Discord</a>.</p>
+<p>Restart Microbot to pick up client 2.6.38. The next time you open the launcher it says a new version is available: click <strong>Install</strong> to get 3.2.17, or download it from the <a href="../index.html">home page</a>. Plugin updates show up in the Microbot Hub panel inside the client. Something not working? Tell us on <a href="https://discord.gg/zaGrfqFEWE" rel="noopener" target="_blank">Discord</a>.</p>
 <p class="rn-credit">Game images © Jagex Ltd., via the <a href="https://oldschool.runescape.wiki" rel="noopener" target="_blank">Old School RuneScape Wiki</a>.</p>
 
 

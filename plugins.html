@@ -128,6 +128,11 @@
             transition: transform 0.3s ease;
         }
 
+        .plugin-icon--fallback {
+            width: 160px;
+            height: 160px;
+        }
+
         .plugin-card:hover .plugin-icon {
             transform: scale(1.05);
         }
@@ -710,7 +715,7 @@ function createPluginCard(plugin, totalInstalls) {
 
     card.innerHTML = `
         <div class="plugin-image-container">
-            <img src="${plugin.cardUrl}" alt="${plugin.name} icon" class="plugin-icon" onerror="this.src='images/favicon.ico'">
+            <img src="${plugin.cardUrl}" alt="${plugin.name} icon" class="plugin-icon" onerror="this.onerror=null;this.src='images/general/logo.png';this.classList.add('plugin-icon--fallback')">
         </div>
 
         <div class="plugin-content">

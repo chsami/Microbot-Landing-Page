@@ -4,7 +4,7 @@ const releases = [
         version: '2.6.38',
         icon: 'images/releases/icons/divine-super-combat.png',
         title: '2.6.38 Release - Divine potions are back in the bank standers',
-        content: "Bank's BankStander and AutoBankStander make divine potions again, run stays off when you turn it off, breaks can wait for a safe spot, plus Huey Prayer and Flipper fixes.",
+        content: "Bank's BankStander and AutoBankStander make divine potions again, run stays off when you turn it off, breaks can wait for a safe spot, plus Huey Prayer and Flipper fixes and launcher 3.2.17 with a setup guide.",
         author: 'Microbot Team'
     },
     {

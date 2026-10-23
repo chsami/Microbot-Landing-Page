@@ -1,5 +1,13 @@
 const releases = [
     {
+        date: new Date('10/23/2026'), //MM/dd/YYYY
+        version: '2.6.38',
+        icon: 'images/releases/icons/divine-super-combat.png',
+        title: '2.6.38 Release - Divine potions are back in the bank standers',
+        content: "Bank's BankStander and AutoBankStander make divine potions again, run stays off when you turn it off, breaks can wait for a safe spot, plus Huey Prayer and Flipper fixes.",
+        author: 'Microbot Team'
+    },
+    {
         date: new Date('10/22/2026'), //MM/dd/YYYY
         version: '2.6.37',
         icon: 'images/releases/icons/warning-letter.png',

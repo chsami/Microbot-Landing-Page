@@ -1,6 +1,14 @@
 const releases = [
     {
         date: new Date('10/24/2026'), //MM/dd/YYYY
+        version: '2.6.40',
+        icon: 'images/releases/icons/pumpkin.png',
+        title: '2.6.40 Release - Happy Halloween',
+        content: "Bats and jack-o'-lanterns on the client's loading screen, in launcher 3.2.18 and on the website, from 20 October to 1 November.",
+        author: 'Microbot Team'
+    },
+    {
+        date: new Date('10/24/2026'), //MM/dd/YYYY
         version: '2.6.39',
         icon: 'images/releases/icons/stats.png',
         title: '2.6.39 Release - Check on your bot from the dashboard',

@@ -1,5 +1,13 @@
 const releases = [
     {
+        date: new Date('10/24/2026'), //MM/dd/YYYY
+        version: '2.6.39',
+        icon: 'images/releases/icons/stats.png',
+        title: '2.6.39 Release - Check on your bot from the dashboard',
+        content: "See your bot's hitpoints, inventory and skills on the dashboard and take a screenshot on request, new death, stuck, low HP and ban alerts, two 2.6.38 slowdowns fixed, and less memory use in long sessions.",
+        author: 'Microbot Team'
+    },
+    {
         date: new Date('10/23/2026'), //MM/dd/YYYY
         version: '2.6.38',
         icon: 'images/releases/icons/divine-super-combat.png',

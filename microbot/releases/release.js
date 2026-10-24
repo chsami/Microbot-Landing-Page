@@ -1,6 +1,14 @@
 const releases = [
     {
         date: new Date('10/24/2026'), //MM/dd/YYYY
+        version: '2.6.41',
+        icon: 'images/releases/icons/zeal.png',
+        title: '2.6.41 Release - RuneLite 1.13.4 and the Zeal prayer',
+        content: 'RuneLite 1.13.4 brings Zeal to the Prayer and XP Drop plugins and a leaner Party plugin, plus fixes to PestControl, MotherlodeMine and HSBlackJack.',
+        author: 'Microbot Team'
+    },
+    {
+        date: new Date('10/24/2026'), //MM/dd/YYYY
         version: '2.6.40',
         icon: 'images/releases/icons/pumpkin.png',
         title: '2.6.40 Release - Happy Halloween',

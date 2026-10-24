@@ -12,10 +12,6 @@
     height: 22px;
 }
 
-.is-halloween .c-border-red {
-    background: linear-gradient(90deg, #6b2fa0, #ff7a00 50%, #6b2fa0);
-}
-
 .hw-host {
     position: relative;
 }

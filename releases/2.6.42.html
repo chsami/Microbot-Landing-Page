@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Microbot 2.6.42 release notes</title>
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Microbot 2.6.42: report a problem from inside the client and hear back when it's fixed, plus more reliable login, world hopping and breaks, Quest Helper fixes and Clue Solver 1.0.10.">
+    <link rel="canonical" href="https://microbot.cloud/releases/2.6.42.html">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Microbot">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:title" content="Microbot 2.6.42 release notes">
+    <meta property="og:description" content="Microbot 2.6.42: report a problem from inside the client and hear back when it's fixed, plus more reliable login, world hopping and breaks, Quest Helper fixes and Clue Solver 1.0.10.">
+    <meta property="og:image" content="https://microbot.cloud/images/general/logo.png">
+    <meta property="og:url" content="https://microbot.cloud/releases/2.6.42.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Microbot 2.6.42 release notes">
+    <meta name="twitter:description" content="Microbot 2.6.42: report a problem from inside the client and hear back when it's fixed, plus more reliable login, world hopping and breaks, Quest Helper fixes and Clue Solver 1.0.10.">
+    <meta name="theme-color" content="#0e0e0e">
+    <link rel="stylesheet" href="../microbot/app.min.css" media="all">
+    <link rel="stylesheet" href="../microbot/341e4a57816af3ba440d891ca87450ff_framework.css.c1bcd9467a7eeb9006567801face652d.css" media="all">
+    <link rel="stylesheet" href="../microbot/20446cf2d164adcc029377cb04d43d17_flags.css.be60c469fe9d673f833faaa74a81e375.css" media="all">
+    <link rel="stylesheet" href="../microbot/90eb5adf50a8c640f633d47fd7eb1778_core.css.730a336650d62c3b59570edc9065b630.css" media="all">
+    <link rel="stylesheet" href="../microbot/5a0da001ccc2200dc5625c3f3934497d_core_responsive.css.1d08c9ed37ed1cae43d3985a3b2316ad.css" media="all">
+    <link rel="stylesheet" href="../microbot/releases/releases.css">
+    <link rel="stylesheet" href="../microbot/halloween/halloween.css">
+</head>
+<body style="background-color:black !important;" class="rn-page ipsApp ipsApp_front ipsClearfix ipsJS_has ipsApp_noTouch">
+<header class="c-header">
+    <!-- Event Start -->
+    <div class="c-events-block py-2">
+        <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between gap-2">
+            <div></div>
+            <a href="https://discord.gg/zaGrfqFEWE" target="_blank" rel="noreferrer noopener"
+               class="c-events-block__right d-flex flex-row align-items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24px" class="me-2" viewBox="0 0 71 55"><title>logo
+                    discord</title>
+                    <g fill="none" class="nc-icon-wrapper">
+                        <g clip-path="url(#clip0)">
+                            <path d="M60.105 4.898A58.55 58.55 0 0 0 45.653.415a.22.22 0 0 0-.233.11 40.784 40.784 0 0 0-1.8 3.697c-5.456-.817-10.886-.817-16.23 0-.485-1.164-1.201-2.587-1.828-3.697a.228.228 0 0 0-.233-.11 58.386 58.386 0 0 0-14.451 4.483.207.207 0 0 0-.095.082C1.578 18.73-.944 32.144.293 45.39a.244.244 0 0 0 .093.167c6.073 4.46 11.955 7.167 17.729 8.962a.23.23 0 0 0 .249-.082 42.08 42.08 0 0 0 3.627-5.9.225.225 0 0 0-.123-.312 38.772 38.772 0 0 1-5.539-2.64.228.228 0 0 1-.022-.378c.372-.279.744-.569 1.1-.862a.22.22 0 0 1 .23-.03c11.619 5.304 24.198 5.304 35.68 0a.219.219 0 0 1 .233.027c.356.293.728.586 1.103.865a.228.228 0 0 1-.02.378 36.384 36.384 0 0 1-5.54 2.637.227.227 0 0 0-.121.315 47.249 47.249 0 0 0 3.624 5.897.225.225 0 0 0 .249.084c5.801-1.794 11.684-4.502 17.757-8.961a.228.228 0 0 0 .092-.164c1.48-15.315-2.48-28.618-10.497-40.412a.18.18 0 0 0-.093-.084zm-36.38 32.427c-3.497 0-6.38-3.211-6.38-7.156 0-3.944 2.827-7.156 6.38-7.156 3.583 0 6.438 3.24 6.382 7.156 0 3.945-2.827 7.156-6.381 7.156zm23.593 0c-3.498 0-6.38-3.211-6.38-7.156 0-3.944 2.826-7.156 6.38-7.156 3.582 0 6.437 3.24 6.38 7.156 0 3.945-2.798 7.156-6.38 7.156z"
+                                  fill="currentColor"></path>
+                        </g>
+                        <defs>
+                            <clippath id="clip0">
+                                <path fill="currentColor" d="M0 0h71v55H0z"></path>
+                            </clippath>
+                        </defs>
+                    </g>
+                </svg>
+                <p class="mb-0">Join us on Discord</p>
+            </a>
+        </div>
+    </div>
+    <div class="c-border-red mb-2"></div>
+    <!-- Event End -->      <!-- Navigation Start -->
+    <nav class="c-nav navbar navbar-expand-sm py-2" style="flex-wrap:nowrap;justify-content: flex-start">
+        <div class="container align-items-stretch">
+            <a class="navbar-brand me-0 me-lg-3 me-xl-5" href="../index.html">
+                <img src="../microbot/logo.png" class="c-nav__logo" loading="lazy" alt="logo">
+            </a>
+            <div class="p-3 p-xl-0" style="line-height: 2rem;width: 100%;" id="navbarMenu">
+                <ul class="navbar-nav me-auto text-center text-xl-left gap-3 gap-xl-4">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://www.github.com/chsami/microbot" target="_blank">Github</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://discord.gg/zaGrfqFEWE" target="_blank">Discord</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://chatgpt.com/g/g-LM0fGeeXB-microbot-documentation"
+                           target="_blank">ChatGPT</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://paypal.me/MicrobotBE?country.x=BE" target="_blank">Donate</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../releases.html">Releases</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../plugins.html">Plugins</a>
+                    </li>
+                </ul>
+            </div>
+
+            <ul id="elMobileNav"
+                class="ipsList_inline ipsResponsive_hideDesktop ipsResponsive_block my-auto d-flex gx-2"
+                data-controller="core.front.core.mobileNav" data-default="all">
+
+                <li class="navbar-toggler my-auto py-3 position-relative" data-ipsdrawer=""
+                    data-ipsdrawer-drawerelem="#elMobileDrawer">
+                    <a href="#">
+                        <i class="fa fa-navicon"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Navigation End -->
+</header>
+
+<main>
+    <section class="rn-hero">
+        <div class="container">
+            <div>
+            <div class="rn-eyebrow">Release notes</div>
+            <h1>Microbot 2.6.42</h1>
+            <p class="rn-tagline">Report a problem from inside the client</p>
+            <div class="rn-meta">
+                <span><strong>October 25, 2026</strong></span>
+                <span>by Microbot Team</span>
+            </div>
+            <div class="rn-actions">
+                <a class="c-button c-button--primary" href="../index.html">Download Microbot</a>
+                <a class="c-button" href="../releases.html">All releases</a>
+            </div>
+            </div>
+            <div class="rn-hero-art"><img class="rn-sprite" src="../images/releases/icons/bug-report.png" alt=""></div>
+        </div>
+    </section>
+
+    <div class="rn-shell">
+        <div class="rn-layout">
+        <aside class="rn-toc" aria-label="In this release">
+            <div class="rn-toc-title">In this release</div>
+            <ol>
+                <li><a href="#report">Report a problem from inside the client</a></li>
+                <li><a href="#login">Login and world hopping</a></li>
+                <li><a href="#breaks">Break handler</a></li>
+                <li><a href="#quests">Quest Helper and Quester</a></li>
+                <li><a href="#errors">Fewer errors and crashes</a></li>
+                <li><a href="#plugins">Plugin updates</a></li>
+                <li><a href="#developers">For script developers</a></li>
+                <li><a href="#update">How to update</a></li>
+            </ol>
+        </aside>
+        <article class="rn-article">
+            <details class="rn-toc-mobile">
+                <summary>In this release</summary>
+                <ol>
+                <li><a href="#report">Report a problem from inside the client</a></li>
+                <li><a href="#login">Login and world hopping</a></li>
+                <li><a href="#breaks">Break handler</a></li>
+                <li><a href="#quests">Quest Helper and Quester</a></li>
+                <li><a href="#errors">Fewer errors and crashes</a></li>
+                <li><a href="#plugins">Plugin updates</a></li>
+                <li><a href="#developers">For script developers</a></li>
+                <li><a href="#update">How to update</a></li>
+                </ol>
+            </details>
+<p class="rn-lede">Something not working? You can now report it from inside the client, and Microbot tells you when it's fixed. No need to post on Discord and keep checking back. This release also makes logging in and world hopping more reliable, keeps the break handler logging you back in, fixes four quest problems and removes a handful of errors that could stop a script. It ships Microbot client 2.6.42 together with Clue Solver 1.0.10 from the Hub, which fixes errors on anagram clues.</p>
+<h2 id="report">Report a problem from inside the client</h2>
+<p>Say you start Web Walker to bank at Varrock west. The first trip goes fine, then your character just stands next to the bank door and does nothing. Here's how you tell us:</p>
+<ol>
+<li>Click the <img alt="" class="rn-sprite rn-inline-icon" src="../images/releases/2.6.42/bug-report.png"/>red bug button in the sidebar and choose <strong>Report a problem...</strong> You can also click the grey bug in the plugin's settings header, or right-click the plugin's name.</li>
+<li>Web Walker is already picked in the <strong>Plugin</strong> box.</li>
+<li>Under <strong>What went wrong?</strong>, write what you were doing and what happened, for example "Walker stands still next to the Varrock west bank door after the first trip."</li>
+<li>Under <strong>Include</strong>, choose what to send along: the recent log and errors, the plugin's settings, your game state (location, inventory and gear) and, if you want, a screenshot of the game. Microbot version and system details are always included: the Microbot, RuneLite, Java and OS versions, your installed plugins and your walker settings.</li>
+<li>Click <strong>See what's sent</strong> to check exactly what goes out, then press <strong>Send</strong>.</li>
+</ol>
+<div class="rn-gallery">
+<img alt="The red bug button menu with Report a problem and My reports at the top" loading="lazy" src="../images/releases/2.6.42/bug-menu.png"/>
+<img alt="Web Walker's settings header with the grey bug button next to the on/off switch" loading="lazy" src="../images/releases/2.6.42/plugin-header-bug.png"/>
+</div>
+<p class="rn-caption">Start a report from the red bug button in the sidebar, or from the grey bug in a plugin's settings.</p>
+<figure class="rn-figure"><img alt="The Report a problem form with Web Walker picked, a description of the problem and the Include checkboxes" loading="lazy" src="../images/releases/2.6.42/report-form.png"/><figcaption>The plugin is already picked. Describe what happened and choose what to include.</figcaption></figure>
+<p>That's it. The client confirms that we've got your report and gives you a report code, in case you want to talk about it on Discord. You don't have to.</p>
+<figure class="rn-figure"><img alt="Thanks, we've got your report, with a report code and Copy, Open Discord and Close buttons" loading="lazy" src="../images/releases/2.6.42/report-sent.png"/><figcaption>Your report is in. Microbot lets you know when there's news.</figcaption></figure>
+<h3>Hear back when it's fixed</h3>
+<p>When the problem is fixed, Microbot tells you in the client. It names the version with the fix and tells you what to do: update the plugin in the Microbot Hub, or restart Microbot from the launcher. An orange dot appears on the bug button, so you see it even if you were busy when the news arrived.</p>
+<p>Choose <strong>My reports</strong> in the bug button menu to see every report you sent from this computer and where it stands. If the team needs more from you, for example whether the walker also stops at the Grand Exchange bank, the question shows up there. Type your answer and click <strong>Send answer</strong>, or answer on Discord if you prefer.</p>
+<figure class="rn-figure"><img alt="My reports showing a Web Walker report with a question from the Microbot team, a Type your answer box and a Send answer button" loading="lazy" src="../images/releases/2.6.42/my-reports-question.png"/><figcaption>The team has a question about your Web Walker report.</figcaption></figure>
+<figure class="rn-figure"><img alt="My reports showing the same report, now marked Being looked at, with your answer below the question" loading="lazy" src="../images/releases/2.6.42/my-reports-answered.png"/><figcaption>After you answer, the report shows it's being looked at.</figcaption></figure>
+<div class="rn-note">
+<span class="rn-note-title">What gets sent</span>
+<p>Only what you tick, plus Microbot version and system details (the Microbot, RuneLite, Java and OS versions, your installed plugins and walker settings). Your password and login details are never sent, and names are removed from the text. A screenshot shows whatever is on your screen, including your chat and name, so leave it unticked if you'd rather not share that. If you turned telemetry off, reporting respects that.</p>
+</div>
+<p><img alt="" class="rn-sprite rn-inline-icon" src="../images/releases/2.6.42/cloud-sync.png"/>Turned telemetry off and want it back on? You can now turn it on again from the <strong>Microbot Cloud</strong> panel.</p>
+<h2 id="login">Login and world hopping</h2>
+<p><img alt="" class="rn-sprite rn-inline-icon" src="../images/releases/2.6.42/world-hopper.png"/>Logging in to a chosen world is more reliable. If your profile or a script picks a world at login, for example a members world, you should end up on it more often.</p>
+<ul>
+<li><strong>World changes at login.</strong> Picking the world while you log in now happens on the client thread, so world hopping at login is more reliable.</li>
+<li><strong>A world that can't be picked.</strong> If the world you asked for can't be selected, login now stops cleanly instead of carrying on.</li>
+<li><strong>Seasonal worlds.</strong> When you log in to a seasonal world, the client now checks it against its own world type while you're still on the login screen.</li>
+</ul>
+<h2 id="breaks">Break handler</h2>
+<p>Say you take a 20-minute break and the first login attempt after it fails. The break handler now keeps retrying the login, instead of leaving you sitting at the login screen until you come back.</p>
+<ul>
+<li>A break that's over no longer leaves stale break state behind.</li>
+<li>Stopping the break handler no longer runs into a race with a break that's starting or ending.</li>
+<li>The fallback world the break handler logs you in to is now checked first.</li>
+</ul>
+<h2 id="quests">Quest Helper and Quester</h2>
+<p><img alt="" class="rn-sprite rn-inline-icon" src="../images/releases/2.6.42/quest-helper.png"/>Quest Helper and its auto-play, Quester, get through more quest steps without stopping:</p>
+<ul>
+<li><strong>Objects you can see but can't walk to.</strong> When a quest step asks you to use an object that's on screen but the walker can't find a path to, Quester now interacts with it directly instead of getting stuck.</li>
+<li><strong>Quest items are used, not eaten.</strong> On a step that asks you to use an item, Quest Helper now uses it instead of eating it.</li>
+<li><strong>Closing the bank.</strong> If the quest bank tab disappears before the game tick ends, for example because the bank just closed, Quest Helper no longer throws an error.</li>
+<li><strong>Cheerers.</strong> Quest Helper now skips cheerers until the game has loaded their models.</li>
+</ul>
+<h2 id="errors">Fewer errors and crashes</h2>
+<p>These fixes are for moments when the game is still loading, for example right after a world hop or while the scene around you changes. A script that hit one of them used to stop with an error. Now it gets a "not this time" answer and can carry on.</p>
+<ul>
+<li><strong>Pathing.</strong> When a tile in the scene is missing, the walker now gets no path instead of failing.</li>
+<li><strong>Clicking objects.</strong> If a script clicks a game object while the world view is unloaded, the click now simply fails instead of crashing.</li>
+<li><strong>Shortest Path.</strong> If Shortest Path fails to start, it now shuts down safely.</li>
+<li><strong>Deposit box.</strong> Scripts that use a deposit box no longer crash when its window is missing.</li>
+<li><img alt="" class="rn-sprite rn-inline-icon" src="../images/releases/2.6.42/grand-exchange.png"/><strong>Grand Exchange.</strong> GE search results are now read on the client thread, so GE scripts run into fewer errors.</li>
+</ul>
+<h2 id="plugins">Plugin updates</h2>
+<div class="rn-plugin-list">
+<div class="rn-plugin">
+<div class="rn-plugin-name"><span class="rn-plugin-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.42/clue-scroll-hard.png"/></span><span>Clue Solver<span class="rn-plugin-version">1.0.10</span></span></div>
+<div class="rn-plugin-body"><p>Anagram clues could stop the plugin with an error. Clue Solver now works out the anagram's answer, the NPC's name and where to find them on the client thread, so anagram clues get solved without errors.</p></div>
+</div>
+</div>
+<h2 id="developers">For script developers</h2>
+<p>The agent server, which lets scripts and tools drive the client from outside, got four updates:</p>
+<ul>
+<li>Clearer CLI errors, exact plugin lookup, plugin health and compact JSON.</li>
+<li>An <code>/observe</code> snapshot, <code>/path</code> route planning and doc fixes.</li>
+<li>Menu clicks, errors, var changes, tile collision and the reason a walk stopped.</li>
+<li>An endpoint list, pause and resume, a request trace, an instance id, and socket and token fixes.</li>
+</ul>
+<p>The build now fails loudly if you ask for <code>:client:test</code>, and the Hub's GE Flipper tests were updated for the 2.6.41 client.</p>
+<h2 id="update">How to update</h2>
+<p>Restart Microbot to get client 2.6.42. Clue Solver 1.0.10 shows up in the Microbot Hub panel inside the client. Something not working? Use <strong>Report a problem...</strong> in the red bug button, and we'll let you know when it's fixed.</p>
+<p class="rn-credit">Game images © Jagex Ltd., via the <a href="https://oldschool.runescape.wiki" rel="noopener" target="_blank">Old School RuneScape Wiki</a>.</p>
+
+<nav class="rn-pager" aria-label="More releases">
+    <a class="rn-pager-prev" href="2.6.41.html"><small>Previous release</small><span>2.6.41</span></a>
+</nav>
+        </article>
+        </div>
+    </div>
+</main>
+
+<footer class="c-footer pt-5">
+    <div class="container">
+        <div class="row justify-content-center align-items-start g-4">
+            <div class="text-center" style="width:20rem">
+                <img src="../microbot/logo.png" class="c-footer--logo" loading="lazy" alt="footer">
+                <div class="c-content-divider mt-3 mb-3"></div>
+                <ul class="d-flex align-items-center justify-content-center gap-4 m-auto text-center">
+                    <li>
+                        <a href="https://discord.gg/zaGrfqFEWE" target="_blank" rel="noreferrer noopener">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24px" viewBox="0 0 71 55"><title>logo
+                                discord</title>
+                                <g fill="none" class="nc-icon-wrapper">
+                                    <g clip-path="url(#clip0)">
+                                        <path d="M60.105 4.898A58.55 58.55 0 0 0 45.653.415a.22.22 0 0 0-.233.11 40.784 40.784 0 0 0-1.8 3.697c-5.456-.817-10.886-.817-16.23 0-.485-1.164-1.201-2.587-1.828-3.697a.228.228 0 0 0-.233-.11 58.386 58.386 0 0 0-14.451 4.483.207.207 0 0 0-.095.082C1.578 18.73-.944 32.144.293 45.39a.244.244 0 0 0 .093.167c6.073 4.46 11.955 7.167 17.729 8.962a.23.23 0 0 0 .249-.082 42.08 42.08 0 0 0 3.627-5.9.225.225 0 0 0-.123-.312 38.772 38.772 0 0 1-5.539-2.64.228.228 0 0 1-.022-.378c.372-.279.744-.569 1.1-.862a.22.22 0 0 1 .23-.03c11.619 5.304 24.198 5.304 35.68 0a.219.219 0 0 1 .233.027c.356.293.728.586 1.103.865a.228.228 0 0 1-.02.378 36.384 36.384 0 0 1-5.54 2.637.227.227 0 0 0-.121.315 47.249 47.249 0 0 0 3.624 5.897.225.225 0 0 0 .249.084c5.801-1.794 11.684-4.502 17.757-8.961a.228.228 0 0 0 .092-.164c1.48-15.315-2.48-28.618-10.497-40.412a.18.18 0 0 0-.093-.084zm-36.38 32.427c-3.497 0-6.38-3.211-6.38-7.156 0-3.944 2.827-7.156 6.38-7.156 3.583 0 6.438 3.24 6.382 7.156 0 3.945-2.827 7.156-6.381 7.156zm23.593 0c-3.498 0-6.38-3.211-6.38-7.156 0-3.944 2.826-7.156 6.38-7.156 3.582 0 6.437 3.24 6.38 7.156 0 3.945-2.798 7.156-6.38 7.156z"
+                                              fill="currentColor"></path>
+                                    </g>
+                                    <defs>
+                                        <clippath id="clip0">
+                                            <path fill="currentColor" d="M0 0h71v55H0z"></path>
+                                        </clippath>
+                                    </defs>
+                                </g>
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/chsami/microbot/releases" target="_blank" rel="noreferrer noopener">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24px" viewBox="0 0 16 16"><title>data
+                                download</title>
+                                <g fill="currentColor" class="nc-icon-wrapper">
+                                    <path d="M14,10a1,1,0,0,0-1,1v2H3V11a1,1,0,0,0-2,0v2a2,2,0,0,0,2,2H13a2,2,0,0,0,2-2V11A1,1,0,0,0,14,10Z"></path>
+                                    <path data-color="color-2"
+                                          d="M7.293,10.707a1,1,0,0,0,1.414,0l4-4a1,1,0,1,0-1.414-1.414L9,7.586V2A1,1,0,0,0,7,2V7.586L4.707,5.293A1,1,0,0,0,3.293,6.707Z"></path>
+                                </g>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="c-footer-cc py-2 mt-5">
+        <div class="container">
+            <p class="text-center c-text-faded mb-0">Microbot © 2026. All Rights Reserved. - <a href="../privacy.html"
+                                                                                                target="_blank">Privacy
+                Policy</a> -
+                <a href="../terms.html"
+                   target="_blank">Terms of service</a></p>
+        </div>
+    </div>
+</footer>
+<script>
+    document.querySelectorAll('.rn-article img, .rn-article video').forEach(function (m) {
+        function hide() {
+            var box = m.closest('.rn-gallery') && m.closest('.rn-gallery').children.length > 1 ? m : (m.closest('figure') || m);
+            box.style.display = 'none';
+        }
+        if (m.tagName === 'IMG' && m.complete && m.naturalWidth === 0 && m.getAttribute('src')) hide();
+        m.addEventListener('error', hide);
+    });
+</script>
+<script defer src="../microbot/halloween/halloween.js"></script>
+</body>
+</html>

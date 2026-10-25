@@ -1,5 +1,13 @@
 const releases = [
     {
+        date: new Date('10/25/2026'), //MM/dd/YYYY
+        version: '2.6.42',
+        icon: 'images/releases/icons/bug-report.png',
+        title: '2.6.42 Release - Report a problem from inside the client',
+        content: "Report a problem from the client and hear back when it's fixed, more reliable login, world hopping and breaks, Quest Helper fixes and Clue Solver 1.0.10 for anagram clues.",
+        author: 'Microbot Team'
+    },
+    {
         date: new Date('10/24/2026'), //MM/dd/YYYY
         version: '2.6.41',
         icon: 'images/releases/icons/zeal.png',

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Microbot 2.6.43 release notes</title>
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Microbot 2.6.43: stop your scripts and log out from the dashboard, break handlers that respect a deliberate logout, Quest Helper buying in batches on free-to-play, and Slayer 1.1.5.">
+    <link rel="canonical" href="https://microbot.cloud/releases/2.6.43.html">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Microbot">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:title" content="Microbot 2.6.43 release notes">
+    <meta property="og:description" content="Microbot 2.6.43: stop your scripts and log out from the dashboard, break handlers that respect a deliberate logout, Quest Helper buying in batches on free-to-play, and Slayer 1.1.5.">
+    <meta property="og:image" content="https://microbot.cloud/images/general/logo.png">
+    <meta property="og:url" content="https://microbot.cloud/releases/2.6.43.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Microbot 2.6.43 release notes">
+    <meta name="twitter:description" content="Microbot 2.6.43: stop your scripts and log out from the dashboard, break handlers that respect a deliberate logout, Quest Helper buying in batches on free-to-play, and Slayer 1.1.5.">
+    <meta name="theme-color" content="#0e0e0e">
+    <link rel="stylesheet" href="../microbot/app.min.css" media="all">
+    <link rel="stylesheet" href="../microbot/341e4a57816af3ba440d891ca87450ff_framework.css.c1bcd9467a7eeb9006567801face652d.css" media="all">
+    <link rel="stylesheet" href="../microbot/20446cf2d164adcc029377cb04d43d17_flags.css.be60c469fe9d673f833faaa74a81e375.css" media="all">
+    <link rel="stylesheet" href="../microbot/90eb5adf50a8c640f633d47fd7eb1778_core.css.730a336650d62c3b59570edc9065b630.css" media="all">
+    <link rel="stylesheet" href="../microbot/5a0da001ccc2200dc5625c3f3934497d_core_responsive.css.1d08c9ed37ed1cae43d3985a3b2316ad.css" media="all">
+    <link rel="stylesheet" href="../microbot/releases/releases.css">
+    <link rel="stylesheet" href="../microbot/halloween/halloween.css">
+</head>
+<body style="background-color:black !important;" class="rn-page ipsApp ipsApp_front ipsClearfix ipsJS_has ipsApp_noTouch">
+<header class="c-header">
+    <!-- Event Start -->
+    <div class="c-events-block py-2">
+        <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between gap-2">
+            <div></div>
+            <a href="https://discord.gg/zaGrfqFEWE" target="_blank" rel="noreferrer noopener"
+               class="c-events-block__right d-flex flex-row align-items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24px" class="me-2" viewBox="0 0 71 55"><title>logo
+                    discord</title>
+                    <g fill="none" class="nc-icon-wrapper">
+                        <g clip-path="url(#clip0)">
+                            <path d="M60.105 4.898A58.55 58.55 0 0 0 45.653.415a.22.22 0 0 0-.233.11 40.784 40.784 0 0 0-1.8 3.697c-5.456-.817-10.886-.817-16.23 0-.485-1.164-1.201-2.587-1.828-3.697a.228.228 0 0 0-.233-.11 58.386 58.386 0 0 0-14.451 4.483.207.207 0 0 0-.095.082C1.578 18.73-.944 32.144.293 45.39a.244.244 0 0 0 .093.167c6.073 4.46 11.955 7.167 17.729 8.962a.23.23 0 0 0 .249-.082 42.08 42.08 0 0 0 3.627-5.9.225.225 0 0 0-.123-.312 38.772 38.772 0 0 1-5.539-2.64.228.228 0 0 1-.022-.378c.372-.279.744-.569 1.1-.862a.22.22 0 0 1 .23-.03c11.619 5.304 24.198 5.304 35.68 0a.219.219 0 0 1 .233.027c.356.293.728.586 1.103.865a.228.228 0 0 1-.02.378 36.384 36.384 0 0 1-5.54 2.637.227.227 0 0 0-.121.315 47.249 47.249 0 0 0 3.624 5.897.225.225 0 0 0 .249.084c5.801-1.794 11.684-4.502 17.757-8.961a.228.228 0 0 0 .092-.164c1.48-15.315-2.48-28.618-10.497-40.412a.18.18 0 0 0-.093-.084zm-36.38 32.427c-3.497 0-6.38-3.211-6.38-7.156 0-3.944 2.827-7.156 6.38-7.156 3.583 0 6.438 3.24 6.382 7.156 0 3.945-2.827 7.156-6.381 7.156zm23.593 0c-3.498 0-6.38-3.211-6.38-7.156 0-3.944 2.826-7.156 6.38-7.156 3.582 0 6.437 3.24 6.38 7.156 0 3.945-2.798 7.156-6.38 7.156z"
+                                  fill="currentColor"></path>
+                        </g>
+                        <defs>
+                            <clippath id="clip0">
+                                <path fill="currentColor" d="M0 0h71v55H0z"></path>
+                            </clippath>
+                        </defs>
+                    </g>
+                </svg>
+                <p class="mb-0">Join us on Discord</p>
+            </a>
+        </div>
+    </div>
+    <div class="c-border-red mb-2"></div>
+    <!-- Event End -->      <!-- Navigation Start -->
+    <nav class="c-nav navbar navbar-expand-sm py-2" style="flex-wrap:nowrap;justify-content: flex-start">
+        <div class="container align-items-stretch">
+            <a class="navbar-brand me-0 me-lg-3 me-xl-5" href="../index.html">
+                <img src="../microbot/logo.png" class="c-nav__logo" loading="lazy" alt="logo">
+            </a>
+            <div class="p-3 p-xl-0" style="line-height: 2rem;width: 100%;" id="navbarMenu">
+                <ul class="navbar-nav me-auto text-center text-xl-left gap-3 gap-xl-4">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://www.github.com/chsami/microbot" target="_blank">Github</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://discord.gg/zaGrfqFEWE" target="_blank">Discord</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://chatgpt.com/g/g-LM0fGeeXB-microbot-documentation"
+                           target="_blank">ChatGPT</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://paypal.me/MicrobotBE?country.x=BE" target="_blank">Donate</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../releases.html">Releases</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../plugins.html">Plugins</a>
+                    </li>
+                </ul>
+            </div>
+
+            <ul id="elMobileNav"
+                class="ipsList_inline ipsResponsive_hideDesktop ipsResponsive_block my-auto d-flex gx-2"
+                data-controller="core.front.core.mobileNav" data-default="all">
+
+                <li class="navbar-toggler my-auto py-3 position-relative" data-ipsdrawer=""
+                    data-ipsdrawer-drawerelem="#elMobileDrawer">
+                    <a href="#">
+                        <i class="fa fa-navicon"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Navigation End -->
+</header>
+
+<main>
+    <section class="rn-hero">
+        <div class="container">
+            <div>
+            <div class="rn-eyebrow">Release notes</div>
+            <h1>Microbot 2.6.43</h1>
+            <p class="rn-tagline">Stop your scripts and log out from the dashboard</p>
+            <div class="rn-meta">
+                <span><strong>October 25, 2026</strong></span>
+                <span>by Microbot Team</span>
+            </div>
+            <div class="rn-actions">
+                <a class="c-button c-button--primary" href="../index.html">Download Microbot</a>
+                <a class="c-button" href="../releases.html">All releases</a>
+            </div>
+            </div>
+            <div class="rn-hero-art"><img class="rn-sprite" src="../images/releases/icons/logout.png" alt=""></div>
+        </div>
+    </section>
+
+    <div class="rn-shell">
+        <div class="rn-layout">
+        <aside class="rn-toc" aria-label="In this release">
+            <div class="rn-toc-title">In this release</div>
+            <ol>
+                <li><a href="#dashboard">Stop scripts and log out from the dashboard</a></li>
+                <li><a href="#breaks">A logout now stays a logout</a></li>
+                <li><a href="#quests">Quest Helper buys items in batches</a></li>
+                <li><a href="#equipment">Teleports that don't happen</a></li>
+                <li><a href="#plugins">Plugin updates</a></li>
+                <li><a href="#developers">For script developers</a></li>
+                <li><a href="#update">How to update</a></li>
+            </ol>
+        </aside>
+        <article class="rn-article">
+            <details class="rn-toc-mobile">
+                <summary>In this release</summary>
+                <ol>
+                <li><a href="#dashboard">Stop scripts and log out from the dashboard</a></li>
+                <li><a href="#breaks">A logout now stays a logout</a></li>
+                <li><a href="#quests">Quest Helper buys items in batches</a></li>
+                <li><a href="#equipment">Teleports that don't happen</a></li>
+                <li><a href="#plugins">Plugin updates</a></li>
+                <li><a href="#developers">For script developers</a></li>
+                <li><a href="#update">How to update</a></li>
+                </ol>
+            </details>
+<p class="rn-lede">You can now stop your scripts or log your client out from the Microbot dashboard, from your phone or any other browser. When you log out that way, or a script logs out on purpose, the break handler no longer logs you straight back in. Quest Helper on a free-to-play account no longer gives up when a quest needs more items than you have Grand Exchange slots, and the walker notices when a teleport from your worn jewellery didn't go through. It ships Microbot client 2.6.43 together with Slayer 1.1.5 from the Hub.</p>
+<h2 id="dashboard">Stop scripts and log out from the dashboard</h2>
+<p>Say you leave a script running and head out. Halfway through the afternoon you check <a href="https://dashboard.microbot.cloud" rel="noopener" target="_blank">dashboard.microbot.cloud</a> on your phone and see your character has been standing in the same spot for twenty minutes. Until now all you could do was look. Now you can act on it.</p>
+<p>Open your client on the dashboard. Its details now have two new buttons:</p>
+<ul>
+<li><strong>Stop scripts</strong> stops every Hub script that's running on that client, the same as switching them off in the plugin list yourself. You can use it while at least one script is running.</li>
+<li><img alt="" class="rn-sprite rn-inline-icon" src="../images/releases/2.6.43/logout.png"/><strong>Log out</strong> stops your scripts first and then logs the account out. You can use it while the client is in game.</li>
+</ul>
+<p>Each button asks you to confirm. The dashboard then waits for your client to answer, which can take up to about a minute, and tells you whether it worked. On the client, a game message says what happened, so you know why your scripts stopped when you come back:</p>
+<ul>
+<li>"The Microbot dashboard stopped your scripts."</li>
+<li>"The Microbot dashboard is logging this account out."</li>
+</ul>
+<p>After a dashboard logout, AutoLogin and the break handler stay out of the way, so the account stays logged out until you log in yourself or start a script in the client. More on that in the next section.</p>
+<div class="rn-note">
+<span class="rn-note-title">Don't want the dashboard to control this client?</span>
+<p><img alt="" class="rn-sprite rn-inline-icon" src="../images/releases/2.6.43/microbot-settings.png"/>Open the Microbot settings and untick <strong>Allow dashboard control</strong> under General. It's on by default. With it off, the dashboard can still show you the client but the two buttons are greyed out, and any command that does arrive is refused. Like the rest of the dashboard, this only works for a client linked to your Microbot account.</p>
+</div>
+<h2 id="breaks">A logout now stays a logout</h2>
+<p>Say a script runs out of supplies and logs out on purpose, or you press <strong>Log out</strong> on the dashboard. If a break was already running at that moment, the break handler used to log the account straight back in when the break ended. Break handler v2 could also mistake the logout for a disconnect and log you back in right away.</p>
+<p>Both break handlers now respect a deliberate logout:</p>
+<div class="rn-compare">
+<div class="is-before">
+<div class="rn-compare-label">2.6.42</div>
+<img alt="Logout" class="rn-sprite rn-orb" src="../images/releases/2.6.43/logout.png"/>
+<p>The script logs out on purpose. When the break ends, or v2 thinks you were disconnected, the break handler logs you back in.</p>
+</div>
+<div class="is-after">
+<div class="rn-compare-label">2.6.43</div>
+<img alt="Logout" class="rn-sprite rn-orb" src="../images/releases/2.6.43/logout.png"/>
+<p>The break handler waits. The account stays logged out until you log in yourself or start a script in the client.</p>
+</div>
+</div>
+<p>Once you log back in by hand, the break handler picks up where it was and finishes the break as usual. Without a deliberate logout nothing changes: breaks and play schedules log you in as before, and if the game disconnects you, break handler v2 still logs you back in. Break handler v1 is now 2.1.3 and v2 is 2.0.13.</p>
+<h2 id="quests">Quest Helper buys items in batches</h2>
+<p><img alt="" class="rn-sprite rn-inline-icon" src="../images/releases/2.6.43/quest-helper.png"/>With <strong>Obtain Missing Items</strong> turned on, Quest Helper buys the quest items you don't have at the <img alt="" class="rn-sprite rn-inline-icon" src="../images/releases/2.6.43/grand-exchange.png"/>Grand Exchange. If a quest needed more items than you had free Grand Exchange slots, it stopped with "Not enough free Grand Exchange slots for missing quest items (need 6, have 3)". A free-to-play account only has 3 slots, so for most quests the feature only worked on members accounts.</p>
+<p>Now it buys in rounds. Say your free-to-play account is missing 6 items for a quest. Quest Helper buys the first 3, collects them, then buys the other 3:</p>
+<ol>
+<li><strong>It checks your gp first.</strong> Before buying anything, Quest Helper prices every missing item and adds up your coins in the bank and inventory. If you can't afford the whole list, it stops right away and says how much gp you need, so you're not left with half the items bought.</li>
+<li><strong>It buys as many items as you have free slots.</strong> The rest are bought on the next round.</li>
+<li><strong>It collects finished offers when every slot is taken.</strong> If your slots are all full but some offers have finished, Quest Helper collects them to free the slots instead of stopping.</li>
+<li><strong>It stops cleanly if collecting doesn't help.</strong> If finished offers can't be collected, for example because your bank is full, it stops with "Could not collect finished Grand Exchange offers (bank full?). Collect them manually and restart." instead of trying again and again.</li>
+</ol>
+<h2 id="equipment">Teleports that don't happen</h2>
+<p>When your route has a teleport on jewellery you're wearing, for example an <img alt="" class="rn-sprite rn-inline-icon" src="../images/releases/2.6.43/amulet-of-glory.png"/>amulet of glory to Edgeville or a <img alt="" class="rn-sprite rn-inline-icon" src="../images/releases/2.6.43/slayer-ring.png"/>slayer ring to the Slayer Tower, the walker opens the Worn Equipment tab and uses the teleport. Sometimes the tab doesn't open. The walker used to count the teleport as done anyway, even though you never left.</p>
+<p>Now the walker notices the teleport didn't happen. It tries another way, such as a teleport in your inventory, or tries again. The same goes for scripts that take off or use worn items: if the Worn Equipment tab doesn't open, the script is told the action failed instead of carrying on as if it had worked.</p>
+<h2 id="plugins">Plugin updates</h2>
+<div class="rn-plugin-list">
+<div class="rn-plugin">
+<div class="rn-plugin-name"><span class="rn-plugin-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.43/slayer.png"/></span><span>Slayer<span class="rn-plugin-version">1.1.5</span></span></div>
+<div class="rn-plugin-body"><p>If you stopped Slayer while it was walking to your task, or about to set up your <img alt="" class="rn-sprite rn-inline-icon" src="../images/releases/2.6.43/cannon-base.png"/>cannon, the plugin could crash with an error at the moment its destination or cannon spot was cleared. It now keeps its own copy of where it's going for the rest of that step, so stopping it mid-trip no longer throws an error.</p></div>
+</div>
+</div>
+<h2 id="developers">For script developers</h2>
+<p><code>Rs2Equipment.invokeMenu</code> now returns a <code>boolean</code>. It returns <code>false</code> when the equipment tab doesn't open, when the item is missing, or when the action isn't in the item's menu. <code>Rs2Equipment.interact(Rs2ItemModel, String)</code>, and with it every <code>unEquip</code> and <code>interact</code> overload, now returns that result instead of always <code>true</code>. Source that calls these methods compiles unchanged. A plugin jar that was already compiled against the old <code>void invokeMenu</code> and calls it directly needs to be rebuilt.</p>
+<h2 id="update">How to update</h2>
+<p>Restart Microbot to get client 2.6.43. Slayer 1.1.5 shows up in the Microbot Hub panel inside the client. To use the new dashboard buttons, make sure your client is linked to your Microbot account, then open <a href="https://dashboard.microbot.cloud" rel="noopener" target="_blank">dashboard.microbot.cloud</a>.</p>
+<p class="rn-credit">Game images © Jagex Ltd., via the <a href="https://oldschool.runescape.wiki" rel="noopener" target="_blank">Old School RuneScape Wiki</a>.</p>
+
+<nav class="rn-pager" aria-label="More releases">
+    <a class="rn-pager-prev" href="2.6.42.html"><small>Previous release</small><span>2.6.42</span></a>
+</nav>
+        </article>
+        </div>
+    </div>
+</main>
+
+<footer class="c-footer pt-5">
+    <div class="container">
+        <div class="row justify-content-center align-items-start g-4">
+            <div class="text-center" style="width:20rem">
+                <img src="../microbot/logo.png" class="c-footer--logo" loading="lazy" alt="footer">
+                <div class="c-content-divider mt-3 mb-3"></div>
+                <ul class="d-flex align-items-center justify-content-center gap-4 m-auto text-center">
+                    <li>
+                        <a href="https://discord.gg/zaGrfqFEWE" target="_blank" rel="noreferrer noopener">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24px" viewBox="0 0 71 55"><title>logo
+                                discord</title>
+                                <g fill="none" class="nc-icon-wrapper">
+                                    <g clip-path="url(#clip0)">
+                                        <path d="M60.105 4.898A58.55 58.55 0 0 0 45.653.415a.22.22 0 0 0-.233.11 40.784 40.784 0 0 0-1.8 3.697c-5.456-.817-10.886-.817-16.23 0-.485-1.164-1.201-2.587-1.828-3.697a.228.228 0 0 0-.233-.11 58.386 58.386 0 0 0-14.451 4.483.207.207 0 0 0-.095.082C1.578 18.73-.944 32.144.293 45.39a.244.244 0 0 0 .093.167c6.073 4.46 11.955 7.167 17.729 8.962a.23.23 0 0 0 .249-.082 42.08 42.08 0 0 0 3.627-5.9.225.225 0 0 0-.123-.312 38.772 38.772 0 0 1-5.539-2.64.228.228 0 0 1-.022-.378c.372-.279.744-.569 1.1-.862a.22.22 0 0 1 .23-.03c11.619 5.304 24.198 5.304 35.68 0a.219.219 0 0 1 .233.027c.356.293.728.586 1.103.865a.228.228 0 0 1-.02.378 36.384 36.384 0 0 1-5.54 2.637.227.227 0 0 0-.121.315 47.249 47.249 0 0 0 3.624 5.897.225.225 0 0 0 .249.084c5.801-1.794 11.684-4.502 17.757-8.961a.228.228 0 0 0 .092-.164c1.48-15.315-2.48-28.618-10.497-40.412a.18.18 0 0 0-.093-.084zm-36.38 32.427c-3.497 0-6.38-3.211-6.38-7.156 0-3.944 2.827-7.156 6.38-7.156 3.583 0 6.438 3.24 6.382 7.156 0 3.945-2.827 7.156-6.381 7.156zm23.593 0c-3.498 0-6.38-3.211-6.38-7.156 0-3.944 2.826-7.156 6.38-7.156 3.582 0 6.437 3.24 6.38 7.156 0 3.945-2.798 7.156-6.38 7.156z"
+                                              fill="currentColor"></path>
+                                    </g>
+                                    <defs>
+                                        <clippath id="clip0">
+                                            <path fill="currentColor" d="M0 0h71v55H0z"></path>
+                                        </clippath>
+                                    </defs>
+                                </g>
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/chsami/microbot/releases" target="_blank" rel="noreferrer noopener">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24px" viewBox="0 0 16 16"><title>data
+                                download</title>
+                                <g fill="currentColor" class="nc-icon-wrapper">
+                                    <path d="M14,10a1,1,0,0,0-1,1v2H3V11a1,1,0,0,0-2,0v2a2,2,0,0,0,2,2H13a2,2,0,0,0,2-2V11A1,1,0,0,0,14,10Z"></path>
+                                    <path data-color="color-2"
+                                          d="M7.293,10.707a1,1,0,0,0,1.414,0l4-4a1,1,0,1,0-1.414-1.414L9,7.586V2A1,1,0,0,0,7,2V7.586L4.707,5.293A1,1,0,0,0,3.293,6.707Z"></path>
+                                </g>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="c-footer-cc py-2 mt-5">
+        <div class="container">
+            <p class="text-center c-text-faded mb-0">Microbot © 2026. All Rights Reserved. - <a href="../privacy.html"
+                                                                                                target="_blank">Privacy
+                Policy</a> -
+                <a href="../terms.html"
+                   target="_blank">Terms of service</a></p>
+        </div>
+    </div>
+</footer>
+<script>
+    document.querySelectorAll('.rn-article img, .rn-article video').forEach(function (m) {
+        function hide() {
+            var box = m.closest('.rn-gallery') && m.closest('.rn-gallery').children.length > 1 ? m : (m.closest('figure') || m);
+            box.style.display = 'none';
+        }
+        if (m.tagName === 'IMG' && m.complete && m.naturalWidth === 0 && m.getAttribute('src')) hide();
+        m.addEventListener('error', hide);
+    });
+</script>
+<script defer src="../microbot/halloween/halloween.js"></script>
+</body>
+</html>

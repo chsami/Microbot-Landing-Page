@@ -1,6 +1,14 @@
 const releases = [
     {
         date: new Date('10/25/2026'), //MM/dd/YYYY
+        version: '2.6.43',
+        icon: 'images/releases/icons/logout.png',
+        title: '2.6.43 Release - Stop your scripts and log out from the dashboard',
+        content: "Stop scripts or log out from the dashboard, break handlers that stay logged out after a deliberate logout, Quest Helper buying quest items in batches on free-to-play, more reliable worn-jewellery teleports and Slayer 1.1.5.",
+        author: 'Microbot Team'
+    },
+    {
+        date: new Date('10/25/2026'), //MM/dd/YYYY
         version: '2.6.42',
         icon: 'images/releases/icons/bug-report.png',
         title: '2.6.42 Release - Report a problem from inside the client',

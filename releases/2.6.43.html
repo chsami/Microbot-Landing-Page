@@ -204,6 +204,20 @@
 </div>
 <h2 id="developers">For script developers</h2>
 <p><code>Rs2Equipment.invokeMenu</code> now returns a <code>boolean</code>. It returns <code>false</code> when the equipment tab doesn't open, when the item is missing, or when the action isn't in the item's menu. <code>Rs2Equipment.interact(Rs2ItemModel, String)</code>, and with it every <code>unEquip</code> and <code>interact</code> overload, now returns that result instead of always <code>true</code>. Source that calls these methods compiles unchanged. A plugin jar that was already compiled against the old <code>void invokeMenu</code> and calls it directly needs to be rebuilt.</p>
+<h3>Objects through the tile-object query</h3>
+<p>Say your script banks at a booth, opens a door, and climbs a staircase. Until now you'd use <code>Rs2GameObject</code> for that. Everything you need is now in the tile-object query:</p>
+<pre><code>Microbot.getRs2TileObjectCache().query()
+        .withName("Bank booth")
+        .withAction("Bank")
+        .interact("Bank");</code></pre>
+<ul>
+<li><code>interact</code> picks the nearest object you can actually reach. If none of them is reachable, it clicks the nearest one and lets the "I can't reach that!" recovery take over, the same recovery <code>Rs2GameObject</code> had.</li>
+<li>New filters: <code>ofType</code>, <code>withAction</code>, <code>withActionContains</code>, and <code>at(WorldPoint)</code>, which matches any tile a large object covers, not only its corner.</li>
+<li>Objects further than 51 tiles away are walked to before the click.</li>
+<li><code>Rs2BankObjects.findBank()</code>, <code>findDepositBox()</code> and <code>findGrandExchangeBooth()</code> give you the nearest usable bank, deposit box or Grand Exchange booth.</li>
+<li>The query only returns objects on your own floor. On the second floor of Lumbridge Castle, <code>Rs2GameObject.getAll()</code> used to return thousands of objects from the floors below that you couldn't click.</li>
+</ul>
+<p><code>Rs2GameObject</code> now reads from the same cache, so your existing scripts keep working, but it is deprecated and will be removed in 2.7.0 at the earliest. The mapping from each old method to its query is in <a href="https://github.com/chsami/Microbot/blob/main/runelite-client/src/main/java/net/runelite/client/plugins/microbot/api/QUERYABLE_API.md" rel="noopener" target="_blank">QUERYABLE_API.md</a>.</p>
 <h2 id="update">How to update</h2>
 <p>Restart Microbot to get client 2.6.43. Slayer 1.1.5 shows up in the Microbot Hub panel inside the client. To use the new dashboard buttons, make sure your client is linked to your Microbot account, then open <a href="https://dashboard.microbot.cloud" rel="noopener" target="_blank">dashboard.microbot.cloud</a>.</p>
 <p class="rn-credit">Game images © Jagex Ltd., via the <a href="https://oldschool.runescape.wiki" rel="noopener" target="_blank">Old School RuneScape Wiki</a>.</p>

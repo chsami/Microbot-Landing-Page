@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Microbot 2.6.45 release notes</title>
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Microbot 2.6.45: start a script from the dashboard, Jagex Account and legacy profile logins fixed, membership read from the game, faster Stronghold of Security walking, and Thieving, Gem Crab Killer and Slayer updates.">
+    <link rel="canonical" href="https://microbot.cloud/releases/2.6.45.html">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Microbot">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:title" content="Microbot 2.6.45 release notes">
+    <meta property="og:description" content="Microbot 2.6.45: start a script from the dashboard, Jagex Account and legacy profile logins fixed, membership read from the game, faster Stronghold of Security walking, and Thieving, Gem Crab Killer and Slayer updates.">
+    <meta property="og:image" content="https://microbot.cloud/images/general/logo.png">
+    <meta property="og:url" content="https://microbot.cloud/releases/2.6.45.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Microbot 2.6.45 release notes">
+    <meta name="twitter:description" content="Microbot 2.6.45: start a script from the dashboard, Jagex Account and legacy profile logins fixed, membership read from the game, faster Stronghold of Security walking, and Thieving, Gem Crab Killer and Slayer updates.">
+    <meta name="theme-color" content="#0e0e0e">
+    <link rel="stylesheet" href="../microbot/app.min.css" media="all">
+    <link rel="stylesheet" href="../microbot/341e4a57816af3ba440d891ca87450ff_framework.css.c1bcd9467a7eeb9006567801face652d.css" media="all">
+    <link rel="stylesheet" href="../microbot/20446cf2d164adcc029377cb04d43d17_flags.css.be60c469fe9d673f833faaa74a81e375.css" media="all">
+    <link rel="stylesheet" href="../microbot/90eb5adf50a8c640f633d47fd7eb1778_core.css.730a336650d62c3b59570edc9065b630.css" media="all">
+    <link rel="stylesheet" href="../microbot/5a0da001ccc2200dc5625c3f3934497d_core_responsive.css.1d08c9ed37ed1cae43d3985a3b2316ad.css" media="all">
+    <link rel="stylesheet" href="../microbot/releases/releases.css">
+    <link rel="stylesheet" href="../microbot/halloween/halloween.css">
+</head>
+<body style="background-color:black !important;" class="rn-page ipsApp ipsApp_front ipsClearfix ipsJS_has ipsApp_noTouch">
+<header class="c-header">
+    <!-- Event Start -->
+    <div class="c-events-block py-2">
+        <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between gap-2">
+            <div></div>
+            <a href="https://discord.gg/zaGrfqFEWE" target="_blank" rel="noreferrer noopener"
+               class="c-events-block__right d-flex flex-row align-items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24px" class="me-2" viewBox="0 0 71 55"><title>logo
+                    discord</title>
+                    <g fill="none" class="nc-icon-wrapper">
+                        <g clip-path="url(#clip0)">
+                            <path d="M60.105 4.898A58.55 58.55 0 0 0 45.653.415a.22.22 0 0 0-.233.11 40.784 40.784 0 0 0-1.8 3.697c-5.456-.817-10.886-.817-16.23 0-.485-1.164-1.201-2.587-1.828-3.697a.228.228 0 0 0-.233-.11 58.386 58.386 0 0 0-14.451 4.483.207.207 0 0 0-.095.082C1.578 18.73-.944 32.144.293 45.39a.244.244 0 0 0 .093.167c6.073 4.46 11.955 7.167 17.729 8.962a.23.23 0 0 0 .249-.082 42.08 42.08 0 0 0 3.627-5.9.225.225 0 0 0-.123-.312 38.772 38.772 0 0 1-5.539-2.64.228.228 0 0 1-.022-.378c.372-.279.744-.569 1.1-.862a.22.22 0 0 1 .23-.03c11.619 5.304 24.198 5.304 35.68 0a.219.219 0 0 1 .233.027c.356.293.728.586 1.103.865a.228.228 0 0 1-.02.378 36.384 36.384 0 0 1-5.54 2.637.227.227 0 0 0-.121.315 47.249 47.249 0 0 0 3.624 5.897.225.225 0 0 0 .249.084c5.801-1.794 11.684-4.502 17.757-8.961a.228.228 0 0 0 .092-.164c1.48-15.315-2.48-28.618-10.497-40.412a.18.18 0 0 0-.093-.084zm-36.38 32.427c-3.497 0-6.38-3.211-6.38-7.156 0-3.944 2.827-7.156 6.38-7.156 3.583 0 6.438 3.24 6.382 7.156 0 3.945-2.827 7.156-6.381 7.156zm23.593 0c-3.498 0-6.38-3.211-6.38-7.156 0-3.944 2.826-7.156 6.38-7.156 3.582 0 6.437 3.24 6.38 7.156 0 3.945-2.798 7.156-6.38 7.156z"
+                                  fill="currentColor"></path>
+                        </g>
+                        <defs>
+                            <clippath id="clip0">
+                                <path fill="currentColor" d="M0 0h71v55H0z"></path>
+                            </clippath>
+                        </defs>
+                    </g>
+                </svg>
+                <p class="mb-0">Join us on Discord</p>
+            </a>
+        </div>
+    </div>
+    <div class="c-border-red mb-2"></div>
+    <!-- Event End -->      <!-- Navigation Start -->
+    <nav class="c-nav navbar navbar-expand-sm py-2" style="flex-wrap:nowrap;justify-content: flex-start">
+        <div class="container align-items-stretch">
+            <a class="navbar-brand me-0 me-lg-3 me-xl-5" href="../index.html">
+                <img src="../microbot/logo.png" class="c-nav__logo" loading="lazy" alt="logo">
+            </a>
+            <div class="p-3 p-xl-0" style="line-height: 2rem;width: 100%;" id="navbarMenu">
+                <ul class="navbar-nav me-auto text-center text-xl-left gap-3 gap-xl-4">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://www.github.com/chsami/microbot" target="_blank">Github</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://discord.gg/zaGrfqFEWE" target="_blank">Discord</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://chatgpt.com/g/g-LM0fGeeXB-microbot-documentation"
+                           target="_blank">ChatGPT</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://paypal.me/MicrobotBE?country.x=BE" target="_blank">Donate</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../releases.html">Releases</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../plugins.html">Plugins</a>
+                    </li>
+                </ul>
+            </div>
+
+            <ul id="elMobileNav"
+                class="ipsList_inline ipsResponsive_hideDesktop ipsResponsive_block my-auto d-flex gx-2"
+                data-controller="core.front.core.mobileNav" data-default="all">
+
+                <li class="navbar-toggler my-auto py-3 position-relative" data-ipsdrawer=""
+                    data-ipsdrawer-drawerelem="#elMobileDrawer">
+                    <a href="#">
+                        <i class="fa fa-navicon"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Navigation End -->
+</header>
+
+<main>
+    <section class="rn-hero">
+        <div class="container">
+            <div>
+            <div class="rn-eyebrow">Release notes</div>
+            <h1>Microbot 2.6.45</h1>
+            <p class="rn-tagline">Start a script from the dashboard</p>
+            <div class="rn-meta">
+                <span><strong>October 29, 2026</strong></span>
+                <span>by Microbot Team</span>
+            </div>
+            <div class="rn-actions">
+                <a class="c-button c-button--primary" href="../index.html">Download Microbot</a>
+                <a class="c-button" href="../releases.html">All releases</a>
+            </div>
+            </div>
+            <div class="rn-hero-art"><img class="rn-sprite" src="../images/releases/icons/microbot-hub.png" alt=""></div>
+        </div>
+    </section>
+
+    <div class="rn-shell">
+        <div class="rn-layout">
+        <aside class="rn-toc" aria-label="In this release">
+            <div class="rn-toc-title">In this release</div>
+            <ol>
+                <li><a href="#dashboard">Start a script from the dashboard</a></li>
+                <li><a href="#profiles">Profiles that log in the way you expect</a></li>
+                <li><a href="#walker">Faster through the Stronghold of Security</a></li>
+                <li><a href="#auto-run">Run energy stays out of your menus</a></li>
+                <li><a href="#fixes">Other fixes</a></li>
+                <li><a href="#plugins">Plugin updates</a></li>
+                <li><a href="#developers">For script developers</a></li>
+                <li><a href="#update">How to update</a></li>
+            </ol>
+        </aside>
+        <article class="rn-article">
+            <details class="rn-toc-mobile">
+                <summary>In this release</summary>
+                <ol>
+                <li><a href="#dashboard">Start a script from the dashboard</a></li>
+                <li><a href="#profiles">Profiles that log in the way you expect</a></li>
+                <li><a href="#walker">Faster through the Stronghold of Security</a></li>
+                <li><a href="#auto-run">Run energy stays out of your menus</a></li>
+                <li><a href="#fixes">Other fixes</a></li>
+                <li><a href="#plugins">Plugin updates</a></li>
+                <li><a href="#developers">For script developers</a></li>
+                <li><a href="#update">How to update</a></li>
+                </ol>
+            </details>
+<p class="rn-lede">In 2.6.43 the Microbot dashboard learned to stop your scripts. Now it can start them too: pick any script installed in your client and press Start, from your phone or any other browser. Profiles log in properly again whether you use a Jagex Account or a legacy login, and they know whether the account is a member. The walker no longer stands still for seconds at every Stronghold of Security entrance and ladder, and scripts no longer switch run on while your bank or a smelting menu is open. It ships Microbot client 2.6.45 together with updates to Thieving, Gem Crab Killer, Slayer, Auto Fishing and Auto Chompy Killer from the Hub.</p>
+<h2 id="dashboard">Start a script from the dashboard</h2>
+<p>Say your woodcutting script finished its task while you were at work. You open <a href="https://dashboard.microbot.cloud" rel="noopener" target="_blank">dashboard.microbot.cloud</a> on your phone, see the client is idle, and want it fishing for the rest of the afternoon. Until now you had to wait until you were back at your computer.</p>
+<p>Open your client's details on the dashboard. Under the Stop scripts and Log out buttons there is now a <strong>Start a script</strong> box:</p>
+<ol>
+<li><strong>Pick a script.</strong> <img alt="" class="rn-sprite rn-inline-icon" src="../images/releases/2.6.45/microbot-hub.png"/>The list shows the Hub scripts installed in that client, and you can type to search it, for example "fish". A script that is already running shows as "(running)" and can't be picked.</li>
+<li><strong>Press Start.</strong> The dashboard waits for your client to answer and then says "Script started.", or why it couldn't, for example "That script is already running."</li>
+<li><strong>The script starts with the settings you saved.</strong> Nothing is changed or sent along: the client starts the script exactly as if you had switched it on in the plugin list, with the settings in your current profile. In the game chat you'll see a message such as "The Microbot dashboard started Fishing.", so you know where it came from when you get back.</li>
+</ol>
+<p>Only scripts you installed from the Microbot Hub can be started this way. Built-in RuneLite plugins aren't in the list. If you removed a script from the client after opening the window, the dashboard tells you to close and reopen it to refresh the list.</p>
+<div class="rn-note">
+<span class="rn-note-title">Starting scripts uses the same switch as stopping them</span>
+<p><img alt="" class="rn-sprite rn-inline-icon" src="../images/releases/2.6.45/microbot-settings.png"/>Starting, stopping and logging out all follow <strong>Allow dashboard control</strong> under General in the Microbot settings. It's on by default. Turn it off and the dashboard can still show your client, but it can't start or stop anything. A client older than 2.6.45 shows "Update the Microbot client to start scripts from here." instead of the script box.</p>
+</div>
+<h2 id="profiles">Profiles that log in the way you expect</h2>
+<p><img alt="" class="rn-sprite rn-inline-icon" src="../images/releases/2.6.45/profiles.png"/>The Profile Manager in the Microbot sidebar got a round of fixes and a cleaner layout.</p>
+<h3>Jagex Account and legacy logins</h3>
+<p>Say you play your main on a Jagex Account and keep an old legacy account for a second script. If the Jagex Account was loaded in the client and you logged in with the legacy profile, the login froze, and closing the client afterwards hung until it timed out. Now a profile login picks the right Jagex Account character for that profile, or clears the Jagex Account so the legacy username and password can be typed in.</p>
+<h3>Import a Jagex Account</h3>
+<p>If you start RuneLite with the <code>--insecure-write-credentials</code> launcher option, it writes your Jagex Account login to a <code>credentials.properties</code> file. Click <strong>Import</strong> in the Profile Manager and choose that file. You get a profile named after your character, instead of an empty "Imported Profile", and loading it switches the client to that character. The saved session is encrypted, the same way profile passwords are.</p>
+<h3>Membership read from the game</h3>
+<p>The Members checkbox is gone. Each time a profile logs in, Microbot reads the account's membership from the game and saves it on the profile, so the card shows for example "Members · 23 days left" or "Free-to-play". It counts the days down while you're logged out, so when the next login picks a world, Microbot knows whether the account can still use members worlds. Redeem a bond during a session and the profile picks that up too. A profile that hasn't logged in yet shows "Unknown until login".</p>
+<h3>Redesigned profile cards</h3>
+<ul>
+<li>A <strong>Load profile</strong> button fills in the profile's login and logs in. Double-clicking a card no longer does this, so a stray double-click won't log you in by accident.</li>
+<li>Each card shows how the profile logs in and its world, for example "Jagex Account · World 301", and the profile you're using is marked <strong>ACTIVE</strong>.</li>
+<li>Saved passwords and bank PINs are masked. Before, the card showed their encrypted text.</li>
+<li>When you edit a profile, leaving the password or bank PIN empty keeps the saved one. Saving no longer turns the placeholder text into your password, bank PIN or Discord webhook.</li>
+</ul>
+<h2 id="walker">Faster through the Stronghold of Security</h2>
+<p>The Stronghold of Security entrance and its ladders move you instantly instead of walking you there. The walker waited up to 5 seconds for you to start walking after every one of them, even though you had already arrived. The ladder down from the first floor also shows a warning, and the walker only accepted it after waiting out two timeouts, then clicked the ladder again.</p>
+<div class="rn-compare">
+<div class="is-before">
+<div class="rn-compare-label">2.6.44</div>
+<p>About 5 seconds from clicking the entrance to walking on. 7 to 14 seconds at the first-floor ladder, with a failed try and a second click.</p>
+</div>
+<div class="is-after">
+<div class="rn-compare-label">2.6.45</div>
+<p>About 1 second at the entrance and 3 seconds at the ladder. The warning is accepted straight away and the ladder is used once.</p>
+</div>
+</div>
+<p>The same faster handling applies to other caves and entrances that move you on the same floor. Doors and gates work as before.</p>
+<h3>The eternal slayer ring with permanent items only</h3>
+<p><img alt="" class="rn-sprite rn-inline-icon" src="../images/releases/2.6.45/eternal-slayer-ring.png"/>If you set <strong>Use teleportation items</strong> to <strong>Inventory (perm)</strong> in the walker settings, the walker only uses teleport items that never run out of charges. The eternal slayer ring is one of them, but the walker treated it like a charged slayer ring and skipped it. It now uses the eternal ring for the Stronghold Slayer Cave, the Slayer Tower, the Fremennik Slayer Dungeon, Tarn's Lair and the dark beasts. Charged slayer rings are still left alone under that setting.</p>
+<h2 id="auto-run">Run energy stays out of your menus</h2>
+<p><img alt="" class="rn-sprite rn-inline-icon" src="../images/releases/2.6.45/agility.png"/>Scripts switch run back on once your run energy is high enough. That click could land while a menu was open. Say you're smelting gold bars: the bank is open, or the "What would you like to smelt?" menu is up, and the script clicks the run orb instead of the bar.</p>
+<p>Now run is only switched on when nothing is in the way. It waits while one of these is open:</p>
+<ul>
+<li>a chat dialogue,</li>
+<li>the bank, the bank PIN screen or a deposit box,</li>
+<li>a shop or the Grand Exchange,</li>
+<li>a make-X, smithing, gold or silver crafting menu.</li>
+</ul>
+<p>Once the window closes, run comes on within about a second. The walker and banking still switch run on when they need it.</p>
+<h2 id="fixes">Other fixes</h2>
+<ul class="rn-iconlist">
+<li><span class="rn-li-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.45/inventory-setups.png"/></span>A script that checks your inventory setups right as the client starts, before the Inventory Setups list has loaded, no longer stops with an error. It treats the setup as not found and carries on.</li>
+</ul>
+<h2 id="plugins">Plugin updates</h2>
+<div class="rn-plugin-list">
+<div class="rn-plugin">
+<div class="rn-plugin-name"><span class="rn-plugin-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.45/thieving.png"/></span><span>Thieving<span class="rn-plugin-version">2.1.10</span></span></div>
+<div class="rn-plugin-body"><p>In Vyres mode with NPCs highlighted in NPC Indicators, the script could pick a nearby NPC that isn't a vyre, for example a Knight of Ardougne, and then fail on it every tick without stealing anything. It now only targets vyres. If you highlighted some vyres it uses those, otherwise the nearest vyre it supports.</p>
+<p>With highlights on in any mode, the script now targets only the NPCs you highlighted. That also makes escape-on-attack work as described: if it's on, an attack from an NPC you didn't highlight now makes you escape and hop.</p>
+<p><img alt="" class="rn-sprite rn-inline-icon" src="../images/releases/2.6.45/vyre-noble-top.png"/>If the nearest bank is Darkmeyer and you don't have the vyre noble set, the script used to stay in its banking step forever. It now stops with "Vyre noble set (top, legs and shoes) is needed to bank at Darkmeyer. Carry or wear it and start the script again."</p></div>
+</div>
+<div class="rn-plugin">
+<div class="rn-plugin-name"><span class="rn-plugin-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.45/mining.png"/></span><span>Gem Crab Killer<span class="rn-plugin-version">1.0.3</span></span></div>
+<div class="rn-plugin-body"><ul>
+<li>With <strong>Use Inventory Setup?</strong> and <strong>Mine and loot the Gem Crab?</strong> on, a full inventory of gems sent you to the bank, and you walked back with the gems still in your bags, then did it again after every kill. The loot now goes into the bank.</li>
+<li>With <strong>Use Inventory Setup?</strong> on but no setup picked, the plugin did nothing and paused every other Microbot script too. It now asks you to pick an inventory setup and stops.</li>
+<li>In <strong>Dharok mode?</strong> without food, the script sent you back to the bank every time you reached the crab, because your HP was always below 25%. It now only banks for food at 2 HP or less, the same point at which it eats.</li>
+<li>Mining the crab now works with a wielded pickaxe. Before, the script skipped mining unless the pickaxe was in your inventory.</li>
+</ul></div>
+</div>
+<div class="rn-plugin">
+<div class="rn-plugin-name"><span class="rn-plugin-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.45/slayer.png"/></span><span>Slayer<span class="rn-plugin-version">1.1.6</span></span></div>
+<div class="rn-plugin-body"><p>A monster you just killed can still be fighting back during its death animation. Slayer sometimes picked that dying monster as its next target and lost time before finding a live one. It now skips monsters that are dead or have no hitpoints left, so it moves on to the next kill straight away.</p></div>
+</div>
+<div class="rn-plugin">
+<div class="rn-plugin-name"><span class="rn-plugin-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.45/fishing.png"/></span><span>Auto Fishing<span class="rn-plugin-version">1.0.11</span></span></div>
+<div class="rn-plugin-body"><p>Right after logging in, on a loading screen or during a world hop, the client doesn't know your position for a moment. The script showed an error then. It now waits quietly until your position is known, including while it's cooking at a fire.</p></div>
+</div>
+<div class="rn-plugin">
+<div class="rn-plugin-name"><span class="rn-plugin-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.45/ranged.png"/></span><span>Auto Chompy Killer<span class="rn-plugin-version">1.0.6</span></span></div>
+<div class="rn-plugin-body"><p>The same fix: while filling bellows at the swamp bubbles, the script printed "Error in main loop" every tick until your position loaded after a login or world hop. It now waits for your position and carries on.</p></div>
+</div>
+</div>
+<h2 id="developers">For script developers</h2>
+<ul>
+<li><code>Rs2InventorySetup.isInventorySetup(name)</code> returns <code>false</code> instead of throwing when the Inventory Setups plugin hasn't loaded its list yet. The name constructor leaves the setup <code>null</code> in that case, which the other entry points such as <code>loadInventory</code> and <code>doesInventoryMatch</code> already handle.</li>
+<li>The automatic run toggle in <code>Script.run()</code> now skips the click while a dialogue, bank, bank PIN, deposit box, shop, Grand Exchange or make-X menu is open. Calling <code>Rs2Player.toggleRunEnergy</code> yourself works as before.</li>
+<li>Only scripts whose plugin class is installed in the client can be started from the dashboard. The dashboard sends the class name and nothing else; no settings or code come from the server.</li>
+<li>The unused <code>GlobalConfiguration</code> class left over from the old RSB code in <code>microbot.globval</code> has been removed. Nothing in Microbot used it.</li>
+</ul>
+<h2 id="update">How to update</h2>
+<p>Restart Microbot to get client 2.6.45. Thieving 2.1.10, Gem Crab Killer 1.0.3, Slayer 1.1.6, Auto Fishing 1.0.11 and Auto Chompy Killer 1.0.6 show up in the Microbot Hub panel inside the client. To start scripts from the dashboard, make sure your client is linked to your Microbot account, then open <a href="https://dashboard.microbot.cloud" rel="noopener" target="_blank">dashboard.microbot.cloud</a>.</p>
+<p class="rn-credit">Game images © Jagex Ltd., via the <a href="https://oldschool.runescape.wiki" rel="noopener" target="_blank">Old School RuneScape Wiki</a>.</p>
+
+<nav class="rn-pager" aria-label="More releases">
+    <a class="rn-pager-prev" href="2.6.43.html"><small>Previous release</small><span>2.6.43</span></a>
+</nav>
+        </article>
+        </div>
+    </div>
+</main>
+
+<footer class="c-footer pt-5">
+    <div class="container">
+        <div class="row justify-content-center align-items-start g-4">
+            <div class="text-center" style="width:20rem">
+                <img src="../microbot/logo.png" class="c-footer--logo" loading="lazy" alt="footer">
+                <div class="c-content-divider mt-3 mb-3"></div>
+                <ul class="d-flex align-items-center justify-content-center gap-4 m-auto text-center">
+                    <li>
+                        <a href="https://discord.gg/zaGrfqFEWE" target="_blank" rel="noreferrer noopener">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24px" viewBox="0 0 71 55"><title>logo
+                                discord</title>
+                                <g fill="none" class="nc-icon-wrapper">
+                                    <g clip-path="url(#clip0)">
+                                        <path d="M60.105 4.898A58.55 58.55 0 0 0 45.653.415a.22.22 0 0 0-.233.11 40.784 40.784 0 0 0-1.8 3.697c-5.456-.817-10.886-.817-16.23 0-.485-1.164-1.201-2.587-1.828-3.697a.228.228 0 0 0-.233-.11 58.386 58.386 0 0 0-14.451 4.483.207.207 0 0 0-.095.082C1.578 18.73-.944 32.144.293 45.39a.244.244 0 0 0 .093.167c6.073 4.46 11.955 7.167 17.729 8.962a.23.23 0 0 0 .249-.082 42.08 42.08 0 0 0 3.627-5.9.225.225 0 0 0-.123-.312 38.772 38.772 0 0 1-5.539-2.64.228.228 0 0 1-.022-.378c.372-.279.744-.569 1.1-.862a.22.22 0 0 1 .23-.03c11.619 5.304 24.198 5.304 35.68 0a.219.219 0 0 1 .233.027c.356.293.728.586 1.103.865a.228.228 0 0 1-.02.378 36.384 36.384 0 0 1-5.54 2.637.227.227 0 0 0-.121.315 47.249 47.249 0 0 0 3.624 5.897.225.225 0 0 0 .249.084c5.801-1.794 11.684-4.502 17.757-8.961a.228.228 0 0 0 .092-.164c1.48-15.315-2.48-28.618-10.497-40.412a.18.18 0 0 0-.093-.084zm-36.38 32.427c-3.497 0-6.38-3.211-6.38-7.156 0-3.944 2.827-7.156 6.38-7.156 3.583 0 6.438 3.24 6.382 7.156 0 3.945-2.827 7.156-6.381 7.156zm23.593 0c-3.498 0-6.38-3.211-6.38-7.156 0-3.944 2.826-7.156 6.38-7.156 3.582 0 6.437 3.24 6.38 7.156 0 3.945-2.798 7.156-6.38 7.156z"
+                                              fill="currentColor"></path>
+                                    </g>
+                                    <defs>
+                                        <clippath id="clip0">
+                                            <path fill="currentColor" d="M0 0h71v55H0z"></path>
+                                        </clippath>
+                                    </defs>
+                                </g>
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/chsami/microbot/releases" target="_blank" rel="noreferrer noopener">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24px" viewBox="0 0 16 16"><title>data
+                                download</title>
+                                <g fill="currentColor" class="nc-icon-wrapper">
+                                    <path d="M14,10a1,1,0,0,0-1,1v2H3V11a1,1,0,0,0-2,0v2a2,2,0,0,0,2,2H13a2,2,0,0,0,2-2V11A1,1,0,0,0,14,10Z"></path>
+                                    <path data-color="color-2"
+                                          d="M7.293,10.707a1,1,0,0,0,1.414,0l4-4a1,1,0,1,0-1.414-1.414L9,7.586V2A1,1,0,0,0,7,2V7.586L4.707,5.293A1,1,0,0,0,3.293,6.707Z"></path>
+                                </g>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="c-footer-cc py-2 mt-5">
+        <div class="container">
+            <p class="text-center c-text-faded mb-0">Microbot © 2026. All Rights Reserved. - <a href="../privacy.html"
+                                                                                                target="_blank">Privacy
+                Policy</a> -
+                <a href="../terms.html"
+                   target="_blank">Terms of service</a></p>
+        </div>
+    </div>
+</footer>
+<script>
+    document.querySelectorAll('.rn-article img, .rn-article video').forEach(function (m) {
+        function hide() {
+            var box = m.closest('.rn-gallery') && m.closest('.rn-gallery').children.length > 1 ? m : (m.closest('figure') || m);
+            box.style.display = 'none';
+        }
+        if (m.tagName === 'IMG' && m.complete && m.naturalWidth === 0 && m.getAttribute('src')) hide();
+        m.addEventListener('error', hide);
+    });
+</script>
+<script defer src="../microbot/halloween/halloween.js"></script>
+</body>
+</html>

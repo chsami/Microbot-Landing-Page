@@ -1,0 +1,43 @@
+/* Plugins list only. Shared parts live in mb-theme.css. */
+.mb .mb-pagehead { padding: 48px 0 8px; background: radial-gradient(800px 300px at 80% 0, rgba(255, 177, 59, .08), transparent 70%); }
+.mb .mb-pagehead__title { font-size: clamp(32px, 4vw, 48px); font-weight: 800; letter-spacing: -.01em; }
+.mb .mb-section--tight { padding: 24px 0 72px; }
+
+.mb .mb-filters { display: flex; flex-direction: column; gap: 14px; margin-top: 28px; }
+.mb .mb-search { position: relative; display: block; max-width: 560px; }
+.mb .mb-search svg { position: absolute; left: 14px; top: 50%; width: 18px; height: 18px; transform: translateY(-50%); color: var(--muted); pointer-events: none; }
+.mb .mb-search input {
+  width: 100%; min-height: 48px; padding: 0 16px 0 44px; border-radius: var(--radius-sm);
+  background: var(--surface-2); border: 1px solid var(--line-strong); color: var(--text-strong); font: 500 15px var(--body);
+}
+.mb .mb-search input::placeholder { color: var(--faint); }
+.mb .mb-search input:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 3px rgba(255, 177, 59, .2); }
+.mb .mb-search input:disabled { opacity: .5; }
+.mb .mb-cats { display: flex; flex-wrap: wrap; gap: 8px; }
+.mb .mb-cat {
+  min-height: 36px; padding: 0 14px; border-radius: 999px; cursor: pointer;
+  background: var(--surface-2); border: 1px solid var(--line-strong); color: var(--text); font: 600 13px var(--body);
+}
+.mb .mb-cat:hover { border-color: var(--gold-soft); color: var(--text-strong); }
+.mb .mb-cat[aria-pressed="true"] { background: var(--gold); border-color: var(--gold); color: var(--on-gold); }
+.mb .mb-count { margin-top: 18px; color: var(--muted); font-size: 14px; }
+
+.mb .mb-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 18px; margin: 0; padding: 0; list-style: none; }
+.mb .mb-grid > li { display: flex; }
+.mb .mb-plugin { display: flex; flex-direction: column; width: 100%; overflow: hidden; }
+.mb .mb-plugin__art { display: block; aspect-ratio: 16 / 9; background: var(--surface-3); border-bottom: 1px solid var(--line); overflow: hidden; }
+.mb .mb-plugin__art img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.mb .mb-plugin__art--none { display: grid; place-items: center; }
+.mb .mb-plugin__art--none img { width: 30%; height: auto; opacity: .3; filter: grayscale(1); }
+.mb .mb-plugin__body { display: flex; flex-direction: column; flex: 1; padding: 14px 16px 16px; }
+.mb .mb-plugin__name { color: var(--text-strong); font-size: 17px; font-weight: 700; line-height: 1.25; }
+.mb .mb-plugin__by { margin-top: 2px; color: var(--muted); font-size: 13px; }
+.mb .mb-plugin__desc { margin-top: 10px; color: var(--text); font-size: 14px; line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.mb .mb-plugin__tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+.mb .mb-plugin__foot { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-top: auto; padding-top: 14px; font-size: 13px; }
+.mb .mb-plugin__ver { color: var(--gold-soft); font-weight: 600; }
+.mb .mb-plugin__installs { color: var(--muted); }
+.mb .mb-empty { grid-column: 1 / -1; padding: 40px; text-align: center; color: var(--muted); }
+.mb .mb-skel { min-height: 340px; width: 100%; background: linear-gradient(100deg, var(--surface-2) 40%, var(--surface-3) 50%, var(--surface-2) 60%) 0 0 / 300% 100%; }
+@media (prefers-reduced-motion: no-preference) { .mb .mb-skel { animation: mb-shimmer 1.4s linear infinite; } }
+@keyframes mb-shimmer { to { background-position: -150% 0; } }

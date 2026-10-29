@@ -1,17 +1,19 @@
 :root {
-    --rn-gold: #ffb13b;
-    --rn-gold-soft: #e9c98f;
-    --rn-red: #8b1010;
-    --rn-red-bright: #d4231f;
-    --rn-text: #d6cfc2;
-    --rn-muted: #9b9384;
-    --rn-faint: #6f685d;
-    --rn-panel: rgba(16, 14, 12, 0.94);
-    --rn-panel-raised: #1a1714;
-    --rn-line: #302817;
-    --rn-line-soft: rgba(48, 40, 23, 0.6);
-    --rn-display: Cinzel, Georgia, serif;
-    --rn-body: Montserrat, Roboto, sans-serif;
+    /* Release and legal pages: the same tokens as every other page (mb-theme.css, the launcher's own). */
+    --rn-gold: var(--gold);
+    --rn-gold-soft: var(--gold-soft);
+    --rn-red: var(--red);
+    --rn-red-bright: var(--red);
+    --rn-text: var(--text);
+    --rn-muted: var(--muted);
+    --rn-faint: var(--faint);
+    --rn-panel: var(--surface);
+    --rn-panel-raised: var(--surface-2);
+    --rn-line: var(--line);
+    --rn-line-soft: var(--line);
+    /* Cinzel stays the wordmark's alone, as in the launcher. */
+    --rn-display: var(--body);
+    --rn-body: var(--body);
 }
 
 .rn-page {
@@ -1172,3 +1174,14 @@
         display: none;
     }
 }
+
+/* The old framework styled .c-button; these pages now get the shared button look (mb-theme.css .mb-btn). */
+.rn-page .c-button {
+    display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+    min-height: 44px; padding: 0 20px; border-radius: var(--radius-sm);
+    background: transparent; color: var(--text-strong); border: 1px solid var(--line-strong);
+    font: 700 14px var(--body); letter-spacing: normal; text-transform: none; text-decoration: none;
+}
+.rn-page .c-button:hover { background: var(--surface-3); color: var(--text-strong); border-color: var(--gold-soft); }
+.rn-page .c-button--primary { background: var(--gold); color: var(--on-gold); border-color: var(--gold); }
+.rn-page .c-button--primary:hover { background: var(--gold-hover); color: var(--on-gold); }

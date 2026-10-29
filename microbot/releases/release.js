@@ -1,5 +1,13 @@
 const releases = [
     {
+        date: new Date('10/29/2026'), //MM/dd/YYYY
+        version: '2.6.45',
+        icon: 'images/releases/icons/microbot-hub.png',
+        title: '2.6.45 Release - Start a script from the dashboard',
+        content: "Start any installed script from the dashboard, Jagex Account and legacy profile logins fixed with membership read from the game, faster Stronghold of Security walking, and fixes to Thieving, Gem Crab Killer, Slayer, Auto Fishing and Auto Chompy Killer.",
+        author: 'Microbot Team'
+    },
+    {
         date: new Date('10/25/2026'), //MM/dd/YYYY
         version: '2.6.43',
         icon: 'images/releases/icons/logout.png',

@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Microbot 2.6.46 release notes</title>
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Microbot 2.6.46: walker clicks stay clear of the chatbox, side panel and minimap, launcher Jagex Account logins keep their character, every pickaxe variant recognised in four mining scripts, and Gem Crab Killer, Volcanic Ash Miner and Tithe Farming fixes.">
+    <link rel="canonical" href="https://microbot.cloud/releases/2.6.46.html">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Microbot">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:title" content="Microbot 2.6.46 release notes">
+    <meta property="og:description" content="Microbot 2.6.46: walker clicks stay clear of the chatbox, side panel and minimap, launcher Jagex Account logins keep their character, every pickaxe variant recognised in four mining scripts, and Gem Crab Killer, Volcanic Ash Miner and Tithe Farming fixes.">
+    <meta property="og:image" content="https://microbot.cloud/images/general/logo.png">
+    <meta property="og:url" content="https://microbot.cloud/releases/2.6.46.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Microbot 2.6.46 release notes">
+    <meta name="twitter:description" content="Microbot 2.6.46: walker clicks stay clear of the chatbox, side panel and minimap, launcher Jagex Account logins keep their character, every pickaxe variant recognised in four mining scripts, and Gem Crab Killer, Volcanic Ash Miner and Tithe Farming fixes.">
+    <meta name="theme-color" content="#0e0e0e">
+    <link rel="stylesheet" href="../microbot/app.min.css" media="all">
+    <link rel="stylesheet" href="../microbot/341e4a57816af3ba440d891ca87450ff_framework.css.c1bcd9467a7eeb9006567801face652d.css" media="all">
+    <link rel="stylesheet" href="../microbot/20446cf2d164adcc029377cb04d43d17_flags.css.be60c469fe9d673f833faaa74a81e375.css" media="all">
+    <link rel="stylesheet" href="../microbot/90eb5adf50a8c640f633d47fd7eb1778_core.css.730a336650d62c3b59570edc9065b630.css" media="all">
+    <link rel="stylesheet" href="../microbot/5a0da001ccc2200dc5625c3f3934497d_core_responsive.css.1d08c9ed37ed1cae43d3985a3b2316ad.css" media="all">
+    <link rel="stylesheet" href="../microbot/releases/releases.css">
+    <link rel="stylesheet" href="../microbot/halloween/halloween.css">
+</head>
+<body style="background-color:black !important;" class="rn-page ipsApp ipsApp_front ipsClearfix ipsJS_has ipsApp_noTouch">
+<header class="c-header">
+    <!-- Event Start -->
+    <div class="c-events-block py-2">
+        <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between gap-2">
+            <div></div>
+            <a href="https://discord.gg/zaGrfqFEWE" target="_blank" rel="noreferrer noopener"
+               class="c-events-block__right d-flex flex-row align-items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24px" class="me-2" viewBox="0 0 71 55"><title>logo
+                    discord</title>
+                    <g fill="none" class="nc-icon-wrapper">
+                        <g clip-path="url(#clip0)">
+                            <path d="M60.105 4.898A58.55 58.55 0 0 0 45.653.415a.22.22 0 0 0-.233.11 40.784 40.784 0 0 0-1.8 3.697c-5.456-.817-10.886-.817-16.23 0-.485-1.164-1.201-2.587-1.828-3.697a.228.228 0 0 0-.233-.11 58.386 58.386 0 0 0-14.451 4.483.207.207 0 0 0-.095.082C1.578 18.73-.944 32.144.293 45.39a.244.244 0 0 0 .093.167c6.073 4.46 11.955 7.167 17.729 8.962a.23.23 0 0 0 .249-.082 42.08 42.08 0 0 0 3.627-5.9.225.225 0 0 0-.123-.312 38.772 38.772 0 0 1-5.539-2.64.228.228 0 0 1-.022-.378c.372-.279.744-.569 1.1-.862a.22.22 0 0 1 .23-.03c11.619 5.304 24.198 5.304 35.68 0a.219.219 0 0 1 .233.027c.356.293.728.586 1.103.865a.228.228 0 0 1-.02.378 36.384 36.384 0 0 1-5.54 2.637.227.227 0 0 0-.121.315 47.249 47.249 0 0 0 3.624 5.897.225.225 0 0 0 .249.084c5.801-1.794 11.684-4.502 17.757-8.961a.228.228 0 0 0 .092-.164c1.48-15.315-2.48-28.618-10.497-40.412a.18.18 0 0 0-.093-.084zm-36.38 32.427c-3.497 0-6.38-3.211-6.38-7.156 0-3.944 2.827-7.156 6.38-7.156 3.583 0 6.438 3.24 6.382 7.156 0 3.945-2.827 7.156-6.381 7.156zm23.593 0c-3.498 0-6.38-3.211-6.38-7.156 0-3.944 2.826-7.156 6.38-7.156 3.582 0 6.437 3.24 6.38 7.156 0 3.945-2.798 7.156-6.38 7.156z"
+                                  fill="currentColor"></path>
+                        </g>
+                        <defs>
+                            <clippath id="clip0">
+                                <path fill="currentColor" d="M0 0h71v55H0z"></path>
+                            </clippath>
+                        </defs>
+                    </g>
+                </svg>
+                <p class="mb-0">Join us on Discord</p>
+            </a>
+        </div>
+    </div>
+    <div class="c-border-red mb-2"></div>
+    <!-- Event End -->      <!-- Navigation Start -->
+    <nav class="c-nav navbar navbar-expand-sm py-2" style="flex-wrap:nowrap;justify-content: flex-start">
+        <div class="container align-items-stretch">
+            <a class="navbar-brand me-0 me-lg-3 me-xl-5" href="../index.html">
+                <img src="../microbot/logo.png" class="c-nav__logo" loading="lazy" alt="logo">
+            </a>
+            <div class="p-3 p-xl-0" style="line-height: 2rem;width: 100%;" id="navbarMenu">
+                <ul class="navbar-nav me-auto text-center text-xl-left gap-3 gap-xl-4">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://www.github.com/chsami/microbot" target="_blank">Github</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://discord.gg/zaGrfqFEWE" target="_blank">Discord</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://chatgpt.com/g/g-LM0fGeeXB-microbot-documentation"
+                           target="_blank">ChatGPT</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://paypal.me/MicrobotBE?country.x=BE" target="_blank">Donate</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../releases.html">Releases</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../plugins.html">Plugins</a>
+                    </li>
+                </ul>
+            </div>
+
+            <ul id="elMobileNav"
+                class="ipsList_inline ipsResponsive_hideDesktop ipsResponsive_block my-auto d-flex gx-2"
+                data-controller="core.front.core.mobileNav" data-default="all">
+
+                <li class="navbar-toggler my-auto py-3 position-relative" data-ipsdrawer=""
+                    data-ipsdrawer-drawerelem="#elMobileDrawer">
+                    <a href="#">
+                        <i class="fa fa-navicon"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Navigation End -->
+</header>
+
+<main>
+    <section class="rn-hero">
+        <div class="container">
+            <div>
+            <div class="rn-eyebrow">Release notes</div>
+            <h1>Microbot 2.6.46</h1>
+            <p class="rn-tagline">Walker clicks that stay out of the chatbox</p>
+            <div class="rn-meta">
+                <span><strong>October 29, 2026</strong></span>
+                <span>by Microbot Team</span>
+            </div>
+            <div class="rn-actions">
+                <a class="c-button c-button--primary" href="../index.html">Download Microbot</a>
+                <a class="c-button" href="../releases.html">All releases</a>
+            </div>
+            </div>
+            <div class="rn-hero-art"><img class="rn-sprite" src="../images/releases/icons/walker.png" alt=""></div>
+        </div>
+    </section>
+
+    <div class="rn-shell">
+        <div class="rn-layout">
+        <aside class="rn-toc" aria-label="In this release">
+            <div class="rn-toc-title">In this release</div>
+            <ol>
+                <li><a href="#walker">Walker clicks stay out of the chatbox</a></li>
+                <li><a href="#launcher-login">Launcher logins keep your Jagex character</a></li>
+                <li><a href="#pickaxes">Every pickaxe counts</a></li>
+                <li><a href="#plugins">Plugin updates</a></li>
+                <li><a href="#fixes">Other fixes</a></li>
+                <li><a href="#developers">For script developers</a></li>
+                <li><a href="#update">How to update</a></li>
+            </ol>
+        </aside>
+        <article class="rn-article">
+            <details class="rn-toc-mobile">
+                <summary>In this release</summary>
+                <ol>
+                <li><a href="#walker">Walker clicks stay out of the chatbox</a></li>
+                <li><a href="#launcher-login">Launcher logins keep your Jagex character</a></li>
+                <li><a href="#pickaxes">Every pickaxe counts</a></li>
+                <li><a href="#plugins">Plugin updates</a></li>
+                <li><a href="#fixes">Other fixes</a></li>
+                <li><a href="#developers">For script developers</a></li>
+                <li><a href="#update">How to update</a></li>
+                </ol>
+            </details>
+<p class="rn-lede">The walker no longer clicks the chatbox, side panel or minimap when it means to click a staircase, ladder or trapdoor. If you start the client from the launcher with a Jagex Account, your scripts can log you back in again after a break. On the Hub, four mining scripts now recognise every pickaxe variant, from dragon (or) to infernal and 3rd age. Motherlode Mine also takes a better pickaxe out of your bank. Gem Crab Killer keeps your potion boosts up, and Volcanic Ash Miner mines again when other players are around. This release ships Microbot client 2.6.46 together with those Hub updates.</p>
+<h2 id="walker">Walker clicks stay out of the chatbox</h2>
+<p><img alt="" class="rn-sprite rn-inline-icon" src="../images/releases/2.6.46/walker.png"/>Say you're walking from the top floor of Lumbridge castle down to the ground floor. The walker clicks the staircase from a distance and lets the game walk you to it, but in resizable mode part of the staircase sits behind the chatbox. The click landed on the chatbox instead, sometimes on its <strong>Report</strong> button, and you stood still while a report window opened. Players saw the same at the Edgeville trapdoor, about half the time.</p>
+<p>Now the walker only clicks the part of an object that you can actually see in the game view, at least a few pixels clear of the chatbox, the side panel and the minimap.</p>
+<ul>
+<li><strong>Partly covered:</strong> the click goes to the visible part. If only the top of the trapdoor shows above the chatbox, that's where it clicks.</li>
+<li><strong>Fully covered:</strong> the walker turns the camera towards the object once and looks again.</li>
+<li><strong>Still covered after that:</strong> it doesn't click at all, and the walker tries again as you get closer. The log says for example "Can't click Staircase - it is behind the chatbox, side panel or minimap even after turning the camera. If this keeps happening, zoom out or move the camera so it is in view." You'll see that line at most once every 10 seconds per object.</li>
+</ul>
+<div class="rn-compare">
+<div class="is-before">
+<div class="rn-compare-label">2.6.45</div>
+<p>The click point could fall anywhere on the object, even under the chatbox, side panel or minimap. With natural mouse on, the corrected point after the mouse moved could land there too.</p>
+</div>
+<div class="is-after">
+<div class="rn-compare-label">2.6.46</div>
+<p>Both the first click and the corrected point stay inside the clear part of the game view. When nothing is clear, nothing is clicked.</p>
+</div>
+</div>
+<p>This matters most with <strong>Interact with obstacles at range</strong> in the walker's advanced settings, which is on by default. Scripts that click game objects through Microbot's object API, such as a bank booth or a rock, get the same protection. With natural mouse on, clicks on NPCs and other characters also stay clear when the mouse corrects its aim.</p>
+<h2 id="launcher-login">Launcher logins keep your Jagex character</h2>
+<p><img alt="" class="rn-sprite rn-inline-icon" src="../images/releases/2.6.46/jagex-account.png"/>When you press <strong>Play With Jagex Account</strong> in the Microbot launcher, the client starts on the profile you picked for that character. The profile's name doesn't have to match the character, for example a profile called "Main#" for a character called "IronMiner42".</p>
+<p>Since 2.6.45, a login on that profile was treated as an old-style username and password login. After a break or a disconnect, the script typed "Main#" into the username box and the relog failed, so a Herbiboar session stopped at the login screen. Now a login on the profile the launcher started with uses the launcher's Jagex character again. If you switch to a different profile in the Profile Manager, that profile still logs in with its own details, as in 2.6.45.</p>
+<h2 id="pickaxes">Every pickaxe counts</h2>
+<p><img alt="" class="rn-sprite rn-inline-icon" src="../images/releases/2.6.46/dragon-pickaxe.png"/>Say you mine at the Motherlode Mine with a dragon pickaxe (or). The script didn't recognise it, so it took a rune pickaxe out of your bank, or stopped with "No pickaxe found in bank or inventory". Several mining scripts only knew the plain version of each pickaxe. They now recognise every version of each tier:</p>
+<ul>
+<li>dragon pickaxe (or) and the dragon pickaxe upgraded at Zalcano,</li>
+<li>infernal pickaxe, charged or not,</li>
+<li>3rd age pickaxe,</li>
+<li>the trailblazer pickaxes,</li>
+<li>crystal pickaxe, inactive or not.</li>
+</ul>
+<p>Each one ranks with its own tier, so an infernal pickaxe counts as a dragon pickaxe.</p>
+<div class="rn-plugin-list">
+<div class="rn-plugin">
+<div class="rn-plugin-name"><span class="rn-plugin-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.46/mining.png"/></span><span>Motherlode Mine<span class="rn-plugin-version">1.9.11</span></span></div>
+<div class="rn-plugin-body"><p>Once each time you start, the script checks whether your bank holds a better pickaxe that you have the Mining level for. Say you're wielding a rune pickaxe and your bank has a dragon pickaxe. It opens the bank and takes out the dragon pickaxe. It wields it if your Attack level allows, otherwise it mines with it from your inventory, and it banks the rune pickaxe. If your inventory is full, it banks one item that the script doesn't need to make room. The log tells you about each swap, and says when your Attack is too low to wield the new pickaxe.</p>
+<p>It also mines with the best pickaxe you carry. Before, a wielded pickaxe always won, even when a better one was in your inventory.</p></div>
+</div>
+<div class="rn-plugin">
+<div class="rn-plugin-name"><span class="rn-plugin-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.46/mining.png"/></span><span>Shooting Star<span class="rn-plugin-version">1.4.12</span></span></div>
+<div class="rn-plugin-body"><p>Recognises every pickaxe version above. Stars can land in the Wilderness, so the script never takes a 3rd age pickaxe out of your bank. If that's the only pickaxe it could use, it stops and tells you to equip it or put it in your inventory before you press start, or to bank another pickaxe you have the levels for. If it takes a lower pickaxe instead, the log says once that it skipped the 3rd age one.</p></div>
+</div>
+<div class="rn-plugin">
+<div class="rn-plugin-name"><span class="rn-plugin-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.46/mining.png"/></span><span>AIO Camdozaal<span class="rn-plugin-version">1.0.1</span></span></div>
+<div class="rn-plugin-body"><p>The <strong>Pickaxe</strong> option now accepts every version of the pickaxe you chose, and it takes the exact version you picked out of the bank first. There is a new 3rd age option. The Trailblazer option didn't match any item before, so it could never find your pickaxe. It works now. Your saved choice stays as it was.</p></div>
+</div>
+<div class="rn-plugin">
+<div class="rn-plugin-name"><span class="rn-plugin-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.46/mining.png"/></span><span>Auto Essence Mining<span class="rn-plugin-version">1.0.5</span></span></div>
+<div class="rn-plugin-body"><p>Recognises every pickaxe version above, so a dragon pickaxe (or) or an infernal pickaxe now counts as a dragon pickaxe.</p></div>
+</div>
+</div>
+<h2 id="plugins">Plugin updates</h2>
+<div class="rn-plugin-list">
+<div class="rn-plugin">
+<div class="rn-plugin-name"><span class="rn-plugin-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.46/attack.png"/></span><span>Gem Crab Killer<span class="rn-plugin-version">1.0.5</span></span></div>
+<div class="rn-plugin-body"><p><img alt="" class="rn-sprite rn-inline-icon" src="../images/releases/2.6.46/divine-super-combat.png"/>With <strong>Use Offensive Potions</strong> on, the script drank a potion at the start and then never again. It only drank while you were "in combat", and the Gem Crab never hits back, so that was hardly ever true. Now it drinks whenever a live crab is there and your boost has run out:</p>
+<ul>
+<li>A divine potion is drunk again when its 5-minute timer ends. It is only drunk above 20 HP. Below that, the script uses a normal potion instead.</li>
+<li>Other potions are drunk again once most of the boost has worn off.</li>
+<li>It drinks one dose and waits for the boost to show, so no doses are wasted.</li>
+</ul>
+<p>A new <strong>Offensive potion</strong> option picks what to drink: Any (best available), Divine super combat, Super combat, Combat, Super attack + strength, Ranging or Magic. Super combat never drinks your divine super combat potions by mistake.</p>
+<p>The script now eats below 50% HP, also right after a divine dose. Dharok mode keeps its own eating. The overlay shows the skill you're training, for example "Attack → 73", with the time and XP to the next level. XP per hour is no longer off if you start the plugin while logged out.</p></div>
+</div>
+<div class="rn-plugin">
+<div class="rn-plugin-name"><span class="rn-plugin-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.46/mining.png"/></span><span>Volcanic Ash Miner<span class="rn-plugin-version">1.2.2</span></span></div>
+<div class="rn-plugin-body"><p>With <strong>Max players in area</strong> above 0, the script stopped working as soon as another player was in view. It showed an error every tick, so it didn't mine and it didn't hop either. Now it counts the other players mining ash within 15 tiles of you, and hops when there are more than your limit. With a limit of 2 and three other players mining nearby, the log says "3 other players are mining here (limit 2). Hopping to world 444..." and you hop. If the hop fails, it says "Could not hop to world 444. Will try again shortly."</p></div>
+</div>
+<div class="rn-plugin">
+<div class="rn-plugin-name"><span class="rn-plugin-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.46/mining.png"/></span><span>Calcified Rock Miner<span class="rn-plugin-version">1.1.5</span></span></div>
+<div class="rn-plugin-body"><p>The same fix for <strong>Max players in area</strong>. It counts every other player within 15 tiles who is doing something, so a player fighting or doing an emote nearby counts too.</p></div>
+</div>
+<div class="rn-plugin">
+<div class="rn-plugin-name"><span class="rn-plugin-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.46/farming.png"/></span><span>Tithe Farming<span class="rn-plugin-version">1.1.15</span></span></div>
+<div class="rn-plugin-body"><p>During a login, a world hop or a loading screen, the game briefly doesn't know where you are. The script then put an error in the log. Now it waits for the next tick and carries on.</p></div>
+</div>
+</div>
+<h2 id="fixes">Other fixes</h2>
+<ul class="rn-iconlist">
+<li><span class="rn-li-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.46/fletching.png"/></span>A fletching script that checks whether the fletching make menu is open could stop with a "must be called on client thread" error. The check now runs safely from any script.</li>
+</ul>
+<h2 id="developers">For script developers</h2>
+<ul>
+<li><code>Rs2Widget.hasVisibleWidgetText</code> now does the widget lookup and the <code>isHidden()</code> check together on the client thread. Calling it from your script thread, directly or through <code>Rs2Fletching.isFletchingInterfaceOpen()</code>, no longer throws <code>IllegalStateException</code>.</li>
+<li><code>Rs2TileObjectModel.click</code> now clicks only inside the part of the clickbox that is clear of the chatbox, side panel and minimap. It can return <code>false</code> without clicking when the object stays covered after one camera turn, so check the result.</li>
+<li><code>Rs2UiHelper</code> gains <code>sceneViewportBounds</code> and <code>clearOfInterfaces</code>. The list of covering interfaces moved there from <code>Rs2WalkerMovement</code>, so tile clicks and object clicks share it.</li>
+<li>The deprecated <code>util.tileobject.Rs2TileObjectModel</code> still clicks the raw clickbox. Switch to <code>api.tileobject.models.Rs2TileObjectModel</code> to get the new behaviour.</li>
+</ul>
+<h2 id="update">How to update</h2>
+<p><img alt="" class="rn-sprite rn-inline-icon" src="../images/releases/2.6.46/microbot-hub.png"/>Restart Microbot to get client 2.6.46. Motherlode Mine 1.9.11, Shooting Star 1.4.12, AIO Camdozaal 1.0.1, Auto Essence Mining 1.0.5, Gem Crab Killer 1.0.5, Volcanic Ash Miner 1.2.2, Calcified Rock Miner 1.1.5 and Tithe Farming 1.1.15 show up in the Microbot Hub panel inside the client.</p>
+<p class="rn-credit">Game images © Jagex Ltd., via the <a href="https://oldschool.runescape.wiki" rel="noopener" target="_blank">Old School RuneScape Wiki</a>.</p>
+
+<nav class="rn-pager" aria-label="More releases">
+    <a class="rn-pager-prev" href="2.6.45.html"><small>Previous release</small><span>2.6.45</span></a>
+</nav>
+        </article>
+        </div>
+    </div>
+</main>
+
+<footer class="c-footer pt-5">
+    <div class="container">
+        <div class="row justify-content-center align-items-start g-4">
+            <div class="text-center" style="width:20rem">
+                <img src="../microbot/logo.png" class="c-footer--logo" loading="lazy" alt="footer">
+                <div class="c-content-divider mt-3 mb-3"></div>
+                <ul class="d-flex align-items-center justify-content-center gap-4 m-auto text-center">
+                    <li>
+                        <a href="https://discord.gg/zaGrfqFEWE" target="_blank" rel="noreferrer noopener">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24px" viewBox="0 0 71 55"><title>logo
+                                discord</title>
+                                <g fill="none" class="nc-icon-wrapper">
+                                    <g clip-path="url(#clip0)">
+                                        <path d="M60.105 4.898A58.55 58.55 0 0 0 45.653.415a.22.22 0 0 0-.233.11 40.784 40.784 0 0 0-1.8 3.697c-5.456-.817-10.886-.817-16.23 0-.485-1.164-1.201-2.587-1.828-3.697a.228.228 0 0 0-.233-.11 58.386 58.386 0 0 0-14.451 4.483.207.207 0 0 0-.095.082C1.578 18.73-.944 32.144.293 45.39a.244.244 0 0 0 .093.167c6.073 4.46 11.955 7.167 17.729 8.962a.23.23 0 0 0 .249-.082 42.08 42.08 0 0 0 3.627-5.9.225.225 0 0 0-.123-.312 38.772 38.772 0 0 1-5.539-2.64.228.228 0 0 1-.022-.378c.372-.279.744-.569 1.1-.862a.22.22 0 0 1 .23-.03c11.619 5.304 24.198 5.304 35.68 0a.219.219 0 0 1 .233.027c.356.293.728.586 1.103.865a.228.228 0 0 1-.02.378 36.384 36.384 0 0 1-5.54 2.637.227.227 0 0 0-.121.315 47.249 47.249 0 0 0 3.624 5.897.225.225 0 0 0 .249.084c5.801-1.794 11.684-4.502 17.757-8.961a.228.228 0 0 0 .092-.164c1.48-15.315-2.48-28.618-10.497-40.412a.18.18 0 0 0-.093-.084zm-36.38 32.427c-3.497 0-6.38-3.211-6.38-7.156 0-3.944 2.827-7.156 6.38-7.156 3.583 0 6.438 3.24 6.382 7.156 0 3.945-2.827 7.156-6.381 7.156zm23.593 0c-3.498 0-6.38-3.211-6.38-7.156 0-3.944 2.826-7.156 6.38-7.156 3.582 0 6.437 3.24 6.38 7.156 0 3.945-2.798 7.156-6.38 7.156z"
+                                              fill="currentColor"></path>
+                                    </g>
+                                    <defs>
+                                        <clippath id="clip0">
+                                            <path fill="currentColor" d="M0 0h71v55H0z"></path>
+                                        </clippath>
+                                    </defs>
+                                </g>
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/chsami/microbot/releases" target="_blank" rel="noreferrer noopener">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24px" viewBox="0 0 16 16"><title>data
+                                download</title>
+                                <g fill="currentColor" class="nc-icon-wrapper">
+                                    <path d="M14,10a1,1,0,0,0-1,1v2H3V11a1,1,0,0,0-2,0v2a2,2,0,0,0,2,2H13a2,2,0,0,0,2-2V11A1,1,0,0,0,14,10Z"></path>
+                                    <path data-color="color-2"
+                                          d="M7.293,10.707a1,1,0,0,0,1.414,0l4-4a1,1,0,1,0-1.414-1.414L9,7.586V2A1,1,0,0,0,7,2V7.586L4.707,5.293A1,1,0,0,0,3.293,6.707Z"></path>
+                                </g>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="c-footer-cc py-2 mt-5">
+        <div class="container">
+            <p class="text-center c-text-faded mb-0">Microbot © 2026. All Rights Reserved. - <a href="../privacy.html"
+                                                                                                target="_blank">Privacy
+                Policy</a> -
+                <a href="../terms.html"
+                   target="_blank">Terms of service</a></p>
+        </div>
+    </div>
+</footer>
+<script>
+    document.querySelectorAll('.rn-article img, .rn-article video').forEach(function (m) {
+        function hide() {
+            var box = m.closest('.rn-gallery') && m.closest('.rn-gallery').children.length > 1 ? m : (m.closest('figure') || m);
+            box.style.display = 'none';
+        }
+        if (m.tagName === 'IMG' && m.complete && m.naturalWidth === 0 && m.getAttribute('src')) hide();
+        m.addEventListener('error', hide);
+    });
+</script>
+<script defer src="../microbot/halloween/halloween.js"></script>
+</body>
+</html>

@@ -5,18 +5,18 @@
     <title>Microbot 2.6.46 release notes</title>
     <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Microbot 2.6.46: walker clicks stay clear of the chatbox, side panel and minimap, launcher Jagex Account logins keep their character, every pickaxe variant recognised in five mining scripts, and Gem Crab Killer, Volcanic Ash Miner and Tithe Farming fixes.">
+    <meta name="description" content="Microbot 2.6.46: walker clicks stay clear of the chatbox, side panel and minimap, launcher Jagex Account logins keep their character, every pickaxe variant recognised in four mining scripts, and Gem Crab Killer, Volcanic Ash Miner and Tithe Farming fixes.">
     <link rel="canonical" href="https://microbot.cloud/releases/2.6.46.html">
     <meta property="og:type" content="article">
     <meta property="og:site_name" content="Microbot">
     <meta property="og:locale" content="en_US">
     <meta property="og:title" content="Microbot 2.6.46 release notes">
-    <meta property="og:description" content="Microbot 2.6.46: walker clicks stay clear of the chatbox, side panel and minimap, launcher Jagex Account logins keep their character, every pickaxe variant recognised in five mining scripts, and Gem Crab Killer, Volcanic Ash Miner and Tithe Farming fixes.">
+    <meta property="og:description" content="Microbot 2.6.46: walker clicks stay clear of the chatbox, side panel and minimap, launcher Jagex Account logins keep their character, every pickaxe variant recognised in four mining scripts, and Gem Crab Killer, Volcanic Ash Miner and Tithe Farming fixes.">
     <meta property="og:image" content="https://microbot.cloud/images/general/logo.png">
     <meta property="og:url" content="https://microbot.cloud/releases/2.6.46.html">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Microbot 2.6.46 release notes">
-    <meta name="twitter:description" content="Microbot 2.6.46: walker clicks stay clear of the chatbox, side panel and minimap, launcher Jagex Account logins keep their character, every pickaxe variant recognised in five mining scripts, and Gem Crab Killer, Volcanic Ash Miner and Tithe Farming fixes.">
+    <meta name="twitter:description" content="Microbot 2.6.46: walker clicks stay clear of the chatbox, side panel and minimap, launcher Jagex Account logins keep their character, every pickaxe variant recognised in four mining scripts, and Gem Crab Killer, Volcanic Ash Miner and Tithe Farming fixes.">
     <meta name="theme-color" content="#0e0e0e">
     <link rel="stylesheet" href="../microbot/app.min.css" media="all">
     <link rel="stylesheet" href="../microbot/341e4a57816af3ba440d891ca87450ff_framework.css.c1bcd9467a7eeb9006567801face652d.css" media="all">
@@ -149,7 +149,7 @@
                 <li><a href="#update">How to update</a></li>
                 </ol>
             </details>
-<p class="rn-lede">The walker no longer clicks the chatbox, side panel or minimap when it means to click a staircase, ladder or trapdoor. If you start the client from the launcher with a Jagex Account, your scripts can log you back in again after a break. On the Hub, five mining scripts now recognise every pickaxe variant, from dragon (or) to infernal and 3rd age. Motherlode Mine also takes a better pickaxe out of your bank. Gem Crab Killer keeps your potion boosts up, and Volcanic Ash Miner mines again when other players are around. This release ships Microbot client 2.6.46 together with those Hub updates.</p>
+<p class="rn-lede">The walker no longer clicks the chatbox, side panel or minimap when it means to click a staircase, ladder or trapdoor. If you start the client from the launcher with a Jagex Account, your scripts can log you back in again after a break. On the Hub, four mining scripts now recognise every pickaxe variant, from dragon (or) to infernal and 3rd age. Motherlode Mine also takes a better pickaxe out of your bank. Gem Crab Killer keeps your potion boosts up, and Volcanic Ash Miner mines again when other players are around. This release ships Microbot client 2.6.46 together with those Hub updates.</p>
 <h2 id="walker">Walker clicks stay out of the chatbox</h2>
 <p><img alt="" class="rn-sprite rn-inline-icon" src="../images/releases/2.6.46/walker.png"/>Say you're walking from the top floor of Lumbridge castle down to the ground floor. The walker clicks the staircase from a distance and lets the game walk you to it, but in resizable mode part of the staircase sits behind the chatbox. The click landed on the chatbox instead, sometimes on its <strong>Report</strong> button, and you stood still while a report window opened. Players saw the same at the Edgeville trapdoor, about half the time.</p>
 <p>Now the walker only clicks the part of an object that you can actually see in the game view, at least a few pixels clear of the chatbox, the side panel and the minimap.</p>
@@ -204,7 +204,7 @@
 <h2 id="plugins">Plugin updates</h2>
 <div class="rn-plugin-list">
 <div class="rn-plugin">
-<div class="rn-plugin-name"><span class="rn-plugin-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.46/attack.png"/></span><span>Gem Crab Killer<span class="rn-plugin-version">1.0.4</span></span></div>
+<div class="rn-plugin-name"><span class="rn-plugin-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.46/attack.png"/></span><span>Gem Crab Killer<span class="rn-plugin-version">1.0.5</span></span></div>
 <div class="rn-plugin-body"><p><img alt="" class="rn-sprite rn-inline-icon" src="../images/releases/2.6.46/divine-super-combat.png"/>With <strong>Use Offensive Potions</strong> on, the script drank a potion at the start and then never again. It only drank while you were "in combat", and the Gem Crab never hits back, so that was hardly ever true. Now it drinks whenever a live crab is there and your boost has run out:</p>
 <ul>
 <li>A divine potion is drunk again when its 5-minute timer ends. It is only drunk above 20 HP. Below that, the script uses a normal potion instead.</li>
@@ -239,7 +239,7 @@
 <li>The deprecated <code>util.tileobject.Rs2TileObjectModel</code> still clicks the raw clickbox. Switch to <code>api.tileobject.models.Rs2TileObjectModel</code> to get the new behaviour.</li>
 </ul>
 <h2 id="update">How to update</h2>
-<p><img alt="" class="rn-sprite rn-inline-icon" src="../images/releases/2.6.46/microbot-hub.png"/>Restart Microbot to get client 2.6.46. Motherlode Mine 1.9.11, Shooting Star 1.4.12, AIO Camdozaal 1.0.1, Auto Essence Mining 1.0.5, Gem Crab Killer 1.0.4, Volcanic Ash Miner 1.2.2, Calcified Rock Miner 1.1.5 and Tithe Farming 1.1.15 show up in the Microbot Hub panel inside the client.</p>
+<p><img alt="" class="rn-sprite rn-inline-icon" src="../images/releases/2.6.46/microbot-hub.png"/>Restart Microbot to get client 2.6.46. Motherlode Mine 1.9.11, Shooting Star 1.4.12, AIO Camdozaal 1.0.1, Auto Essence Mining 1.0.5, Gem Crab Killer 1.0.5, Volcanic Ash Miner 1.2.2, Calcified Rock Miner 1.1.5 and Tithe Farming 1.1.15 show up in the Microbot Hub panel inside the client.</p>
 <p class="rn-credit">Game images © Jagex Ltd., via the <a href="https://oldschool.runescape.wiki" rel="noopener" target="_blank">Old School RuneScape Wiki</a>.</p>
 
 <nav class="rn-pager" aria-label="More releases">

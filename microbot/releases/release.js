@@ -1,6 +1,14 @@
 const releases = [
     {
         date: new Date('10/29/2026'), //MM/dd/YYYY
+        version: '2.6.46',
+        icon: 'images/releases/icons/walker.png',
+        title: '2.6.46 Release - Walker clicks that stay out of the chatbox',
+        content: "Walker clicks that stay clear of the chatbox, side panel and minimap, launcher Jagex Account logins that keep their character, every pickaxe variant recognised in Motherlode Mine, Shooting Star and other mining scripts, and fixes to Gem Crab Killer, Volcanic Ash Miner and Tithe Farming.",
+        author: 'Microbot Team'
+    },
+    {
+        date: new Date('10/29/2026'), //MM/dd/YYYY
         version: '2.6.45',
         icon: 'images/releases/icons/microbot-hub.png',
         title: '2.6.45 Release - Start a script from the dashboard',

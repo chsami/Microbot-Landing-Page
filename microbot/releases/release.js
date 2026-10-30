@@ -1,5 +1,13 @@
 const releases = [
     {
+        date: new Date('10/30/2026'), //MM/dd/YYYY
+        version: '2.6.47',
+        icon: 'images/releases/icons/world-map-target.png',
+        title: '2.6.47 Release - Set Target works inside dungeons',
+        content: "World map Set Target that walks you into the dungeon you clicked, Jagex Account auto login through the RuneLite launcher that keeps your character, Slayer 1.1.7 stopping when your Slayer Master is out of reach, and fixes to Grand Exchange prices, pop-ups, Auto Essence Mining, Mahogany Homes, MicroAgility, AutoHunter and Gem Crab Killer.",
+        author: 'Microbot Team'
+    },
+    {
         date: new Date('10/29/2026'), //MM/dd/YYYY
         version: '2.6.46',
         icon: 'images/releases/icons/walker.png',

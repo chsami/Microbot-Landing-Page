@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Microbot 2.6.47 release notes</title>
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Microbot 2.6.47: world map Set Target works inside dungeons, Jagex Account auto login through the RuneLite launcher keeps your character, Slayer stops when your Slayer Master is out of reach, plus Grand Exchange price, pop-up and Hub script fixes.">
+    <link rel="canonical" href="https://microbot.cloud/releases/2.6.47.html">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Microbot">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:title" content="Microbot 2.6.47 release notes">
+    <meta property="og:description" content="Microbot 2.6.47: world map Set Target works inside dungeons, Jagex Account auto login through the RuneLite launcher keeps your character, Slayer stops when your Slayer Master is out of reach, plus Grand Exchange price, pop-up and Hub script fixes.">
+    <meta property="og:image" content="https://microbot.cloud/images/general/logo.png">
+    <meta property="og:url" content="https://microbot.cloud/releases/2.6.47.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Microbot 2.6.47 release notes">
+    <meta name="twitter:description" content="Microbot 2.6.47: world map Set Target works inside dungeons, Jagex Account auto login through the RuneLite launcher keeps your character, Slayer stops when your Slayer Master is out of reach, plus Grand Exchange price, pop-up and Hub script fixes.">
+    <meta name="theme-color" content="#0e0e0e">
+    <link rel="stylesheet" href="../microbot/app.min.css" media="all">
+    <link rel="stylesheet" href="../microbot/341e4a57816af3ba440d891ca87450ff_framework.css.c1bcd9467a7eeb9006567801face652d.css" media="all">
+    <link rel="stylesheet" href="../microbot/20446cf2d164adcc029377cb04d43d17_flags.css.be60c469fe9d673f833faaa74a81e375.css" media="all">
+    <link rel="stylesheet" href="../microbot/90eb5adf50a8c640f633d47fd7eb1778_core.css.730a336650d62c3b59570edc9065b630.css" media="all">
+    <link rel="stylesheet" href="../microbot/5a0da001ccc2200dc5625c3f3934497d_core_responsive.css.1d08c9ed37ed1cae43d3985a3b2316ad.css" media="all">
+    <link rel="stylesheet" href="../microbot/releases/releases.css">
+    <link rel="stylesheet" href="../microbot/halloween/halloween.css">
+</head>
+<body style="background-color:black !important;" class="rn-page ipsApp ipsApp_front ipsClearfix ipsJS_has ipsApp_noTouch">
+<header class="c-header">
+    <!-- Event Start -->
+    <div class="c-events-block py-2">
+        <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between gap-2">
+            <div></div>
+            <a href="https://discord.gg/zaGrfqFEWE" target="_blank" rel="noreferrer noopener"
+               class="c-events-block__right d-flex flex-row align-items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24px" class="me-2" viewBox="0 0 71 55"><title>logo
+                    discord</title>
+                    <g fill="none" class="nc-icon-wrapper">
+                        <g clip-path="url(#clip0)">
+                            <path d="M60.105 4.898A58.55 58.55 0 0 0 45.653.415a.22.22 0 0 0-.233.11 40.784 40.784 0 0 0-1.8 3.697c-5.456-.817-10.886-.817-16.23 0-.485-1.164-1.201-2.587-1.828-3.697a.228.228 0 0 0-.233-.11 58.386 58.386 0 0 0-14.451 4.483.207.207 0 0 0-.095.082C1.578 18.73-.944 32.144.293 45.39a.244.244 0 0 0 .093.167c6.073 4.46 11.955 7.167 17.729 8.962a.23.23 0 0 0 .249-.082 42.08 42.08 0 0 0 3.627-5.9.225.225 0 0 0-.123-.312 38.772 38.772 0 0 1-5.539-2.64.228.228 0 0 1-.022-.378c.372-.279.744-.569 1.1-.862a.22.22 0 0 1 .23-.03c11.619 5.304 24.198 5.304 35.68 0a.219.219 0 0 1 .233.027c.356.293.728.586 1.103.865a.228.228 0 0 1-.02.378 36.384 36.384 0 0 1-5.54 2.637.227.227 0 0 0-.121.315 47.249 47.249 0 0 0 3.624 5.897.225.225 0 0 0 .249.084c5.801-1.794 11.684-4.502 17.757-8.961a.228.228 0 0 0 .092-.164c1.48-15.315-2.48-28.618-10.497-40.412a.18.18 0 0 0-.093-.084zm-36.38 32.427c-3.497 0-6.38-3.211-6.38-7.156 0-3.944 2.827-7.156 6.38-7.156 3.583 0 6.438 3.24 6.382 7.156 0 3.945-2.827 7.156-6.381 7.156zm23.593 0c-3.498 0-6.38-3.211-6.38-7.156 0-3.944 2.826-7.156 6.38-7.156 3.582 0 6.437 3.24 6.38 7.156 0 3.945-2.798 7.156-6.38 7.156z"
+                                  fill="currentColor"></path>
+                        </g>
+                        <defs>
+                            <clippath id="clip0">
+                                <path fill="currentColor" d="M0 0h71v55H0z"></path>
+                            </clippath>
+                        </defs>
+                    </g>
+                </svg>
+                <p class="mb-0">Join us on Discord</p>
+            </a>
+        </div>
+    </div>
+    <div class="c-border-red mb-2"></div>
+    <!-- Event End -->      <!-- Navigation Start -->
+    <nav class="c-nav navbar navbar-expand-sm py-2" style="flex-wrap:nowrap;justify-content: flex-start">
+        <div class="container align-items-stretch">
+            <a class="navbar-brand me-0 me-lg-3 me-xl-5" href="../index.html">
+                <img src="../microbot/logo.png" class="c-nav__logo" loading="lazy" alt="logo">
+            </a>
+            <div class="p-3 p-xl-0" style="line-height: 2rem;width: 100%;" id="navbarMenu">
+                <ul class="navbar-nav me-auto text-center text-xl-left gap-3 gap-xl-4">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://www.github.com/chsami/microbot" target="_blank">Github</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://discord.gg/zaGrfqFEWE" target="_blank">Discord</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://chatgpt.com/g/g-LM0fGeeXB-microbot-documentation"
+                           target="_blank">ChatGPT</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://paypal.me/MicrobotBE?country.x=BE" target="_blank">Donate</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../releases.html">Releases</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../plugins.html">Plugins</a>
+                    </li>
+                </ul>
+            </div>
+
+            <ul id="elMobileNav"
+                class="ipsList_inline ipsResponsive_hideDesktop ipsResponsive_block my-auto d-flex gx-2"
+                data-controller="core.front.core.mobileNav" data-default="all">
+
+                <li class="navbar-toggler my-auto py-3 position-relative" data-ipsdrawer=""
+                    data-ipsdrawer-drawerelem="#elMobileDrawer">
+                    <a href="#">
+                        <i class="fa fa-navicon"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Navigation End -->
+</header>
+
+<main>
+    <section class="rn-hero">
+        <div class="container">
+            <div>
+            <div class="rn-eyebrow">Release notes</div>
+            <h1>Microbot 2.6.47</h1>
+            <p class="rn-tagline">Set Target works inside dungeons</p>
+            <div class="rn-meta">
+                <span><strong>October 30, 2026</strong></span>
+                <span>by Microbot Team</span>
+            </div>
+            <div class="rn-actions">
+                <a class="c-button c-button--primary" href="../index.html">Download Microbot</a>
+                <a class="c-button" href="../releases.html">All releases</a>
+            </div>
+            </div>
+            <div class="rn-hero-art"><img class="rn-sprite" src="../images/releases/icons/world-map-target.png" alt=""></div>
+        </div>
+    </section>
+
+    <div class="rn-shell">
+        <div class="rn-layout">
+        <aside class="rn-toc" aria-label="In this release">
+            <div class="rn-toc-title">In this release</div>
+            <ol>
+                <li><a href="#world-map">Set Target works inside dungeons</a></li>
+                <li><a href="#jagex-login">Jagex Account auto login works again</a></li>
+                <li><a href="#slayer">Slayer tells you when a master is out of reach</a></li>
+                <li><a href="#plugins">Plugin updates</a></li>
+                <li><a href="#fixes">Other fixes</a></li>
+                <li><a href="#developers">For script developers</a></li>
+                <li><a href="#update">How to update</a></li>
+            </ol>
+        </aside>
+        <article class="rn-article">
+            <details class="rn-toc-mobile">
+                <summary>In this release</summary>
+                <ol>
+                <li><a href="#world-map">Set Target works inside dungeons</a></li>
+                <li><a href="#jagex-login">Jagex Account auto login works again</a></li>
+                <li><a href="#slayer">Slayer tells you when a master is out of reach</a></li>
+                <li><a href="#plugins">Plugin updates</a></li>
+                <li><a href="#fixes">Other fixes</a></li>
+                <li><a href="#developers">For script developers</a></li>
+                <li><a href="#update">How to update</a></li>
+                </ol>
+            </details>
+<p class="rn-lede">Right-click the world map inside a dungeon, pick <strong>Set Target</strong>, and the walker now takes you into that dungeon instead of to some spot on the surface. If you start Microbot through the RuneLite launcher with a Jagex Account, Auto Login and the Break Handler log you back in as your character again, instead of typing "default" into the username box. On the Hub, Slayer stops straight away and names a master you can use when the one you picked won't give you a task. Four scripts no longer show errors during loading screens and world hops, and Gem Crab Killer's potion setting fits the panel again. This release ships Microbot client 2.6.47 together with those Hub updates.</p>
+<h2 id="world-map">Set Target works inside dungeons</h2>
+<p><img alt="" class="rn-sprite rn-inline-icon" src="../images/releases/2.6.47/world-map-target.png"/>The game's world map doesn't draw caves and dungeons where they really are. It draws them in a free part of the map, usually next to the area above them. Say you open the world map, switch to the Dwarven Mine map, right-click inside the Motherlode Mine and pick <strong>Set Target</strong>. The walker took the spot where the mine happens to be drawn, which is a real tile out near Draynor, and set off with a teleport to get there.</p>
+<p>Now Set Target turns the spot you clicked into the tile it stands for, so the walker takes you into the Motherlode Mine. The Target pin shows up on the dungeon map right where you clicked. <strong>Set Start</strong> works the same way. Targets on the surface behave exactly as before.</p>
+<div class="rn-compare">
+<div class="is-before">
+<div class="rn-compare-label">2.6.46</div>
+<p>Set Target inside a dungeon sent you to wherever that part of the map is drawn, often a different town altogether.</p>
+</div>
+<div class="is-after">
+<div class="rn-compare-label">2.6.47</div>
+<p>The walker heads into the dungeon you clicked, and the pin sits on the dungeon map where you put it.</p>
+</div>
+</div>
+<div class="rn-note">
+<span class="rn-note-title">Good to know</span>
+<p>On a dungeon map the path line is still drawn at the real coordinates, so it doesn't lead to the pin yet. The pin can also show up on another underground map that is drawn over the same spot. If a spot you click on a dungeon map can't be matched to a real tile, no pin appears and your character stays where it is.</p>
+</div>
+<h2 id="jagex-login">Jagex Account auto login works again</h2>
+<p><img alt="" class="rn-sprite rn-inline-icon" src="../images/releases/2.6.47/jagex-account.png"/>Many players start Microbot through the RuneLite launcher with a Jagex Account, set up the way our <strong>!jagexaccount</strong> guide on Discord explains. Since 2.6.45, Auto Login, the Break Handler and script relogs on that setup typed the profile name, usually "default", into the username box instead of logging in as your character. Logging in by hand still worked, so you only noticed after a break or a disconnect, when the client sat on the login screen.</p>
+<p>Now a profile without a saved password logs in with the Jagex character the client was started with. Say you start your character "IronMiner42" on the "default" profile and the Break Handler takes a 20-minute break. When the break ends, IronMiner42 is logged back in and your script carries on.</p>
+<ul>
+<li>A profile with a saved username and password still logs in with those, as in 2.6.45.</li>
+<li>The client reads your launcher login once, when it starts. If you then start a second client for another character, the first client keeps logging in as its own character.</li>
+<li>The launcher login is only used when it belongs to the character this client was started with, so a client never logs you in as a different character.</li>
+</ul>
+<p>2.6.46 fixed the same problem for <strong>Play With Jagex Account</strong> in the Microbot launcher. This release fixes it for the RuneLite launcher.</p>
+<h2 id="slayer">Slayer tells you when a master is out of reach</h2>
+<p><img alt="" class="rn-sprite rn-inline-icon" src="../images/releases/2.6.47/slayer-master.png"/>The Slayer plugin uses Duradel by default, and Duradel only gives tasks from 100 combat and 50 Slayer. One player with 63 combat and 12 Slayer started the plugin without changing that setting. It walked them all the way to Shilo Village and then stood there on "getting task", because Duradel never gives that account a task.</p>
+<p>Now Slayer 1.1.7 checks your combat and Slayer levels before it walks to your master to get, skip or block a task. If they're too low, it stops before walking anywhere and tells you what to pick instead:</p>
+<div class="rn-note">
+<span class="rn-note-title">Slayer stopped</span>
+<p>Duradel only gives tasks from combat level 100; you are combat level 63. Vannaka works at your level with no quest needed. Pick a Slayer Master you can use in the plugin settings, then start the plugin again.</p>
+</div>
+<ul>
+<li>From 85 combat it suggests Nieve, or Steve once you've finished Monkey Madness II.</li>
+<li>Below that it also names a master that needs a quest when one fits your level, such as Chaeldar after Lost City.</li>
+<li>Hover over the <strong>Slayer Master</strong> setting to see what each master needs, one per line.</li>
+<li>If you already have a task, the check doesn't stop you.</li>
+</ul>
+<p>The plugin doesn't check quests yet. With 100 combat and 50 Slayer it still walks you to Duradel, even if you haven't finished Shilo Village.</p>
+<h2 id="plugins">Plugin updates</h2>
+<p>A loading screen, a world hop or a teleport leaves the game without your position for a moment. Four scripts tripped over that moment and filled the log with errors. They now wait for the next tick and carry on.</p>
+<div class="rn-plugin-list">
+<div class="rn-plugin">
+<div class="rn-plugin-name"><span class="rn-plugin-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.47/mining.png"/></span><span>Auto Essence Mining<span class="rn-plugin-version">1.0.6</span></span></div>
+<div class="rn-plugin-body"><p>When Aubury teleports you to the essence mine, or you take the portal back to Varrock, the script showed a red error with a stack trace ten times a second until you arrived. It looked as if the script had crashed, even though it picked up again afterwards. Now it waits quietly until your position is back.</p></div>
+</div>
+<div class="rn-plugin">
+<div class="rn-plugin-name"><span class="rn-plugin-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.47/construction.png"/></span><span>Mahogany Homes<span class="rn-plugin-version">0.0.18</span></span></div>
+<div class="rn-plugin-body"><p>If your position went missing just as the script checked whether you were inside a client's home, the loop failed with "Mahogany Homes script loop failed". Now it counts that moment as being outside every home and checks again on the next tick.</p></div>
+</div>
+<div class="rn-plugin">
+<div class="rn-plugin-name"><span class="rn-plugin-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.47/agility.png"/></span><span>MicroAgility<span class="rn-plugin-version">1.3.3</span></span></div>
+<div class="rn-plugin-body"><p>On the Agility Pyramid, after you hand your pyramid tops to Simon, the script walks back to the start of the course. If your position went missing right then, it logged an error. Now it skips that walk-back and heads to the start on the next tick, as it would have anyway.</p></div>
+</div>
+<div class="rn-plugin">
+<div class="rn-plugin-name"><span class="rn-plugin-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.47/hunter.png"/></span><span>AutoHunter<span class="rn-plugin-version">1.5.6</span></span></div>
+<div class="rn-plugin-body"><p>While catching chinchompas, a world hop or loading screen could stop the tick with an error as the script moved to a new trap spot. Now it skips that tick and tries again a quarter of a second later.</p></div>
+</div>
+<div class="rn-plugin">
+<div class="rn-plugin-name"><span class="rn-plugin-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.47/attack.png"/></span><span>Gem Crab Killer<span class="rn-plugin-version">1.0.6</span></span></div>
+<div class="rn-plugin-body"><p>The <strong>Offensive potion</strong> option added in 1.0.5 was cut off to "Offensiv..." in the plugin panel. It's now called <strong>Potion</strong>, and your saved choice stays as it was.</p></div>
+</div>
+</div>
+<h2 id="fixes">Other fixes</h2>
+<ul class="rn-iconlist">
+<li><span class="rn-li-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.47/grand-exchange.png"/></span>Scripts that type a price into a Grand Exchange offer, or press the -5% and +5% buttons, read the price box wrongly in some game sessions. They typed the price again every time with an error in the log, and a +5% click could move on too early or time out. The price is now read correctly in every session.</li>
+<li><span class="rn-li-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.47/microbot.png"/></span>Scripts can show a short pop-up message over the game view. It only worked in the resizable classic layout. In fixed mode or the resizable modern layout it failed with a "component does not exist" error. It now opens in whichever layout you play in. On the login screen or during a loading screen the pop-up is skipped instead of causing an error.</li>
+</ul>
+<h2 id="developers">For script developers</h2>
+<ul>
+<li><code>Microbot.openPopUp</code> opens on the notifications layer of the active toplevel: fixed (548), resizable classic (161) or resizable modern (164). It returns without opening anything when you're not logged in or another toplevel is active. If players must see the text, also send it as a game chat message.</li>
+<li><code>Rs2GrandExchange.getOfferPrice()</code> reads varp 5753 as a long and falls back to the int value when the game stores it as an int. Read it the same way if your script reads that varp itself.</li>
+<li>ShortestPath 1.0.6: world map <strong>Set Target</strong>, <strong>Set Start</strong> and <strong>Set Test</strong> turn the clicked map point into the real tile with <code>WorldPointMapper</code>, limited to the map being viewed. <code>ShortestPathPlugin.createTargetMarker</code> builds every Target pin at the map position of the real tile, and <code>Rs2PathApi.createTargetMarker</code> uses it too. Pathing still uses the real tile.</li>
+<li><code>JagexCredentials.fromLaunch()</code> reads the launch credentials once per client, so a credentials file rewritten by a later launch doesn't change this client's character.</li>
+</ul>
+<h2 id="update">How to update</h2>
+<p><img alt="" class="rn-sprite rn-inline-icon" src="../images/releases/2.6.47/microbot-hub.png"/>Restart Microbot to get client 2.6.47. Slayer 1.1.7, Auto Essence Mining 1.0.6, Mahogany Homes 0.0.18, MicroAgility 1.3.3, AutoHunter 1.5.6 and Gem Crab Killer 1.0.6 show up in the Microbot Hub panel inside the client.</p>
+<p class="rn-credit">Game images © Jagex Ltd., via the <a href="https://oldschool.runescape.wiki" rel="noopener" target="_blank">Old School RuneScape Wiki</a>.</p>
+
+<nav class="rn-pager" aria-label="More releases">
+    <a class="rn-pager-prev" href="2.6.46.html"><small>Previous release</small><span>2.6.46</span></a>
+</nav>
+        </article>
+        </div>
+    </div>
+</main>
+
+<footer class="c-footer pt-5">
+    <div class="container">
+        <div class="row justify-content-center align-items-start g-4">
+            <div class="text-center" style="width:20rem">
+                <img src="../microbot/logo.png" class="c-footer--logo" loading="lazy" alt="footer">
+                <div class="c-content-divider mt-3 mb-3"></div>
+                <ul class="d-flex align-items-center justify-content-center gap-4 m-auto text-center">
+                    <li>
+                        <a href="https://discord.gg/zaGrfqFEWE" target="_blank" rel="noreferrer noopener">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24px" viewBox="0 0 71 55"><title>logo
+                                discord</title>
+                                <g fill="none" class="nc-icon-wrapper">
+                                    <g clip-path="url(#clip0)">
+                                        <path d="M60.105 4.898A58.55 58.55 0 0 0 45.653.415a.22.22 0 0 0-.233.11 40.784 40.784 0 0 0-1.8 3.697c-5.456-.817-10.886-.817-16.23 0-.485-1.164-1.201-2.587-1.828-3.697a.228.228 0 0 0-.233-.11 58.386 58.386 0 0 0-14.451 4.483.207.207 0 0 0-.095.082C1.578 18.73-.944 32.144.293 45.39a.244.244 0 0 0 .093.167c6.073 4.46 11.955 7.167 17.729 8.962a.23.23 0 0 0 .249-.082 42.08 42.08 0 0 0 3.627-5.9.225.225 0 0 0-.123-.312 38.772 38.772 0 0 1-5.539-2.64.228.228 0 0 1-.022-.378c.372-.279.744-.569 1.1-.862a.22.22 0 0 1 .23-.03c11.619 5.304 24.198 5.304 35.68 0a.219.219 0 0 1 .233.027c.356.293.728.586 1.103.865a.228.228 0 0 1-.02.378 36.384 36.384 0 0 1-5.54 2.637.227.227 0 0 0-.121.315 47.249 47.249 0 0 0 3.624 5.897.225.225 0 0 0 .249.084c5.801-1.794 11.684-4.502 17.757-8.961a.228.228 0 0 0 .092-.164c1.48-15.315-2.48-28.618-10.497-40.412a.18.18 0 0 0-.093-.084zm-36.38 32.427c-3.497 0-6.38-3.211-6.38-7.156 0-3.944 2.827-7.156 6.38-7.156 3.583 0 6.438 3.24 6.382 7.156 0 3.945-2.827 7.156-6.381 7.156zm23.593 0c-3.498 0-6.38-3.211-6.38-7.156 0-3.944 2.826-7.156 6.38-7.156 3.582 0 6.437 3.24 6.38 7.156 0 3.945-2.798 7.156-6.38 7.156z"
+                                              fill="currentColor"></path>
+                                    </g>
+                                    <defs>
+                                        <clippath id="clip0">
+                                            <path fill="currentColor" d="M0 0h71v55H0z"></path>
+                                        </clippath>
+                                    </defs>
+                                </g>
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/chsami/microbot/releases" target="_blank" rel="noreferrer noopener">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24px" viewBox="0 0 16 16"><title>data
+                                download</title>
+                                <g fill="currentColor" class="nc-icon-wrapper">
+                                    <path d="M14,10a1,1,0,0,0-1,1v2H3V11a1,1,0,0,0-2,0v2a2,2,0,0,0,2,2H13a2,2,0,0,0,2-2V11A1,1,0,0,0,14,10Z"></path>
+                                    <path data-color="color-2"
+                                          d="M7.293,10.707a1,1,0,0,0,1.414,0l4-4a1,1,0,1,0-1.414-1.414L9,7.586V2A1,1,0,0,0,7,2V7.586L4.707,5.293A1,1,0,0,0,3.293,6.707Z"></path>
+                                </g>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="c-footer-cc py-2 mt-5">
+        <div class="container">
+            <p class="text-center c-text-faded mb-0">Microbot © 2026. All Rights Reserved. - <a href="../privacy.html"
+                                                                                                target="_blank">Privacy
+                Policy</a> -
+                <a href="../terms.html"
+                   target="_blank">Terms of service</a></p>
+        </div>
+    </div>
+</footer>
+<script>
+    document.querySelectorAll('.rn-article img, .rn-article video').forEach(function (m) {
+        function hide() {
+            var box = m.closest('.rn-gallery') && m.closest('.rn-gallery').children.length > 1 ? m : (m.closest('figure') || m);
+            box.style.display = 'none';
+        }
+        if (m.tagName === 'IMG' && m.complete && m.naturalWidth === 0 && m.getAttribute('src')) hide();
+        m.addEventListener('error', hide);
+    });
+</script>
+<script defer src="../microbot/halloween/halloween.js"></script>
+</body>
+</html>

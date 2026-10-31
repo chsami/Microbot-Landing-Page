@@ -1,5 +1,13 @@
 const releases = [
     {
+        date: new Date('10/31/2026'), //MM/dd/YYYY
+        version: '2.6.48',
+        icon: 'images/releases/icons/bug-report.png',
+        title: '2.6.48 Release - Bug reports that show what happened',
+        content: "Bug reports that can include the last 20 minutes of movement, clicks, game messages and script status, Set Target that moves to the nearest walkable tile, and fixes to Quest Helper, tab switching while logged out, Varrock Anvil, Auto Woodcutting, Moons of Peril and Tutorial Island.",
+        author: 'Microbot Team'
+    },
+    {
         date: new Date('10/30/2026'), //MM/dd/YYYY
         version: '2.6.47',
         icon: 'images/releases/icons/world-map-target.png',

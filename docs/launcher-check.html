@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Launcher compatibility check</title>
+<style>
+  body { margin: 0; background: #000; color: #ddd; font: 13px/1.5 Consolas, monospace; }
+  .bar { padding: 8px 12px; background: #111; }
+  .ok { color: #9fd98a; } .bad { color: #ff7a6e; font-weight: bold; }
+  iframe { display: block; border: 0; background: #0c0a08; }
+</style>
+</head>
+<body>
+<div class="bar" id="out">checking...</div>
+<!-- Same size as the launcher's webview: 1280x750 window minus the 400px sidebar. ?w= to try the 900px-wide window (500). -->
+<iframe id="f" width="880" height="700"></iframe>
+<script>
+// Copied from Microbot-Launcher/renderer.js loadLandingPageWebview() - keep in step with it.
+const LAUNCHER_SELECTORS = {
+  'event strip (removed)': 'body > header > div.c-events-block.py-2 > div',
+  'red rule (removed)': 'body > header > div.c-border-red.mb-2',
+  'cookie banner (removed)': '#cookie-banner',
+  'nav container (max-width 100%)': 'body > header > nav > div',
+  'hero (min-height 600px)': 'body > main > section.c-main-header.c-main-header--home.py-5.d-flex.flex-column.justify-content-center',
+};
+const LAUNCHER_SCRIPT = `(() => {
+  const topDiscordHeaderContainer = document.querySelector("body > header > div.c-events-block.py-2 > div");
+  if (topDiscordHeaderContainer) topDiscordHeaderContainer.remove();
+  const topSeparator = document.querySelector("body > header > div.c-border-red.mb-2");
+  if (topSeparator) topSeparator.remove();
+  const cookieBanner = document.getElementById("cookie-banner");
+  if (cookieBanner) cookieBanner.remove();
+  const navContainer = document.querySelector("body > header > nav > div");
+  if (navContainer) navContainer.style.maxWidth = "100%";
+  const bodyHero = document.querySelector("body > main > section.c-main-header.c-main-header--home.py-5.d-flex.flex-column.justify-content-center");
+  if (bodyHero) bodyHero.style.minHeight = "600px";
+  return true;
+})();`;
+const q = new URLSearchParams(location.search);
+const f = document.getElementById('f');
+if (q.get('w')) f.width = q.get('w');
+f.src = '../' + (q.get('page') || 'index.html') + '?source=launcher';
+f.addEventListener('load', () => {
+  const d = f.contentDocument, w = f.contentWindow;
+  // Only the home page is opened by the launcher, so only it needs the hero; every page keeps the header parts.
+  const page = q.get('page') || 'index.html';
+  const isHome = page === 'index.html';
+  // Hub pages live on github.io: no analytics there, so no cookie banner to remove.
+  const isHub = page.startsWith('Microbot-Hub/');
+  const found = Object.entries(LAUNCHER_SELECTORS)
+    // The cookie banner exists only where Analytics loads (home, plugins); the launcher skips it when absent.
+    .filter(([k]) => (isHome || !k.startsWith('hero')) && (isHome || !k.startsWith('cookie')))
+    .map(([k, s]) => [k, !!d.querySelector(s)]);
+  w.eval(LAUNCHER_SCRIPT);
+  const overflow = d.documentElement.scrollWidth > d.documentElement.clientWidth;
+  const hero = d.querySelector('.c-main-header');
+  const inLauncher = d.documentElement.classList.contains('mb-in-launcher');
+  const downloadShown = !!d.getElementById('downloadBtn') && d.getElementById('downloadBtn').offsetParent !== null;
+  const rows = found.map(([k, ok]) => `<span class="${ok ? 'ok' : 'bad'}">${ok ? 'OK ' : 'MISSING '}</span>${k}`);
+  rows.push(`<span class="${overflow ? 'bad' : 'ok'}">${overflow ? 'SIDEWAYS SCROLL' : 'no sideways scroll'}</span>`);
+  rows.push(`<span class="${inLauncher ? 'ok' : 'bad'}">launcher mode ${inLauncher ? 'on' : 'OFF'}</span>`);
+  if (isHome) rows.push(`<span class="${downloadShown ? 'bad' : 'ok'}">download buttons ${downloadShown ? 'SHOWN' : 'hidden'}</span>`);
+  rows.push(`hero ${hero ? hero.offsetHeight : 0}px`);
+  document.getElementById('out').innerHTML = rows.join(' &middot; ');
+  document.title = found.every(([, ok]) => ok) && !overflow && inLauncher && !(isHome && downloadShown) ? 'PASS' : 'FAIL';
+});
+</script>
+</body>
+</html>

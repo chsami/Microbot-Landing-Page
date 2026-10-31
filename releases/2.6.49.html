@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Microbot 2.6.49 release notes</title>
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Microbot 2.6.49: relogs on a Jagex-launched client keep your character even with a saved password, walker clicks that stop cancelling each other, minigame teleports that pick the right destination, eight Inventory Setups fixes, and Hub updates to Guardians of the Rift, Revenant Killer, MM Caves and Barrows.">
+    <link rel="canonical" href="https://microbot.cloud/releases/2.6.49.html">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Microbot">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:title" content="Microbot 2.6.49 release notes">
+    <meta property="og:description" content="Microbot 2.6.49: relogs on a Jagex-launched client keep your character even with a saved password, walker clicks that stop cancelling each other, minigame teleports that pick the right destination, eight Inventory Setups fixes, and Hub updates to Guardians of the Rift, Revenant Killer, MM Caves and Barrows.">
+    <meta property="og:image" content="https://microbot.cloud/images/general/logo.png">
+    <meta property="og:url" content="https://microbot.cloud/releases/2.6.49.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Microbot 2.6.49 release notes">
+    <meta name="twitter:description" content="Microbot 2.6.49: relogs on a Jagex-launched client keep your character even with a saved password, walker clicks that stop cancelling each other, minigame teleports that pick the right destination, eight Inventory Setups fixes, and Hub updates to Guardians of the Rift, Revenant Killer, MM Caves and Barrows.">
+    <meta name="theme-color" content="#0e0e0e">
+    <link rel="stylesheet" href="../microbot/app.min.css" media="all">
+    <link rel="stylesheet" href="../microbot/341e4a57816af3ba440d891ca87450ff_framework.css.c1bcd9467a7eeb9006567801face652d.css" media="all">
+    <link rel="stylesheet" href="../microbot/20446cf2d164adcc029377cb04d43d17_flags.css.be60c469fe9d673f833faaa74a81e375.css" media="all">
+    <link rel="stylesheet" href="../microbot/90eb5adf50a8c640f633d47fd7eb1778_core.css.730a336650d62c3b59570edc9065b630.css" media="all">
+    <link rel="stylesheet" href="../microbot/5a0da001ccc2200dc5625c3f3934497d_core_responsive.css.1d08c9ed37ed1cae43d3985a3b2316ad.css" media="all">
+    <link rel="stylesheet" href="../microbot/releases/releases.css">
+    <link rel="stylesheet" href="../microbot/halloween/halloween.css">
+</head>
+<body style="background-color:black !important;" class="rn-page ipsApp ipsApp_front ipsClearfix ipsJS_has ipsApp_noTouch">
+<header class="c-header">
+    <!-- Event Start -->
+    <div class="c-events-block py-2">
+        <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between gap-2">
+            <div></div>
+            <a href="https://discord.gg/zaGrfqFEWE" target="_blank" rel="noreferrer noopener"
+               class="c-events-block__right d-flex flex-row align-items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24px" class="me-2" viewBox="0 0 71 55"><title>logo
+                    discord</title>
+                    <g fill="none" class="nc-icon-wrapper">
+                        <g clip-path="url(#clip0)">
+                            <path d="M60.105 4.898A58.55 58.55 0 0 0 45.653.415a.22.22 0 0 0-.233.11 40.784 40.784 0 0 0-1.8 3.697c-5.456-.817-10.886-.817-16.23 0-.485-1.164-1.201-2.587-1.828-3.697a.228.228 0 0 0-.233-.11 58.386 58.386 0 0 0-14.451 4.483.207.207 0 0 0-.095.082C1.578 18.73-.944 32.144.293 45.39a.244.244 0 0 0 .093.167c6.073 4.46 11.955 7.167 17.729 8.962a.23.23 0 0 0 .249-.082 42.08 42.08 0 0 0 3.627-5.9.225.225 0 0 0-.123-.312 38.772 38.772 0 0 1-5.539-2.64.228.228 0 0 1-.022-.378c.372-.279.744-.569 1.1-.862a.22.22 0 0 1 .23-.03c11.619 5.304 24.198 5.304 35.68 0a.219.219 0 0 1 .233.027c.356.293.728.586 1.103.865a.228.228 0 0 1-.02.378 36.384 36.384 0 0 1-5.54 2.637.227.227 0 0 0-.121.315 47.249 47.249 0 0 0 3.624 5.897.225.225 0 0 0 .249.084c5.801-1.794 11.684-4.502 17.757-8.961a.228.228 0 0 0 .092-.164c1.48-15.315-2.48-28.618-10.497-40.412a.18.18 0 0 0-.093-.084zm-36.38 32.427c-3.497 0-6.38-3.211-6.38-7.156 0-3.944 2.827-7.156 6.38-7.156 3.583 0 6.438 3.24 6.382 7.156 0 3.945-2.827 7.156-6.381 7.156zm23.593 0c-3.498 0-6.38-3.211-6.38-7.156 0-3.944 2.826-7.156 6.38-7.156 3.582 0 6.437 3.24 6.38 7.156 0 3.945-2.798 7.156-6.38 7.156z"
+                                  fill="currentColor"></path>
+                        </g>
+                        <defs>
+                            <clippath id="clip0">
+                                <path fill="currentColor" d="M0 0h71v55H0z"></path>
+                            </clippath>
+                        </defs>
+                    </g>
+                </svg>
+                <p class="mb-0">Join us on Discord</p>
+            </a>
+        </div>
+    </div>
+    <div class="c-border-red mb-2"></div>
+    <!-- Event End -->      <!-- Navigation Start -->
+    <nav class="c-nav navbar navbar-expand-sm py-2" style="flex-wrap:nowrap;justify-content: flex-start">
+        <div class="container align-items-stretch">
+            <a class="navbar-brand me-0 me-lg-3 me-xl-5" href="../index.html">
+                <img src="../microbot/logo.png" class="c-nav__logo" loading="lazy" alt="logo">
+            </a>
+            <div class="p-3 p-xl-0" style="line-height: 2rem;width: 100%;" id="navbarMenu">
+                <ul class="navbar-nav me-auto text-center text-xl-left gap-3 gap-xl-4">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://www.github.com/chsami/microbot" target="_blank">Github</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://discord.gg/zaGrfqFEWE" target="_blank">Discord</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://chatgpt.com/g/g-LM0fGeeXB-microbot-documentation"
+                           target="_blank">ChatGPT</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://paypal.me/MicrobotBE?country.x=BE" target="_blank">Donate</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../releases.html">Releases</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../plugins.html">Plugins</a>
+                    </li>
+                </ul>
+            </div>
+
+            <ul id="elMobileNav"
+                class="ipsList_inline ipsResponsive_hideDesktop ipsResponsive_block my-auto d-flex gx-2"
+                data-controller="core.front.core.mobileNav" data-default="all">
+
+                <li class="navbar-toggler my-auto py-3 position-relative" data-ipsdrawer=""
+                    data-ipsdrawer-drawerelem="#elMobileDrawer">
+                    <a href="#">
+                        <i class="fa fa-navicon"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Navigation End -->
+</header>
+
+<main>
+    <section class="rn-hero">
+        <div class="container">
+            <div>
+            <div class="rn-eyebrow">Release notes</div>
+            <h1>Microbot 2.6.49</h1>
+            <p class="rn-tagline">Relogs that keep your Jagex character</p>
+            <div class="rn-meta">
+                <span><strong>October 31, 2026</strong></span>
+                <span>by Microbot Team</span>
+            </div>
+            <div class="rn-actions">
+                <a class="c-button c-button--primary" href="../index.html">Download Microbot</a>
+                <a class="c-button" href="../releases.html">All releases</a>
+            </div>
+            </div>
+            <div class="rn-hero-art"><img class="rn-sprite" src="../images/releases/icons/login.png" alt=""></div>
+        </div>
+    </section>
+
+    <div class="rn-shell">
+        <div class="rn-layout">
+        <aside class="rn-toc" aria-label="In this release">
+            <div class="rn-toc-title">In this release</div>
+            <ol>
+                <li><a href="#jagex-relog">Relogs keep your Jagex character</a></li>
+                <li><a href="#walker">Walker clicks stop cancelling each other</a></li>
+                <li><a href="#minigame-teleports">Minigame teleports pick the right destination</a></li>
+                <li><a href="#inventory-setups">Inventory Setups load your gear reliably</a></li>
+                <li><a href="#plugins">Plugin updates</a></li>
+                <li><a href="#fixes">Other changes</a></li>
+                <li><a href="#developers">For script developers</a></li>
+                <li><a href="#update">How to update</a></li>
+            </ol>
+        </aside>
+        <article class="rn-article">
+            <details class="rn-toc-mobile">
+                <summary>In this release</summary>
+                <ol>
+                <li><a href="#jagex-relog">Relogs keep your Jagex character</a></li>
+                <li><a href="#walker">Walker clicks stop cancelling each other</a></li>
+                <li><a href="#minigame-teleports">Minigame teleports pick the right destination</a></li>
+                <li><a href="#inventory-setups">Inventory Setups load your gear reliably</a></li>
+                <li><a href="#plugins">Plugin updates</a></li>
+                <li><a href="#fixes">Other changes</a></li>
+                <li><a href="#developers">For script developers</a></li>
+                <li><a href="#update">How to update</a></li>
+                </ol>
+            </details>
+<p class="rn-lede">If you play on a Jagex Account and your profile still has an old saved password, a Break Handler break could end with the client typing "default" into the login box instead of logging your character back in. In 2.6.49 the profile your client started on always relogs the Jagex character it was launched with. The walker also waits for you to start moving before it clicks again, so minimap and game-view clicks stop cancelling each other, and minigame teleports now click the destination you need and are only used when they save a long trip. Inventory Setups got eight fixes that affect every script that loads gear from a setup, such as AIO Fighter, Vorkath and Barrows. On the Hub, Guardians of the Rift leaves the large mine at your fragment cap, Revenant Killer stops trying to teleport with a ring that can't, MM Caves accepts Kandarin headgear as a light source, and Barrows never equips a broken piece. This release ships Microbot client 2.6.49 together with those Hub updates.</p>
+<h2 id="jagex-relog">Relogs keep your Jagex character</h2>
+<p><img alt="" class="rn-sprite rn-inline-icon" src="../images/releases/2.6.49/login.png"/>When you start Microbot through the Jagex launcher, or through the RuneLite launcher with a <code>credentials.properties</code> file in your <code>.runelite</code> folder, the client logs you back in by itself after a break or a disconnect. Auto Login, the Break Handler, scripts that relog and <strong>Load</strong> in the profile panel all use the same login. 2.6.46 and 2.6.47 fixed most of the cases where that login typed your profile's name, usually "default", into the username box instead of picking your Jagex character.</p>
+<p>One case was still open in 2.6.48: a profile that has a saved password. You may have one from the old Auto Login, which needed a password, or because you once typed it into the profile editor. On those profiles the client dropped your Jagex character and typed the profile name and the old password, and you were left on the login screen.</p>
+<div class="rn-compare">
+<div class="is-before">
+<div class="rn-compare-label">2.6.48</div>
+<p>The Break Handler logs you out for a 10-minute break. When the break ends, the client clears your Jagex character and types "default" and your old saved password. The login fails and your script never resumes.</p>
+</div>
+<div class="is-after">
+<div class="rn-compare-label">2.6.49</div>
+<p>When the break ends, the client logs the Jagex character you launched with straight back in. Nothing is typed into the username box, and your script carries on.</p>
+</div>
+</div>
+<p>The rule is now simple: the profile your client started on always relogs the Jagex character it was launched with, whatever password is saved on it. So does a profile you set as the default for that RuneScape account. Logging in by hand works as before.</p>
+<div class="rn-note">
+<span class="rn-note-title">Want to use the saved password instead?</span>
+<p>When a profile with a saved password relogs your Jagex character, the client writes one warning to its log that names the character. To log in with the saved username and password instead, choose <strong>Play without Jagex Account</strong> in the Microbot launcher, remove <code>credentials.properties</code> from your <code>.runelite</code> folder if you start from the RuneLite launcher, or switch to that profile after the client has started. A profile you switch to after launch that has a password and isn't linked to your Jagex character still logs in with that password.</p>
+</div>
+<h2 id="walker">Walker clicks stop cancelling each other</h2>
+<p><img alt="" class="rn-sprite rn-inline-icon" src="../images/releases/2.6.49/walker.png"/>A player walking from the Lava Maze to Ferox Enclave through the Wilderness, without teleports, watched the walker click a minimap tile about 9 tiles ahead and then, almost at once, a tile in the game view only 3 tiles ahead. The second click replaced the first, the character barely moved, and in the Wilderness that cost them several deaths.</p>
+<p>When you're standing still, the game often takes more than one tick to act on a click. The walker checked after about 0.6 seconds, saw you hadn't moved yet, and clicked again. Now it waits up to about 1.2 seconds longer for you to start moving before it treats a click as missed. If you're already walking, nothing changes. When a click really does nothing, for example in front of a closed gate, the walker now pauses about 1.8 seconds instead of 0.6 before it clicks again or deals with the gate.</p>
+<h2 id="minigame-teleports">Minigame teleports pick the right destination</h2>
+<p><img alt="" class="rn-sprite rn-inline-icon" src="../images/releases/2.6.49/transportation.png"/>The walker can use the minigame teleports in the Grouping tab, such as Tithe Farm, Castle Wars or Barbarian Assault. Players saw it open and close the destination dropdown over and over: the click meant for the destination landed on the dropdown button again and closed the list. Now it clicks inside the destination row. If the list doesn't open or a click fails, the walker gives up on that teleport after a few tries and takes another route, instead of retrying forever.</p>
+<p>The walker also used minigame teleports far too often. You can only use one every 20 minutes and each one takes several clicks, but the walker treated them as almost free, so it would teleport for a trip that was quicker to walk. They now count as 200 extra tiles of walking, so the walker only uses one when it saves a long trip. Going from the Grand Exchange to Tithe Farm still takes the Tithe Farm teleport and gets you there in about 18 seconds. When it's on cooldown, the walker uses another teleport.</p>
+<h2 id="inventory-setups">Inventory Setups load your gear reliably</h2>
+<p><img alt="" class="rn-sprite rn-inline-icon" src="../images/releases/2.6.49/inventory-setups.png"/>Many Hub scripts load your gear from an Inventory Setup, among them AIO Fighter, Vorkath, Barrows, Royal Titans, Demonic Gorilla Killer, Gem Crab Killer, Ensouled Head Slayer and Moons of Peril. We wrote 112 new tests for the Inventory Setups plugin and the code those scripts use to load a setup, and they found eight bugs. Here is what you'll notice:</p>
+<ul>
+<li><strong>Items you removed no longer count as missing.</strong> If you removed an item from a slot in the Inventory Setups panel, scripts kept going to the bank for it on every load, or stopped. An emptied slot now counts as empty. An emptied fuzzy inventory slot also no longer hides items that aren't in your setup, so those get banked as they should.</li>
+<li><strong>Degraded Barrows gear stays on.</strong> Wearing Dharok's helm 100 with a setup that lists Dharok's helm made scripts bank your whole worn Barrows set on every load. Degraded pieces now count as the setup item.</li>
+<li><strong>A broken Barrows piece pauses your script with a message.</strong> A broken piece such as Dharok's helm 0 can't be worn. If it's your only copy, the script now pauses, as it does for other missing setup gear, and says the piece is broken: "Repair it (Bob in Lumbridge or an armour stand in your house) or remove it from the setup." If you also have a working copy, the script picks that one.</li>
+<li><strong>Imported setups pass the setup check.</strong> Setups imported from the RuneLite Inventory Setups plugin expected every item in the first inventory slot, so the check always failed. Imported items now keep their order, and setups you imported earlier are repaired the next time the client loads them.</li>
+<li><strong>Update all instances no longer piles items into one slot.</strong> Replacing an item in every setup at once gave every copy the slot you clicked. Setups damaged this way are repaired when the client loads them. If one still fails its check after you use it, press the update inventory button once to save it again.</li>
+<li><strong>Aether runes no longer break the rune pouch load.</strong> The client doesn't know aether runes yet, so loading a setup with them in the pouch emptied the whole pouch and threw an error. They are now skipped with a warning in the log. Fill those yourself, or remove them from the setup.</li>
+<li><strong>Granite cannonballs count as cannonballs</strong> in fuzzy slots again, for highlighting and the bank filter.</li>
+<li><strong>Pressing Enter on an empty amount prompt</strong> sets the item's amount to 1 instead of throwing an error.</li>
+<li><strong>A setup file with a field the client didn't recognise</strong> could freeze the loading of all your setups. Unknown fields are now skipped.</li>
+</ul>
+<h2 id="plugins">Plugin updates</h2>
+<div class="rn-plugin-list">
+<div class="rn-plugin">
+<div class="rn-plugin-name"><span class="rn-plugin-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.49/runecraft.png"/></span><span>Guardians of the Rift<span class="rn-plugin-version">1.5.14</span></span></div>
+<div class="rn-plugin-body"><p>One player set <strong>Max. amount fragments</strong> to 130, and the script kept mining the large guardian remains game after game. When they sent a bug report they had 732 guardian fragments and no essence. The script only left the large mine based on the portal timer, and when it couldn't read that timer it kept mining. Now it leaves the large mine as soon as you reach your fragment cap, and during a game it also leaves when it can't read the portal time.</p></div>
+</div>
+<div class="rn-plugin">
+<div class="rn-plugin-name"><span class="rn-plugin-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.49/ring-of-dueling.png"/></span><span>Revenant Killer<span class="rn-plugin-version">2.0.13</span></span></div>
+<div class="rn-plugin-body"><p>When a PKer showed up, the script tried to teleport out with whatever ring or amulet you were wearing. With a Ring of wealth, it clicked "Ferox Enclave" on a ring that doesn't have that teleport, failed and tried again, 2530 times in one report while the PKer kept attacking. Now it only teleports with a charged Ring of dueling at level 20 and below, or a charged Amulet of glory from level 20 to 30. After 5 failed clicks, or when you wear neither, it runs to Ferox Enclave on foot and logs why, for example "Teleport with Ring of dueling(8) failed 5 times, running to Ferox Enclave on foot." A bank trip with an uncharged ring now walks to Ferox too.</p></div>
+</div>
+<div class="rn-plugin">
+<div class="rn-plugin-name"><span class="rn-plugin-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.49/kandarin-headgear.png"/></span><span>MM Caves<span class="rn-plugin-version">1.0.4</span></span></div>
+<div class="rn-plugin-body"><p>A player in the Ape Atoll dungeon with Kandarin headgear 3 as their light source pressed start, and within a second or two the script decided they had no light, walked out of the dungeon, logged out and stopped. Kandarin headgear 1 to 4 now count, the Abyssal lantern is recognised, and torches and candles match their lit names, Lit torch and Lit candle. An unlit candle no longer passes. Without a light source, the stop message now lists every item that works: "MM Caves stopped: no lit light source found. Carry or wear one of: ... Unlit torches and candles do not count, so light them first."</p></div>
+</div>
+<div class="rn-plugin">
+<div class="rn-plugin-name"><span class="rn-plugin-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.49/barrows.png"/></span><span>Barrows<span class="rn-plugin-version">2.5.25</span></span></div>
+<div class="rn-plugin-body"><p>When a piece of your gear didn't equip, the script's backup step could withdraw a broken copy such as Dharok's helm 0 instead of your working one, or pick Rune platebody (g) from an earlier bank slot when your setup asks for Rune platebody, and then use up all 8 attempts. It now wears the exact item from your setup and never a broken piece. If your only copy is broken, Barrows stops and tells you: "Dharok's helm is broken (Dharok's helm 0) and you have no working copy in your bank or inventory. Repair it (Bob in Lumbridge or an armour stand in your house), then start Barrows again." With client 2.6.49 the client usually pauses first with its own repair message. When the client pauses your scripts for missing gear, Barrows stops right away instead of walking back to the bank to try again.</p></div>
+</div>
+</div>
+<h2 id="fixes">Other changes</h2>
+<ul class="rn-iconlist">
+<li><span class="rn-li-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.49/cloud-sync.png"/></span>If your client is linked to the Microbot dashboard, it now sends the name of the character you're logged in as, so the dashboard can list your clients by account name instead of "Microbot client 2". The name is only sent while you're logged in, only through the existing dashboard link, and never when telemetry is off. If you stream or share screenshots, the eye button in the dashboard's top bar hides the names.</li>
+<li><span class="rn-li-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.49/microbot-hub.png"/></span>Plugin pages on the Microbot Hub website now have the same look as themicrobot.com. Each page shows the plugin's version, the minimum client version it needs, its authors and how to install it from the Plugin Hub inside the client.</li>
+</ul>
+<h2 id="developers">For script developers</h2>
+<ul>
+<li><code>InventorySetupsItem.isEmptySlot</code> is a new public helper. Use it instead of <code>itemIsDummy</code> to find empty setup rows: a row emptied in the panel keeps id <code>-1</code> and its settings, and <code>itemIsDummy</code> doesn't recognise it.</li>
+<li><code>Rs2InventorySetup</code> never treats a broken Barrows piece, such as <code>Dharok's helm 0</code>, as filling a setup row, and withdraws or wears Barrows rows by id. Unsupported pouch runes are skipped on load with one WARN.</li>
+<li>Setup items use the same JSON adapter with every Gson instance, and unknown fields are skipped instead of stalling the read.</li>
+<li>Minigame teleport edges cost an extra 200 tiles in <code>CollisionMap.teleportCost()</code>, and the bank-versus-direct planner prices teleports with the same cost.</li>
+<li><code>Rs2Walker</code> waits up to 1.2 s for movement to start before it retries a route click.</li>
+<li><code>ConfigManager</code> records the profile the client started on, and <code>LoginManager</code> uses it to keep the launch Jagex character. The login choice is logged at INFO, without names or secrets.</li>
+<li>The dashboard game state includes <code>playerName</code> while you're logged in.</li>
+<li>Main was merged back into development after 2.6.48.</li>
+</ul>
+<h2 id="update">How to update</h2>
+<p><img alt="" class="rn-sprite rn-inline-icon" src="../images/releases/2.6.49/microbot-hub.png"/>Restart Microbot to get client 2.6.49. Guardians of the Rift 1.5.14, Revenant Killer 2.0.13, MM Caves 1.0.4 and Barrows 2.5.25 show up in the Microbot Hub panel inside the client.</p>
+<p class="rn-credit">Game images © Jagex Ltd., via the <a href="https://oldschool.runescape.wiki" rel="noopener" target="_blank">Old School RuneScape Wiki</a>.</p>
+
+<nav class="rn-pager" aria-label="More releases">
+    <a class="rn-pager-prev" href="2.6.48.html"><small>Previous release</small><span>2.6.48</span></a>
+</nav>
+        </article>
+        </div>
+    </div>
+</main>
+
+<footer class="c-footer pt-5">
+    <div class="container">
+        <div class="row justify-content-center align-items-start g-4">
+            <div class="text-center" style="width:20rem">
+                <img src="../microbot/logo.png" class="c-footer--logo" loading="lazy" alt="footer">
+                <div class="c-content-divider mt-3 mb-3"></div>
+                <ul class="d-flex align-items-center justify-content-center gap-4 m-auto text-center">
+                    <li>
+                        <a href="https://discord.gg/zaGrfqFEWE" target="_blank" rel="noreferrer noopener">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24px" viewBox="0 0 71 55"><title>logo
+                                discord</title>
+                                <g fill="none" class="nc-icon-wrapper">
+                                    <g clip-path="url(#clip0)">
+                                        <path d="M60.105 4.898A58.55 58.55 0 0 0 45.653.415a.22.22 0 0 0-.233.11 40.784 40.784 0 0 0-1.8 3.697c-5.456-.817-10.886-.817-16.23 0-.485-1.164-1.201-2.587-1.828-3.697a.228.228 0 0 0-.233-.11 58.386 58.386 0 0 0-14.451 4.483.207.207 0 0 0-.095.082C1.578 18.73-.944 32.144.293 45.39a.244.244 0 0 0 .093.167c6.073 4.46 11.955 7.167 17.729 8.962a.23.23 0 0 0 .249-.082 42.08 42.08 0 0 0 3.627-5.9.225.225 0 0 0-.123-.312 38.772 38.772 0 0 1-5.539-2.64.228.228 0 0 1-.022-.378c.372-.279.744-.569 1.1-.862a.22.22 0 0 1 .23-.03c11.619 5.304 24.198 5.304 35.68 0a.219.219 0 0 1 .233.027c.356.293.728.586 1.103.865a.228.228 0 0 1-.02.378 36.384 36.384 0 0 1-5.54 2.637.227.227 0 0 0-.121.315 47.249 47.249 0 0 0 3.624 5.897.225.225 0 0 0 .249.084c5.801-1.794 11.684-4.502 17.757-8.961a.228.228 0 0 0 .092-.164c1.48-15.315-2.48-28.618-10.497-40.412a.18.18 0 0 0-.093-.084zm-36.38 32.427c-3.497 0-6.38-3.211-6.38-7.156 0-3.944 2.827-7.156 6.38-7.156 3.583 0 6.438 3.24 6.382 7.156 0 3.945-2.827 7.156-6.381 7.156zm23.593 0c-3.498 0-6.38-3.211-6.38-7.156 0-3.944 2.826-7.156 6.38-7.156 3.582 0 6.437 3.24 6.38 7.156 0 3.945-2.798 7.156-6.38 7.156z"
+                                              fill="currentColor"></path>
+                                    </g>
+                                    <defs>
+                                        <clippath id="clip0">
+                                            <path fill="currentColor" d="M0 0h71v55H0z"></path>
+                                        </clippath>
+                                    </defs>
+                                </g>
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/chsami/microbot/releases" target="_blank" rel="noreferrer noopener">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24px" viewBox="0 0 16 16"><title>data
+                                download</title>
+                                <g fill="currentColor" class="nc-icon-wrapper">
+                                    <path d="M14,10a1,1,0,0,0-1,1v2H3V11a1,1,0,0,0-2,0v2a2,2,0,0,0,2,2H13a2,2,0,0,0,2-2V11A1,1,0,0,0,14,10Z"></path>
+                                    <path data-color="color-2"
+                                          d="M7.293,10.707a1,1,0,0,0,1.414,0l4-4a1,1,0,1,0-1.414-1.414L9,7.586V2A1,1,0,0,0,7,2V7.586L4.707,5.293A1,1,0,0,0,3.293,6.707Z"></path>
+                                </g>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="c-footer-cc py-2 mt-5">
+        <div class="container">
+            <p class="text-center c-text-faded mb-0">Microbot © 2026. All Rights Reserved. - <a href="../privacy.html"
+                                                                                                target="_blank">Privacy
+                Policy</a> -
+                <a href="../terms.html"
+                   target="_blank">Terms of service</a></p>
+        </div>
+    </div>
+</footer>
+<script>
+    document.querySelectorAll('.rn-article img, .rn-article video').forEach(function (m) {
+        function hide() {
+            var box = m.closest('.rn-gallery') && m.closest('.rn-gallery').children.length > 1 ? m : (m.closest('figure') || m);
+            box.style.display = 'none';
+        }
+        if (m.tagName === 'IMG' && m.complete && m.naturalWidth === 0 && m.getAttribute('src')) hide();
+        m.addEventListener('error', hide);
+    });
+</script>
+<script defer src="../microbot/halloween/halloween.js"></script>
+</body>
+</html>

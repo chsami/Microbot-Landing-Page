@@ -174,9 +174,136 @@
             background: rgba(139, 16, 16, 0.35);
             color: #fff;
         }
-    </style>
 
-    <link rel="stylesheet" href="./microbot/halloween/halloween.css">
+        .c-latest-release-section {
+            padding: 56px 0 8px;
+        }
+
+        .c-latest-release {
+            display: grid;
+            grid-template-columns: 200px minmax(0, 1fr);
+            gap: 32px;
+            align-items: center;
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 36px;
+            border: 1px solid #302817;
+            background:
+                radial-gradient(120% 140% at 0% 0%, rgba(139, 16, 16, 0.35), rgba(139, 16, 16, 0) 55%),
+                #1a1714;
+            color: #d6cfc2;
+            text-decoration: none;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+
+        .c-latest-release:hover {
+            border-color: #ffb13b;
+            transform: translateY(-3px);
+            color: #d6cfc2;
+        }
+
+        .c-latest-release__version {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 14px;
+            font-family: Cinzel, Georgia, serif;
+            font-weight: 700;
+            font-size: 58px;
+            line-height: 1;
+            color: #ffb13b;
+        }
+
+        .c-latest-release__version img {
+            width: 68px;
+            height: auto;
+        }
+
+        .c-latest-release__date {
+            font-family: Montserrat, Roboto, sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            color: #9b9384;
+        }
+
+        .c-latest-release__label {
+            display: inline-block;
+            margin-bottom: 14px;
+            padding: 3px 10px;
+            background: #8b1010;
+            color: #fff;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+        }
+
+        .c-latest-release__title {
+            font-family: Cinzel, Georgia, serif;
+            font-weight: 700;
+            font-size: 28px;
+            line-height: 1.2;
+            color: #fff;
+            margin: 0 0 10px;
+            text-transform: none;
+        }
+
+        .c-latest-release__summary {
+            margin: 0 0 16px;
+            font-size: 16px;
+            line-height: 1.65;
+        }
+
+        .c-latest-release__links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px 24px;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #ffb13b;
+        }
+
+        .c-latest-release-all {
+            display: block;
+            max-width: 960px;
+            margin: 14px auto 0;
+            text-align: right;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #9b9384;
+        }
+
+        .c-latest-release-all:hover {
+            color: #ffb13b;
+        }
+
+        @media (max-width: 767px) {
+            .c-latest-release {
+                grid-template-columns: minmax(0, 1fr);
+                gap: 12px;
+                padding: 24px;
+            }
+
+            .c-latest-release__version {
+                flex-direction: row;
+                align-items: center;
+                font-size: 44px;
+            }
+
+            .c-latest-release__version img {
+                width: 48px;
+            }
+
+            .c-latest-release__title {
+                font-size: 22px;
+            }
+        }
+    </style>
 </head>
 <body style="background-color:black !important;" class="ipsApp ipsApp_front ipsClearfix ipsJS_has ipsApp_noTouch"
       data-controller="core.front.core.app" data-message="" data-pageapp="" data-pagelocation="front" data-pagemodule=""
@@ -288,6 +415,29 @@
                    rel="noreferrer noopener">Loading...</a>
             </div>
         </div>
+        </div>
+    </section>
+    <div class="c-border-red"></div>
+    <section class="c-latest-release-section" id="latest-release-section" hidden>
+        <div class="container">
+            <a class="c-latest-release" id="latest-release" href="releases.html">
+                <div class="c-latest-release__version">
+                    <img id="latest-release-icon" src="" alt="" hidden>
+                    <div>
+                        <span id="latest-release-version"></span>
+                        <div class="c-latest-release__date" id="latest-release-date"></div>
+                    </div>
+                </div>
+                <div>
+                    <span class="c-latest-release__label" id="latest-release-label">Latest release</span>
+                    <h2 class="c-latest-release__title" id="latest-release-title"></h2>
+                    <p class="c-latest-release__summary" id="latest-release-summary"></p>
+                    <div class="c-latest-release__links">
+                        <span>Read the release notes &rarr;</span>
+                    </div>
+                </div>
+            </a>
+            <a class="c-latest-release-all" href="releases.html">All releases &rarr;</a>
         </div>
     </section>
     <section class="c-section-area c-content-section mb-0" id="featured-content">
@@ -808,11 +958,36 @@
             } else {
                 badge.style.display = 'none';
             }
+
+            renderLatestRelease();
         };
         document.head.appendChild(script);
+    }
+
+    function renderLatestRelease() {
+        if (typeof releases === 'undefined' || !releases.length) return;
+        const latest = releases.slice().sort((a, b) => new Date(b.date) - new Date(a.date))[0];
+        const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+        const date = new Date(latest.date);
+        const titled = latest.title.includes(' - ');
+        const isNew = (Date.now() - date.getTime()) < 7 * 24 * 60 * 60 * 1000;
+
+        document.getElementById('latest-release').href = 'releases/' + encodeURIComponent(latest.version) + '.html';
+        document.getElementById('latest-release-version').textContent = latest.version;
+        document.getElementById('latest-release-date').textContent = months[date.getMonth()] + ' ' + date.getDate() + ', ' + date.getFullYear();
+        document.getElementById('latest-release-label').textContent = isNew ? 'New release' : 'Latest release';
+        document.getElementById('latest-release-title').textContent = titled ? latest.title.split(' - ').slice(1).join(' - ') : latest.content;
+        const summary = document.getElementById('latest-release-summary');
+        summary.textContent = titled ? latest.content : '';
+        summary.hidden = !titled;
+        if (latest.icon) {
+            const icon = document.getElementById('latest-release-icon');
+            icon.src = latest.icon;
+            icon.hidden = false;
+        }
+        document.getElementById('latest-release-section').hidden = false;
     }
 </script>
 
 <script defer src="./libraries/carousel/carousel.js"></script>
 <script defer src="./libraries/hero-parallax/hero-parallax.js"></script>
-<script defer src="./microbot/halloween/halloween.js"></script>

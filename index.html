@@ -1,980 +1,215 @@
 <!DOCTYPE html>
-<html lang="en-US" dir="ltr" data-lt-installed="true">
+<html lang="en-US" class="mb">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Microbot - Free Open Source Client</title>
-
-    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-
-    <meta name="description" content="Microbot Free open source client based on runelite">
-
-
+    <title>Microbot - Free Open Source OSRS Client</title>
+    <meta name="description" content="Microbot is a free, open-source Old School RuneScape client built on RuneLite, with community plugins for skilling, combat and minigames.">
     <meta property="og:site_name" content="Microbot">
-
-
-    <meta property="og:locale" content="en_US">
-
-
-    <meta name="theme-color" content="#2c2c2c">
-
-
-    <link rel="stylesheet" href="./microbot/app.min.css">
-    <link rel="stylesheet" href="./libraries/carousel/carousel.css">
-    <link rel="stylesheet" href="./libraries/hero-parallax/hero-parallax.css">
-
-
-    <link rel="stylesheet"
-          href="./microbot/341e4a57816af3ba440d891ca87450ff_framework.css.c1bcd9467a7eeb9006567801face652d.css"
-          media="all">
-
-    <link rel="stylesheet"
-          href="./microbot/20446cf2d164adcc029377cb04d43d17_flags.css.be60c469fe9d673f833faaa74a81e375.css" media="all">
-
-    <link rel="stylesheet"
-          href="./microbot/90eb5adf50a8c640f633d47fd7eb1778_core.css.730a336650d62c3b59570edc9065b630.css" media="all">
-
-    <link rel="stylesheet"
-          href="./microbot/5a0da001ccc2200dc5625c3f3934497d_core_responsive.css.1d08c9ed37ed1cae43d3985a3b2316ad.css"
-          media="all">
-
-    <style>
-        .new-badge {
-            display: inline-block;
-            background: linear-gradient(135deg, #ff6b35, #ff8c5a);
-            color: white;
-            font-size: 10px;
-            font-weight: bold;
-            padding: 2px 6px;
-            border-radius: 10px;
-            margin-left: 8px;
-            box-shadow: 0 2px 4px rgba(255, 107, 53, 0.3);
-            animation: pulse 2s infinite;
-            vertical-align: super;
-            line-height: 1;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-        .c-top-plugins {
-            max-width: 1100px;
-            margin: 64px auto 0;
-        }
-
-        .c-top-plugins__intro {
-            text-align: center;
-            color: #b9b9b9;
-            margin-bottom: 32px;
-        }
-
-        .c-top-plugins__grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
-            gap: 14px;
-        }
-
-        .c-top-plugin {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            padding: 16px 18px;
-            background: linear-gradient(180deg, #161514 0%, #0c0c0c 100%);
-            border: 1px solid #2e2d2c;
-            color: #d2d2d2;
-            text-decoration: none;
-            transition: border-color 0.2s ease, transform 0.2s ease;
-        }
-
-        .c-top-plugin:hover {
-            border-color: #8b1010;
-            color: #d2d2d2;
-            transform: translateY(-2px);
-        }
-
-        .c-top-plugin__rank {
-            flex: none;
-            width: 44px;
-            height: 44px;
-            display: grid;
-            place-items: center;
-            border: 1px solid #8b1010;
-            background: rgba(139, 16, 16, 0.2);
-            font-family: Cinzel, serif;
-            font-weight: 800;
-            font-size: 18px;
-            color: #ffb13b;
-        }
-
-        .c-top-plugin__body {
-            flex: 1;
-            min-width: 0;
-        }
-
-        .c-top-plugin__name {
-            display: block;
-            font-size: 16px;
-            font-weight: 700;
-            color: #fff;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-        .c-top-plugin__meta {
-            display: block;
-            font-size: 13px;
-            color: #9a9a9a;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-        .c-top-plugin__installs {
-            text-align: right;
-        }
-
-        .c-top-plugin__count {
-            display: block;
-            font-size: 16px;
-            font-weight: 800;
-            color: #ffb13b;
-            font-variant-numeric: tabular-nums;
-        }
-
-        .c-top-plugin__label {
-            font-size: 12px;
-            color: #9a9a9a;
-        }
-
-        .c-top-plugins__cta {
-            display: flex;
-            justify-content: center;
-            margin-top: 28px;
-        }
-
-        .c-top-plugins__button {
-            display: inline-flex;
-            align-items: center;
-            min-height: 50px;
-            padding: 0 26px;
-            border: 2px solid #8b1010;
-            color: #fff;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.03em;
-            text-decoration: none;
-            transition: background 0.2s ease;
-        }
-
-        .c-top-plugins__button:hover {
-            background: rgba(139, 16, 16, 0.35);
-            color: #fff;
-        }
-
-        .c-latest-release-section {
-            padding: 56px 0 8px;
-        }
-
-        .c-latest-release {
-            display: grid;
-            grid-template-columns: 200px minmax(0, 1fr);
-            gap: 32px;
-            align-items: center;
-            max-width: 960px;
-            margin: 0 auto;
-            padding: 36px;
-            border: 1px solid #302817;
-            background:
-                radial-gradient(120% 140% at 0% 0%, rgba(139, 16, 16, 0.35), rgba(139, 16, 16, 0) 55%),
-                #1a1714;
-            color: #d6cfc2;
-            text-decoration: none;
-            transition: border-color 0.2s ease, transform 0.2s ease;
-        }
-
-        .c-latest-release:hover {
-            border-color: #ffb13b;
-            transform: translateY(-3px);
-            color: #d6cfc2;
-        }
-
-        .c-latest-release__version {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 14px;
-            font-family: Cinzel, Georgia, serif;
-            font-weight: 700;
-            font-size: 58px;
-            line-height: 1;
-            color: #ffb13b;
-        }
-
-        .c-latest-release__version img {
-            width: 68px;
-            height: auto;
-        }
-
-        .c-latest-release__date {
-            font-family: Montserrat, Roboto, sans-serif;
-            font-size: 13px;
-            font-weight: 600;
-            letter-spacing: 0.04em;
-            color: #9b9384;
-        }
-
-        .c-latest-release__label {
-            display: inline-block;
-            margin-bottom: 14px;
-            padding: 3px 10px;
-            background: #8b1010;
-            color: #fff;
-            font-size: 11px;
-            font-weight: 700;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-        }
-
-        .c-latest-release__title {
-            font-family: Cinzel, Georgia, serif;
-            font-weight: 700;
-            font-size: 28px;
-            line-height: 1.2;
-            color: #fff;
-            margin: 0 0 10px;
-            text-transform: none;
-        }
-
-        .c-latest-release__summary {
-            margin: 0 0 16px;
-            font-size: 16px;
-            line-height: 1.65;
-        }
-
-        .c-latest-release__links {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px 24px;
-            font-size: 13px;
-            font-weight: 700;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            color: #ffb13b;
-        }
-
-        .c-latest-release-all {
-            display: block;
-            max-width: 960px;
-            margin: 14px auto 0;
-            text-align: right;
-            font-size: 13px;
-            font-weight: 700;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            color: #9b9384;
-        }
-
-        .c-latest-release-all:hover {
-            color: #ffb13b;
-        }
-
-        @media (max-width: 767px) {
-            .c-latest-release {
-                grid-template-columns: minmax(0, 1fr);
-                gap: 12px;
-                padding: 24px;
-            }
-
-            .c-latest-release__version {
-                flex-direction: row;
-                align-items: center;
-                font-size: 44px;
-            }
-
-            .c-latest-release__version img {
-                width: 48px;
-            }
-
-            .c-latest-release__title {
-                font-size: 22px;
-            }
-        }
-    </style>
+    <meta property="og:title" content="Microbot - Free Open Source OSRS Client">
+    <meta property="og:image" content="https://www.themicrobot.com/images/general/logo.png">
+    <meta name="theme-color" content="#0c0a08">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Montserrat:wght@400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="./microbot/mb-theme.css">
+    <link rel="stylesheet" href="./microbot/mb-home.css">
+    <script>
+        // Before first paint, so the launcher never flashes the download buttons.
+        if (/[?&]source=[^&]*launcher/i.test(location.search)) document.documentElement.classList.add('mb-in-launcher');
+    </script>
 </head>
-<body style="background-color:black !important;" class="ipsApp ipsApp_front ipsClearfix ipsJS_has ipsApp_noTouch"
-      data-controller="core.front.core.app" data-message="" data-pageapp="" data-pagelocation="front" data-pagemodule=""
-      data-pagecontroller="">
+<body>
+<a class="mb-skip" href="#main">Skip to content</a>
+
+<!-- Shared header. The launcher looks up: header > div.c-events-block.py-2 > div, header > div.c-border-red.mb-2,
+     header > nav > div. Keep these three, in this order, on every page. -->
 <header class="c-header">
-    <!-- Event Start -->
     <div class="c-events-block py-2">
-        <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between gap-2">
-            <div></div>
-            <a href="https://discord.gg/zaGrfqFEWE" target="_blank" rel="noreferrer noopener"
-               class="c-events-block__right d-flex flex-row align-items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24px" class="me-2" viewBox="0 0 71 55"><title>logo
-                    discord</title>
-                    <g fill="none" class="nc-icon-wrapper">
-                        <g clip-path="url(#clip0)">
-                            <path d="M60.105 4.898A58.55 58.55 0 0 0 45.653.415a.22.22 0 0 0-.233.11 40.784 40.784 0 0 0-1.8 3.697c-5.456-.817-10.886-.817-16.23 0-.485-1.164-1.201-2.587-1.828-3.697a.228.228 0 0 0-.233-.11 58.386 58.386 0 0 0-14.451 4.483.207.207 0 0 0-.095.082C1.578 18.73-.944 32.144.293 45.39a.244.244 0 0 0 .093.167c6.073 4.46 11.955 7.167 17.729 8.962a.23.23 0 0 0 .249-.082 42.08 42.08 0 0 0 3.627-5.9.225.225 0 0 0-.123-.312 38.772 38.772 0 0 1-5.539-2.64.228.228 0 0 1-.022-.378c.372-.279.744-.569 1.1-.862a.22.22 0 0 1 .23-.03c11.619 5.304 24.198 5.304 35.68 0a.219.219 0 0 1 .233.027c.356.293.728.586 1.103.865a.228.228 0 0 1-.02.378 36.384 36.384 0 0 1-5.54 2.637.227.227 0 0 0-.121.315 47.249 47.249 0 0 0 3.624 5.897.225.225 0 0 0 .249.084c5.801-1.794 11.684-4.502 17.757-8.961a.228.228 0 0 0 .092-.164c1.48-15.315-2.48-28.618-10.497-40.412a.18.18 0 0 0-.093-.084zm-36.38 32.427c-3.497 0-6.38-3.211-6.38-7.156 0-3.944 2.827-7.156 6.38-7.156 3.583 0 6.438 3.24 6.382 7.156 0 3.945-2.827 7.156-6.381 7.156zm23.593 0c-3.498 0-6.38-3.211-6.38-7.156 0-3.944 2.826-7.156 6.38-7.156 3.582 0 6.437 3.24 6.38 7.156 0 3.945-2.798 7.156-6.38 7.156z"
-                                  fill="currentColor"></path>
-                        </g>
-                        <defs>
-                            <clippath id="clip0">
-                                <path fill="currentColor" d="M0 0h71v55H0z"></path>
-                            </clippath>
-                        </defs>
-                    </g>
-                </svg>
-                <p class="mb-0">Join us on Discord</p>
+        <div class="container">
+            <span class="mb-event" id="mb-event"></span>
+            <a href="https://discord.gg/zaGrfqFEWE" target="_blank" rel="noreferrer noopener">
+                <svg viewBox="0 0 71 55" aria-hidden="true"><path fill="currentColor" d="M60.1 4.9A58.5 58.5 0 0 0 45.6.4l-.2.1a40.8 40.8 0 0 0-1.8 3.7 54 54 0 0 0-16.2 0A37.3 37.3 0 0 0 25.6.5L25.4.4A58.4 58.4 0 0 0 10.9 4.9l-.1.1C1.6 18.7-1 32.1.3 45.4l.1.2a58.7 58.7 0 0 0 17.7 9h.3a42 42 0 0 0 3.6-5.9l-.1-.3a38.8 38.8 0 0 1-5.5-2.6l-.1-.4 1.1-.9.2-.1a41.9 41.9 0 0 0 35.7 0h.2l1.1.9v.4a36.4 36.4 0 0 1-5.5 2.6l-.1.3a47.2 47.2 0 0 0 3.6 5.9h.3a58.5 58.5 0 0 0 17.7-9l.1-.2C72.6 30 68.6 16.7 60.1 5zM23.7 37.3c-3.5 0-6.4-3.2-6.4-7.1 0-4 2.8-7.2 6.4-7.2 3.6 0 6.4 3.2 6.4 7.2 0 3.9-2.8 7.1-6.4 7.1zm23.6 0c-3.5 0-6.4-3.2-6.4-7.1 0-4 2.8-7.2 6.4-7.2 3.6 0 6.4 3.2 6.4 7.2 0 3.9-2.8 7.1-6.4 7.1z"/></svg>
+                Join us on Discord
             </a>
         </div>
     </div>
     <div class="c-border-red mb-2"></div>
-    <!-- Event End -->      <!-- Navigation Start -->
-    <nav class="c-nav navbar navbar-expand-sm py-2" style="flex-wrap:nowrap;justify-content: flex-start">
-        <div class="container align-items-stretch">
-            <a class="navbar-brand me-0 me-lg-3 me-xl-5" href="../index.html">
-                <img src="./microbot/logo.png" class="c-nav__logo" loading="lazy" alt="logo">
+    <nav class="c-nav" aria-label="Site">
+        <div class="container">
+            <a class="mb-brand" href="index.html" aria-label="Microbot home">
+                <img src="./microbot/logo.png" alt="" width="44" height="44">
+                <span class="mb-brand__text"><span class="mb-brand__name">Microbot</span><span class="mb-brand__tag">Old School client</span></span>
             </a>
-            <div class="p-3 p-xl-0" style="line-height: 2rem;width: 100%;" id="navbarMenu">
-                <ul class="navbar-nav me-auto text-center text-xl-left gap-3 gap-xl-4">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://www.github.com/chsami/microbot" target="_blank">Github</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://discord.gg/zaGrfqFEWE" target="_blank">Discord</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://chatgpt.com/g/g-LM0fGeeXB-microbot-documentation"
-                           target="_blank">ChatGPT</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://paypal.me/MicrobotBE?country.x=BE" target="_blank">Donate</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="releases.html">Releases<span id="releases-badge" class="new-badge" style="display: none;">NEW</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="plugins.html">Plugins</a>
-                    </li>
-                </ul>
-            </div>
-
-
-            <ul id="elMobileNav"
-                class="ipsList_inline ipsResponsive_hideDesktop ipsResponsive_block my-auto d-flex gx-2"
-                data-controller="core.front.core.mobileNav" data-default="all">
-
-                <li class="navbar-toggler my-auto py-3 position-relative" data-ipsdrawer=""
-                    data-ipsdrawer-drawerelem="#elMobileDrawer">
-                    <a href="#">
-                        <i class="fa fa-navicon"></i>
-                    </a>
-                </li>
+            <button class="mb-menu" type="button" aria-expanded="false" aria-controls="mb-nav">Menu</button>
+            <ul class="mb-nav" id="mb-nav">
+                <li><a href="index.html" aria-current="page">Home</a></li>
+                <li><a href="plugins.html">Plugins</a></li>
+                <li><a href="releases.html">Releases<span id="releases-badge" class="new-badge" hidden>NEW</span></a></li>
+                <li><a href="https://www.github.com/chsami/microbot" target="_blank" rel="noopener">GitHub</a></li>
+                <li><a href="https://discord.gg/zaGrfqFEWE" target="_blank" rel="noopener">Discord</a></li>
+                <li><a href="https://paypal.me/MicrobotBE?country.x=BE" target="_blank" rel="noopener">Donate</a></li>
             </ul>
         </div>
     </nav>
-    <!-- Navigation End -->
 </header>
 
-<main>
+<main id="main">
+    <!-- Launcher contract: main > section.c-main-header.c-main-header--home.py-5.d-flex.flex-column.justify-content-center -->
     <section class="c-main-header c-main-header--home py-5 d-flex flex-column justify-content-center">
-        <div class="container">
-            <h1 class="c-main-header__title display-1 text-uppercase my-0">Microbot</h1>
-            <h1 class="c-main-header__title c-main-header__title--gold text-uppercase my-0">Open Source &
-                Free</h1>
-            <h5 class="c-main-header__desc fw-normal text-faded c-font-family__primary mt-2 mt-lg-3 mb-3 mb-lg-5">
-                The Best OpenSource OSRS Client </h5>
-            <h5 class="c-main-header__desc fw-normal text-faded c-font-family__primary mt-2 mt-lg-3 mb-3 mb-lg-5">
-                Players Online <span id="counter" class="counter">0</span></h5>
-            <br/>
+        <div class="container mb-hero">
+            <div class="mb-hero__copy">
+                <span class="mb-chip mb-chip--gold">Open source &amp; free</span>
+                <h1 class="mb-hero__title">The open-source<br>Old School client</h1>
+                <p class="mb-hero__lead">Built on RuneLite, with <span id="plugin-count">community plugins</span> for skilling, combat and minigames.</p>
 
-        <div class="dropdown">
-            <button style="font-size:1.2rem !important;" class="c-button c-button--large c-main-header__c-button py-2 py-sm-3 px-3 px-md-4"
-                    id="downloadBtn">
-                <i style="margin-right: 16px;" class="fa fa-download"></i> Download
-            </button>
-            <div style="width: 100%;" class="dropdown-content c-button c-button--large c-main-header__c-button py-2 py-sm-3 px-3 px-md-4"
-                 id="dropdownContent">
-                <a id="launcher-hyperlink-windows" href=""
-                   target="_blank" rel="noreferrer noopener">Loading...</a>
-                <a id="launcher-hyperlink-linux" href=""
-                   target="_blank" rel="noreferrer noopener">Loading...</a>
-                <a id="launcher-hyperlink-mac" href=""
-                   target="_blank" rel="noreferrer noopener">Loading...</a>
-                <hr />
-                <a id="microbot-hyperlink" href="#"
-                   target="_blank"
-                   rel="noreferrer noopener">Loading...</a>
+                <div class="mb-download" id="downloadBtn">
+                    <a class="mb-btn mb-btn--gold" id="launcher-hyperlink-windows" href="https://github.com/chsami/microbot/releases">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 5.5 10 4.5v7H3zm0 13 7 1v-7H3zm8-14.2L21 3v8.5H11zm0 15.4L21 21v-8.5H11z"/></svg>
+                        Download for Windows
+                    </a>
+                    <a class="mb-btn mb-btn--line" id="launcher-hyperlink-mac" href="https://github.com/chsami/microbot/releases">macOS</a>
+                    <a class="mb-btn mb-btn--line" id="launcher-hyperlink-linux" href="https://github.com/chsami/microbot/releases">Linux</a>
+                </div>
+                <p class="mb-download__alt">Prefer the plain client? <a id="microbot-hyperlink" href="https://github.com/chsami/microbot/releases">Download the jar</a></p>
+
+                <div class="mb-launcher-cta">
+                    <p class="mb-launcher-cta__thanks">Thanks for being part of the Microbot community.</p>
+                    <a class="mb-btn mb-btn--gold" href="plugins.html">Browse plugins</a>
+                    <a class="mb-btn mb-btn--line" href="releases.html">What's new</a>
+                </div>
+
+                <p class="mb-hero__stat" id="mb-stat" hidden><span class="mb-live"><strong id="counter">-</strong>&nbsp;players online now</span></p>
+            </div>
+            <div class="mb-hero__art" aria-hidden="true">
+                <img src="./microbot/feature-1.jpg" alt="" class="mb-hero__shot mb-hero__shot--back">
+                <img src="./microbot/feature-4.jpg?v=2" alt="" class="mb-hero__shot mb-hero__shot--front">
             </div>
         </div>
-        </div>
     </section>
-    <div class="c-border-red"></div>
-    <section class="c-latest-release-section" id="latest-release-section" hidden>
+
+    <section class="mb-section mb-latest-section" id="latest-release-section" aria-label="Latest release" hidden>
         <div class="container">
-            <a class="c-latest-release" id="latest-release" href="releases.html">
-                <div class="c-latest-release__version">
+            <a class="mb-card mb-latest" id="latest-release" href="releases.html">
+                <div class="mb-latest__version">
                     <img id="latest-release-icon" src="" alt="" hidden>
                     <div>
                         <span id="latest-release-version"></span>
-                        <div class="c-latest-release__date" id="latest-release-date"></div>
+                        <div class="mb-latest__date" id="latest-release-date"></div>
                     </div>
                 </div>
                 <div>
-                    <span class="c-latest-release__label" id="latest-release-label">Latest release</span>
-                    <h2 class="c-latest-release__title" id="latest-release-title"></h2>
-                    <p class="c-latest-release__summary" id="latest-release-summary"></p>
-                    <div class="c-latest-release__links">
-                        <span>Read the release notes &rarr;</span>
-                    </div>
+                    <span class="mb-eyebrow" id="latest-release-label">Latest release</span>
+                    <h2 class="mb-latest__title" id="latest-release-title"></h2>
+                    <p class="mb-latest__summary" id="latest-release-summary"></p>
+                    <span class="mb-latest__more">Read the release notes &rarr;</span>
                 </div>
             </a>
-            <a class="c-latest-release-all" href="releases.html">All releases &rarr;</a>
+            <a class="mb-latest__all" href="releases.html">All releases &rarr;</a>
         </div>
     </section>
-    <section class="c-section-area c-content-section mb-0" id="featured-content">
+
+    <section class="mb-section mb-section--alt" aria-labelledby="why">
         <div class="container">
-            <h2 class="c-section-heading text-center mx-auto">Featured Plugins</h2>
-
-            <div class="carousel-container">
-                <div class="carousel-track">
-                    <div class="carousel-slide">
-                        <div class="plugin-card">
-                            <img src="./microbot/feature-1.jpg" alt="Wintertodt" loading="lazy">
-                            <div class="plugin-info">
-                                <p class="c-text-secondary">Wintertodt</p>
-                                <p class="c-text-faded">Chop, Fletch, Light, Build, Bank, Eats, All food supported!</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="carousel-slide">
-                        <div class="plugin-card">
-                            <img src="./microbot/feature-2.jpg?v=2" alt="Fletching" loading="lazy">
-                            <div class="plugin-info">
-                                <p class="c-text-secondary">Fletching</p>
-                                <p class="c-text-faded">Fletches logs, strings bows! Progressive fletching supported!</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="carousel-slide">
-                        <div class="plugin-card">
-                            <img src="./microbot/feature-3.jpg" alt="NMZ" loading="lazy">
-                            <div class="plugin-info">
-                                <p class="c-text-secondary">NMZ</p>
-                                <p class="c-text-faded">Nightmarezone supports Orbs! Rock cake, absorption, overload support. Special Attack support!</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="carousel-slide">
-                        <div class="plugin-card">
-                            <img src="./microbot/feature-4.jpg?v=2" alt="Vorkath" loading="lazy">
-                            <div class="plugin-info">
-                                <p class="c-text-secondary">Vorkath</p>
-                                <p class="c-text-faded">Ranged vorkath, woox walk, banking, multiple kills per trip, sell items on ge, gets items back from death!</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="carousel-slide">
-                        <div class="plugin-card">
-                            <img src="./microbot/feature-5.jpg" alt="Sand Crabs" loading="lazy">
-                            <div class="plugin-info">
-                                <p class="c-text-secondary">Sand Crabs</p>
-                                <p class="c-text-faded">Multiple spots, Food support, Aggro reset</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="carousel-slide">
-                        <div class="plugin-card">
-                            <img src="./microbot/feature-6.jpg" alt="Antiban support" loading="lazy">
-                            <div class="plugin-info">
-                                <p class="c-text-secondary">Antiban support</p>
-                                <p class="c-text-faded">Natural Mouse movement, simulate mistakes, human like patterns, fatigue and so much more!</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-slide">
-                        <div class="plugin-card">
-                            <img src="./images/featured/mixology.jpg" alt="Mixology" loading="lazy">
-                            <div class="plugin-info">
-                                <p class="c-text-secondary">Mixology</p>
-                                <p class="c-text-faded">Mixology, efficient methods, grinds and plays the minigame</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-slide">
-                        <div class="plugin-card">
-                            <img src="./images/featured/gotr.jpg" alt="Guardians of the rift" loading="lazy">
-                            <div class="plugin-info">
-                                <p class="c-text-secondary">Guardians of the rift</p>
-                                <p class="c-text-faded">Plays the guardians of the rift minigame!</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-slide">
-                        <div class="plugin-card">
-                            <img src="./images/featured/bots.jpg" alt="Bots" loading="lazy">
-                            <div class="plugin-info">
-                                <p class="c-text-secondary">Multiple sessions for free</p>
-                                <p class="c-text-faded">Open as many microbot instances as you want for free!</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-slide">
-                        <div class="plugin-card">
-                            <img src="./images/featured/mining.jpg?v=2" alt="Mining" loading="lazy">
-                            <div class="plugin-info">
-                                <p class="c-text-secondary">Mining</p>
-                                <p class="c-text-faded">Supports Motherload Mine, PowerMiner and many more!</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <button class="carousel-button carousel-button-prev">←</button>
-                <button class="carousel-button carousel-button-next">→</button>
-
-                <div class="carousel-dots"></div>
-            </div>
-
-            <h2 class="c-section-heading text-center mx-auto">And many more...</h2>
-
-            <div class="c-top-plugins" id="top-plugins" hidden>
-                <p class="c-top-plugins__intro">The most installed plugins on the Microbot Hub.</p>
-                <div class="c-top-plugins__grid" id="top-plugins-grid"></div>
-                <div class="c-top-plugins__cta">
-                    <a href="plugins.html" class="c-top-plugins__button" id="top-plugins-browse">Browse all plugins</a>
-                </div>
-            </div>
+            <h2 class="visually-hidden" id="why">Why Microbot</h2>
+            <ul class="mb-why">
+                <li><strong>Open source</strong><span>Every line is on GitHub. Read it, build it, change it.</span></li>
+                <li><strong>Free</strong><span>Free to download and free to use.</span></li>
+                <li><strong>Human-like play</strong><span>Natural mouse movement, mistakes, fatigue and human patterns.</span></li>
+                <li><strong>Many sessions</strong><span>Open as many Microbot clients as you like, still free.</span></li>
+            </ul>
         </div>
     </section>
 
-    <div class="c-border-red"></div>
-    <section class="c-section-area c-discord-section overflow-hidden my-0" id="discord-content">
+    <section class="mb-section" id="featured-content" aria-labelledby="featured-title">
         <div class="container">
-            <div class="row justify-content-center align-items-center g-4">
-                <div class="col-12 col-md-6 col-lg-4">
-                    <h2 class="c-section-heading mb-3 mb-sm-5">Discord</h2>
-                    <p class="c-text-faded my-4">Join us on the Microbot Community Discord Server.</p>
-                    <a href="https://discord.gg/zaGrfqFEWE" target="_blank" rel="noreferrer noopener"
-                       class="c-button c-button--discord py-2 py-sm-3 px-3 px-md-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24px" class="me-2" viewBox="0 0 71 55"><title>
-                            logo discord</title>
-                            <g fill="none" class="nc-icon-wrapper">
-                                <g clip-path="url(#clip0)">
-                                    <path d="M60.105 4.898A58.55 58.55 0 0 0 45.653.415a.22.22 0 0 0-.233.11 40.784 40.784 0 0 0-1.8 3.697c-5.456-.817-10.886-.817-16.23 0-.485-1.164-1.201-2.587-1.828-3.697a.228.228 0 0 0-.233-.11 58.386 58.386 0 0 0-14.451 4.483.207.207 0 0 0-.095.082C1.578 18.73-.944 32.144.293 45.39a.244.244 0 0 0 .093.167c6.073 4.46 11.955 7.167 17.729 8.962a.23.23 0 0 0 .249-.082 42.08 42.08 0 0 0 3.627-5.9.225.225 0 0 0-.123-.312 38.772 38.772 0 0 1-5.539-2.64.228.228 0 0 1-.022-.378c.372-.279.744-.569 1.1-.862a.22.22 0 0 1 .23-.03c11.619 5.304 24.198 5.304 35.68 0a.219.219 0 0 1 .233.027c.356.293.728.586 1.103.865a.228.228 0 0 1-.02.378 36.384 36.384 0 0 1-5.54 2.637.227.227 0 0 0-.121.315 47.249 47.249 0 0 0 3.624 5.897.225.225 0 0 0 .249.084c5.801-1.794 11.684-4.502 17.757-8.961a.228.228 0 0 0 .092-.164c1.48-15.315-2.48-28.618-10.497-40.412a.18.18 0 0 0-.093-.084zm-36.38 32.427c-3.497 0-6.38-3.211-6.38-7.156 0-3.944 2.827-7.156 6.38-7.156 3.583 0 6.438 3.24 6.382 7.156 0 3.945-2.827 7.156-6.381 7.156zm23.593 0c-3.498 0-6.38-3.211-6.38-7.156 0-3.944 2.826-7.156 6.38-7.156 3.582 0 6.437 3.24 6.38 7.156 0 3.945-2.798 7.156-6.38 7.156z"
-                                          fill="currentColor"></path>
-                                </g>
-                                <defs>
-                                    <clippath id="clip0">
-                                        <path fill="currentColor" d="M0 0h71v55H0z"></path>
-                                    </clippath>
-                                </defs>
-                            </g>
-                        </svg>
-                        Join us on Discord
-                    </a>
+            <div class="mb-section__head">
+                <div>
+                    <span class="mb-eyebrow">Plugins</span>
+                    <h2 class="mb-h2" id="featured-title">Featured plugins</h2>
+                    <p class="mb-lead">A few favourites. Each one installs from the client's Plugin Hub in a click.</p>
                 </div>
-                <div class="col-12 col-md-6 col-lg-3 offset-lg-1">
-                    <div class="position-relative" style="min-height: 300px;">
-                        <iframe src="https://discord.com/widget?id=1087718903985221642&theme=dark" width="350"
-                                height="500" allowtransparency="true"
-                                sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
-                    </div>
-                </div>
+                <a class="mb-btn mb-btn--line mb-btn--small" href="plugins.html">See all plugins</a>
             </div>
+            <ul class="mb-features">
+                <li class="mb-card mb-feature"><img src="./microbot/feature-1.jpg" alt="" loading="lazy"><div><h3>Wintertodt</h3><p>Chops, fletches, lights, builds and banks. Eats any food.</p></div></li>
+                <li class="mb-card mb-feature"><img src="./microbot/feature-4.jpg?v=2" alt="" loading="lazy"><div><h3>Vorkath</h3><p>Ranged Vorkath with woox walk, banking and several kills per trip.</p></div></li>
+                <li class="mb-card mb-feature"><img src="./images/featured/gotr.jpg" alt="" loading="lazy"><div><h3>Guardians of the Rift</h3><p>Plays the whole minigame for you.</p></div></li>
+                <li class="mb-card mb-feature"><img src="./microbot/feature-3.jpg" alt="" loading="lazy"><div><h3>Nightmare Zone</h3><p>Orbs, rock cake, absorptions, overloads and special attacks.</p></div></li>
+                <li class="mb-card mb-feature"><img src="./images/featured/mixology.jpg" alt="" loading="lazy"><div><h3>Mixology</h3><p>Efficient methods that grind the minigame.</p></div></li>
+                <li class="mb-card mb-feature"><img src="./microbot/feature-2.jpg?v=2" alt="" loading="lazy"><div><h3>Fletching</h3><p>Fletches logs and strings bows, progressive training included.</p></div></li>
+                <li class="mb-card mb-feature"><img src="./images/featured/mining.jpg?v=2" alt="" loading="lazy"><div><h3>Mining</h3><p>Motherlode Mine, power mining and more.</p></div></li>
+                <li class="mb-card mb-feature"><img src="./microbot/feature-5.jpg" alt="" loading="lazy"><div><h3>Sand Crabs</h3><p>Several spots, food and aggro reset.</p></div></li>
+            </ul>
         </div>
     </section>
-    <div class="c-border-red"></div>
+
+    <section class="mb-section mb-section--alt" id="top-plugins" aria-labelledby="top-title" hidden>
+        <div class="container">
+            <div class="mb-section__head">
+                <div>
+                    <span class="mb-eyebrow">Most installed</span>
+                    <h2 class="mb-h2" id="top-title">What players run most</h2>
+                </div>
+                <a href="plugins.html" class="mb-btn mb-btn--gold mb-btn--small" id="top-plugins-browse">Browse all plugins</a>
+            </div>
+            <ol class="mb-top" id="top-plugins-grid"></ol>
+        </div>
+    </section>
+
+    <section class="mb-section" id="discord-content" aria-labelledby="discord-title">
+        <div class="container mb-discord">
+            <div>
+                <span class="mb-eyebrow">Community</span>
+                <h2 class="mb-h2" id="discord-title">Join the Discord</h2>
+                <p class="mb-lead">Get help, share setups, report a broken plugin, or talk to the people who write them.</p>
+                <p style="margin-top:24px"><a href="https://discord.gg/zaGrfqFEWE" target="_blank" rel="noreferrer noopener" class="mb-btn mb-btn--gold">Join us on Discord</a></p>
+            </div>
+            <iframe class="mb-discord__widget" title="Microbot Discord server" src="https://discord.com/widget?id=1087718903985221642&theme=dark"
+                    width="350" height="420" loading="lazy" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+        </div>
+    </section>
 </main>
 
-
-<div class="c-border-red"></div>
-<footer class="c-footer pt-5">
+<footer class="mb-footer">
     <div class="container">
-        <div class="row justify-content-center align-items-start g-4">
-            <div class="text-center" style="width:20rem">
-                <img src="./microbot/logo.png" class="c-footer--logo" loading="lazy" alt="footer">
-                <div class="c-content-divider mt-3 mb-3"></div>
-                <ul class="d-flex align-items-center justify-content-center gap-4 m-auto text-center">
-                    <li>
-                        <a href="https://discord.gg/zaGrfqFEWE" target="_blank" rel="noreferrer noopener">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24px" viewBox="0 0 71 55"><title>logo
-                                discord</title>
-                                <g fill="none" class="nc-icon-wrapper">
-                                    <g clip-path="url(#clip0)">
-                                        <path d="M60.105 4.898A58.55 58.55 0 0 0 45.653.415a.22.22 0 0 0-.233.11 40.784 40.784 0 0 0-1.8 3.697c-5.456-.817-10.886-.817-16.23 0-.485-1.164-1.201-2.587-1.828-3.697a.228.228 0 0 0-.233-.11 58.386 58.386 0 0 0-14.451 4.483.207.207 0 0 0-.095.082C1.578 18.73-.944 32.144.293 45.39a.244.244 0 0 0 .093.167c6.073 4.46 11.955 7.167 17.729 8.962a.23.23 0 0 0 .249-.082 42.08 42.08 0 0 0 3.627-5.9.225.225 0 0 0-.123-.312 38.772 38.772 0 0 1-5.539-2.64.228.228 0 0 1-.022-.378c.372-.279.744-.569 1.1-.862a.22.22 0 0 1 .23-.03c11.619 5.304 24.198 5.304 35.68 0a.219.219 0 0 1 .233.027c.356.293.728.586 1.103.865a.228.228 0 0 1-.02.378 36.384 36.384 0 0 1-5.54 2.637.227.227 0 0 0-.121.315 47.249 47.249 0 0 0 3.624 5.897.225.225 0 0 0 .249.084c5.801-1.794 11.684-4.502 17.757-8.961a.228.228 0 0 0 .092-.164c1.48-15.315-2.48-28.618-10.497-40.412a.18.18 0 0 0-.093-.084zm-36.38 32.427c-3.497 0-6.38-3.211-6.38-7.156 0-3.944 2.827-7.156 6.38-7.156 3.583 0 6.438 3.24 6.382 7.156 0 3.945-2.827 7.156-6.381 7.156zm23.593 0c-3.498 0-6.38-3.211-6.38-7.156 0-3.944 2.826-7.156 6.38-7.156 3.582 0 6.437 3.24 6.38 7.156 0 3.945-2.798 7.156-6.38 7.156z"
-                                              fill="currentColor"></path>
-                                    </g>
-                                    <defs>
-                                        <clippath id="clip0">
-                                            <path fill="currentColor" d="M0 0h71v55H0z"></path>
-                                        </clippath>
-                                    </defs>
-                                </g>
-                            </svg>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://github.com/chsami/microbot/releases" target="_blank" rel="noreferrer noopener">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24px" viewBox="0 0 16 16"><title>data
-                                download</title>
-                                <g fill="currentColor" class="nc-icon-wrapper">
-                                    <path d="M14,10a1,1,0,0,0-1,1v2H3V11a1,1,0,0,0-2,0v2a2,2,0,0,0,2,2H13a2,2,0,0,0,2-2V11A1,1,0,0,0,14,10Z"></path>
-                                    <path data-color="color-2"
-                                          d="M7.293,10.707a1,1,0,0,0,1.414,0l4-4a1,1,0,1,0-1.414-1.414L9,7.586V2A1,1,0,0,0,7,2V7.586L4.707,5.293A1,1,0,0,0,3.293,6.707Z"></path>
-                                </g>
-                            </svg>
-                        </a>
-                    </li>
-                </ul>
-            </div>
+        <div class="mb-footer__row">
+            <a class="mb-brand" href="index.html" aria-label="Microbot home">
+                <img src="./microbot/logo.png" alt="" width="44" height="44">
+                <span class="mb-brand__text"><span class="mb-brand__name">Microbot</span><span class="mb-brand__tag">Old School client</span></span>
+            </a>
+            <ul class="mb-footer__links">
+                <li><a href="plugins.html">Plugins</a></li>
+                <li><a href="releases.html">Releases</a></li>
+                <li><a href="https://github.com/chsami/microbot" target="_blank" rel="noopener">GitHub</a></li>
+                <li><a href="https://discord.gg/zaGrfqFEWE" target="_blank" rel="noopener">Discord</a></li>
+                <li><a href="https://chatgpt.com/g/g-LM0fGeeXB-microbot-documentation" target="_blank" rel="noopener">Docs assistant</a></li>
+            </ul>
         </div>
-    </div>
-    <div class="c-footer-cc py-2 mt-5">
-        <div class="container">
-            <p class="text-center c-text-faded mb-0">Microbot © 2024. All Rights Reserved. - <a href="privacy.html"
-                                                                                                target="_blank">Privacy
-                Policy</a> -
-                <a href="terms.html"
-                   target="_blank">Terms of service</a></p>
-        </div>
+        <p class="mb-footer__legal">Microbot &copy; 2024. All rights reserved. <a href="privacy.html">Privacy policy</a> &middot; <a href="terms.html">Terms of service</a>.</p>
     </div>
 </footer>
 
-
-<div id="elMobileDrawer" class="ipsDrawer ipsHide">
-    <a href="#" class="ipsDrawer_close" data-action="close"><span>×</span></a>
-    <div class="ipsDrawer_menu">
-        <div class="ipsDrawer_content">
-
-
-            <ul class="ipsDrawer_list">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="https://www.github.com/chsami/microbot" target="_blank">Github</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="https://discord.gg/zaGrfqFEWE" target="_blank">Discord</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="https://chatgpt.com/g/g-LM0fGeeXB-microbot-documentation" target="_blank">ChatGPT</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="https://paypal.me/MicrobotBE?country.x=BE" target="_blank">Donate</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="https://www.youtube.com/@eudora8057" target="_blank">Youtube</a>
-                </li>
-            </ul>
-        </div>
-    </div>
+<!-- Cookie Consent Banner (id kept: the launcher removes it) -->
+<div id="cookie-banner" class="cookie-banner" role="region" aria-label="Cookies">
+    <p>We use cookies to understand how the site is used, including Google Analytics. More in our <a href="privacy.html">privacy policy</a>.</p>
+    <button id="accept-cookies" class="mb-btn mb-btn--gold mb-btn--small" type="button">Accept</button>
+    <button id="decline-cookies" class="mb-btn mb-btn--line mb-btn--small" type="button">Decline</button>
 </div>
 
-<!-- Cookie Consent Banner -->
-<div id="cookie-banner" class="cookie-banner">
-    <p>
-        We use cookies to improve your experience, analyze site usage, and assist in our marketing efforts. By using
-        this site, you consent to the use of cookies, including Google Analytics.
-        Read more in our <a href="privacy.html" target="_blank">Privacy Policy</a>.
-    </p>
-    <button id="accept-cookies" class="btn">Accept</button>
-    <button id="decline-cookies" class="btn">Decline</button>
-</div>
-
-<script type="text/javascript">
-
-
-    const url = window.location.href;
-
-    // Extract the query string part
-    const queryString = url.split('?')[1];
-
-    // Split the query string into individual parameters
-    const params = queryString?.split('&');
-
-    // Iterate over each parameter
-    params?.forEach(param => {
-        const [key, value] = param.split('=');
-        if (key === "source") {
-            if (value.toLowerCase().includes("launcher")) {
-                document.getElementById('downloadBtn').outerHTML = "<p>Thanks for being part of the Microbot Community!</p>"
-            }
-        }
-    });
-
-</script>
-
-
+<script src="./microbot/mb-site.js"></script>
 <script>
-    function animateCounter(element, start, end, duration) {
-        let startTime = null;
-
-        function animation(currentTime) {
-            if (startTime === null) startTime = currentTime;
-            const elapsedTime = currentTime - startTime;
-
-            const progress = Math.min(elapsedTime / duration, 1);
-            const value = Math.floor(progress * (end - start) + start);
-            element.innerText = value;
-
-            if (progress < 1) {
-                requestAnimationFrame(animation);
-            } else {
-                element.innerText = end; // Ensure the final value matches the target
-            }
-        }
-
-        requestAnimationFrame(animation);
-    }
-</script>
-
-
-<span style="visibility: hidden; position: absolute; top: -300px; width: 1px; height: 1px; overflow: hidden; left: -300px;"><span
-        class="ipsLoading ipsLoading_noAnim" style="display: block;"></span></span></body>
-</html>
-
-
-<script>
-    document.getElementById('downloadBtn').addEventListener('click', function () {
-        document.getElementById('dropdownContent').classList.toggle('show');
-    });
-
-    window.onclick = function (event) {
-        if (!event.target.matches('#downloadBtn')) {
-            var dropdowns = document.getElementsByClassName("dropdown-content");
-            for (var i = 0; i < dropdowns.length; i++) {
-                var openDropdown = dropdowns[i];
-                if (openDropdown.classList.contains('show')) {
-                    openDropdown.classList.remove('show');
-                }
-            }
-        }
-    }
-</script>
-
-<script>
-    document.addEventListener("DOMContentLoaded", async function () {
-        const section = document.getElementById('top-plugins');
-        const grid = document.getElementById('top-plugins-grid');
-        try {
-            const pluginsResponse = await fetch('https://chsami.github.io/Microbot-Hub/plugins.json');
-            if (!pluginsResponse.ok) return;
-            const plugins = (await pluginsResponse.json()).filter(plugin => !plugin.disable);
-
-            const installsResponse = await fetch('https://microbot.cloud/api/PluginTelemetry/plugins-total-installs', {
-                method: 'POST',
-                headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify({PluginNames: plugins.map(plugin => plugin.internalName)})
-            });
-            if (!installsResponse.ok) return;
-            const installs = {};
-            for (const dto of await installsResponse.json()) {
-                installs[dto.pluginName] = dto.totalInstalls;
-            }
-
-            const top = plugins
-                .filter(plugin => installs[plugin.internalName] > 0)
-                .sort((a, b) => installs[b.internalName] - installs[a.internalName])
-                .slice(0, 6);
-            if (top.length === 0) return;
-
-            const element = (tag, className, text) => {
-                const node = document.createElement(tag);
-                node.className = className;
-                if (text !== undefined) node.textContent = text;
-                return node;
-            };
-
-            top.forEach((plugin, index) => {
-                const card = element('a', 'c-top-plugin');
-                card.href = `https://chsami.github.io/Microbot-Hub/${encodeURIComponent(plugin.internalName)}`;
-                card.target = '_blank';
-                card.rel = 'noopener noreferrer';
-
-                const body = element('span', 'c-top-plugin__body');
-                body.append(
-                    element('span', 'c-top-plugin__name', plugin.name.trim()),
-                    element('span', 'c-top-plugin__meta', `by ${(plugin.authors || []).join(', ') || 'Unknown'} · v${plugin.version}`)
-                );
-
-                const count = element('span', 'c-top-plugin__installs');
-                count.append(
-                    element('span', 'c-top-plugin__count', installs[plugin.internalName].toLocaleString('en-US')),
-                    element('span', 'c-top-plugin__label', 'installs')
-                );
-
-                card.append(element('span', 'c-top-plugin__rank', String(index + 1)), body, count);
-                grid.appendChild(card);
-            });
-
-            document.getElementById('top-plugins-browse').textContent = `Browse all ${plugins.length} plugins`;
-            section.hidden = false;
-        } catch (err) {
-            console.error('Top plugins error:', err);
-        }
-    });
-</script>
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-
-        fetch('https://microbot.cloud/api/session/count').then(async (result) => {
-            if (!result.ok) return
-            const playerCount = await result.json()
-            if (!Number.isFinite(playerCount)) return
-            const counterElement = document.getElementById('counter');
-            animateCounter(counterElement, 0, playerCount, 1000); // Animate from 0 to 1000 in 2 seconds
-        })
-
-        fetch('https://microbot.cloud/api/version/client').then(async (result) => {
-            if (!result.ok) return
-            const version = (await result.text()).trim()
-            if (!/^[0-9][0-9A-Za-z.-]*$/.test(version)) return
-            const microbotHyperLink = document.getElementById('microbot-hyperlink');
-            microbotHyperLink.innerText = 'jar-' + version
-            microbotHyperLink.href = `https://files.microbot.cloud/releases/microbot/stable/microbot-${version}.jar`
-        })
-
-        fetch('https://microbot.cloud/api/version/launcher').then(async (result) => {
-            if (!result.ok) return
-            const version = (await result.text()).trim()
-            if (!/^[0-9][0-9A-Za-z.-]*$/.test(version)) return
-            const microbotHyperLinkWindows = document.getElementById('launcher-hyperlink-windows');
-            const microbotHyperLinkLinux = document.getElementById('launcher-hyperlink-linux');
-            const microbotHyperLinkMac = document.getElementById('launcher-hyperlink-mac');
-
-            // Windows
-            microbotHyperLinkWindows.innerHTML = '<i class="fa fa-windows"></i> Windows';
-            microbotHyperLinkWindows.href = `https://files.microbot.cloud/releases/microbot-launcher/Microbot%20Launcher%20Setup%20${version}.exe`;
-
-            // Linux
-            microbotHyperLinkLinux.innerHTML = '<i class="fa fa-linux"></i> Linux';
-            microbotHyperLinkLinux.href = `https://files.microbot.cloud/releases/microbot-launcher/Microbot%20Launcher-${version}.AppImage`;
-
-            // Mac
-            microbotHyperLinkMac.innerHTML = '<i class="fa fa-apple"></i> Mac';
-            microbotHyperLinkMac.href = `https://files.microbot.cloud/releases/microbot-launcher/Microbot%20Launcher-${version}-arm64.dmg`;
-        })
-
-        var cookieBanner = document.getElementById('cookie-banner');
-        var acceptCookiesButton = document.getElementById('accept-cookies');
-        var declineCookiesButton = document.getElementById('decline-cookies');
-
-        // Check if user has already made a choice
-        if (!localStorage.getItem('cookies-consent')) {
-            cookieBanner.style.display = 'block';
-        }
-
-        // When user accepts cookies
-        acceptCookiesButton.addEventListener('click', function () {
-            localStorage.setItem('cookies-consent', 'accepted');
-            cookieBanner.style.display = 'none';
-
-            // Enable Google Analytics or other cookies
-            enableGoogleAnalytics();
-        });
-
-        // When user declines cookies
-        declineCookiesButton.addEventListener('click', function () {
-            localStorage.setItem('cookies-consent', 'declined');
-            cookieBanner.style.display = 'none';
-
-            // Disable or prevent Google Analytics
-            disableGoogleAnalytics();
-        });
-
-        // Function to enable Google Analytics (Add your GA initialization code here)
-        function enableGoogleAnalytics() {
-            // Add your Google Analytics tracking code here
-            // Create script element for Google Analytics
-            var script = document.createElement('script');
-            script.async = true;
-            script.src = 'https://www.googletagmanager.com/gtag/js?id=G-0CEWCTWC8Q';
-            document.head.appendChild(script);
-            console.log('Google Analytics enabled');
-
-            // Inject the Google Analytics initialization code
-            script.onload = function () {
-                window.dataLayer = window.dataLayer || [];
-
-                function gtag() {
-                    dataLayer.push(arguments);
-                }
-
-                gtag('js', new Date());
-                gtag('config', 'G-0CEWCTWC8Q');
-            };
-        }
-
-        // Function to disable Google Analytics
-        function disableGoogleAnalytics() {
-            console.log('Google Analytics disabled');
-            // You could set this up by not injecting the GA script at all when declined
-        }
-
-        // Check for new releases and show badge if needed
-        checkForNewReleases();
-    });
-
-    // Function to check for new releases and show/hide badge
-    function checkForNewReleases() {
-        // Import releases data from release.js
-        const script = document.createElement('script');
-        script.src = './microbot/releases/release.js';
-        script.onload = function() {
-            // Check if any release is within the past 7 days
-            const currentDate = new Date();
-            let hasNewRelease = false;
-
-            for (const release of releases) {
-                const releaseDate = new Date(release.date);
-                const timeDiff = currentDate.getTime() - releaseDate.getTime();
-                const daysDiff = Math.ceil(timeDiff / (1000 * 3600 * 24));
-
-                if (daysDiff <= 7) {
-                    hasNewRelease = true;
-                    break;
-                }
-            }
-
-            // Show or hide the badge based on whether there are new releases
-            const badge = document.getElementById('releases-badge');
-            if (hasNewRelease) {
-                badge.style.display = 'inline-block';
-            } else {
-                badge.style.display = 'none';
-            }
-
-            renderLatestRelease();
-        };
-        document.head.appendChild(script);
-    }
-
-    function renderLatestRelease() {
-        if (typeof releases === 'undefined' || !releases.length) return;
+    document.addEventListener('mb:releases', function () {
+        if (!releases.length) return;
         const latest = releases.slice().sort((a, b) => new Date(b.date) - new Date(a.date))[0];
-        const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
         const date = new Date(latest.date);
         const titled = latest.title.includes(' - ');
         const isNew = (Date.now() - date.getTime()) < 7 * 24 * 60 * 60 * 1000;
 
         document.getElementById('latest-release').href = 'releases/' + encodeURIComponent(latest.version) + '.html';
         document.getElementById('latest-release-version').textContent = latest.version;
-        document.getElementById('latest-release-date').textContent = months[date.getMonth()] + ' ' + date.getDate() + ', ' + date.getFullYear();
+        document.getElementById('latest-release-date').textContent = date.toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
         document.getElementById('latest-release-label').textContent = isNew ? 'New release' : 'Latest release';
         document.getElementById('latest-release-title').textContent = titled ? latest.title.split(' - ').slice(1).join(' - ') : latest.content;
         const summary = document.getElementById('latest-release-summary');
@@ -986,8 +221,73 @@
             icon.hidden = false;
         }
         document.getElementById('latest-release-section').hidden = false;
-    }
-</script>
+    });
 
-<script defer src="./libraries/carousel/carousel.js"></script>
-<script defer src="./libraries/hero-parallax/hero-parallax.js"></script>
+    document.addEventListener('DOMContentLoaded', function () {
+        fetch('https://microbot.cloud/api/session/count').then(async (r) => {
+            if (!r.ok) return;
+            const n = await r.json();
+            if (!Number.isFinite(n)) return;
+            document.getElementById('mb-stat').hidden = false;
+            MB.countUp(document.getElementById('counter'), n);
+        }).catch(() => {});
+
+        fetch('https://microbot.cloud/api/version/client').then(async (r) => {
+            if (!r.ok) return;
+            const v = (await r.text()).trim();
+            if (!/^[0-9][0-9A-Za-z.-]*$/.test(v)) return;
+            const a = document.getElementById('microbot-hyperlink');
+            a.textContent = 'Download the jar (' + v + ')';
+            a.href = `https://files.microbot.cloud/releases/microbot/stable/microbot-${v}.jar`;
+        }).catch(() => {});
+
+        fetch('https://microbot.cloud/api/version/launcher').then(async (r) => {
+            if (!r.ok) return;
+            const v = (await r.text()).trim();
+            if (!/^[0-9][0-9A-Za-z.-]*$/.test(v)) return;
+            const base = 'https://files.microbot.cloud/releases/microbot-launcher/';
+            document.getElementById('launcher-hyperlink-windows').href = `${base}Microbot%20Launcher%20Setup%20${v}.exe`;
+            document.getElementById('launcher-hyperlink-linux').href = `${base}Microbot%20Launcher-${v}.AppImage`;
+            document.getElementById('launcher-hyperlink-mac').href = `${base}Microbot%20Launcher-${v}-arm64.dmg`;
+        }).catch(() => {});
+
+        // Most installed: Hub list + install counts; the section stays hidden if either is unavailable.
+        (async function () {
+            try {
+                const pr = await fetch('https://chsami.github.io/Microbot-Hub/plugins.json');
+                if (!pr.ok) return;
+                const plugins = (await pr.json()).filter(p => !p.disable);
+                document.getElementById('plugin-count').textContent = `${plugins.length} community plugins`;
+                const ir = await fetch('https://microbot.cloud/api/PluginTelemetry/plugins-total-installs', {
+                    method: 'POST', headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({PluginNames: plugins.map(p => p.internalName)})
+                });
+                if (!ir.ok) return;
+                const installs = {};
+                for (const d of await ir.json()) installs[d.pluginName] = d.totalInstalls;
+                const top = plugins.filter(p => installs[p.internalName] > 0)
+                    .sort((a, b) => installs[b.internalName] - installs[a.internalName]).slice(0, 6);
+                if (!top.length) return;
+                const grid = document.getElementById('top-plugins-grid');
+                top.forEach((p, i) => {
+                    const li = document.createElement('li');
+                    const a = MB.el('a', 'mb-card mb-top__item');
+                    a.href = `https://chsami.github.io/Microbot-Hub/${encodeURIComponent(p.internalName)}`;
+                    a.append(MB.el('span', 'mb-top__rank', String(i + 1)));
+                    const body = MB.el('span', 'mb-top__body');
+                    body.append(MB.el('span', 'mb-top__name', p.name.trim()),
+                        MB.el('span', 'mb-top__meta', `by ${(p.authors || []).join(', ') || 'Unknown'}`));
+                    const count = MB.el('span', 'mb-top__count');
+                    count.append(MB.el('strong', '', installs[p.internalName].toLocaleString('en-US')), MB.el('span', '', 'installs'));
+                    a.append(body, count);
+                    li.append(a);
+                    grid.append(li);
+                });
+                document.getElementById('top-plugins-browse').textContent = `Browse all ${plugins.length} plugins`;
+                document.getElementById('top-plugins').hidden = false;
+            } catch (e) { console.error('Top plugins error:', e); }
+        })();
+    });
+</script>
+</body>
+</html>

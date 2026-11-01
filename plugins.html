@@ -1,748 +1,226 @@
 <!DOCTYPE html>
-<html lang="en-US" dir="ltr" data-lt-installed="true">
+<html lang="en-US" class="mb">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Microbot Plugins - OSRS Automation Plugins | Free & Open Source</title>
-
-    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <meta name="description" content="Browse and discover Microbot plugins for Old School RuneScape automation. Community-made plugins for skilling, combat, minigames, and more. Free and open source.">
-
-    <!-- Canonical URL -->
+    <title>Microbot Plugins - Community plugins for Old School RuneScape</title>
+    <meta name="description" content="Browse community plugins for the Microbot client: skilling, combat, minigames and more. Free and open source.">
     <link rel="canonical" href="https://microbot.cloud/plugins.html">
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
     <meta property="og:site_name" content="Microbot">
-    <meta property="og:locale" content="en_US">
-    <meta property="og:title" content="Microbot Plugins - OSRS Automation Plugins">
-    <meta property="og:description" content="Browse and discover Microbot plugins for Old School RuneScape automation. Community-made plugins for skilling, combat, minigames, and more.">
-    <meta property="og:image" content="https://microbot.cloud/images/general/logo.png">
-    <meta property="og:url" content="https://microbot.cloud/plugins.html">
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Microbot Plugins - OSRS Automation Plugins">
-    <meta name="twitter:description" content="Browse and discover Microbot plugins for Old School RuneScape automation. Community-made plugins for skilling, combat, minigames, and more.">
-    <meta name="twitter:image" content="https://microbot.cloud/images/general/logo.png">
-
-    <!-- Additional SEO -->
-    <meta name="keywords" content="Microbot plugins, OSRS plugins, RuneScape automation, skilling plugins, combat plugins, minigame plugins, Wintertodt, NMZ, Vorkath">
-    <meta name="author" content="Microbot">
-    <meta name="robots" content="index, follow">
-    <meta name="theme-color" content="#2c2c2c">
-
-    <link rel="stylesheet" href="./microbot/app.min.css">
-    <link rel="stylesheet" href="./libraries/carousel/carousel.css">
-
-    <link rel="stylesheet"
-          href="./microbot/341e4a57816af3ba440d891ca87450ff_framework.css.c1bcd9467a7eeb9006567801face652d.css"
-          media="all">
-
-    <link rel="stylesheet"
-          href="./microbot/20446cf2d164adcc029377cb04d43d17_flags.css.be60c469fe9d673f833faaa74a81e375.css" media="all">
-
-    <link rel="stylesheet"
-          href="./microbot/90eb5adf50a8c640f633d47fd7eb1778_core.css.730a336650d62c3b59570edc9065b630.css" media="all">
-
-    <link rel="stylesheet"
-          href="./microbot/5a0da001ccc2200dc5625c3f3934497d_core_responsive.css.1d08c9ed37ed1cae43d3985a3b2316ad.css"
-          media="all">
-
-    <style>
-        .plugins-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .plugins-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 30px;
-            margin-top: 30px;
-            width: 100%;
-            justify-content: center;
-        }
-
-        .plugins-grid-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: space-around;
-            width: 100%;
-            max-width: 900px; /* Fits 3 cards of 280px each + 2 gaps of 20px */
-        }
-
-        @media (min-width: 1200px) {
-            .plugins-grid {
-            }
-        }
-
-        .plugin-card {
-            background: #1a1a1a;
-            border: 1px solid #333;
-            border-radius: 12px;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            text-decoration: none;
-            color: inherit;
-            display: flex;
-            flex-direction: column;
-            flex: 0 0 280px;
-            max-width: 280px;
-            box-shadow: 0 4px 12px rgba(255, 0, 0, 0.2);
-        }
-
-        .plugin-card:hover {
-            transform: translateY(-4px);
-            border-color: #555;
-            text-decoration: none;
-            color: inherit;
-            box-shadow: 0 4px 12px rgba(255, 0, 0, 0.4);
-        }
-
-        .plugin-image-container {
-            position: relative;
-            width: 100%;
-            height: 200px;
-            overflow: hidden;
-            background: #2a2a2a;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .plugin-icon {
-            max-width: 100%;
-            max-height: 100%;
-            width: auto;
-            height: auto;
-            object-fit: contain;
-            transition: transform 0.3s ease;
-        }
-
-        .plugin-icon--fallback {
-            width: 160px;
-            height: 160px;
-        }
-
-        .plugin-card:hover .plugin-icon {
-            transform: scale(1.05);
-        }
-
-        .plugin-content {
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
-        }
-
-        .plugin-header {
-            margin-bottom: 15px;
-        }
-
-        .plugin-title {
-            color: #fff;
-            font-size: 1.3em;
-            font-weight: 600;
-            margin: 0 0 8px 0;
-            line-height: 1.2;
-        }
-
-        .plugin-author {
-            color: #888;
-            font-size: 0.9em;
-            margin: 0;
-        }
-
-        .plugin-tags {
-            margin-bottom: 15px;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-        }
-
-        .plugin-tag {
-            background: #333;
-            color: #fff;
-            padding: 4px 8px;
-            border-radius: 12px;
-            font-size: 0.75em;
-            white-space: nowrap;
-        }
-
-        .plugin-description {
-            color: #ccc;
-            line-height: 1.5;
-            flex-grow: 1;
-            margin-bottom: 15px;
-            font-size: 0.9em;
-        }
-
-        .plugin-meta {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: auto;
-            padding-top: 15px;
-            border-top: 1px solid #333;
-        }
-
-        .plugin-version {
-            background: #2c5aa0;
-            color: white;
-            padding: 4px 10px;
-            border-radius: 8px;
-            font-size: 0.8em;
-            font-weight: 500;
-        }
-
-        .plugin-min-version {
-            color: #888;
-            font-size: 0.8em;
-        }
-
-        .loading {
-            text-align: center;
-            color: #ccc;
-            font-size: 1.2em;
-            padding: 40px;
-            grid-column: 1 / -1;
-        }
-
-        .error {
-            text-align: center;
-            color: #dc3545;
-            font-size: 1.2em;
-            padding: 40px;
-            grid-column: 1 / -1;
-        }
-
-        .plugins-header {
-            text-align: center;
-            color: #fff;
-            margin-bottom: 20px;
-        }
-
-        .plugins-count {
-            color: #fff;
-            font-size: 1.4em;
-            margin-top: 15px;
-            font-weight: 600;
-            background: rgba(217, 44, 38, 0.15);
-            display: inline-block;
-            padding: 8px 20px;
-            border-radius: 10px;
-            border: 1px solid rgba(217, 44, 38, 0.3);
-        }
-
-        .plugin-card:focus {
-            outline: 2px solid #2c5aa0;
-            outline-offset: 2px;
-        }
-
-        /* Loading spinner */
-        .fa-spinner {
-            animation: spin 1s linear infinite;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        /* Search bar styles */
-        .search-container {
-            margin: 30px 0;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-        }
-
-        .search-bar {
-            display: flex;
-            align-items: center;
-            width: 100%;
-            background: #2a2a2a;
-            border-radius: 30px;
-            overflow: hidden;
-            border: 1px solid #444;
-            box-shadow: 0 4px 12px rgba(255, 0, 0, 0.2);
-            justify-content: space-between;
-        }
-
-        .search-input {
-            flex: 1;
-            padding: 15px 25px !important;
-            border: none !important;
-            border-radius: 30px 0 0 30px !important;
-            background-color: #2a2a2a !important;
-            color: #fff !important;
-            font-size: 1.1em !important;
-            max-width: 100% !important;
-        }
-
-        .search-input::placeholder {
-            color: #888;
-        }
-
-        .highlight-count {
-            animation: highlight 0.5s ease-out;
-        }
-
-        @keyframes highlight {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-            100% { transform: scale(1); }
-        }
-
-        .category-filters {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-            margin: 0 0 20px 0;
-        }
-
-        .category-chip {
-            background: #2a2a2a;
-            color: #ccc;
-            border: 1px solid #444;
-            border-radius: 20px;
-            padding: 6px 16px;
-            font-size: 0.95em;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-
-        .category-chip:hover {
-            border-color: #666;
-            color: #fff;
-        }
-
-        .category-chip[aria-pressed="true"] {
-            background: rgba(217, 44, 38, 0.2);
-            border-color: rgba(217, 44, 38, 0.6);
-            color: #fff;
-        }
-
-        .category-chip:focus-visible {
-            outline: 2px solid #2c5aa0;
-            outline-offset: 2px;
-        }
-    </style>
+    <meta property="og:title" content="Microbot Plugins">
+    <meta property="og:image" content="https://www.themicrobot.com/images/general/logo.png">
+    <meta name="theme-color" content="#0c0a08">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Montserrat:wght@400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="./microbot/mb-theme.css">
+    <link rel="stylesheet" href="./microbot/mb-plugins.css">
 </head>
-<body style="background-color:black !important;" class="ipsApp ipsApp_front ipsClearfix ipsJS_has ipsApp_noTouch"
-      data-controller="core.front.core.app" data-message="" data-pageapp="" data-pagelocation="front" data-pagemodule=""
-      data-pagecontroller="">
+<body>
+<a class="mb-skip" href="#main">Skip to content</a>
+
+<!-- Shared header: keep identical on every page (see SITE_PAGES.md). -->
 <header class="c-header">
-    <!-- Event Start -->
     <div class="c-events-block py-2">
-        <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between gap-2">
-            <div></div>
-            <a href="https://discord.gg/zaGrfqFEWE" target="_blank" rel="noreferrer noopener"
-               class="c-events-block__right d-flex flex-row align-items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24px" class="me-2" viewBox="0 0 71 55"><title>logo
-                    discord</title>
-                    <g fill="none" class="nc-icon-wrapper">
-                        <g clip-path="url(#clip0)">
-                            <path d="M60.105 4.898A58.55 58.55 0 0 0 45.653.415a.22.22 0 0 0-.233.11 40.784 40.784 0 0 0-1.8 3.697c-5.456-.817-10.886-.817-16.23 0-.485-1.164-1.201-2.587-1.828-3.697a.228.228 0 0 0-.233-.11 58.386 58.386 0 0 0-14.451 4.483.207.207 0 0 0-.095.082C1.578 18.73-.944 32.144.293 45.39a.244.244 0 0 0 .093.167c6.073 4.46 11.955 7.167 17.729 8.962a.23.23 0 0 0 .249-.082 42.08 42.08 0 0 0 3.627-5.9.225.225 0 0 0-.123-.312 38.772 38.772 0 0 1-5.539-2.64.228.228 0 0 1-.022-.378c.372-.279.744-.569 1.1-.862a.22.22 0 0 1 .23-.03c11.619 5.304 24.198 5.304 35.68 0a.219.219 0 0 1 .233.027c.356.293.728.586 1.103.865a.228.228 0 0 1-.02.378 36.384 36.384 0 0 1-5.54 2.637.227.227 0 0 0-.121.315 47.249 47.249 0 0 0 3.624 5.897.225.225 0 0 0 .249.084c5.801-1.794 11.684-4.502 17.757-8.961a.228.228 0 0 0 .092-.164c1.48-15.315-2.48-28.618-10.497-40.412a.18.18 0 0 0-.093-.084zm-36.38 32.427c-3.497 0-6.38-3.211-6.38-7.156 0-3.944 2.827-7.156 6.38-7.156 3.583 0 6.438 3.24 6.382 7.156 0 3.945-2.827 7.156-6.381 7.156zm23.593 0c-3.498 0-6.38-3.211-6.38-7.156 0-3.944 2.826-7.156 6.38-7.156 3.582 0 6.437 3.24 6.38 7.156 0 3.945-2.798 7.156-6.38 7.156z"
-                                  fill="currentColor"></path>
-                        </g>
-                        <defs>
-                            <clippath id="clip0">
-                                <path fill="currentColor" d="M0 0h71v55H0z"></path>
-                            </clippath>
-                        </defs>
-                    </g>
-                </svg>
-                <p class="mb-0">Join us on Discord</p>
+        <div class="container">
+            <span class="mb-event" id="mb-event"></span>
+            <a href="https://discord.gg/zaGrfqFEWE" target="_blank" rel="noreferrer noopener">
+                <svg viewBox="0 0 71 55" aria-hidden="true"><path fill="currentColor" d="M60.1 4.9A58.5 58.5 0 0 0 45.6.4l-.2.1a40.8 40.8 0 0 0-1.8 3.7 54 54 0 0 0-16.2 0A37.3 37.3 0 0 0 25.6.5L25.4.4A58.4 58.4 0 0 0 10.9 4.9l-.1.1C1.6 18.7-1 32.1.3 45.4l.1.2a58.7 58.7 0 0 0 17.7 9h.3a42 42 0 0 0 3.6-5.9l-.1-.3a38.8 38.8 0 0 1-5.5-2.6l-.1-.4 1.1-.9.2-.1a41.9 41.9 0 0 0 35.7 0h.2l1.1.9v.4a36.4 36.4 0 0 1-5.5 2.6l-.1.3a47.2 47.2 0 0 0 3.6 5.9h.3a58.5 58.5 0 0 0 17.7-9l.1-.2C72.6 30 68.6 16.7 60.1 5zM23.7 37.3c-3.5 0-6.4-3.2-6.4-7.1 0-4 2.8-7.2 6.4-7.2 3.6 0 6.4 3.2 6.4 7.2 0 3.9-2.8 7.1-6.4 7.1zm23.6 0c-3.5 0-6.4-3.2-6.4-7.1 0-4 2.8-7.2 6.4-7.2 3.6 0 6.4 3.2 6.4 7.2 0 3.9-2.8 7.1-6.4 7.1z"/></svg>
+                Join us on Discord
             </a>
         </div>
     </div>
     <div class="c-border-red mb-2"></div>
-    <!-- Event End -->      <!-- Navigation Start -->
-    <nav class="c-nav navbar navbar-expand-sm py-2" style="flex-wrap:nowrap;justify-content: flex-start">
-        <div class="container align-items-stretch">
-            <a class="navbar-brand me-0 me-lg-3 me-xl-5" href="index.html">
-                <img src="./microbot/logo.png" class="c-nav__logo" loading="lazy" alt="logo">
+    <nav class="c-nav" aria-label="Site">
+        <div class="container">
+            <a class="mb-brand" href="index.html" aria-label="Microbot home">
+                <img src="./microbot/logo.png" alt="" width="44" height="44">
+                <span class="mb-brand__text"><span class="mb-brand__name">Microbot</span><span class="mb-brand__tag">Old School client</span></span>
             </a>
-            <div class="p-3 p-xl-0" style="line-height: 2rem;width: 100%;" id="navbarMenu">
-                <ul class="navbar-nav me-auto text-center text-xl-left gap-3 gap-xl-4">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://www.github.com/chsami/microbot" target="_blank">Github</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://discord.gg/zaGrfqFEWE" target="_blank">Discord</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://chatgpt.com/g/g-LM0fGeeXB-microbot-documentation"
-                           target="_blank">ChatGPT</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://paypal.me/MicrobotBE?country.x=BE" target="_blank">Donate</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="releases.html">Releases</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="plugins.html">Plugins</a>
-                    </li>
-                </ul>
-            </div>
-
-            <ul id="elMobileNav"
-                class="ipsList_inline ipsResponsive_hideDesktop ipsResponsive_block my-auto d-flex gx-2"
-                data-controller="core.front.core.mobileNav" data-default="all">
-
-                <li class="navbar-toggler my-auto py-3 position-relative" data-ipsdrawer=""
-                    data-ipsdrawer-drawerelem="#elMobileDrawer">
-                    <a href="#">
-                        <i class="fa fa-navicon"></i>
-                    </a>
-                </li>
+            <button class="mb-menu" type="button" aria-expanded="false" aria-controls="mb-nav">Menu</button>
+            <ul class="mb-nav" id="mb-nav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="plugins.html" aria-current="page">Plugins</a></li>
+                <li><a href="releases.html">Releases<span id="releases-badge" class="new-badge" hidden>NEW</span></a></li>
+                <li><a href="https://www.github.com/chsami/microbot" target="_blank" rel="noopener">GitHub</a></li>
+                <li><a href="https://discord.gg/zaGrfqFEWE" target="_blank" rel="noopener">Discord</a></li>
+                <li><a href="https://paypal.me/MicrobotBE?country.x=BE" target="_blank" rel="noopener">Donate</a></li>
             </ul>
         </div>
     </nav>
-    <!-- Navigation End -->
 </header>
 
-<main>
-    <div class="plugins-container" style="margin-top: 100px;">
-        <div class="plugins-header">
-            <h1 class="display-2 text-uppercase">Microbot Plugins</h1>
-            <p>Extend your Microbot experience with community-developed plugins</p>
+<main id="main">
+    <section class="mb-pagehead">
+        <div class="container">
+            <span class="mb-eyebrow">Plugin Hub</span>
+            <h1 class="mb-pagehead__title">Plugins</h1>
+            <p class="mb-lead">Community plugins for the Microbot client. Install any of them from the <b>Plugin Hub</b> tab in the client.</p>
 
-            <div class="search-container">
-                <div class="search-bar">
-                    <input type="text" id="pluginSearch" class="search-input" placeholder="Search plugins by name, author, or tags...">
-                </div>
+            <div class="mb-filters">
+                <label class="mb-search">
+                    <span class="visually-hidden">Search plugins</span>
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="m21 21-4.3-4.3M10.5 18a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15z"/></svg>
+                    <input type="search" id="pluginSearch" placeholder="Search by name, author or tag" autocomplete="off" disabled>
+                </label>
+                <div class="mb-cats" id="categoryFilters" role="group" aria-label="Filter by category"></div>
             </div>
-
-            <div class="category-filters" id="categoryFilters" role="group" aria-label="Filter plugins by category"></div>
-
-            <div class="plugins-count" id="pluginsCount">Loading plugins...</div>
+            <p class="mb-count" id="pluginsCount" role="status">Loading plugins...</p>
         </div>
+    </section>
 
-        <div id="pluginsContainer" class="plugins-grid">
-            <div class="loading">
-                <i class="fa fa-spinner fa-spin"></i> Loading plugins...
-            </div>
+    <section class="mb-section mb-section--tight">
+        <div class="container">
+            <ul class="mb-grid" id="pluginsContainer" aria-busy="true">
+                <li class="mb-card mb-skel"></li><li class="mb-card mb-skel"></li><li class="mb-card mb-skel"></li>
+                <li class="mb-card mb-skel"></li><li class="mb-card mb-skel"></li><li class="mb-card mb-skel"></li>
+            </ul>
         </div>
-    </div>
+    </section>
 </main>
 
+<footer class="mb-footer">
+    <div class="container">
+        <div class="mb-footer__row">
+            <a class="mb-brand" href="index.html" aria-label="Microbot home">
+                <img src="./microbot/logo.png" alt="" width="44" height="44">
+                <span class="mb-brand__text"><span class="mb-brand__name">Microbot</span><span class="mb-brand__tag">Old School client</span></span>
+            </a>
+            <ul class="mb-footer__links">
+                <li><a href="plugins.html">Plugins</a></li>
+                <li><a href="releases.html">Releases</a></li>
+                <li><a href="https://github.com/chsami/microbot" target="_blank" rel="noopener">GitHub</a></li>
+                <li><a href="https://discord.gg/zaGrfqFEWE" target="_blank" rel="noopener">Discord</a></li>
+                <li><a href="https://chatgpt.com/g/g-LM0fGeeXB-microbot-documentation" target="_blank" rel="noopener">Docs assistant</a></li>
+            </ul>
+        </div>
+        <p class="mb-footer__legal">Microbot &copy; 2024. All rights reserved. <a href="privacy.html">Privacy policy</a> &middot; <a href="terms.html">Terms of service</a>.</p>
+    </div>
+</footer>
+
+<div id="cookie-banner" class="cookie-banner" role="region" aria-label="Cookies">
+    <p>We use cookies to understand how the site is used, including Google Analytics. More in our <a href="privacy.html">privacy policy</a>.</p>
+    <button id="accept-cookies" class="mb-btn mb-btn--gold mb-btn--small" type="button">Accept</button>
+    <button id="decline-cookies" class="mb-btn mb-btn--line mb-btn--small" type="button">Decline</button>
+</div>
+
+<script src="./microbot/mb-site.js"></script>
 <script>
-document.addEventListener("DOMContentLoaded", function() {
-    document.getElementById('pluginSearch')?.focus();
-    fetchPlugins();
-});
+(function () {
+    const HUB = 'https://chsami.github.io/Microbot-Hub/';
+    const CATEGORIES = [
+        { id: 'combat', label: 'Combat', tags: ['combat', 'pvm', 'pvp', 'boss', 'bossing', 'slayer', 'zulrah', 'vorkath', 'jad', 'fight', 'fight caves', 'revenant killer', 'wilderness', 'kill', 'sandcrab', 'crabs', 'demonic'] },
+        { id: 'fishing', label: 'Fishing', tags: ['fishing', 'fish', 'fishing trawler', 'aerial', 'aerial fishing', 'barbarian', 'barb', 'minnows', 'eel', 'fly', 'karambwan'] },
+        { id: 'woodcutting', label: 'Woodcutting', tags: ['woodcutting', 'woodcut', 'woodcutter'] },
+        { id: 'mining', label: 'Mining', tags: ['mining', 'mine', 'ore', 'motherlode', 'mlm', 'mining guild'] },
+        { id: 'minigames', label: 'Minigames', tags: ['minigame', 'minigames', 'gotr', 'guardians of the rift', 'wintertodt', 'tempoross', 'pest control', 'barrows', 'tob', 'theatre', 'raids', 'colosseum', 'fortis', 'mta', 'nmz', 'tol', 'tears of guthix', 'royal titans', 'gauntlet', 'doom of mokhaiotl', 'mokha', 'zmi'] },
+        { id: 'money-making', label: 'Money making', tags: ['money making', 'moneymaking', 'mm', 'ge', 'grand exchange', 'flip', 'flipping', 'buy', 'buyer', 'money', 'shopper', 'seller'] },
+        { id: 'skilling', label: 'Skilling', tags: ['skilling', 'skills', 'smithing', 'cooking', 'firemaking', 'crafting', 'fletching', 'herblore', 'runecraft', 'runecrafting', 'farming', 'construction', 'agility', 'thieving', 'tanning'] }
+    ];
+    const selected = new Set();
+    let all = [], installs = {};
+    const $ = id => document.getElementById(id);
 
-let allPlugins = []; // Store all plugins for searching
-let pluginInstallsMap = {}; // Store plugin install counts by name
-
-const PLUGIN_CATEGORIES = [
-    { id: 'combat', label: 'Combat', tags: ['combat', 'pvm', 'pvp', 'boss', 'bossing', 'slayer', 'zulrah', 'vorkath', 'jad', 'fight', 'fight caves', 'revenant killer', 'wilderness', 'kill', 'sandcrab', 'crabs', 'demonic'] },
-    { id: 'fishing', label: 'Fishing', tags: ['fishing', 'fish', 'fishing trawler', 'aerial', 'aerial fishing', 'barbarian', 'barb', 'minnows', 'eel', 'fly', 'karambwan'] },
-    { id: 'woodcutting', label: 'Woodcutting', tags: ['woodcutting', 'woodcut', 'woodcutter'] },
-    { id: 'mining', label: 'Mining', tags: ['mining', 'mine', 'ore', 'motherlode', 'mlm', 'mining guild'] },
-    { id: 'minigames', label: 'Minigames', tags: ['minigame', 'minigames', 'gotr', 'guardians of the rift', 'wintertodt', 'tempoross', 'pest control', 'barrows', 'tob', 'theatre', 'raids', 'colosseum', 'fortis', 'mta', 'nmz', 'tol', 'tears of guthix', 'royal titans', 'gauntlet', 'doom of mokhaiotl', 'mokha', 'zmi'] },
-    { id: 'money-making', label: 'Money Making', tags: ['money making', 'moneymaking', 'mm', 'ge', 'grand exchange', 'flip', 'flipping', 'buy', 'buyer', 'money', 'shopper', 'seller'] },
-    { id: 'skilling', label: 'Skilling', tags: ['skilling', 'skills', 'smithing', 'cooking', 'firemaking', 'crafting', 'fletching', 'herblore', 'runecraft', 'runecrafting', 'farming', 'construction', 'agility', 'thieving', 'tanning'] }
-];
-const selectedCategories = new Set();
-
-function categoriesFor(plugin) {
-    const tags = (plugin.tags || []).map(tag => tag.toLowerCase().trim());
-    const name = ` ${plugin.name.toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim()} `;
-    return PLUGIN_CATEGORIES
-        .filter(category => tags.some(tag => category.tags.includes(tag))
-            || category.tags.some(keyword => name.includes(` ${keyword} `)))
-        .map(category => category.id);
-}
-
-function renderCategoryFilters() {
-    const container = document.getElementById('categoryFilters');
-    if (container.childElementCount > 0) {
-        updateCategoryChips();
-        return;
+    function categoriesFor(p) {
+        const tags = (p.tags || []).map(t => t.toLowerCase().trim());
+        const name = ` ${p.name.toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim()} `;
+        return CATEGORIES.filter(c => tags.some(t => c.tags.includes(t)) || c.tags.some(k => name.includes(` ${k} `))).map(c => c.id);
     }
 
-    const addChip = (label, categoryId, onClick) => {
-        const chip = document.createElement('button');
-        chip.type = 'button';
-        chip.className = 'category-chip';
-        chip.dataset.category = categoryId;
-        chip.textContent = label;
-        chip.addEventListener('click', onClick);
-        container.appendChild(chip);
-    };
-
-    addChip('All', '', () => {
-        selectedCategories.clear();
-        updateCategoryChips();
-        performSearch();
-    });
-
-    for (const category of PLUGIN_CATEGORIES) {
-        addChip(category.label, category.id, () => {
-            if (selectedCategories.has(category.id)) {
-                selectedCategories.delete(category.id);
-            } else {
-                selectedCategories.add(category.id);
-            }
-            updateCategoryChips();
-            performSearch();
-        });
+    function chips() {
+        const box = $('categoryFilters');
+        const add = (label, id) => {
+            const b = MB.el('button', 'mb-cat', label);
+            b.type = 'button';
+            b.dataset.category = id;
+            b.addEventListener('click', () => {
+                if (!id) selected.clear(); else if (selected.has(id)) selected.delete(id); else selected.add(id);
+                sync(); render();
+            });
+            box.append(b);
+        };
+        add('All', '');
+        CATEGORIES.forEach(c => add(c.label, c.id));
+        sync();
+    }
+    function sync() {
+        document.querySelectorAll('.mb-cat').forEach(b => b.setAttribute('aria-pressed',
+            String(b.dataset.category === '' ? selected.size === 0 : selected.has(b.dataset.category))));
     }
 
-    updateCategoryChips();
-}
-
-function updateCategoryChips() {
-    const chips = document.querySelectorAll('#categoryFilters .category-chip');
-    for (const chip of chips) {
-        const pressed = chip.dataset.category === ''
-            ? selectedCategories.size === 0
-            : selectedCategories.has(chip.dataset.category);
-        chip.setAttribute('aria-pressed', String(pressed));
+    function matches(p, q) {
+        if (selected.size && !categoriesFor(p).some(id => selected.has(id))) return false;
+        if (!q) return true;
+        return p.name.toLowerCase().includes(q) || (p.description || '').toLowerCase().includes(q)
+            || (p.authors || []).some(a => a.toLowerCase().includes(q)) || (p.tags || []).some(t => t.toLowerCase().includes(q));
     }
-}
 
-async function getPluginTotalInstalls(pluginNames) {
-    try {
-        const response = await fetch('https://microbot.cloud/api/PluginTelemetry/plugins-total-installs', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ PluginNames: pluginNames })
-        });
-        if (!response.ok) return {};
-        const result = await response.json();
-        // result is an array of { PluginName, TotalInstalls }
-        const map = {};
-        for (const dto of result) {
-            map[dto.pluginName] = dto.totalInstalls;
+    function card(p) {
+        const li = MB.el('li');
+        const a = MB.el('a', 'mb-card mb-plugin');
+        a.href = HUB + encodeURIComponent(p.internalName);
+        const art = MB.el('span', 'mb-plugin__art');
+        const img = MB.el('img');
+        img.alt = ''; img.loading = 'lazy';
+        img.src = p.cardUrl || 'microbot/logo.png';
+        if (!p.cardUrl) art.classList.add('mb-plugin__art--none');
+        img.onerror = () => { img.onerror = null; img.src = 'microbot/logo.png'; art.classList.add('mb-plugin__art--none'); };
+        art.append(img);
+        const body = MB.el('span', 'mb-plugin__body');
+        body.append(MB.el('span', 'mb-plugin__name', p.name.trim()),
+            MB.el('span', 'mb-plugin__by', 'by ' + ((p.authors || []).join(', ') || 'Unknown')),
+            MB.el('span', 'mb-plugin__desc', p.description || ''));
+        const tags = MB.el('span', 'mb-plugin__tags');
+        (p.tags || []).slice(0, 4).forEach(t => tags.append(MB.el('span', 'mb-chip', t)));
+        body.append(tags);
+        const foot = MB.el('span', 'mb-plugin__foot');
+        foot.append(MB.el('span', 'mb-plugin__ver', 'v' + p.version));
+        const n = installs[p.internalName];
+        if (n) foot.append(MB.el('span', 'mb-plugin__installs', n.toLocaleString('en-US') + ' installs'));
+        body.append(foot);
+        a.append(art, body);
+        li.append(a);
+        return li;
+    }
+
+    function render() {
+        const q = $('pluginSearch').value.toLowerCase().trim();
+        const list = all.filter(p => matches(p, q));
+        const grid = $('pluginsContainer');
+        grid.replaceChildren(...list.map(card));
+        grid.setAttribute('aria-busy', 'false');
+        $('pluginsCount').textContent = list.length === all.length
+            ? `${all.length} plugins` : `${list.length} of ${all.length} plugins`;
+        if (!list.length) grid.append(MB.el('li', 'mb-empty', 'No plugins match. Try another word or clear the categories.'));
+    }
+
+    async function load() {
+        try {
+            const r = await fetch(HUB + 'plugins.json');
+            if (!r.ok) throw new Error('HTTP ' + r.status);
+            all = (await r.json()).filter(p => !p.disable);
+            try {
+                const ir = await fetch('https://microbot.cloud/api/PluginTelemetry/plugins-total-installs', {
+                    method: 'POST', headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({PluginNames: all.map(p => p.internalName)})
+                });
+                if (ir.ok) for (const d of await ir.json()) installs[d.pluginName] = d.totalInstalls;
+            } catch (e) { /* install counts are a nice-to-have */ }
+            all.sort((a, b) => (installs[b.internalName] || 0) - (installs[a.internalName] || 0) || a.name.localeCompare(b.name));
+            chips();
+            const s = $('pluginSearch');
+            s.disabled = false;
+            s.addEventListener('input', render);
+            render();
+        } catch (e) {
+            console.error('Error fetching plugins:', e);
+            $('pluginsContainer').replaceChildren(MB.el('li', 'mb-empty', 'Could not load the plugin list. Please try again later.'));
+            $('pluginsCount').textContent = 'Plugins unavailable';
         }
-        return map;
-    } catch (err) {
-        console.error('Telemetry error:', err);
-        return {};
     }
-}
-
-function setSearchEnabled(enabled) {
-    const searchInput = document.getElementById('pluginSearch');
-    if (searchInput) {
-        searchInput.disabled = !enabled;
-        searchInput.style.opacity = enabled ? '1' : '0.5';
-        searchInput.style.cursor = enabled ? 'text' : 'not-allowed';
-    }
-}
-
-async function fetchPlugins() {
-    const pluginsContainer = document.getElementById('pluginsContainer');
-    const pluginsCount = document.getElementById('pluginsCount');
-
-    setSearchEnabled(false); // Disable search while loading
-
-    try {
-        const response = await fetch('https://chsami.github.io/Microbot-Hub/plugins.json');
-
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-
-        // Get all plugins and filter out disabled ones
-        const plugins = await response.json();
-        allPlugins = plugins.filter(plugin => !plugin.disable);
-
-        // Get plugin install counts
-        pluginInstallsMap = await getPluginTotalInstalls(allPlugins.map(p => p.internalName));
-
-        // Order plugins by totalInstalls descending
-        allPlugins.sort((a, b) => (pluginInstallsMap[b.internalName] || 0) - (pluginInstallsMap[a.internalName] || 0));
-
-        // Create count-up animation for plugins count
-        animatePluginCount(allPlugins.length);
-
-        // Display all plugins initially
-        displayPlugins(allPlugins);
-
-        // Set up search functionality
-        setupSearch();
-        renderCategoryFilters();
-        setSearchEnabled(true); // Enable search after loading
-
-    } catch (error) {
-        console.error('Error fetching plugins:', error);
-        pluginsContainer.innerHTML = `
-            <div class="error">
-                <i class="fa fa-exclamation-triangle"></i>
-                Failed to load plugins. Please try again later.
-            </div>
-        `;
-        pluginsCount.textContent = 'Error loading plugins';
-        setSearchEnabled(false); // Keep search disabled on error
-    }
-}
-
-function animatePluginCount(total) {
-    const pluginsCount = document.getElementById('pluginsCount');
-    let current = 0;
-    const duration = 1500; // Animation duration in milliseconds
-    const step = Math.ceil(total / (duration / 50)); // Update every 50ms
-
-    // Clear any existing text first
-    pluginsCount.innerHTML = '<span class="count-number">0</span> plugins available';
-
-    const countSpan = pluginsCount.querySelector('.count-number');
-
-    const interval = setInterval(() => {
-        current += step;
-        if (current >= total) {
-            clearInterval(interval);
-            current = total;
-
-            // Add a highlight animation once counting is complete
-            setTimeout(() => {
-                countSpan.classList.add('highlight-count');
-            }, 1000);
-        }
-        countSpan.textContent = current;
-    }, 50);
-}
-
-function displayPlugins(plugins) {
-    const pluginsContainer = document.getElementById('pluginsContainer');
-    const pluginsCount = document.getElementById('pluginsCount');
-
-    // Update count for search results
-    pluginsCount.innerHTML = `<span class="count-number">${plugins.length}</span> of ${allPlugins.length} plugins found`;
-
-    // Clear container
-    pluginsContainer.innerHTML = '';
-
-    if (plugins.length === 0) {
-        pluginsContainer.innerHTML = `
-            <div class="error">
-                <i class="fa fa-search"></i>
-                No plugins match your search criteria.
-            </div>
-        `;
-        return;
-    }
-
-    // Create a row container for every set of 3 cards
-    for (let i = 0; i < plugins.length; i += 3) {
-        const rowContainer = document.createElement('div');
-        rowContainer.className = 'plugins-grid-row';
-
-        // Add up to 3 cards per row
-        for (let j = i; j < i + 3 && j < plugins.length; j++) {
-            const pluginCard = createPluginCard(plugins[j], pluginInstallsMap[plugins[j].internalName] || 0);
-            rowContainer.appendChild(pluginCard);
-        }
-
-        pluginsContainer.appendChild(rowContainer);
-    }
-}
-
-function setupSearch() {
-    const searchInput = document.getElementById('pluginSearch');
-
-    // Search when Enter key is pressed
-    searchInput.addEventListener('keypress', function(e) {
-        if (e.key === 'Enter') {
-            performSearch();
-        }
-    });
-
-    // Real-time search as user types (optional, can be removed if preferred)
-    searchInput.addEventListener('input', performSearch);
-}
-
-function performSearch() {
-    const searchTerm = document.getElementById('pluginSearch').value.toLowerCase().trim();
-
-    const filtered = allPlugins.filter(plugin => matchesCategory(plugin) && matchesSearch(plugin, searchTerm));
-
-    displayPlugins(filtered);
-}
-
-function matchesCategory(plugin) {
-    if (selectedCategories.size === 0) return true;
-    return categoriesFor(plugin).some(id => selectedCategories.has(id));
-}
-
-function matchesSearch(plugin, searchTerm) {
-    if (searchTerm === '') return true;
-
-    if (plugin.name.toLowerCase().includes(searchTerm)) return true;
-
-    if (plugin.authors && plugin.authors.some(author => author.toLowerCase().includes(searchTerm))) return true;
-
-    if (plugin.description.toLowerCase().includes(searchTerm)) return true;
-
-    if (plugin.tags && plugin.tags.some(tag => tag.toLowerCase().includes(searchTerm))) return true;
-
-    return false;
-}
-
-function createPluginCard(plugin, totalInstalls) {
-    const card = document.createElement('a');
-    card.className = 'plugin-card';
-    card.href = `https://chsami.github.io/Microbot-Hub/${plugin.internalName}`;
-    card.target = '_blank';
-    card.rel = 'noopener noreferrer';
-
-    // Create tags HTML
-    const tagsHtml = plugin.tags.map(tag => `<span class="plugin-tag">${tag}</span>`).join('');
-
-    // Create authors string from array
-    const authorsText = plugin.authors ? plugin.authors.join(', ') : '';
-
-    card.innerHTML = `
-        <div class="plugin-image-container">
-            <img src="${plugin.cardUrl}" alt="${plugin.name} icon" class="plugin-icon" onerror="this.onerror=null;this.src='images/general/logo.png';this.classList.add('plugin-icon--fallback')">
-        </div>
-
-        <div class="plugin-content">
-            <div class="plugin-header">
-                <h3 class="plugin-title">${plugin.name}</h3>
-                <div class="plugin-author">by ${authorsText}</div>
-            </div>
-
-            <div class="plugin-tags">
-                ${tagsHtml}
-            </div>
-
-            <p class="plugin-description">${plugin.description}</p>
-
-            <div class="plugin-meta">
-                <div>
-                    <span class="plugin-version">v${plugin.version}</span>
-                    <span class="plugin-installs" style="margin-left:8px;color:#ffd700;font-size:0.85em;">&#x1F4E6; ${totalInstalls} installs</span>
-                </div>
-                <div class="plugin-min-version">Min Client: ${plugin.minClientVersion}</div>
-            </div>
-        </div>
-    `;
-
-    return card;
-}
+    document.addEventListener('DOMContentLoaded', load);
+})();
 </script>
-
 </body>
 </html>

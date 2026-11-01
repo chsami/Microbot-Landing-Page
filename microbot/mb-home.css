@@ -1,0 +1,102 @@
+/* Home page only. Shared parts live in mb-theme.css. */
+
+/* Hero. The launcher sets min-height 600px on this section; the layout centres in whatever height it gets. */
+.mb .c-main-header {
+  position: relative; display: flex; align-items: center; min-height: clamp(520px, 72vh, 760px); padding: 56px 0;
+  background:
+    radial-gradient(900px 420px at 78% 30%, rgba(255, 177, 59, .12), transparent 70%),
+    radial-gradient(700px 500px at 10% 100%, rgba(194, 35, 31, .08), transparent 70%),
+    var(--bg);
+  border-bottom: 1px solid var(--line);
+  overflow: hidden;
+}
+.mb .mb-hero { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); gap: 48px; align-items: center; }
+.mb .mb-hero__title { margin-top: 18px; font-size: clamp(36px, 5.2vw, 64px); font-weight: 800; letter-spacing: -.02em; line-height: 1.05; }
+.mb .mb-hero__lead { margin-top: 18px; max-width: 46ch; color: var(--muted); font-size: clamp(16px, 1.6vw, 19px); }
+.mb .mb-download { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 32px; }
+.mb .mb-download__alt { margin-top: 12px; font-size: 14px; color: var(--muted); }
+.mb .mb-hero__stat { margin-top: 32px; font-size: 14px; color: var(--muted); }
+.mb .mb-hero__stat strong { color: var(--text-strong); font-variant-numeric: tabular-nums; }
+
+/* In the launcher: no download (it is already installed), a way into the plugins instead. */
+.mb .mb-launcher-cta { display: none; }
+.mb.mb-in-launcher .mb-download, .mb.mb-in-launcher .mb-download__alt { display: none; }
+.mb.mb-in-launcher .mb-launcher-cta { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-top: 28px; }
+.mb .mb-launcher-cta__thanks { flex-basis: 100%; color: var(--gold-soft); font-weight: 600; }
+
+.mb .mb-hero__art { position: relative; aspect-ratio: 5 / 4; }
+.mb .mb-hero__shot { position: absolute; width: 78%; border-radius: var(--radius); border: 1px solid var(--line-strong); box-shadow: 0 24px 60px rgba(0, 0, 0, .6); object-fit: cover; aspect-ratio: 16 / 10; }
+.mb .mb-hero__shot--back { top: 0; right: 0; opacity: .55; }
+.mb .mb-hero__shot--front { bottom: 0; left: 0; outline: 1px solid rgba(255, 177, 59, .25); outline-offset: -1px; }
+
+/* Why strip */
+.mb .mb-why { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 28px; margin: 0; padding: 0; list-style: none; }
+.mb .mb-section--alt:has(.mb-why) { padding: 40px 0; }
+.mb .mb-why li { display: flex; flex-direction: column; gap: 6px; padding-left: 16px; border-left: 2px solid var(--gold); }
+.mb .mb-why strong { color: var(--text-strong); font-size: 16px; }
+.mb .mb-why span { color: var(--muted); font-size: 14px; }
+
+/* Latest release (filled from release.js) */
+.mb .mb-latest-section { padding-bottom: 0; }
+.mb .mb-latest { display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 32px; align-items: center; max-width: 960px; margin: 0 auto; padding: 32px;
+  background: radial-gradient(120% 140% at 0% 0%, rgba(255, 177, 59, .10), transparent 55%), var(--surface); color: var(--text); }
+.mb .mb-latest:hover { color: var(--text); }
+.mb .mb-latest__version { display: flex; flex-direction: column; align-items: flex-start; gap: 14px; color: var(--gold); font-size: 56px; font-weight: 800; line-height: 1; }
+.mb .mb-latest__version img { width: 64px; }
+.mb .mb-latest__date { margin-top: 8px; color: var(--muted); font-size: 13px; font-weight: 600; letter-spacing: .04em; }
+.mb .mb-latest__title { margin-top: 10px; font-size: 26px; }
+.mb .mb-latest__summary { margin-top: 10px; color: var(--muted); }
+.mb .mb-latest__more { display: inline-block; margin-top: 16px; color: var(--gold); font-size: 13px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+.mb .mb-latest__all { display: block; max-width: 960px; margin: 14px auto 0; text-align: right; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+.mb .mb-latest__all:hover { color: var(--gold); }
+
+/* Featured plugins */
+.mb .mb-features { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; margin: 0; padding: 0; list-style: none; }
+.mb .mb-feature { overflow: hidden; display: flex; flex-direction: column; }
+.mb .mb-feature img { display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; border-bottom: 1px solid var(--line); }
+.mb .mb-feature div { padding: 14px 16px 18px; }
+.mb .mb-feature h3 { font-size: 16px; }
+.mb .mb-feature p { margin-top: 6px; color: var(--muted); font-size: 14px; line-height: 1.5; }
+
+/* Most installed */
+.mb .mb-top { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin: 0; padding: 0; list-style: none; }
+.mb .mb-top__item { display: flex; align-items: center; gap: 16px; padding: 14px 18px; }
+.mb .mb-top__rank { flex: none; width: 34px; height: 34px; display: grid; place-items: center; border-radius: 50%; background: var(--surface-3); color: var(--gold); font-weight: 800; }
+.mb li:first-child .mb-top__rank { background: var(--gold); color: var(--on-gold); }
+.mb .mb-top__body { min-width: 0; flex: 1; display: flex; flex-direction: column; }
+.mb .mb-top__name { color: var(--text-strong); font-weight: 700; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.mb .mb-top__meta { color: var(--muted); font-size: 13px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.mb .mb-top__count { flex: none; display: flex; flex-direction: column; align-items: flex-end; line-height: 1.2; }
+.mb .mb-top__count strong { color: var(--text-strong); font-variant-numeric: tabular-nums; }
+.mb .mb-top__count span { color: var(--faint); font-size: 12px; }
+
+/* Discord */
+.mb .mb-discord { display: grid; grid-template-columns: minmax(0, 1fr) 350px; gap: 48px; align-items: center; }
+.mb .mb-discord__widget { width: 100%; max-width: 350px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
+
+/* The launcher's webview is 500-880px wide: one column well before that. */
+@media (max-width: 980px) {
+  .mb .mb-features { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .mb .mb-why { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 900px) {
+  .mb .mb-hero { gap: 28px; }
+  .mb .mb-top { grid-template-columns: 1fr; }
+  .mb .mb-discord { grid-template-columns: 1fr; }
+}
+@media (max-width: 760px) {
+  .mb .mb-hero { grid-template-columns: 1fr; }
+  .mb .mb-latest { grid-template-columns: 1fr; gap: 12px; padding: 24px; }
+  .mb .mb-latest__version { flex-direction: row; align-items: center; font-size: 42px; }
+  .mb .mb-latest__version img { width: 46px; }
+  .mb .mb-latest__title { font-size: 21px; }
+  .mb .mb-hero__art { display: none; }
+}
+@media (max-width: 680px) {
+  .mb .mb-features { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .mb .mb-section { padding: 52px 0; }
+  .mb .mb-download .mb-btn--gold { flex-basis: 100%; }
+}
+@media (max-width: 420px) {
+  .mb .mb-features, .mb .mb-why { grid-template-columns: 1fr; }
+}

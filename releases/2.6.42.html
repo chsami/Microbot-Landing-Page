@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="mb">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Microbot 2.6.42 release notes</title>
@@ -17,88 +17,42 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Microbot 2.6.42 release notes">
     <meta name="twitter:description" content="Microbot 2.6.42: report a problem from inside the client and hear back when it's fixed, plus more reliable login, world hopping and breaks, Quest Helper fixes and Clue Solver 1.0.10.">
-    <meta name="theme-color" content="#0e0e0e">
-    <link rel="stylesheet" href="../microbot/app.min.css" media="all">
-    <link rel="stylesheet" href="../microbot/341e4a57816af3ba440d891ca87450ff_framework.css.c1bcd9467a7eeb9006567801face652d.css" media="all">
-    <link rel="stylesheet" href="../microbot/20446cf2d164adcc029377cb04d43d17_flags.css.be60c469fe9d673f833faaa74a81e375.css" media="all">
-    <link rel="stylesheet" href="../microbot/90eb5adf50a8c640f633d47fd7eb1778_core.css.730a336650d62c3b59570edc9065b630.css" media="all">
-    <link rel="stylesheet" href="../microbot/5a0da001ccc2200dc5625c3f3934497d_core_responsive.css.1d08c9ed37ed1cae43d3985a3b2316ad.css" media="all">
+    <link rel="stylesheet" href="../microbot/mb-theme.css">
     <link rel="stylesheet" href="../microbot/releases/releases.css">
+    <meta name="theme-color" content="#0c0a08">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Montserrat:wght@400;500;600;700;800&display=swap">
 </head>
-<body style="background-color:black !important;" class="rn-page ipsApp ipsApp_front ipsClearfix ipsJS_has ipsApp_noTouch">
+<body class="rn-page">
 <header class="c-header">
-    <!-- Event Start -->
     <div class="c-events-block py-2">
-        <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between gap-2">
-            <div></div>
-            <a href="https://discord.gg/zaGrfqFEWE" target="_blank" rel="noreferrer noopener"
-               class="c-events-block__right d-flex flex-row align-items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24px" class="me-2" viewBox="0 0 71 55"><title>logo
-                    discord</title>
-                    <g fill="none" class="nc-icon-wrapper">
-                        <g clip-path="url(#clip0)">
-                            <path d="M60.105 4.898A58.55 58.55 0 0 0 45.653.415a.22.22 0 0 0-.233.11 40.784 40.784 0 0 0-1.8 3.697c-5.456-.817-10.886-.817-16.23 0-.485-1.164-1.201-2.587-1.828-3.697a.228.228 0 0 0-.233-.11 58.386 58.386 0 0 0-14.451 4.483.207.207 0 0 0-.095.082C1.578 18.73-.944 32.144.293 45.39a.244.244 0 0 0 .093.167c6.073 4.46 11.955 7.167 17.729 8.962a.23.23 0 0 0 .249-.082 42.08 42.08 0 0 0 3.627-5.9.225.225 0 0 0-.123-.312 38.772 38.772 0 0 1-5.539-2.64.228.228 0 0 1-.022-.378c.372-.279.744-.569 1.1-.862a.22.22 0 0 1 .23-.03c11.619 5.304 24.198 5.304 35.68 0a.219.219 0 0 1 .233.027c.356.293.728.586 1.103.865a.228.228 0 0 1-.02.378 36.384 36.384 0 0 1-5.54 2.637.227.227 0 0 0-.121.315 47.249 47.249 0 0 0 3.624 5.897.225.225 0 0 0 .249.084c5.801-1.794 11.684-4.502 17.757-8.961a.228.228 0 0 0 .092-.164c1.48-15.315-2.48-28.618-10.497-40.412a.18.18 0 0 0-.093-.084zm-36.38 32.427c-3.497 0-6.38-3.211-6.38-7.156 0-3.944 2.827-7.156 6.38-7.156 3.583 0 6.438 3.24 6.382 7.156 0 3.945-2.827 7.156-6.381 7.156zm23.593 0c-3.498 0-6.38-3.211-6.38-7.156 0-3.944 2.826-7.156 6.38-7.156 3.582 0 6.437 3.24 6.38 7.156 0 3.945-2.798 7.156-6.38 7.156z"
-                                  fill="currentColor"></path>
-                        </g>
-                        <defs>
-                            <clippath id="clip0">
-                                <path fill="currentColor" d="M0 0h71v55H0z"></path>
-                            </clippath>
-                        </defs>
-                    </g>
-                </svg>
-                <p class="mb-0">Join us on Discord</p>
+        <div class="container">
+            <span class="mb-event" id="mb-event"></span>
+            <a href="https://discord.gg/zaGrfqFEWE" target="_blank" rel="noreferrer noopener">
+                <svg viewBox="0 0 71 55" aria-hidden="true"><path fill="currentColor" d="M60.1 4.9A58.5 58.5 0 0 0 45.6.4l-.2.1a40.8 40.8 0 0 0-1.8 3.7 54 54 0 0 0-16.2 0A37.3 37.3 0 0 0 25.6.5L25.4.4A58.4 58.4 0 0 0 10.9 4.9l-.1.1C1.6 18.7-1 32.1.3 45.4l.1.2a58.7 58.7 0 0 0 17.7 9h.3a42 42 0 0 0 3.6-5.9l-.1-.3a38.8 38.8 0 0 1-5.5-2.6l-.1-.4 1.1-.9.2-.1a41.9 41.9 0 0 0 35.7 0h.2l1.1.9v.4a36.4 36.4 0 0 1-5.5 2.6l-.1.3a47.2 47.2 0 0 0 3.6 5.9h.3a58.5 58.5 0 0 0 17.7-9l.1-.2C72.6 30 68.6 16.7 60.1 5zM23.7 37.3c-3.5 0-6.4-3.2-6.4-7.1 0-4 2.8-7.2 6.4-7.2 3.6 0 6.4 3.2 6.4 7.2 0 3.9-2.8 7.1-6.4 7.1zm23.6 0c-3.5 0-6.4-3.2-6.4-7.1 0-4 2.8-7.2 6.4-7.2 3.6 0 6.4 3.2 6.4 7.2 0 3.9-2.8 7.1-6.4 7.1z"/></svg>
+                Join us on Discord
             </a>
         </div>
     </div>
     <div class="c-border-red mb-2"></div>
-    <!-- Event End -->      <!-- Navigation Start -->
-    <nav class="c-nav navbar navbar-expand-sm py-2" style="flex-wrap:nowrap;justify-content: flex-start">
-        <div class="container align-items-stretch">
-            <a class="navbar-brand me-0 me-lg-3 me-xl-5" href="../index.html">
-                <img src="../microbot/logo.png" class="c-nav__logo" loading="lazy" alt="logo">
+    <nav class="c-nav" aria-label="Site">
+        <div class="container">
+            <a class="mb-brand" href="../index.html" aria-label="Microbot home">
+                <img src="../microbot/logo.png" alt="" width="44" height="44">
+                <span class="mb-brand__text"><span class="mb-brand__name">Microbot</span><span class="mb-brand__tag">Old School client</span></span>
             </a>
-            <div class="p-3 p-xl-0" style="line-height: 2rem;width: 100%;" id="navbarMenu">
-                <ul class="navbar-nav me-auto text-center text-xl-left gap-3 gap-xl-4">
-                    <li class="nav-item">
-                        <a class="nav-link" href="../index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://www.github.com/chsami/microbot" target="_blank">Github</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://discord.gg/zaGrfqFEWE" target="_blank">Discord</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://chatgpt.com/g/g-LM0fGeeXB-microbot-documentation"
-                           target="_blank">ChatGPT</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://paypal.me/MicrobotBE?country.x=BE" target="_blank">Donate</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../releases.html">Releases</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../plugins.html">Plugins</a>
-                    </li>
-                </ul>
-            </div>
-
-            <ul id="elMobileNav"
-                class="ipsList_inline ipsResponsive_hideDesktop ipsResponsive_block my-auto d-flex gx-2"
-                data-controller="core.front.core.mobileNav" data-default="all">
-
-                <li class="navbar-toggler my-auto py-3 position-relative" data-ipsdrawer=""
-                    data-ipsdrawer-drawerelem="#elMobileDrawer">
-                    <a href="#">
-                        <i class="fa fa-navicon"></i>
-                    </a>
-                </li>
+            <button class="mb-menu" type="button" aria-expanded="false" aria-controls="mb-nav">Menu</button>
+            <ul class="mb-nav" id="mb-nav">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../plugins.html">Plugins</a></li>
+                <li><a href="../releases.html" aria-current="page">Releases<span id="releases-badge" class="new-badge" hidden>NEW</span></a></li>
+                <li><a href="https://www.github.com/chsami/microbot" target="_blank" rel="noopener">GitHub</a></li>
+                <li><a href="https://discord.gg/zaGrfqFEWE" target="_blank" rel="noopener">Discord</a></li>
+                <li><a href="https://paypal.me/MicrobotBE?country.x=BE" target="_blank" rel="noopener">Donate</a></li>
             </ul>
         </div>
     </nav>
-    <!-- Navigation End -->
 </header>
 
 <main>
@@ -238,55 +192,22 @@
     </div>
 </main>
 
-<footer class="c-footer pt-5">
+<footer class="mb-footer">
     <div class="container">
-        <div class="row justify-content-center align-items-start g-4">
-            <div class="text-center" style="width:20rem">
-                <img src="../microbot/logo.png" class="c-footer--logo" loading="lazy" alt="footer">
-                <div class="c-content-divider mt-3 mb-3"></div>
-                <ul class="d-flex align-items-center justify-content-center gap-4 m-auto text-center">
-                    <li>
-                        <a href="https://discord.gg/zaGrfqFEWE" target="_blank" rel="noreferrer noopener">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24px" viewBox="0 0 71 55"><title>logo
-                                discord</title>
-                                <g fill="none" class="nc-icon-wrapper">
-                                    <g clip-path="url(#clip0)">
-                                        <path d="M60.105 4.898A58.55 58.55 0 0 0 45.653.415a.22.22 0 0 0-.233.11 40.784 40.784 0 0 0-1.8 3.697c-5.456-.817-10.886-.817-16.23 0-.485-1.164-1.201-2.587-1.828-3.697a.228.228 0 0 0-.233-.11 58.386 58.386 0 0 0-14.451 4.483.207.207 0 0 0-.095.082C1.578 18.73-.944 32.144.293 45.39a.244.244 0 0 0 .093.167c6.073 4.46 11.955 7.167 17.729 8.962a.23.23 0 0 0 .249-.082 42.08 42.08 0 0 0 3.627-5.9.225.225 0 0 0-.123-.312 38.772 38.772 0 0 1-5.539-2.64.228.228 0 0 1-.022-.378c.372-.279.744-.569 1.1-.862a.22.22 0 0 1 .23-.03c11.619 5.304 24.198 5.304 35.68 0a.219.219 0 0 1 .233.027c.356.293.728.586 1.103.865a.228.228 0 0 1-.02.378 36.384 36.384 0 0 1-5.54 2.637.227.227 0 0 0-.121.315 47.249 47.249 0 0 0 3.624 5.897.225.225 0 0 0 .249.084c5.801-1.794 11.684-4.502 17.757-8.961a.228.228 0 0 0 .092-.164c1.48-15.315-2.48-28.618-10.497-40.412a.18.18 0 0 0-.093-.084zm-36.38 32.427c-3.497 0-6.38-3.211-6.38-7.156 0-3.944 2.827-7.156 6.38-7.156 3.583 0 6.438 3.24 6.382 7.156 0 3.945-2.827 7.156-6.381 7.156zm23.593 0c-3.498 0-6.38-3.211-6.38-7.156 0-3.944 2.826-7.156 6.38-7.156 3.582 0 6.437 3.24 6.38 7.156 0 3.945-2.798 7.156-6.38 7.156z"
-                                              fill="currentColor"></path>
-                                    </g>
-                                    <defs>
-                                        <clippath id="clip0">
-                                            <path fill="currentColor" d="M0 0h71v55H0z"></path>
-                                        </clippath>
-                                    </defs>
-                                </g>
-                            </svg>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://github.com/chsami/microbot/releases" target="_blank" rel="noreferrer noopener">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24px" viewBox="0 0 16 16"><title>data
-                                download</title>
-                                <g fill="currentColor" class="nc-icon-wrapper">
-                                    <path d="M14,10a1,1,0,0,0-1,1v2H3V11a1,1,0,0,0-2,0v2a2,2,0,0,0,2,2H13a2,2,0,0,0,2-2V11A1,1,0,0,0,14,10Z"></path>
-                                    <path data-color="color-2"
-                                          d="M7.293,10.707a1,1,0,0,0,1.414,0l4-4a1,1,0,1,0-1.414-1.414L9,7.586V2A1,1,0,0,0,7,2V7.586L4.707,5.293A1,1,0,0,0,3.293,6.707Z"></path>
-                                </g>
-                            </svg>
-                        </a>
-                    </li>
-                </ul>
-            </div>
+        <div class="mb-footer__row">
+            <a class="mb-brand" href="../index.html" aria-label="Microbot home">
+                <img src="../microbot/logo.png" alt="" width="44" height="44">
+                <span class="mb-brand__text"><span class="mb-brand__name">Microbot</span><span class="mb-brand__tag">Old School client</span></span>
+            </a>
+            <ul class="mb-footer__links">
+                <li><a href="../plugins.html">Plugins</a></li>
+                <li><a href="../releases.html">Releases</a></li>
+                <li><a href="https://github.com/chsami/microbot" target="_blank" rel="noopener">GitHub</a></li>
+                <li><a href="https://discord.gg/zaGrfqFEWE" target="_blank" rel="noopener">Discord</a></li>
+                <li><a href="https://chatgpt.com/g/g-LM0fGeeXB-microbot-documentation" target="_blank" rel="noopener">Docs assistant</a></li>
+            </ul>
         </div>
-    </div>
-    <div class="c-footer-cc py-2 mt-5">
-        <div class="container">
-            <p class="text-center c-text-faded mb-0">Microbot © 2026. All Rights Reserved. - <a href="../privacy.html"
-                                                                                                target="_blank">Privacy
-                Policy</a> -
-                <a href="../terms.html"
-                   target="_blank">Terms of service</a></p>
-        </div>
+        <p class="mb-footer__legal">Microbot &copy; 2024. All rights reserved. <a href="../privacy.html">Privacy policy</a> &middot; <a href="../terms.html">Terms of service</a>.</p>
     </div>
 </footer>
 <script>
@@ -299,5 +220,6 @@
         m.addEventListener('error', hide);
     });
 </script>
+<script src="../microbot/mb-site.js"></script>
 </body>
 </html>

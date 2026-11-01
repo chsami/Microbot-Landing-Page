@@ -81,5 +81,4 @@ Available caches:
 
 - Discord Community: https://discord.gg/zaGrfqFEWE
 - GitHub Issues: https://github.com/chsami/microbot/issues
-- Donations: https://paypal.me/MicrobotBE
 

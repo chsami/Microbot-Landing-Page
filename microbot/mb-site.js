@@ -63,6 +63,7 @@ window.MB = (function () {
     }
 
     // NEW next to Releases when a release is under 7 days old (data: microbot/releases/release.js -> `releases`).
+    // Fires `mb:releases` on document once `releases` is loaded (the home page's latest-release card uses it).
     function releasesBadge() {
         var badge = document.getElementById('releases-badge');
         if (!badge) return;
@@ -72,6 +73,7 @@ window.MB = (function () {
             if (typeof releases === 'undefined') return;
             var week = 7 * 24 * 3600 * 1000;
             badge.hidden = !releases.some(function (r) { return Date.now() - new Date(r.date).getTime() <= week; });
+            document.dispatchEvent(new Event('mb:releases'));
         };
         document.head.appendChild(s);
     }

@@ -89,6 +89,27 @@
         </div>
     </section>
 
+    <section class="mb-section mb-latest-section" id="latest-release-section" aria-label="Latest release" hidden>
+        <div class="container">
+            <a class="mb-card mb-latest" id="latest-release" href="releases.html">
+                <div class="mb-latest__version">
+                    <img id="latest-release-icon" src="" alt="" hidden>
+                    <div>
+                        <span id="latest-release-version"></span>
+                        <div class="mb-latest__date" id="latest-release-date"></div>
+                    </div>
+                </div>
+                <div>
+                    <span class="mb-eyebrow" id="latest-release-label">Latest release</span>
+                    <h2 class="mb-latest__title" id="latest-release-title"></h2>
+                    <p class="mb-latest__summary" id="latest-release-summary"></p>
+                    <span class="mb-latest__more">Read the release notes &rarr;</span>
+                </div>
+            </a>
+            <a class="mb-latest__all" href="releases.html">All releases &rarr;</a>
+        </div>
+    </section>
+
     <section class="mb-section mb-section--alt" aria-labelledby="why">
         <div class="container">
             <h2 class="visually-hidden" id="why">Why Microbot</h2>
@@ -179,6 +200,29 @@
 
 <script src="./microbot/mb-site.js"></script>
 <script>
+    document.addEventListener('mb:releases', function () {
+        if (!releases.length) return;
+        const latest = releases.slice().sort((a, b) => new Date(b.date) - new Date(a.date))[0];
+        const date = new Date(latest.date);
+        const titled = latest.title.includes(' - ');
+        const isNew = (Date.now() - date.getTime()) < 7 * 24 * 60 * 60 * 1000;
+
+        document.getElementById('latest-release').href = 'releases/' + encodeURIComponent(latest.version) + '.html';
+        document.getElementById('latest-release-version').textContent = latest.version;
+        document.getElementById('latest-release-date').textContent = date.toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
+        document.getElementById('latest-release-label').textContent = isNew ? 'New release' : 'Latest release';
+        document.getElementById('latest-release-title').textContent = titled ? latest.title.split(' - ').slice(1).join(' - ') : latest.content;
+        const summary = document.getElementById('latest-release-summary');
+        summary.textContent = titled ? latest.content : '';
+        summary.hidden = !titled;
+        if (latest.icon) {
+            const icon = document.getElementById('latest-release-icon');
+            icon.src = latest.icon;
+            icon.hidden = false;
+        }
+        document.getElementById('latest-release-section').hidden = false;
+    });
+
     document.addEventListener('DOMContentLoaded', function () {
         fetch('https://microbot.cloud/api/session/count').then(async (r) => {
             if (!r.ok) return;

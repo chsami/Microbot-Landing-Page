@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en" class="mb">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Microbot 2.6.48 release notes</title>
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Microbot 2.6.48: bug reports can include the last 20 minutes of activity, Set Target moves to walkable ground, plus Quest Helper, combat and logged-out fixes and Hub updates to Varrock Anvil, Auto Woodcutting, Moons of Peril and Tutorial Island.">
+    <link rel="canonical" href="https://microbot.cloud/releases/2.6.48.html">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Microbot">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:title" content="Microbot 2.6.48 release notes">
+    <meta property="og:description" content="Microbot 2.6.48: bug reports can include the last 20 minutes of activity, Set Target moves to walkable ground, plus Quest Helper, combat and logged-out fixes and Hub updates to Varrock Anvil, Auto Woodcutting, Moons of Peril and Tutorial Island.">
+    <meta property="og:image" content="https://microbot.cloud/images/general/logo.png">
+    <meta property="og:url" content="https://microbot.cloud/releases/2.6.48.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Microbot 2.6.48 release notes">
+    <meta name="twitter:description" content="Microbot 2.6.48: bug reports can include the last 20 minutes of activity, Set Target moves to walkable ground, plus Quest Helper, combat and logged-out fixes and Hub updates to Varrock Anvil, Auto Woodcutting, Moons of Peril and Tutorial Island.">
+    <link rel="stylesheet" href="../microbot/mb-theme.css">
+    <link rel="stylesheet" href="../microbot/releases/releases.css">
+    <meta name="theme-color" content="#0c0a08">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Montserrat:wght@400;500;600;700;800&display=swap">
+</head>
+<body class="rn-page">
+<header class="c-header">
+    <div class="c-events-block py-2">
+        <div class="container">
+            <span class="mb-event" id="mb-event"></span>
+            <a href="https://discord.gg/zaGrfqFEWE" target="_blank" rel="noreferrer noopener">
+                <svg viewBox="0 0 71 55" aria-hidden="true"><path fill="currentColor" d="M60.1 4.9A58.5 58.5 0 0 0 45.6.4l-.2.1a40.8 40.8 0 0 0-1.8 3.7 54 54 0 0 0-16.2 0A37.3 37.3 0 0 0 25.6.5L25.4.4A58.4 58.4 0 0 0 10.9 4.9l-.1.1C1.6 18.7-1 32.1.3 45.4l.1.2a58.7 58.7 0 0 0 17.7 9h.3a42 42 0 0 0 3.6-5.9l-.1-.3a38.8 38.8 0 0 1-5.5-2.6l-.1-.4 1.1-.9.2-.1a41.9 41.9 0 0 0 35.7 0h.2l1.1.9v.4a36.4 36.4 0 0 1-5.5 2.6l-.1.3a47.2 47.2 0 0 0 3.6 5.9h.3a58.5 58.5 0 0 0 17.7-9l.1-.2C72.6 30 68.6 16.7 60.1 5zM23.7 37.3c-3.5 0-6.4-3.2-6.4-7.1 0-4 2.8-7.2 6.4-7.2 3.6 0 6.4 3.2 6.4 7.2 0 3.9-2.8 7.1-6.4 7.1zm23.6 0c-3.5 0-6.4-3.2-6.4-7.1 0-4 2.8-7.2 6.4-7.2 3.6 0 6.4 3.2 6.4 7.2 0 3.9-2.8 7.1-6.4 7.1z"/></svg>
+                Join us on Discord
+            </a>
+        </div>
+    </div>
+    <div class="c-border-red mb-2"></div>
+    <nav class="c-nav" aria-label="Site">
+        <div class="container">
+            <a class="mb-brand" href="../index.html" aria-label="Microbot home">
+                <img src="../microbot/logo.png" alt="" width="44" height="44">
+                <span class="mb-brand__text"><span class="mb-brand__name">Microbot</span><span class="mb-brand__tag">Old School client</span></span>
+            </a>
+            <button class="mb-menu" type="button" aria-expanded="false" aria-controls="mb-nav">Menu</button>
+            <ul class="mb-nav" id="mb-nav">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../plugins.html">Plugins</a></li>
+                <li><a href="../releases.html" aria-current="page">Releases<span id="releases-badge" class="new-badge" hidden>NEW</span></a></li>
+                <li><a href="https://www.github.com/chsami/microbot" target="_blank" rel="noopener">GitHub</a></li>
+                <li><a href="https://discord.gg/zaGrfqFEWE" target="_blank" rel="noopener">Discord</a></li>
+                <li><a href="https://paypal.me/MicrobotBE?country.x=BE" target="_blank" rel="noopener">Donate</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <section class="rn-hero">
+        <div class="container">
+            <div>
+            <div class="rn-eyebrow">Release notes</div>
+            <h1>Microbot 2.6.48</h1>
+            <p class="rn-tagline">Bug reports that show what happened</p>
+            <div class="rn-meta">
+                <span><strong>October 31, 2026</strong></span>
+                <span>by Microbot Team</span>
+            </div>
+            <div class="rn-actions">
+                <a class="c-button c-button--primary" href="../index.html">Download Microbot</a>
+                <a class="c-button" href="../releases.html">All releases</a>
+            </div>
+            </div>
+            <div class="rn-hero-art"><img class="rn-sprite" src="../images/releases/icons/bug-report.png" alt=""></div>
+        </div>
+    </section>
+
+    <div class="rn-shell">
+        <div class="rn-layout">
+        <aside class="rn-toc" aria-label="In this release">
+            <div class="rn-toc-title">In this release</div>
+            <ol>
+                <li><a href="#bug-reports">Bug reports show what led up to the problem</a></li>
+                <li><a href="#set-target">Set Target lands on walkable ground</a></li>
+                <li><a href="#plugins">Plugin updates</a></li>
+                <li><a href="#fixes">Other fixes</a></li>
+                <li><a href="#developers">For script developers</a></li>
+                <li><a href="#update">How to update</a></li>
+            </ol>
+        </aside>
+        <article class="rn-article">
+            <details class="rn-toc-mobile">
+                <summary>In this release</summary>
+                <ol>
+                <li><a href="#bug-reports">Bug reports show what led up to the problem</a></li>
+                <li><a href="#set-target">Set Target lands on walkable ground</a></li>
+                <li><a href="#plugins">Plugin updates</a></li>
+                <li><a href="#fixes">Other fixes</a></li>
+                <li><a href="#developers">For script developers</a></li>
+                <li><a href="#update">How to update</a></li>
+                </ol>
+            </details>
+<p class="rn-lede">When a script goes wrong and you send a bug report, it can now show us what the script did in the minutes before, not only where you stood when you opened the report. A new <strong>Recent activity</strong> section adds up to the last 20 minutes of your movement, clicks, game messages and script status, and it stays on your computer until you send a report. <strong>Set Target</strong> on the world map or in the game view now moves to the nearest walkable tile, so clicking a rock or a deposit box still gives you a route. On the Hub, Varrock Anvil only stops when your bank is really out of bars, Auto Woodcutting banks your logs again in progressive mode, Moons of Peril eats and drinks through the main fight, and Tutorial Island cooks its bread on the range again. This release ships Microbot client 2.6.48 together with those Hub updates.</p>
+<h2 id="bug-reports">Bug reports show what led up to the problem</h2>
+<p><img alt="" class="rn-sprite rn-inline-icon" src="../images/releases/2.6.48/bug-report.png"/>You open a bug report the same way as before: click the red bug button in the sidebar and choose <strong>Report a problem...</strong>, click the grey bug in a plugin's settings header, or right-click the plugin's name. Until now a report held a snapshot of the game at the moment you opened it, plus the end of the client log. Most Hub scripts write very little to the log while they run. A Giants' Foundry report, for example, said "Not animating" twice and nothing else, so we had to come back and ask you what the script had been doing.</p>
+<p>The <strong>Report a problem</strong> window now has a <strong>Recent activity (movement, clicks, game messages)</strong> box under <strong>Game state</strong>. It's ticked by default, and you can untick it for any report you'd rather send without it. With it ticked, the report shows the minutes before you opened it: the script filled the crucible, the bars left your inventory, then the script printed the same error 37 times in a row. That is usually enough for us to find the problem without asking you to make it happen again.</p>
+<p>The activity has one short line for each game tick where something changed. Here are a few lines from a Giants' Foundry run:</p>
+<pre><code>812 08:13:02.4 p=3361,11500,0 a=899
+812 08:13:02.9 click=Fill&gt;Crucible(44776,GAME_OBJECT_FIRST_OPTION)
+813 08:13:03.0 inv -2361*14 v13934=14
+840 08:13:19.2 out="Cannot invoke "Stage.getHeat()" because the return value is null"
+840 08:13:19.3 (previous line repeated 37 more times)</code></pre>
+<p>Hover over the box in the window to see the full list. It records:</p>
+<ul>
+<li>where you walked, your animation, what you attacked, and your HP, prayer and run energy</li>
+<li>items you gained or lost, written as item numbers</li>
+<li>game messages, the options you clicked, windows opened and closed, and game settings that changed</li>
+<li>the script's status, scripts starting and stopping, and anything the script printed</li>
+<li>a line starting with <strong>!</strong> when a script has run for 50 ticks, about 30 seconds, with nothing changing in the game, unless the script is paused or you are using the mouse or keyboard yourself</li>
+</ul>
+<div class="rn-note">
+<span class="rn-note-title">What stays private</span>
+<p>The activity is kept in memory on your computer, 20 minutes at most, and only leaves it inside a report you send. Other players you click or attack show up as "player", and other players' chat isn't recorded. Your own name is removed, as in the other sections. Anything a script prints is included as the script printed it. If you untick <strong>Recent log and errors</strong>, the script's error output is left out of the activity too.</p>
+</div>
+<p><strong>See what's sent</strong> shows the last 40 lines of activity with a short key to the shorthand. <strong>Copy report</strong>, for pasting into Discord, keeps the last 15 lines. Both always use the latest data, so a preview you open just before sending matches what goes out. Keeping the record costs very little: about half a megabyte of memory and a couple of microseconds per game tick.</p>
+<h2 id="set-target">Set Target lands on walkable ground</h2>
+<p><img alt="" class="rn-sprite rn-inline-icon" src="../images/releases/2.6.48/world-map-target.png"/>2.6.47 made <strong>Set Target</strong> on a dungeon map take you into that dungeon. The tile you click still has to be one you can stand on, though. Say you open the world map, switch to the Dwarven Mine map and right-click the deposit box in the Motherlode Mine. The box sits on its own tile, which you can't stand on, and the walker was handed that tile as its target anyway.</p>
+<p>Now <strong>Set Target</strong> and <strong>Set Start</strong> move to the nearest walkable tile within 16 tiles of the spot you clicked. This works on the world map and with Shift + right-click in the game view. Click the Motherlode deposit box and the target lands on the floor right next to it.</p>
+<ul>
+<li>If the target moves more than 2 tiles, a game message tells you: "Web Walker: Target moved 5 tiles to the nearest walkable spot."</li>
+<li>If there's no walkable ground within 16 tiles, you see "Web Walker: No walkable ground near that spot. Pick a tile closer to a path or floor." Your current route stays as it was.</li>
+<li>If the world map can't match a dungeon to its real tiles yet, you see "Web Walker: Can't set a target in this dungeon from the world map." Close the map and Shift + right-click a tile in the game view instead. In 2.6.47 nothing happened at all in that case.</li>
+</ul>
+<h2 id="plugins">Plugin updates</h2>
+<div class="rn-plugin-list">
+<div class="rn-plugin">
+<div class="rn-plugin-name"><span class="rn-plugin-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.48/smithing.png"/></span><span>Varrock Anvil<span class="rn-plugin-version">1.0.4</span></span></div>
+<div class="rn-plugin-body"><p>One player smithing rune 2h swords at the anvil west of Varrock had the script stop with "Could not find bars in bank" while standing at the bank with a hammer and 27 Runite bars in their inventory. The script checked the bank before it had finished loading, and gave up after 3.5 seconds when a withdraw was slow. Now it waits for the bank to load, showing "Waiting for the bank to load", and retries a slow withdraw. The overlay shows "Withdraw failed, retrying (1/3)", and the script only stops after three failed tries in a row. It sets the bank to withdraw items rather than notes, and the stop message names your bar, for example "Out of Runite bars in the bank. Stopping."</p></div>
+</div>
+<div class="rn-plugin">
+<div class="rn-plugin-name"><span class="rn-plugin-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.48/woodcutting.png"/></span><span>Auto Woodcutting<span class="rn-plugin-version">1.8.9</span></span></div>
+<div class="rn-plugin-body"><p>With <strong>Progressive mode</strong> on and banking as the action, your character filled the inventory and set off for the bank. If the bank didn't open on the first try, it turned around and walked back to the trees with a full inventory of logs. Now the script only walks to the progressive tree spot while it is cutting, so it keeps trying the bank until your logs are deposited. If you level up while banking, it heads to the new tree on its next trip. With <strong>Firemake only</strong> set, progressive mode no longer walks you to a tree spot.</p></div>
+</div>
+<div class="rn-plugin">
+<div class="rn-plugin-name"><span class="rn-plugin-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.48/prayer.png"/></span><span>Moons of Peril<span class="rn-plugin-version">1.0.7</span></span></div>
+<div class="rn-plugin-body"><p>Players reported that the script never ate or drank prayer potions during the boss fights, and died almost straight away. The main attack phase of the Blood, Blue and Eclipse moons, which is the longest part of each fight, left eating to the QoL plugin. If you hadn't set QoL up, your HP and prayer ran out. Now the script eats and drinks there at your <strong>Health % topup</strong> and <strong>Prayer % topup</strong> settings. It still doesn't top up during the Blood Moon jaguar phase, and only tops up at the start of the Eclipse clone phase, so keeping QoL as a backup is a good idea. The setting tooltips say this too.</p></div>
+</div>
+<div class="rn-plugin">
+<div class="rn-plugin-name"><span class="rn-plugin-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.48/cooking.png"/></span><span>Tutorial Island<span class="rn-plugin-version">1.3.18</span></span></div>
+<div class="rn-plugin-body"><p>At the Master Chef, the script used the wrong option on the range, so your bread dough was never baked. It now picks <strong>Cook</strong> on the range and bakes your bread. It also answers "No, I'm not planning to do that." when the Magic Instructor offers that choice.</p></div>
+</div>
+</div>
+<h2 id="fixes">Other fixes</h2>
+<ul class="rn-iconlist">
+<li><span class="rn-li-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.48/quest-helper.png"/></span>In Quest Helper, ticking or unticking the shortest path option in the settings threw an error, and the path to your next quest step was never drawn. It now draws or clears the path as soon as you change the option.</li>
+<li><span class="rn-li-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.48/logout.png"/></span>A script that switches tabs on the login screen, during a loading screen or during a world hop filled the log with errors. One report had 53 of them. Switching tabs while logged out now just does nothing and tells the script it didn't work, so the script can try again once you are logged in.</li>
+<li><span class="rn-li-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.48/attack.png"/></span>Scripts that check how far your weapon can reach, such as Zulrah Slayer, hit an error 72 times in a single report when the game couldn't tell them your attack style. They now get your weapon's normal reach instead, for example 7 tiles for a shortbow.</li>
+<li><span class="rn-li-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.48/microbot.png"/></span>If you deploy scripts to the client through the Agent Server, a folder path with a character your system doesn't allow now gets a clear "Invalid sourcePath" reply instead of an internal server error.</li>
+</ul>
+<h2 id="developers">For script developers</h2>
+<ul>
+<li><code>Script.trace(key, value)</code> adds a value to the bug report activity, recorded only when it changes. For example <code>trace("stage", stage)</code> in your loop shows every stage change in the next report. Anything your script prints with <code>System.out</code> or <code>System.err</code> is recorded too; repeats are folded and stack traces are cut to two frames.</li>
+<li><code>Rs2Tab.switchTo</code> returns <code>false</code> right away when you're not logged in. Before, it could return <code>true</code> from the cached tab after an error.</li>
+<li><code>Rs2Combat.getWeaponAttackStyle</code> can return <code>null</code> when a style lookup fails. <code>getAttackRange()</code> then falls back to the weapon's default range.</li>
+<li><code>POST /scripts/deploy</code> on the Agent Server replies 400 with <code>Invalid sourcePath: &lt;reason&gt;</code> when the path can't be parsed.</li>
+<li>Quest Helper's shortest path toggle runs on the client thread.</li>
+<li>Main was merged back into development after 2.6.47.</li>
+</ul>
+<h2 id="update">How to update</h2>
+<p><img alt="" class="rn-sprite rn-inline-icon" src="../images/releases/2.6.48/microbot-hub.png"/>Restart Microbot to get client 2.6.48. Varrock Anvil 1.0.4, Auto Woodcutting 1.8.9, Moons of Peril 1.0.7 and Tutorial Island 1.3.18 show up in the Microbot Hub panel inside the client.</p>
+<p class="rn-credit">Game images © Jagex Ltd., via the <a href="https://oldschool.runescape.wiki" rel="noopener" target="_blank">Old School RuneScape Wiki</a>.</p>
+
+<nav class="rn-pager" aria-label="More releases">
+    <a class="rn-pager-prev" href="2.6.47.html"><small>Previous release</small><span>2.6.47</span></a>
+    <a class="rn-pager-next" href="2.6.49.html"><small>Next release</small><span>2.6.49</span></a>
+</nav>
+        </article>
+        </div>
+    </div>
+</main>
+
+<footer class="mb-footer">
+    <div class="container">
+        <div class="mb-footer__row">
+            <a class="mb-brand" href="../index.html" aria-label="Microbot home">
+                <img src="../microbot/logo.png" alt="" width="44" height="44">
+                <span class="mb-brand__text"><span class="mb-brand__name">Microbot</span><span class="mb-brand__tag">Old School client</span></span>
+            </a>
+            <ul class="mb-footer__links">
+                <li><a href="../plugins.html">Plugins</a></li>
+                <li><a href="../releases.html">Releases</a></li>
+                <li><a href="https://github.com/chsami/microbot" target="_blank" rel="noopener">GitHub</a></li>
+                <li><a href="https://discord.gg/zaGrfqFEWE" target="_blank" rel="noopener">Discord</a></li>
+                <li><a href="https://chatgpt.com/g/g-LM0fGeeXB-microbot-documentation" target="_blank" rel="noopener">Docs assistant</a></li>
+            </ul>
+        </div>
+        <p class="mb-footer__legal">Microbot &copy; 2024. All rights reserved. <a href="../privacy.html">Privacy policy</a> &middot; <a href="../terms.html">Terms of service</a>.</p>
+    </div>
+</footer>
+<script>
+    document.querySelectorAll('.rn-article img, .rn-article video').forEach(function (m) {
+        function hide() {
+            var box = m.closest('.rn-gallery') && m.closest('.rn-gallery').children.length > 1 ? m : (m.closest('figure') || m);
+            box.style.display = 'none';
+        }
+        if (m.tagName === 'IMG' && m.complete && m.naturalWidth === 0 && m.getAttribute('src')) hide();
+        m.addEventListener('error', hide);
+    });
+</script>
+<script src="../microbot/mb-site.js"></script>
+</body>
+</html>

@@ -36,6 +36,20 @@
 .mb .mb-why strong { color: var(--text-strong); font-size: 16px; }
 .mb .mb-why span { color: var(--muted); font-size: 14px; }
 
+/* Latest release (filled from release.js) */
+.mb .mb-latest-section { padding-bottom: 0; }
+.mb .mb-latest { display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 32px; align-items: center; max-width: 960px; margin: 0 auto; padding: 32px;
+  background: radial-gradient(120% 140% at 0% 0%, rgba(255, 177, 59, .10), transparent 55%), var(--surface); color: var(--text); }
+.mb .mb-latest:hover { color: var(--text); }
+.mb .mb-latest__version { display: flex; flex-direction: column; align-items: flex-start; gap: 14px; color: var(--gold); font-size: 56px; font-weight: 800; line-height: 1; }
+.mb .mb-latest__version img { width: 64px; }
+.mb .mb-latest__date { margin-top: 8px; color: var(--muted); font-size: 13px; font-weight: 600; letter-spacing: .04em; }
+.mb .mb-latest__title { margin-top: 10px; font-size: 26px; }
+.mb .mb-latest__summary { margin-top: 10px; color: var(--muted); }
+.mb .mb-latest__more { display: inline-block; margin-top: 16px; color: var(--gold); font-size: 13px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+.mb .mb-latest__all { display: block; max-width: 960px; margin: 14px auto 0; text-align: right; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+.mb .mb-latest__all:hover { color: var(--gold); }
+
 /* Featured plugins */
 .mb .mb-features { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; margin: 0; padding: 0; list-style: none; }
 .mb .mb-feature { overflow: hidden; display: flex; flex-direction: column; }
@@ -72,6 +86,10 @@
 }
 @media (max-width: 760px) {
   .mb .mb-hero { grid-template-columns: 1fr; }
+  .mb .mb-latest { grid-template-columns: 1fr; gap: 12px; padding: 24px; }
+  .mb .mb-latest__version { flex-direction: row; align-items: center; font-size: 42px; }
+  .mb .mb-latest__version img { width: 46px; }
+  .mb .mb-latest__title { font-size: 21px; }
   .mb .mb-hero__art { display: none; }
 }
 @media (max-width: 680px) {

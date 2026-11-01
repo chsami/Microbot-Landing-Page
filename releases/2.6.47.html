@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en" class="mb">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Microbot 2.6.47 release notes</title>
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Microbot 2.6.47: world map Set Target works inside dungeons, Jagex Account auto login through the RuneLite launcher keeps your character, Slayer stops when your Slayer Master is out of reach, plus Grand Exchange price, pop-up and Hub script fixes.">
+    <link rel="canonical" href="https://microbot.cloud/releases/2.6.47.html">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Microbot">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:title" content="Microbot 2.6.47 release notes">
+    <meta property="og:description" content="Microbot 2.6.47: world map Set Target works inside dungeons, Jagex Account auto login through the RuneLite launcher keeps your character, Slayer stops when your Slayer Master is out of reach, plus Grand Exchange price, pop-up and Hub script fixes.">
+    <meta property="og:image" content="https://microbot.cloud/images/general/logo.png">
+    <meta property="og:url" content="https://microbot.cloud/releases/2.6.47.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Microbot 2.6.47 release notes">
+    <meta name="twitter:description" content="Microbot 2.6.47: world map Set Target works inside dungeons, Jagex Account auto login through the RuneLite launcher keeps your character, Slayer stops when your Slayer Master is out of reach, plus Grand Exchange price, pop-up and Hub script fixes.">
+    <link rel="stylesheet" href="../microbot/mb-theme.css">
+    <link rel="stylesheet" href="../microbot/releases/releases.css">
+    <meta name="theme-color" content="#0c0a08">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Montserrat:wght@400;500;600;700;800&display=swap">
+</head>
+<body class="rn-page">
+<header class="c-header">
+    <div class="c-events-block py-2">
+        <div class="container">
+            <span class="mb-event" id="mb-event"></span>
+            <a href="https://discord.gg/zaGrfqFEWE" target="_blank" rel="noreferrer noopener">
+                <svg viewBox="0 0 71 55" aria-hidden="true"><path fill="currentColor" d="M60.1 4.9A58.5 58.5 0 0 0 45.6.4l-.2.1a40.8 40.8 0 0 0-1.8 3.7 54 54 0 0 0-16.2 0A37.3 37.3 0 0 0 25.6.5L25.4.4A58.4 58.4 0 0 0 10.9 4.9l-.1.1C1.6 18.7-1 32.1.3 45.4l.1.2a58.7 58.7 0 0 0 17.7 9h.3a42 42 0 0 0 3.6-5.9l-.1-.3a38.8 38.8 0 0 1-5.5-2.6l-.1-.4 1.1-.9.2-.1a41.9 41.9 0 0 0 35.7 0h.2l1.1.9v.4a36.4 36.4 0 0 1-5.5 2.6l-.1.3a47.2 47.2 0 0 0 3.6 5.9h.3a58.5 58.5 0 0 0 17.7-9l.1-.2C72.6 30 68.6 16.7 60.1 5zM23.7 37.3c-3.5 0-6.4-3.2-6.4-7.1 0-4 2.8-7.2 6.4-7.2 3.6 0 6.4 3.2 6.4 7.2 0 3.9-2.8 7.1-6.4 7.1zm23.6 0c-3.5 0-6.4-3.2-6.4-7.1 0-4 2.8-7.2 6.4-7.2 3.6 0 6.4 3.2 6.4 7.2 0 3.9-2.8 7.1-6.4 7.1z"/></svg>
+                Join us on Discord
+            </a>
+        </div>
+    </div>
+    <div class="c-border-red mb-2"></div>
+    <nav class="c-nav" aria-label="Site">
+        <div class="container">
+            <a class="mb-brand" href="../index.html" aria-label="Microbot home">
+                <img src="../microbot/logo.png" alt="" width="44" height="44">
+                <span class="mb-brand__text"><span class="mb-brand__name">Microbot</span><span class="mb-brand__tag">Old School client</span></span>
+            </a>
+            <button class="mb-menu" type="button" aria-expanded="false" aria-controls="mb-nav">Menu</button>
+            <ul class="mb-nav" id="mb-nav">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../plugins.html">Plugins</a></li>
+                <li><a href="../releases.html" aria-current="page">Releases<span id="releases-badge" class="new-badge" hidden>NEW</span></a></li>
+                <li><a href="https://www.github.com/chsami/microbot" target="_blank" rel="noopener">GitHub</a></li>
+                <li><a href="https://discord.gg/zaGrfqFEWE" target="_blank" rel="noopener">Discord</a></li>
+                <li><a href="https://paypal.me/MicrobotBE?country.x=BE" target="_blank" rel="noopener">Donate</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <section class="rn-hero">
+        <div class="container">
+            <div>
+            <div class="rn-eyebrow">Release notes</div>
+            <h1>Microbot 2.6.47</h1>
+            <p class="rn-tagline">Set Target works inside dungeons</p>
+            <div class="rn-meta">
+                <span><strong>October 30, 2026</strong></span>
+                <span>by Microbot Team</span>
+            </div>
+            <div class="rn-actions">
+                <a class="c-button c-button--primary" href="../index.html">Download Microbot</a>
+                <a class="c-button" href="../releases.html">All releases</a>
+            </div>
+            </div>
+            <div class="rn-hero-art"><img class="rn-sprite" src="../images/releases/icons/world-map-target.png" alt=""></div>
+        </div>
+    </section>
+
+    <div class="rn-shell">
+        <div class="rn-layout">
+        <aside class="rn-toc" aria-label="In this release">
+            <div class="rn-toc-title">In this release</div>
+            <ol>
+                <li><a href="#world-map">Set Target works inside dungeons</a></li>
+                <li><a href="#jagex-login">Jagex Account auto login works again</a></li>
+                <li><a href="#slayer">Slayer tells you when a master is out of reach</a></li>
+                <li><a href="#plugins">Plugin updates</a></li>
+                <li><a href="#fixes">Other fixes</a></li>
+                <li><a href="#developers">For script developers</a></li>
+                <li><a href="#update">How to update</a></li>
+            </ol>
+        </aside>
+        <article class="rn-article">
+            <details class="rn-toc-mobile">
+                <summary>In this release</summary>
+                <ol>
+                <li><a href="#world-map">Set Target works inside dungeons</a></li>
+                <li><a href="#jagex-login">Jagex Account auto login works again</a></li>
+                <li><a href="#slayer">Slayer tells you when a master is out of reach</a></li>
+                <li><a href="#plugins">Plugin updates</a></li>
+                <li><a href="#fixes">Other fixes</a></li>
+                <li><a href="#developers">For script developers</a></li>
+                <li><a href="#update">How to update</a></li>
+                </ol>
+            </details>
+<p class="rn-lede">Right-click the world map inside a dungeon, pick <strong>Set Target</strong>, and the walker now takes you into that dungeon instead of to some spot on the surface. If you start Microbot through the RuneLite launcher with a Jagex Account, Auto Login and the Break Handler log you back in as your character again, instead of typing "default" into the username box. On the Hub, Slayer stops straight away and names a master you can use when the one you picked won't give you a task. Four scripts no longer show errors during loading screens and world hops, and Gem Crab Killer's potion setting fits the panel again. This release ships Microbot client 2.6.47 together with those Hub updates.</p>
+<h2 id="world-map">Set Target works inside dungeons</h2>
+<p><img alt="" class="rn-sprite rn-inline-icon" src="../images/releases/2.6.47/world-map-target.png"/>The game's world map doesn't draw caves and dungeons where they really are. It draws them in a free part of the map, usually next to the area above them. Say you open the world map, switch to the Dwarven Mine map, right-click inside the Motherlode Mine and pick <strong>Set Target</strong>. The walker took the spot where the mine happens to be drawn, which is a real tile out near Draynor, and set off with a teleport to get there.</p>
+<p>Now Set Target turns the spot you clicked into the tile it stands for, so the walker takes you into the Motherlode Mine. The Target pin shows up on the dungeon map right where you clicked. <strong>Set Start</strong> works the same way. Targets on the surface behave exactly as before.</p>
+<div class="rn-compare">
+<div class="is-before">
+<div class="rn-compare-label">2.6.46</div>
+<p>Set Target inside a dungeon sent you to wherever that part of the map is drawn, often a different town altogether.</p>
+</div>
+<div class="is-after">
+<div class="rn-compare-label">2.6.47</div>
+<p>The walker heads into the dungeon you clicked, and the pin sits on the dungeon map where you put it.</p>
+</div>
+</div>
+<div class="rn-note">
+<span class="rn-note-title">Good to know</span>
+<p>On a dungeon map the path line is still drawn at the real coordinates, so it doesn't lead to the pin yet. The pin can also show up on another underground map that is drawn over the same spot. If a spot you click on a dungeon map can't be matched to a real tile, no pin appears and your character stays where it is.</p>
+</div>
+<h2 id="jagex-login">Jagex Account auto login works again</h2>
+<p><img alt="" class="rn-sprite rn-inline-icon" src="../images/releases/2.6.47/jagex-account.png"/>Many players start Microbot through the RuneLite launcher with a Jagex Account, set up the way our <strong>!jagexaccount</strong> guide on Discord explains. Since 2.6.45, Auto Login, the Break Handler and script relogs on that setup typed the profile name, usually "default", into the username box instead of logging in as your character. Logging in by hand still worked, so you only noticed after a break or a disconnect, when the client sat on the login screen.</p>
+<p>Now a profile without a saved password logs in with the Jagex character the client was started with. Say you start your character "IronMiner42" on the "default" profile and the Break Handler takes a 20-minute break. When the break ends, IronMiner42 is logged back in and your script carries on.</p>
+<ul>
+<li>A profile with a saved username and password still logs in with those, as in 2.6.45.</li>
+<li>The client reads your launcher login once, when it starts. If you then start a second client for another character, the first client keeps logging in as its own character.</li>
+<li>The launcher login is only used when it belongs to the character this client was started with, so a client never logs you in as a different character.</li>
+</ul>
+<p>2.6.46 fixed the same problem for <strong>Play With Jagex Account</strong> in the Microbot launcher. This release fixes it for the RuneLite launcher.</p>
+<h2 id="slayer">Slayer tells you when a master is out of reach</h2>
+<p><img alt="" class="rn-sprite rn-inline-icon" src="../images/releases/2.6.47/slayer-master.png"/>The Slayer plugin uses Duradel by default, and Duradel only gives tasks from 100 combat and 50 Slayer. One player with 63 combat and 12 Slayer started the plugin without changing that setting. It walked them all the way to Shilo Village and then stood there on "getting task", because Duradel never gives that account a task.</p>
+<p>Now Slayer 1.1.7 checks your combat and Slayer levels before it walks to your master to get, skip or block a task. If they're too low, it stops before walking anywhere and tells you what to pick instead:</p>
+<div class="rn-note">
+<span class="rn-note-title">Slayer stopped</span>
+<p>Duradel only gives tasks from combat level 100; you are combat level 63. Vannaka works at your level with no quest needed. Pick a Slayer Master you can use in the plugin settings, then start the plugin again.</p>
+</div>
+<ul>
+<li>From 85 combat it suggests Nieve, or Steve once you've finished Monkey Madness II.</li>
+<li>Below that it also names a master that needs a quest when one fits your level, such as Chaeldar after Lost City.</li>
+<li>Hover over the <strong>Slayer Master</strong> setting to see what each master needs, one per line.</li>
+<li>If you already have a task, the check doesn't stop you.</li>
+</ul>
+<p>The plugin doesn't check quests yet. With 100 combat and 50 Slayer it still walks you to Duradel, even if you haven't finished Shilo Village.</p>
+<h2 id="plugins">Plugin updates</h2>
+<p>A loading screen, a world hop or a teleport leaves the game without your position for a moment. Four scripts tripped over that moment and filled the log with errors. They now wait for the next tick and carry on.</p>
+<div class="rn-plugin-list">
+<div class="rn-plugin">
+<div class="rn-plugin-name"><span class="rn-plugin-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.47/mining.png"/></span><span>Auto Essence Mining<span class="rn-plugin-version">1.0.6</span></span></div>
+<div class="rn-plugin-body"><p>When Aubury teleports you to the essence mine, or you take the portal back to Varrock, the script showed a red error with a stack trace ten times a second until you arrived. It looked as if the script had crashed, even though it picked up again afterwards. Now it waits quietly until your position is back.</p></div>
+</div>
+<div class="rn-plugin">
+<div class="rn-plugin-name"><span class="rn-plugin-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.47/construction.png"/></span><span>Mahogany Homes<span class="rn-plugin-version">0.0.18</span></span></div>
+<div class="rn-plugin-body"><p>If your position went missing just as the script checked whether you were inside a client's home, the loop failed with "Mahogany Homes script loop failed". Now it counts that moment as being outside every home and checks again on the next tick.</p></div>
+</div>
+<div class="rn-plugin">
+<div class="rn-plugin-name"><span class="rn-plugin-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.47/agility.png"/></span><span>MicroAgility<span class="rn-plugin-version">1.3.3</span></span></div>
+<div class="rn-plugin-body"><p>On the Agility Pyramid, after you hand your pyramid tops to Simon, the script walks back to the start of the course. If your position went missing right then, it logged an error. Now it skips that walk-back and heads to the start on the next tick, as it would have anyway.</p></div>
+</div>
+<div class="rn-plugin">
+<div class="rn-plugin-name"><span class="rn-plugin-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.47/hunter.png"/></span><span>AutoHunter<span class="rn-plugin-version">1.5.6</span></span></div>
+<div class="rn-plugin-body"><p>While catching chinchompas, a world hop or loading screen could stop the tick with an error as the script moved to a new trap spot. Now it skips that tick and tries again a quarter of a second later.</p></div>
+</div>
+<div class="rn-plugin">
+<div class="rn-plugin-name"><span class="rn-plugin-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.47/attack.png"/></span><span>Gem Crab Killer<span class="rn-plugin-version">1.0.6</span></span></div>
+<div class="rn-plugin-body"><p>The <strong>Offensive potion</strong> option added in 1.0.5 was cut off to "Offensiv..." in the plugin panel. It's now called <strong>Potion</strong>, and your saved choice stays as it was.</p></div>
+</div>
+</div>
+<h2 id="fixes">Other fixes</h2>
+<ul class="rn-iconlist">
+<li><span class="rn-li-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.47/grand-exchange.png"/></span>Scripts that type a price into a Grand Exchange offer, or press the -5% and +5% buttons, read the price box wrongly in some game sessions. They typed the price again every time with an error in the log, and a +5% click could move on too early or time out. The price is now read correctly in every session.</li>
+<li><span class="rn-li-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.47/microbot.png"/></span>Scripts can show a short pop-up message over the game view. It only worked in the resizable classic layout. In fixed mode or the resizable modern layout it failed with a "component does not exist" error. It now opens in whichever layout you play in. On the login screen or during a loading screen the pop-up is skipped instead of causing an error.</li>
+</ul>
+<h2 id="developers">For script developers</h2>
+<ul>
+<li><code>Microbot.openPopUp</code> opens on the notifications layer of the active toplevel: fixed (548), resizable classic (161) or resizable modern (164). It returns without opening anything when you're not logged in or another toplevel is active. If players must see the text, also send it as a game chat message.</li>
+<li><code>Rs2GrandExchange.getOfferPrice()</code> reads varp 5753 as a long and falls back to the int value when the game stores it as an int. Read it the same way if your script reads that varp itself.</li>
+<li>ShortestPath 1.0.6: world map <strong>Set Target</strong>, <strong>Set Start</strong> and <strong>Set Test</strong> turn the clicked map point into the real tile with <code>WorldPointMapper</code>, limited to the map being viewed. <code>ShortestPathPlugin.createTargetMarker</code> builds every Target pin at the map position of the real tile, and <code>Rs2PathApi.createTargetMarker</code> uses it too. Pathing still uses the real tile.</li>
+<li><code>JagexCredentials.fromLaunch()</code> reads the launch credentials once per client, so a credentials file rewritten by a later launch doesn't change this client's character.</li>
+</ul>
+<h2 id="update">How to update</h2>
+<p><img alt="" class="rn-sprite rn-inline-icon" src="../images/releases/2.6.47/microbot-hub.png"/>Restart Microbot to get client 2.6.47. Slayer 1.1.7, Auto Essence Mining 1.0.6, Mahogany Homes 0.0.18, MicroAgility 1.3.3, AutoHunter 1.5.6 and Gem Crab Killer 1.0.6 show up in the Microbot Hub panel inside the client.</p>
+<p class="rn-credit">Game images © Jagex Ltd., via the <a href="https://oldschool.runescape.wiki" rel="noopener" target="_blank">Old School RuneScape Wiki</a>.</p>
+
+<nav class="rn-pager" aria-label="More releases">
+    <a class="rn-pager-prev" href="2.6.46.html"><small>Previous release</small><span>2.6.46</span></a>
+    <a class="rn-pager-next" href="2.6.48.html"><small>Next release</small><span>2.6.48</span></a>
+</nav>
+        </article>
+        </div>
+    </div>
+</main>
+
+<footer class="mb-footer">
+    <div class="container">
+        <div class="mb-footer__row">
+            <a class="mb-brand" href="../index.html" aria-label="Microbot home">
+                <img src="../microbot/logo.png" alt="" width="44" height="44">
+                <span class="mb-brand__text"><span class="mb-brand__name">Microbot</span><span class="mb-brand__tag">Old School client</span></span>
+            </a>
+            <ul class="mb-footer__links">
+                <li><a href="../plugins.html">Plugins</a></li>
+                <li><a href="../releases.html">Releases</a></li>
+                <li><a href="https://github.com/chsami/microbot" target="_blank" rel="noopener">GitHub</a></li>
+                <li><a href="https://discord.gg/zaGrfqFEWE" target="_blank" rel="noopener">Discord</a></li>
+                <li><a href="https://chatgpt.com/g/g-LM0fGeeXB-microbot-documentation" target="_blank" rel="noopener">Docs assistant</a></li>
+            </ul>
+        </div>
+        <p class="mb-footer__legal">Microbot &copy; 2024. All rights reserved. <a href="../privacy.html">Privacy policy</a> &middot; <a href="../terms.html">Terms of service</a>.</p>
+    </div>
+</footer>
+<script>
+    document.querySelectorAll('.rn-article img, .rn-article video').forEach(function (m) {
+        function hide() {
+            var box = m.closest('.rn-gallery') && m.closest('.rn-gallery').children.length > 1 ? m : (m.closest('figure') || m);
+            box.style.display = 'none';
+        }
+        if (m.tagName === 'IMG' && m.complete && m.naturalWidth === 0 && m.getAttribute('src')) hide();
+        m.addEventListener('error', hide);
+    });
+</script>
+<script src="../microbot/mb-site.js"></script>
+</body>
+</html>

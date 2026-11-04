@@ -700,45 +700,94 @@ function matchesSearch(plugin, searchTerm) {
     return false;
 }
 
+function safeImageUrl(value) {
+    const raw = String(value ?? '').trim();
+    if (!raw) return 'images/general/logo.png';
+    try {
+        const url = new URL(raw, window.location.origin);
+        if (url.protocol === 'https:' || url.protocol === 'http:') {
+            return url.href;
+        }
+    } catch (e) {
+    }
+    return 'images/general/logo.png';
+}
+
 function createPluginCard(plugin, totalInstalls) {
     const card = document.createElement('a');
     card.className = 'plugin-card';
-    card.href = `https://chsami.github.io/Microbot-Hub/${plugin.internalName}`;
+    card.href = `https://chsami.github.io/Microbot-Hub/${encodeURIComponent(String(plugin.internalName ?? ''))}`;
     card.target = '_blank';
     card.rel = 'noopener noreferrer';
 
-    // Create tags HTML
-    const tagsHtml = plugin.tags.map(tag => `<span class="plugin-tag">${tag}</span>`).join('');
+    const imageContainer = document.createElement('div');
+    imageContainer.className = 'plugin-image-container';
 
-    // Create authors string from array
-    const authorsText = plugin.authors ? plugin.authors.join(', ') : '';
+    const icon = document.createElement('img');
+    icon.src = safeImageUrl(plugin.cardUrl);
+    icon.alt = `${String(plugin.name ?? '')} icon`;
+    icon.className = 'plugin-icon';
+    icon.addEventListener('error', () => {
+        icon.src = 'images/general/logo.png';
+        icon.classList.add('plugin-icon--fallback');
+    }, { once: true });
+    imageContainer.appendChild(icon);
 
-    card.innerHTML = `
-        <div class="plugin-image-container">
-            <img src="${plugin.cardUrl}" alt="${plugin.name} icon" class="plugin-icon" onerror="this.onerror=null;this.src='images/general/logo.png';this.classList.add('plugin-icon--fallback')">
-        </div>
+    const content = document.createElement('div');
+    content.className = 'plugin-content';
 
-        <div class="plugin-content">
-            <div class="plugin-header">
-                <h3 class="plugin-title">${plugin.name}</h3>
-                <div class="plugin-author">by ${authorsText}</div>
-            </div>
+    const header = document.createElement('div');
+    header.className = 'plugin-header';
 
-            <div class="plugin-tags">
-                ${tagsHtml}
-            </div>
+    const title = document.createElement('h3');
+    title.className = 'plugin-title';
+    title.textContent = String(plugin.name ?? '');
 
-            <p class="plugin-description">${plugin.description}</p>
+    const author = document.createElement('div');
+    author.className = 'plugin-author';
+    const authorsText = Array.isArray(plugin.authors) ? plugin.authors.map(String).join(', ') : '';
+    author.textContent = `by ${authorsText}`;
 
-            <div class="plugin-meta">
-                <div>
-                    <span class="plugin-version">v${plugin.version}</span>
-                    <span class="plugin-installs" style="margin-left:8px;color:#ffd700;font-size:0.85em;">&#x1F4E6; ${totalInstalls} installs</span>
-                </div>
-                <div class="plugin-min-version">Min Client: ${plugin.minClientVersion}</div>
-            </div>
-        </div>
-    `;
+    header.append(title, author);
+
+    const tags = document.createElement('div');
+    tags.className = 'plugin-tags';
+    const tagList = Array.isArray(plugin.tags) ? plugin.tags : [];
+    for (const tag of tagList) {
+        const tagEl = document.createElement('span');
+        tagEl.className = 'plugin-tag';
+        tagEl.textContent = String(tag);
+        tags.appendChild(tagEl);
+    }
+
+    const description = document.createElement('p');
+    description.className = 'plugin-description';
+    description.textContent = String(plugin.description ?? '');
+
+    const meta = document.createElement('div');
+    meta.className = 'plugin-meta';
+
+    const metaRow = document.createElement('div');
+
+    const version = document.createElement('span');
+    version.className = 'plugin-version';
+    version.textContent = `v${String(plugin.version ?? '')}`;
+
+    const installs = document.createElement('span');
+    installs.className = 'plugin-installs';
+    installs.style.cssText = 'margin-left:8px;color:#ffd700;font-size:0.85em;';
+    const installCount = Number(totalInstalls);
+    installs.textContent = `\u{1F4E6} ${Number.isFinite(installCount) ? installCount : 0} installs`;
+
+    metaRow.append(version, installs);
+
+    const minVersion = document.createElement('div');
+    minVersion.className = 'plugin-min-version';
+    minVersion.textContent = `Min Client: ${String(plugin.minClientVersion ?? '')}`;
+
+    meta.append(metaRow, minVersion);
+    content.append(header, tags, description, meta);
+    card.append(imageContainer, content);
 
     return card;
 }

@@ -1,6 +1,33 @@
 {
   "routes": [
     {
+      "route": "/.specify/*",
+      "statusCode": 404
+    },
+    {
+      "route": "/.claude/*",
+      "statusCode": 404
+    },
+    {
+      "route": "/.idea/*",
+      "statusCode": 404
+    },
+    {
+      "route": "/docs/*",
+      "statusCode": 404
+    },
+    {
+      "route": "/CLAUDE.md",
+      "statusCode": 404
+    },
+    {
+      "route": "/microbot/fonts/*",
+      "headers": {
+        "cache-control": "public, max-age=604800",
+        "access-control-allow-origin": "*"
+      }
+    },
+    {
       "route": "/images/*",
       "headers": {
         "cache-control": "public, max-age=604800"

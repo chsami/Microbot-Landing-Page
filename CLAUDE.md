@@ -9,8 +9,7 @@ Static HTML/CSS/JavaScript landing page for Microbot, a free open-source RuneLit
 ## Tech Stack
 
 - HTML5, CSS3, Vanilla JavaScript
-- Bootstrap CSS framework
-- Custom libraries: `/libraries/carousel/`, `/libraries/timeago/`
+- Shared theme: `microbot/mb-theme.css`, `microbot/mb-site.js` (see `docs/SITE_PAGES.md`)
 - Deployment: Azure Static Web Apps via GitHub Actions
 
 ## Development
@@ -25,7 +24,6 @@ python -m http.server 8000
 ## Key Directories
 
 - `/microbot/` - Pre-built assets, minified CSS, fonts, release data
-- `/libraries/` - Reusable JS utilities (carousel, timeago)
 - `/docs/` - Markdown documentation (QUERYABLE_API.md)
 - `/releases/` - Individual release note HTML files
 - `/.specify/` - Speckit feature development templates
@@ -45,5 +43,5 @@ This project uses Speckit for structured feature development. Available skills:
 
 - Conventional commits: `feat:`, `docs:`, `fix:`, `chore:`
 - Update `/docs/QUERYABLE_API.md` for API changes
-- Add release notes to `/releases/` directory
+- Add release notes to `/releases/` directory: copy the newest page there and replace its head metadata and `<main>`. Pages on the old template still render but keep the old header (see `docs/SITE_PAGES.md`)
 - Main branch: `master`

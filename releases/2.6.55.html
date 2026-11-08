@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Microbot 2.6.55 release notes</title>
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Microbot 2.6.55: a rebuilt installed plugins list with sorting, filters and Hub install from search, a sortable Hub tab and a banner for plugin status changes, opt-in hardware ID spoofing, walker, camera and mouse fixes, and five new Fourtifys plugins including Phosani's Nightmare and Tormented Demons.">
+    <link rel="canonical" href="https://microbot.cloud/releases/2.6.55.html">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Microbot">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:title" content="Microbot 2.6.55 release notes">
+    <meta property="og:description" content="Microbot 2.6.55: a rebuilt installed plugins list with sorting, filters and Hub install from search, a sortable Hub tab and a banner for plugin status changes, opt-in hardware ID spoofing, walker, camera and mouse fixes, and five new Fourtifys plugins including Phosani's Nightmare and Tormented Demons.">
+    <meta property="og:image" content="https://microbot.cloud/images/general/logo.png">
+    <meta property="og:url" content="https://microbot.cloud/releases/2.6.55.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Microbot 2.6.55 release notes">
+    <meta name="twitter:description" content="Microbot 2.6.55: a rebuilt installed plugins list with sorting, filters and Hub install from search, a sortable Hub tab and a banner for plugin status changes, opt-in hardware ID spoofing, walker, camera and mouse fixes, and five new Fourtifys plugins including Phosani's Nightmare and Tormented Demons.">
+    <meta name="theme-color" content="#0e0e0e">
+    <link rel="stylesheet" href="../microbot/app.min.css" media="all">
+    <link rel="stylesheet" href="../microbot/341e4a57816af3ba440d891ca87450ff_framework.css.c1bcd9467a7eeb9006567801face652d.css" media="all">
+    <link rel="stylesheet" href="../microbot/20446cf2d164adcc029377cb04d43d17_flags.css.be60c469fe9d673f833faaa74a81e375.css" media="all">
+    <link rel="stylesheet" href="../microbot/90eb5adf50a8c640f633d47fd7eb1778_core.css.730a336650d62c3b59570edc9065b630.css" media="all">
+    <link rel="stylesheet" href="../microbot/5a0da001ccc2200dc5625c3f3934497d_core_responsive.css.1d08c9ed37ed1cae43d3985a3b2316ad.css" media="all">
+    <link rel="stylesheet" href="../microbot/releases/releases.css">
+</head>
+<body style="background-color:black !important;" class="rn-page ipsApp ipsApp_front ipsClearfix ipsJS_has ipsApp_noTouch">
+<header class="c-header">
+    <!-- Event Start -->
+    <div class="c-events-block py-2">
+        <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between gap-2">
+            <div></div>
+            <a href="https://discord.gg/zaGrfqFEWE" target="_blank" rel="noreferrer noopener"
+               class="c-events-block__right d-flex flex-row align-items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24px" class="me-2" viewBox="0 0 71 55"><title>logo
+                    discord</title>
+                    <g fill="none" class="nc-icon-wrapper">
+                        <g clip-path="url(#clip0)">
+                            <path d="M60.105 4.898A58.55 58.55 0 0 0 45.653.415a.22.22 0 0 0-.233.11 40.784 40.784 0 0 0-1.8 3.697c-5.456-.817-10.886-.817-16.23 0-.485-1.164-1.201-2.587-1.828-3.697a.228.228 0 0 0-.233-.11 58.386 58.386 0 0 0-14.451 4.483.207.207 0 0 0-.095.082C1.578 18.73-.944 32.144.293 45.39a.244.244 0 0 0 .093.167c6.073 4.46 11.955 7.167 17.729 8.962a.23.23 0 0 0 .249-.082 42.08 42.08 0 0 0 3.627-5.9.225.225 0 0 0-.123-.312 38.772 38.772 0 0 1-5.539-2.64.228.228 0 0 1-.022-.378c.372-.279.744-.569 1.1-.862a.22.22 0 0 1 .23-.03c11.619 5.304 24.198 5.304 35.68 0a.219.219 0 0 1 .233.027c.356.293.728.586 1.103.865a.228.228 0 0 1-.02.378 36.384 36.384 0 0 1-5.54 2.637.227.227 0 0 0-.121.315 47.249 47.249 0 0 0 3.624 5.897.225.225 0 0 0 .249.084c5.801-1.794 11.684-4.502 17.757-8.961a.228.228 0 0 0 .092-.164c1.48-15.315-2.48-28.618-10.497-40.412a.18.18 0 0 0-.093-.084zm-36.38 32.427c-3.497 0-6.38-3.211-6.38-7.156 0-3.944 2.827-7.156 6.38-7.156 3.583 0 6.438 3.24 6.382 7.156 0 3.945-2.827 7.156-6.381 7.156zm23.593 0c-3.498 0-6.38-3.211-6.38-7.156 0-3.944 2.826-7.156 6.38-7.156 3.582 0 6.437 3.24 6.38 7.156 0 3.945-2.798 7.156-6.38 7.156z"
+                                  fill="currentColor"></path>
+                        </g>
+                        <defs>
+                            <clippath id="clip0">
+                                <path fill="currentColor" d="M0 0h71v55H0z"></path>
+                            </clippath>
+                        </defs>
+                    </g>
+                </svg>
+                <p class="mb-0">Join us on Discord</p>
+            </a>
+        </div>
+    </div>
+    <div class="c-border-red mb-2"></div>
+    <!-- Event End -->      <!-- Navigation Start -->
+    <nav class="c-nav navbar navbar-expand-sm py-2" style="flex-wrap:nowrap;justify-content: flex-start">
+        <div class="container align-items-stretch">
+            <a class="navbar-brand me-0 me-lg-3 me-xl-5" href="../index.html">
+                <img src="../microbot/logo.png" class="c-nav__logo" loading="lazy" alt="logo">
+            </a>
+            <div class="p-3 p-xl-0" style="line-height: 2rem;width: 100%;" id="navbarMenu">
+                <ul class="navbar-nav me-auto text-center text-xl-left gap-3 gap-xl-4">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://www.github.com/chsami/microbot" target="_blank">Github</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://discord.gg/zaGrfqFEWE" target="_blank">Discord</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://chatgpt.com/g/g-LM0fGeeXB-microbot-documentation"
+                           target="_blank">ChatGPT</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../releases.html">Releases</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../plugins.html">Plugins</a>
+                    </li>
+                </ul>
+            </div>
+
+            <ul id="elMobileNav"
+                class="ipsList_inline ipsResponsive_hideDesktop ipsResponsive_block my-auto d-flex gx-2"
+                data-controller="core.front.core.mobileNav" data-default="all">
+
+                <li class="navbar-toggler my-auto py-3 position-relative" data-ipsdrawer=""
+                    data-ipsdrawer-drawerelem="#elMobileDrawer">
+                    <a href="#">
+                        <i class="fa fa-navicon"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Navigation End -->
+</header>
+
+<main>
+    <section class="rn-hero">
+        <div class="container">
+            <div>
+            <div class="rn-eyebrow">Release notes</div>
+            <h1>Microbot 2.6.55</h1>
+            <p class="rn-tagline">A new installed plugins list, a sortable Hub, and five new plugins</p>
+            <div class="rn-meta">
+                <span><strong>November 9, 2026</strong></span>
+                <span>by Microbot Team</span>
+            </div>
+            <div class="rn-actions">
+                <a class="c-button c-button--primary" href="../index.html">Download Microbot</a>
+                <a class="c-button" href="../releases.html">All releases</a>
+            </div>
+            </div>
+            <div class="rn-hero-art"><img class="rn-sprite" src="../images/releases/2.6.55/microbot-hub.png" alt=""></div>
+        </div>
+    </section>
+
+    <div class="rn-shell">
+        <div class="rn-layout">
+        <aside class="rn-toc" aria-label="In this release">
+            <div class="rn-toc-title">In this release</div>
+            <ol>
+                <li><a href="#plugin-list">A new installed plugins list</a></li>
+                <li><a href="#hub-tab">Sort the Hub tab</a></li>
+                <li><a href="#hub-health">Plugin status changes</a></li>
+                <li><a href="#hwid">Hardware ID spoofing is opt-in</a></li>
+                <li><a href="#walker">Walking, camera and mouse</a></li>
+                <li><a href="#fixes">Other client fixes</a></li>
+                <li><a href="#new-plugins">Five new plugins</a></li>
+                <li><a href="#plugins">Plugin updates</a></li>
+                <li><a href="#developers">For script developers</a></li>
+                <li><a href="#update">How to update</a></li>
+            </ol>
+        </aside>
+        <article class="rn-article">
+            <details class="rn-toc-mobile">
+                <summary>In this release</summary>
+                <ol>
+                <li><a href="#plugin-list">A new installed plugins list</a></li>
+                <li><a href="#hub-tab">Sort the Hub tab</a></li>
+                <li><a href="#hub-health">Plugin status changes</a></li>
+                <li><a href="#hwid">Hardware ID spoofing is opt-in</a></li>
+                <li><a href="#walker">Walking, camera and mouse</a></li>
+                <li><a href="#fixes">Other client fixes</a></li>
+                <li><a href="#new-plugins">Five new plugins</a></li>
+                <li><a href="#plugins">Plugin updates</a></li>
+                <li><a href="#developers">For script developers</a></li>
+                <li><a href="#update">How to update</a></li>
+                </ol>
+            </details>
+<p class="rn-lede">Most of us have dozens of Hub plugins installed by now, and finding the one you want meant scrolling a long list, while a plugin the Hub had marked as broken looked just like the rest. 2.6.55 rebuilds the installed plugins list: sort it by recently used or by author, show only the plugins that are on, install Hub plugins straight from the search box, and see on each row whether a plugin failed to start or has an update. The Hub tab gets its own sort menu, and a banner tells you when the Hub changes the status of a plugin you have installed. Hardware ID spoofing is now something you turn on in the launcher, and the walker, camera and natural mouse each lose a way to get stuck. On the Hub there are five new plugins from Fourtifys, among them Phosani's Nightmare and Tormented Demons, plus fixes to Auto Fishing, Tithe Farm, Revenant Killer, Guardians of the Rift, Tempoross, CG Prep and 14 others.</p>
+<h2 id="plugin-list">A new installed plugins list</h2>
+<p><img alt="" class="rn-sprite rn-inline-icon" src="../images/releases/2.6.55/configure.png"/>Open the Microbot plugin list and the search box now has a button next to it called <strong>Sort, filter and more</strong>. It holds everything that used to sit along the top of the list:</p>
+<ul>
+<li><strong>A-Z</strong> sorts by the plugin's own name and ignores the author tag in front of it.</li>
+<li><strong>Recently installed</strong> puts the plugins you added last at the top. Updating a plugin doesn't move it, so a plugin you installed months ago stays where it was.</li>
+<li><strong>Recently used</strong> puts the plugins you turned on last at the top. If you switch between three or four plugins every day, they're the first rows you see.</li>
+<li><strong>By author</strong> groups plugins under a header per author tag, with a "No author tag" group at the end.</li>
+<li><strong>Only on</strong> hides every plugin that is off. The number in brackets tells you how many are on.</li>
+<li><strong>Local Plugins...</strong> opens the window from 2.6.53 for adding and updating plugin JARs.</li>
+</ul>
+<p>Your choice is remembered. Each row now has a status line that says what's going on with that plugin, for example "Failed to start", "Not loaded", "Turned off by its author", "Turned off on the Microbot Hub" or "Confirmed broken". When a Hub plugin has a newer version, an <strong>Update</strong> button shows on its row, so the pop-up that listed outdated plugins at startup is gone. A "2 to fix" chip shows above the list only while something needs your attention.</p>
+<div class="rn-compare">
+<div class="is-before">
+<div class="rn-compare-label">Before</div>
+<p>You type "agil" in the search box to find an Agility plugin. Nothing installed matches, so the list is empty, and you go to the Hub tab and search again.</p>
+</div>
+<div class="is-after">
+<div class="rn-compare-label">2.6.55</div>
+<p>The list says no installed plugin matches and shows "Microbot Hub: 3 matches" underneath, each with an <strong>Install</strong> button. You install one without leaving the list.</p>
+</div>
+</div>
+<ul class="rn-iconlist">
+<li><span class="rn-li-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.55/pin.png"/></span><strong>Pins carry over.</strong> Plugins you pinned with the star stay pinned after the update.</li>
+<li><span class="rn-li-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.55/configure.png"/></span><strong>Less clutter at the bottom.</strong> Plugins that are always on, the Microbot settings row and plugins their author has turned off sit in a closed group called "Always on &amp; settings".</li>
+<li><span class="rn-li-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.55/search.png"/></span><strong>Keyboard shortcuts.</strong> Ctrl+F jumps to the search box, the arrow keys move between rows, Space turns the selected plugin on or off, Enter opens its settings and Escape clears the search.</li>
+</ul>
+<h2 id="hub-tab">Sort the Hub tab, and read each plugin's state</h2>
+<p><img alt="" class="rn-sprite rn-inline-icon" src="../images/releases/2.6.55/microbot-hub.png"/>The Microbot Hub tab gets the same kind of menu button next to its search box. Pick <strong>Installed first</strong> to see what you already have at the top, <strong>Newest</strong> to see what was added to the Hub lately, or <strong>A-Z</strong>. <strong>Open plugin folder...</strong> moved into this menu from the top bar. The sort you pick is saved per profile, so your main account and your alt can each keep their own.</p>
+<p>Cards for plugins you have installed now say their state in words: "Installed", "Update available", or the Hub's own reason when a plugin is blocked. A plugin that needs a newer client used to show "Confirmed broken" like a plugin that really is broken. It now says "Requires client" with the version it needs, and a plugin turned off by the Hub team says "Turned off on the Microbot Hub". An update only shows when the Hub has a newer version than the one you have.</p>
+<h2 id="hub-health">Know when an installed plugin's status changes</h2>
+<ul class="rn-iconlist">
+<li><span class="rn-li-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.55/alert.png"/></span><strong>A banner for status changes.</strong> Say the Hub marks one of your installed plugins as confirmed broken after a game update, or turns it back on once it's fixed. The next time you open the plugin list, a banner at the top reads "Hub status changed for your plugins", with one line per plugin. Click a line and the list jumps to that plugin's row. Click the cross to dismiss the whole banner. Until you do one of the two, the banner comes back, so you don't miss a change because you didn't open the list that day. Routine changes, such as a new plugin version being verified, don't show up.</li>
+<li><span class="rn-li-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.55/error.png"/></span><strong>Fixed JARs stop showing as not loaded.</strong> If a plugin JAR was broken when Microbot started, it stayed flagged as not loaded until you restarted the client, even after you replaced or deleted the JAR. The warning now clears as soon as the fixed JAR loads, the JAR is gone, or you switch to another plugin folder.</li>
+<li><span class="rn-li-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.55/microbot-hub.png"/></span><strong>Older Hub plugins keep loading.</strong> The new list changed a piece of code that some Hub plugins still use. Our release checks caught it before 2.6.55 went out, so those plugins load as before.</li>
+</ul>
+<h2 id="hwid">Hardware ID spoofing is now opt-in</h2>
+<p><img alt="" class="rn-sprite rn-inline-icon" src="../images/releases/2.6.55/profile.png"/>Spoofing sends a random device ID instead of your real one when you log in. It used to be on for everyone who started Microbot from the launcher. From launcher 3.2.29, a new install starts with the <strong>Spoof hardware IDs</strong> box unticked, and 2.6.55 follows that box. If you already use the launcher, your current setting is kept, so nobody is switched to their real IDs without knowing it.</p>
+<ul>
+<li>To spoof, tick <strong>Spoof hardware IDs</strong> in the launcher and start the client again. <strong>Spoof device ID</strong> under Microbot &gt; General only works while that box is ticked.</li>
+<li>If you leave the box unticked, the client says nothing about it. That's your choice.</li>
+<li>If you ticked the box and spoofing didn't take effect, you get one line in game chat after logging in, for example: "Spoofing is not active, so this login sent your real device details. Restart the client from the Microbot launcher and check that Spoof hardware IDs is ticked. Already ticked? Report it in the Microbot Discord."</li>
+</ul>
+<h2 id="walker">Walking, camera and mouse fixes</h2>
+<ul class="rn-iconlist">
+<li><span class="rn-li-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.55/walker.png"/></span><strong>No more waiting at a wall next to a door.</strong> On a Mahogany Homes bank trip in East Ardougne, the walker stopped at a wall beside a door and waited there for about 20 minutes, starting the same walk again every few minutes. It now walks around the wall.</li>
+<li><span class="rn-li-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.55/walker.png"/></span><strong>The Al Kharid tanner.</strong> After banking, the walker led a tanning plugin into the furnace building next to the tanner and then stood still, because it kept picking the tile you were already on as the new goal. Walks now only end on tiles you can stand on, and never retarget onto your own tile.</li>
+<li><span class="rn-li-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.55/walker.png"/></span><strong>A quieter chat.</strong> Every time a plugin stopped, game chat could show "[WebWalk] clear | reason=&lt;missing&gt;", about 40 times in one player's session, which made it look like the plugin was fighting the walker. That line now only goes to the client log.</li>
+<li><span class="rn-li-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.55/search.png"/></span><strong>The camera stops where it should.</strong> When a script clicked something hidden behind the chatbox or the side panel, the camera could spin several full turns for up to 5 seconds before the click. It now stops turning as soon as it faces the object.</li>
+<li><span class="rn-li-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.55/cursor.png"/></span><strong>Natural mouse in Stretched Mode.</strong> With Stretched Mode and natural mouse on, a Wintertodt script froze with the bot's cursor off the game screen, and the character stood still and took damage until the player moved the real mouse over the game. Bot mouse movement now stays on the game screen in Stretched Mode.</li>
+</ul>
+<h2 id="fixes">Other client fixes</h2>
+<ul class="rn-iconlist">
+<li><span class="rn-li-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.55/login.png"/></span><strong>Adding a Jagex account on Windows.</strong> You could sign in through the Jagex window and still see no account appear in the list, because Windows or your antivirus was holding on to a temporary helper file the client then failed to delete. The account is now added, and the leftover file is deleted when the client closes.</li>
+<li><span class="rn-li-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.55/thieving.png"/></span><strong>Pickpocketing a missing NPC.</strong> When the NPC a thieving script wanted had just walked away or despawned, the script hit an error. The pickpocket or click now simply reports that it didn't happen, so the script can carry on.</li>
+<li><span class="rn-li-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.55/alert.png"/></span><strong>Minimap checks.</strong> Scripts that check whether an object is on the minimap before clicking it there failed with an error on every tick in 2.6.53. That check now works.</li>
+</ul>
+<h2 id="new-plugins">Five new plugins from Fourtifys</h2>
+<p>Each of these plugins has a page on the Hub that lists what you need and how to set it up. When one stops, it tells you why and what to do next in game chat, for example "Out of Shark in the bank: restock it or lower Food count", and it waits while you pause scripts with the header pause button.</p>
+<div class="rn-plugin-list">
+<div class="rn-plugin">
+<div class="rn-plugin-name"><span class="rn-plugin-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.55/prayer.png"/></span><span>Fourtifys Phosani's Nightmare<span class="rn-plugin-version">1.0.0</span></span></div>
+<div class="rn-plugin-body"><p>Kills Phosani's Nightmare. It prays against her melee, magic and ranged attacks, keeping the right prayer while her curse swaps them, and steps off her rifts, spores, flowers and surges. It kills husks, parasites and sleepwalkers, drinks a cure while a parasite grows, and charges the totems with your magic gear, with an optional thrall and Death Charge. In her last phase it uses your special attack weapon first. Between kills it picks up the loot and starts the next kill while you still carry enough supplies. When you run low it teleports to Ferox Enclave with a Ring of dueling, banks, restocks, drinks from the pool and comes back with Drakan's medallion.</p></div>
+</div>
+<div class="rn-plugin">
+<div class="rn-plugin-name"><span class="rn-plugin-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.55/slayer.png"/></span><span>Fourtifys Tormented Demons<span class="rn-plugin-version">1.0.1</span></span></div>
+<div class="rn-plugin-body"><p>Kills Tormented Demons in a single-combat room of the Ancient Guthixian Temple. It switches your protection prayer to the demon's attack style, swaps to your next gear set when the demon starts protecting against the style you're using, and steps off fire bombs. It eats and drinks at the percentages you set and loots drops above a minimum value. When supplies run out it banks at Ferox Enclave and comes back by temple teleport. You fill in at least two of the Magic, Ranged and Melee gear sets, and a missing item stops it with a message such as "Missing Ghrazi rapier (22324)". In 1.0.1, changing a setting after a death no longer wipes your kill count and runtime.</p></div>
+</div>
+<div class="rn-plugin">
+<div class="rn-plugin-name"><span class="rn-plugin-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.55/barrows.png"/></span><span>Fourtifys Barrows<span class="rn-plugin-version">1.0.1</span></span></div>
+<div class="rn-plugin-body"><p>Runs full Barrows trips. It travels by Barrows teleport tablet, Mort'ton teleport scroll, the Arceuus Barrows Teleport, Morytania legs 3 or 4, or the Shades of Mort'ton teleport. It kills each brother with the right protection prayer and gear, solves the tunnel puzzle and loots the chest, then banks at Ferox Enclave and goes again. If it has to stop in the middle of a fight, it teleports out first so a brother can't keep hitting you. In 1.0.1 it handles a chest reward that doesn't fit in your inventory, and you can start it with the bank already open.</p></div>
+</div>
+<div class="rn-plugin">
+<div class="rn-plugin-name"><span class="rn-plugin-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.55/agility.png"/></span><span>Fourtifys Agility<span class="rn-plugin-version">1.0.1</span></span></div>
+<div class="rn-plugin-body"><p>Runs laps on 16 courses: the Gnome Stronghold, the rooftop courses from Draynor Village to Ardougne, the Agility Pyramid, Brimhaven, both Colossal Wyrm courses, the Wilderness course, Prifddinas and Ape Atoll. It picks up marks of grace, eats at the Hitpoints level you set, and can cast High Level Alchemy between obstacles, which works properly as of 1.0.1. If your level is too low for the course, it tells you, for example "Agility 60 needed for this course; choose a lower course".</p></div>
+</div>
+<div class="rn-plugin">
+<div class="rn-plugin-name"><span class="rn-plugin-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.55/mining.png"/></span><span>Fourtifys Gem Mining<span class="rn-plugin-version">1.0.1</span></span></div>
+<div class="rn-plugin-body"><p>Mines gem rocks in the Shilo Village gem mine, on the surface or underground. When your inventory is full it banks the uncut gems at Shilo Village bank or the mine's deposit chest and walks back, and it fills and empties a gem bag if you carry one. On a free-to-play world it stops with "Shilo Village is members-only. Switch to a members world".</p></div>
+</div>
+</div>
+<h2 id="plugins">Plugin updates</h2>
+<ul class="rn-iconlist">
+<li><span class="rn-li-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.55/fishing.png"/></span><strong>Auto Fishing 1.0.14:</strong> one player fishing Sacred eels kept the Sandworms in a Tackle box, as the game allows, and the plugin logged out on the first tick without saying why. Bait in a Tackle box and Sandworms now count, and if you really are out of bait the plugin tells you what's missing and where to put it. In 1.0.13 it also closes the level-up screen, which used to stop fishing at Barbarian Village until you turned the plugin off and on.</li>
+<li><span class="rn-li-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.55/farming.png"/></span><strong>Tithe Farm 1.1.18:</strong> on lanes 1 and 2 the character ran about 20 tiles from one end of the lane to the other several times a minute, because it went by plant number. It now waters and harvests the nearest plant that's due.</li>
+<li><span class="rn-li-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.55/ring-of-dueling.png"/></span><strong>Revenant Killer 2.0.14:</strong> wearing a Ring of wealth instead of a Ring of dueling sent the plugin back and forth to the bank for minutes, and could pull you out of the caves mid-fight. At the bank it now swaps a wrong ring for a Ring of dueling and a wrong or uncharged amulet for a charged Amulet of glory, and puts yours back in the bank. An Amulet of eternal glory is left on.</li>
+<li><span class="rn-li-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.55/runecraft.png"/></span><strong>Guardians of the Rift 1.5.15:</strong> with Mode set to CATALYTIC, the plugin still went mostly to elemental guardians, 63 elemental energy to 7 catalytic in one player's round. CATALYTIC is now respected, and ELEMENTAL and BALANCED pick altars by rune type.</li>
+<li><span class="rn-li-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.55/fishing.png"/></span><strong>Tempoross 2.24.10:</strong> when a mast repair interrupted loading the cannon, the plugin stood at the totem with 16 cooked fish while fires burned and the storm won. It now puts the fires out and loads the cannon again.</li>
+<li><span class="rn-li-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.55/corrupted-bow.png"/></span><strong>CG Prep 1.8.2:</strong> in the Hunllef fight it moves with the game's own pathing, never stands under the boss and clicks less. The camera no longer overshoots while turning, it stops praying against melee monsters that can't reach you, a cursor move that fails no longer stalls the fight, deaths show in the overlay, Reward Chest retries are capped, and there's a new <strong>Show overlay</strong> setting.</li>
+<li><span class="rn-li-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.55/crafting.png"/></span><strong>Crafting 1.0.7:</strong> with <strong>Fletch into Bolt Tips</strong> on, the plugin banked your cut rubies and stopped with "You've ran out of materials!". It now fletches cut gems into bolt tips.</li>
+<li><span class="rn-li-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.55/thieving.png"/></span><strong>Rogues' Den 1.0.4:</strong> one player's character stood in front of the trapped wall for about 18 minutes, clicking to walk, without ever searching it. It now searches the wall from the tile next to it, and if a maze tile can't be reached it turns the camera, tries again and tells you.</li>
+<li><span class="rn-li-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.55/alert.png"/></span><strong>Random Event Handler 2.1.3:</strong> a Mysterious Old Man or Rick Turpentine could stand next to you and never be dismissed if no bot script was running, for example when only the walker was active. They're now dismissed whenever the handler is on, as long as you aren't using the mouse or keyboard at that moment. In 2.1.2 it also stopped trying to dismiss an NPC that had already left.</li>
+<li><span class="rn-li-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.55/barrows.png"/></span><strong>Barrows 2.5.27:</strong> without a Ring of dueling in the bank, the plugin stood still with its toggle still on and the reason only in the log. It now shows a message such as "Barrows stopped: no Ring of dueling in your bank", turns itself off, and says how many you need and which setting to change.</li>
+<li><span class="rn-li-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.55/smithing.png"/></span><strong>Blast Furnace (BlastoiseFurnace) 1.2.6:</strong> with run off, the plugin stopped waiting before the ore reached the conveyor belt and lost about half the coal for the trip. It now waits for the walk, and stops if coal from the coal bag stays in your inventory.</li>
+<li><span class="rn-li-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.55/magic.png"/></span><strong>AIO Magic:</strong> with natural mouse on and several of the same item in your inventory, alching never cast. It now alchs the item that's already in the right slot.</li>
+<li><span class="rn-li-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.55/agility.png"/></span><strong>MicroAgility 1.3.5:</strong> stuck in the Brimhaven Agility Arena out of reach of the rope swing, the plugin logged "No agility obstacle found" forever. After about 5 seconds of standing still it now stops and tells you to leave the arena or walk back next to the rope swing by the entrance ladder.</li>
+<li><span class="rn-li-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.55/attack.png"/></span><strong>Gem Crab Killer 1.0.7:</strong> with <strong>Use Inventory Setup?</strong> on, it walked straight to the crab without your setup. It now loads the setup at the bank first, and if that fails it lists what's short, for example "not enough Shark, Prayer potion(4)".</li>
+<li><span class="rn-li-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.55/glory.png"/></span><strong>Bank's Shopper 1.4.6, Woodcutting 1.8.14, AutoLooter 1.2.1, Firemaking Plus 0.2.5, Auto Smelting and Frosty RC:</strong> no more errors in the moment your position is unknown, such as during a world hop, a Forestry event or right after you start the plugin.</li>
+</ul>
+<h2 id="developers">For script developers</h2>
+<ul>
+<li><code>Rs2Npc.pickpocket</code> and the <code>Rs2Npc.interact</code> overloads return <code>false</code> for a null NPC instead of throwing.</li>
+<li><code>Rs2TileObjectModel.getMinimapLocation()</code> can be called from a script thread again; it reads on the client thread for you.</li>
+<li>A route clear without a reason, such as <code>Rs2Walker.setTarget(null)</code>, now logs at INFO, so it stays out of game chat. Pass a reason if you want it to show up in the log with context.</li>
+<li>The 7-argument <code>MicrobotPluginConfigurationDescriptor</code> constructor is back for plugins compiled against it.</li>
+<li><code>PluginManager.startPlugin(plugin, countsAsUse)</code> feeds the Recently used sort, which is saved in <code>~/.runelite/microbot/plugin-usage.json</code>.</li>
+<li>The HWID agent registers nothing when the JVM is started with <code>-Dmicrobot.hwid.spoof=false</code>. A launcher that attaches the agent without that flag still gets spoofing.</li>
+<li>Two merges of <code>main</code> into <code>development</code>, with no change for players.</li>
+</ul>
+<h2 id="update">How to update</h2>
+<p><img alt="" class="rn-sprite rn-inline-icon" src="../images/releases/2.6.55/microbot-hub.png"/>Restart Microbot to get client 2.6.55. The new sort and filter menu is next to the search box in the Microbot plugin list and in the Microbot Hub tab. To keep or turn on hardware ID spoofing, check the <strong>Spoof hardware IDs</strong> box in the launcher. The new and updated plugins show up in the Microbot Hub panel inside the client.</p>
+<p class="rn-credit">Game images © Jagex Ltd., via the <a href="https://oldschool.runescape.wiki" rel="noopener" target="_blank">Old School RuneScape Wiki</a>.</p>
+
+<nav class="rn-pager" aria-label="More releases">
+    <a class="rn-pager-prev" href="2.6.53.html"><small>Previous release</small><span>2.6.53</span></a>
+</nav>
+        </article>
+        </div>
+    </div>
+</main>
+
+<footer class="c-footer pt-5">
+    <div class="container">
+        <div class="row justify-content-center align-items-start g-4">
+            <div class="text-center" style="width:20rem">
+                <img src="../microbot/logo.png" class="c-footer--logo" loading="lazy" alt="footer">
+                <div class="c-content-divider mt-3 mb-3"></div>
+                <ul class="d-flex align-items-center justify-content-center gap-4 m-auto text-center">
+                    <li>
+                        <a href="https://discord.gg/zaGrfqFEWE" target="_blank" rel="noreferrer noopener">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24px" viewBox="0 0 71 55"><title>logo
+                                discord</title>
+                                <g fill="none" class="nc-icon-wrapper">
+                                    <g clip-path="url(#clip0)">
+                                        <path d="M60.105 4.898A58.55 58.55 0 0 0 45.653.415a.22.22 0 0 0-.233.11 40.784 40.784 0 0 0-1.8 3.697c-5.456-.817-10.886-.817-16.23 0-.485-1.164-1.201-2.587-1.828-3.697a.228.228 0 0 0-.233-.11 58.386 58.386 0 0 0-14.451 4.483.207.207 0 0 0-.095.082C1.578 18.73-.944 32.144.293 45.39a.244.244 0 0 0 .093.167c6.073 4.46 11.955 7.167 17.729 8.962a.23.23 0 0 0 .249-.082 42.08 42.08 0 0 0 3.627-5.9.225.225 0 0 0-.123-.312 38.772 38.772 0 0 1-5.539-2.64.228.228 0 0 1-.022-.378c.372-.279.744-.569 1.1-.862a.22.22 0 0 1 .23-.03c11.619 5.304 24.198 5.304 35.68 0a.219.219 0 0 1 .233.027c.356.293.728.586 1.103.865a.228.228 0 0 1-.02.378 36.384 36.384 0 0 1-5.54 2.637.227.227 0 0 0-.121.315 47.249 47.249 0 0 0 3.624 5.897.225.225 0 0 0 .249.084c5.801-1.794 11.684-4.502 17.757-8.961a.228.228 0 0 0 .092-.164c1.48-15.315-2.48-28.618-10.497-40.412a.18.18 0 0 0-.093-.084zm-36.38 32.427c-3.497 0-6.38-3.211-6.38-7.156 0-3.944 2.827-7.156 6.38-7.156 3.583 0 6.438 3.24 6.382 7.156 0 3.945-2.827 7.156-6.381 7.156zm23.593 0c-3.498 0-6.38-3.211-6.38-7.156 0-3.944 2.826-7.156 6.38-7.156 3.582 0 6.437 3.24 6.38 7.156 0 3.945-2.798 7.156-6.38 7.156z"
+                                              fill="currentColor"></path>
+                                    </g>
+                                    <defs>
+                                        <clippath id="clip0">
+                                            <path fill="currentColor" d="M0 0h71v55H0z"></path>
+                                        </clippath>
+                                    </defs>
+                                </g>
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/chsami/microbot/releases" target="_blank" rel="noreferrer noopener">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24px" viewBox="0 0 16 16"><title>data
+                                download</title>
+                                <g fill="currentColor" class="nc-icon-wrapper">
+                                    <path d="M14,10a1,1,0,0,0-1,1v2H3V11a1,1,0,0,0-2,0v2a2,2,0,0,0,2,2H13a2,2,0,0,0,2-2V11A1,1,0,0,0,14,10Z"></path>
+                                    <path data-color="color-2"
+                                          d="M7.293,10.707a1,1,0,0,0,1.414,0l4-4a1,1,0,1,0-1.414-1.414L9,7.586V2A1,1,0,0,0,7,2V7.586L4.707,5.293A1,1,0,0,0,3.293,6.707Z"></path>
+                                </g>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="c-footer-cc py-2 mt-5">
+        <div class="container">
+            <p class="text-center c-text-faded mb-0">Microbot © 2026. All Rights Reserved. - <a href="../privacy.html"
+                                                                                                target="_blank">Privacy
+                Policy</a> -
+                <a href="../terms.html"
+                   target="_blank">Terms of service</a></p>
+        </div>
+    </div>
+</footer>
+<script>
+    document.querySelectorAll('.rn-article img, .rn-article video').forEach(function (m) {
+        function hide() {
+            var box = m.closest('.rn-gallery') && m.closest('.rn-gallery').children.length > 1 ? m : (m.closest('figure') || m);
+            box.style.display = 'none';
+        }
+        if (m.tagName === 'IMG' && m.complete && m.naturalWidth === 0 && m.getAttribute('src')) hide();
+        m.addEventListener('error', hide);
+    });
+</script>
+</body>
+</html>

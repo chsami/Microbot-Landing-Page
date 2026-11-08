@@ -1,5 +1,13 @@
 const releases = [
     {
+        date: new Date('11/09/2026'), //MM/dd/YYYY
+        version: '2.6.55',
+        icon: 'images/releases/2.6.55/microbot-hub.png',
+        title: '2.6.55 Release - A new installed plugins list and five new plugins',
+        content: "A rebuilt installed plugins list with sorting, an Only on filter and Hub installs from the search box, a sort menu and plain-worded states in the Hub tab, a banner when an installed plugin's Hub status changes, opt-in hardware ID spoofing, walker, camera and natural mouse fixes, and Hub updates including five new Fourtifys plugins (Phosani's Nightmare, Tormented Demons, Barrows, Agility and Gem Mining), Auto Fishing, Tithe Farm, Revenant Killer, Guardians of the Rift and Tempoross.",
+        author: 'Microbot Team'
+    },
+    {
         date: new Date('11/05/2026'), //MM/dd/YYYY
         version: '2.6.53',
         icon: 'images/releases/2.6.53/pause.png',

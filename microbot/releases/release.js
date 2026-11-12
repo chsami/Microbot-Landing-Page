@@ -1,5 +1,13 @@
 const releases = [
     {
+        date: new Date('11/12/2026'), //MM/dd/YYYY
+        version: '2.6.57',
+        icon: 'images/releases/2.6.57/mouse.png',
+        title: '2.6.57 Release - Fast mouse plugins stay fast, and four new Dro plugins',
+        content: "A fix that keeps a plugin's own mouse speed until you change your antiban settings, so Phosani's Nightmare and Barbarian Fishing click fast again, four new Dro plugins (Elf Thieving, Pyramid Plunder, Inferno Prayers and Colosseum Prayers), and Hub fixes to CG Prep, Tormented Demons, AIO Fighter, Herb Run, Blackjack, Motherlode Mine, Guardians of the Rift and 15 others.",
+        author: 'Microbot Team'
+    },
+    {
         date: new Date('11/09/2026'), //MM/dd/YYYY
         version: '2.6.55',
         icon: 'images/releases/2.6.55/microbot-hub.png',

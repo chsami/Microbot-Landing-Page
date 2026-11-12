@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Microbot 2.6.57 release notes</title>
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Microbot 2.6.57: plugins that speed up the mouse stay fast again, four new Dro plugins including Pyramid Plunder and Inferno Prayers, and fixes to CG Prep, Tormented Demons, AIO Fighter, Guardians of the Rift, Motherlode Mine and 17 more Hub plugins.">
+    <link rel="canonical" href="https://microbot.cloud/releases/2.6.57.html">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Microbot">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:title" content="Microbot 2.6.57 release notes">
+    <meta property="og:description" content="Microbot 2.6.57: plugins that speed up the mouse stay fast again, four new Dro plugins including Pyramid Plunder and Inferno Prayers, and fixes to CG Prep, Tormented Demons, AIO Fighter, Guardians of the Rift, Motherlode Mine and 17 more Hub plugins.">
+    <meta property="og:image" content="https://microbot.cloud/images/general/logo.png">
+    <meta property="og:url" content="https://microbot.cloud/releases/2.6.57.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Microbot 2.6.57 release notes">
+    <meta name="twitter:description" content="Microbot 2.6.57: plugins that speed up the mouse stay fast again, four new Dro plugins including Pyramid Plunder and Inferno Prayers, and fixes to CG Prep, Tormented Demons, AIO Fighter, Guardians of the Rift, Motherlode Mine and 17 more Hub plugins.">
+    <meta name="theme-color" content="#0e0e0e">
+    <link rel="stylesheet" href="../microbot/app.min.css" media="all">
+    <link rel="stylesheet" href="../microbot/341e4a57816af3ba440d891ca87450ff_framework.css.c1bcd9467a7eeb9006567801face652d.css" media="all">
+    <link rel="stylesheet" href="../microbot/20446cf2d164adcc029377cb04d43d17_flags.css.be60c469fe9d673f833faaa74a81e375.css" media="all">
+    <link rel="stylesheet" href="../microbot/90eb5adf50a8c640f633d47fd7eb1778_core.css.730a336650d62c3b59570edc9065b630.css" media="all">
+    <link rel="stylesheet" href="../microbot/5a0da001ccc2200dc5625c3f3934497d_core_responsive.css.1d08c9ed37ed1cae43d3985a3b2316ad.css" media="all">
+    <link rel="stylesheet" href="../microbot/releases/releases.css">
+</head>
+<body style="background-color:black !important;" class="rn-page ipsApp ipsApp_front ipsClearfix ipsJS_has ipsApp_noTouch">
+<header class="c-header">
+    <!-- Event Start -->
+    <div class="c-events-block py-2">
+        <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between gap-2">
+            <div></div>
+            <a href="https://discord.gg/zaGrfqFEWE" target="_blank" rel="noreferrer noopener"
+               class="c-events-block__right d-flex flex-row align-items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24px" class="me-2" viewBox="0 0 71 55"><title>logo
+                    discord</title>
+                    <g fill="none" class="nc-icon-wrapper">
+                        <g clip-path="url(#clip0)">
+                            <path d="M60.105 4.898A58.55 58.55 0 0 0 45.653.415a.22.22 0 0 0-.233.11 40.784 40.784 0 0 0-1.8 3.697c-5.456-.817-10.886-.817-16.23 0-.485-1.164-1.201-2.587-1.828-3.697a.228.228 0 0 0-.233-.11 58.386 58.386 0 0 0-14.451 4.483.207.207 0 0 0-.095.082C1.578 18.73-.944 32.144.293 45.39a.244.244 0 0 0 .093.167c6.073 4.46 11.955 7.167 17.729 8.962a.23.23 0 0 0 .249-.082 42.08 42.08 0 0 0 3.627-5.9.225.225 0 0 0-.123-.312 38.772 38.772 0 0 1-5.539-2.64.228.228 0 0 1-.022-.378c.372-.279.744-.569 1.1-.862a.22.22 0 0 1 .23-.03c11.619 5.304 24.198 5.304 35.68 0a.219.219 0 0 1 .233.027c.356.293.728.586 1.103.865a.228.228 0 0 1-.02.378 36.384 36.384 0 0 1-5.54 2.637.227.227 0 0 0-.121.315 47.249 47.249 0 0 0 3.624 5.897.225.225 0 0 0 .249.084c5.801-1.794 11.684-4.502 17.757-8.961a.228.228 0 0 0 .092-.164c1.48-15.315-2.48-28.618-10.497-40.412a.18.18 0 0 0-.093-.084zm-36.38 32.427c-3.497 0-6.38-3.211-6.38-7.156 0-3.944 2.827-7.156 6.38-7.156 3.583 0 6.438 3.24 6.382 7.156 0 3.945-2.827 7.156-6.381 7.156zm23.593 0c-3.498 0-6.38-3.211-6.38-7.156 0-3.944 2.826-7.156 6.38-7.156 3.582 0 6.437 3.24 6.38 7.156 0 3.945-2.798 7.156-6.38 7.156z"
+                                  fill="currentColor"></path>
+                        </g>
+                        <defs>
+                            <clippath id="clip0">
+                                <path fill="currentColor" d="M0 0h71v55H0z"></path>
+                            </clippath>
+                        </defs>
+                    </g>
+                </svg>
+                <p class="mb-0">Join us on Discord</p>
+            </a>
+        </div>
+    </div>
+    <div class="c-border-red mb-2"></div>
+    <!-- Event End -->      <!-- Navigation Start -->
+    <nav class="c-nav navbar navbar-expand-sm py-2" style="flex-wrap:nowrap;justify-content: flex-start">
+        <div class="container align-items-stretch">
+            <a class="navbar-brand me-0 me-lg-3 me-xl-5" href="../index.html">
+                <img src="../microbot/logo.png" class="c-nav__logo" loading="lazy" alt="logo">
+            </a>
+            <div class="p-3 p-xl-0" style="line-height: 2rem;width: 100%;" id="navbarMenu">
+                <ul class="navbar-nav me-auto text-center text-xl-left gap-3 gap-xl-4">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://www.github.com/chsami/microbot" target="_blank">Github</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://discord.gg/zaGrfqFEWE" target="_blank">Discord</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://chatgpt.com/g/g-LM0fGeeXB-microbot-documentation"
+                           target="_blank">ChatGPT</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../releases.html">Releases</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../plugins.html">Plugins</a>
+                    </li>
+                </ul>
+            </div>
+
+            <ul id="elMobileNav"
+                class="ipsList_inline ipsResponsive_hideDesktop ipsResponsive_block my-auto d-flex gx-2"
+                data-controller="core.front.core.mobileNav" data-default="all">
+
+                <li class="navbar-toggler my-auto py-3 position-relative" data-ipsdrawer=""
+                    data-ipsdrawer-drawerelem="#elMobileDrawer">
+                    <a href="#">
+                        <i class="fa fa-navicon"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Navigation End -->
+</header>
+
+<main>
+    <section class="rn-hero">
+        <div class="container">
+            <div>
+            <div class="rn-eyebrow">Release notes</div>
+            <h1>Microbot 2.6.57</h1>
+            <p class="rn-tagline">Fast mouse plugins stay fast, and four new plugins from Dro</p>
+            <div class="rn-meta">
+                <span><strong>November 12, 2026</strong></span>
+                <span>by Microbot Team</span>
+            </div>
+            <div class="rn-actions">
+                <a class="c-button c-button--primary" href="../index.html">Download Microbot</a>
+                <a class="c-button" href="../releases.html">All releases</a>
+            </div>
+            </div>
+            <div class="rn-hero-art"><img class="rn-sprite" src="../images/releases/2.6.57/mouse.png" alt=""></div>
+        </div>
+    </section>
+
+    <div class="rn-shell">
+        <div class="rn-layout">
+        <aside class="rn-toc" aria-label="In this release">
+            <div class="rn-toc-title">In this release</div>
+            <ol>
+                <li><a href="#mouse">Plugin mouse speed stays put</a></li>
+                <li><a href="#new-plugins">Four new plugins</a></li>
+                <li><a href="#bossing">Bossing and combat</a></li>
+                <li><a href="#skilling">Skilling</a></li>
+                <li><a href="#minigames">Thieving and minigames</a></li>
+                <li><a href="#developers">For script developers</a></li>
+                <li><a href="#update">How to update</a></li>
+            </ol>
+        </aside>
+        <article class="rn-article">
+            <details class="rn-toc-mobile">
+                <summary>In this release</summary>
+                <ol>
+                <li><a href="#mouse">Plugin mouse speed stays put</a></li>
+                <li><a href="#new-plugins">Four new plugins</a></li>
+                <li><a href="#bossing">Bossing and combat</a></li>
+                <li><a href="#skilling">Skilling</a></li>
+                <li><a href="#minigames">Thieving and minigames</a></li>
+                <li><a href="#developers">For script developers</a></li>
+                <li><a href="#update">How to update</a></li>
+                </ol>
+            </details>
+<p class="rn-lede">If you run a plugin that clicks fast in short bursts, 2.6.56 slowed it down: Fourtifys Phosani's Nightmare lost its quick clicks in the fight, and Barbarian Fishing dropped fish at your normal mouse speed. 2.6.57 fixes that, so a plugin's own mouse speed holds until you change your antiban settings. On the Hub there are four new plugins from Dro, Elf Thieving, Pyramid Plunder, Inferno Prayers and Colosseum Prayers, and fixes to 22 plugins. CG Prep no longer stalls during prep, Tormented Demons dodges the fire bomb while you are bound, AIO Fighter finally buys slayer items, and Herb Run, Blackjack, Motherlode Mine and Guardians of the Rift each lose a way to get stuck.</p>
+<h2 id="mouse">A plugin's mouse speed stays put</h2>
+<p><img alt="" class="rn-sprite rn-inline-icon" src="../images/releases/2.6.57/mouse.png"/>Some plugins speed up the mouse for a burst of clicks and then hand it back to your antiban settings. In 2.6.56 the client rebuilt its natural mouse on every move, and that threw away the plugin's speed after the very first click.</p>
+<div class="rn-compare">
+<div class="is-before">
+<div class="rn-compare-label">2.6.56</div>
+<p>Barbarian Fishing starts dropping a full inventory. The first fish drops quickly, then the cursor slows to your normal antiban speed for the rest of the inventory, and you lose fishing time on every drop.</p>
+</div>
+<div class="is-after">
+<div class="rn-compare-label">2.6.57</div>
+<p>The whole inventory drops at the plugin's speed. In Fourtifys Phosani's Nightmare the quick clicks during the fight stay quick from the first prayer switch to the last.</p>
+</div>
+</div>
+<ul class="rn-iconlist">
+<li><span class="rn-li-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.57/mouse.png"/></span><strong>Your settings still win.</strong> When you change activity intensity, Simulate fatigue or Simulate mistakes in the antiban settings, the mouse picks up your new setting on its next move, without a restart. That was the fix in 2.6.56, and it stays.</li>
+<li><span class="rn-li-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.57/microbot-hub.png"/></span><strong>Caught before the Hub shipped.</strong> A Hub test that checks a fight glides at full speed and returns to your settings afterwards failed on 2.6.56. That held back the Hub release until this fix was in.</li>
+</ul>
+<h2 id="new-plugins">Four new plugins from Dro</h2>
+<p>Search for "Dro" in the Microbot Hub tab to find them. The two prayer plugins only switch prayers, so you still move, attack and eat yourself.</p>
+<div class="rn-plugin-list">
+<div class="rn-plugin">
+<div class="rn-plugin-name"><span class="rn-plugin-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.57/thieving.png"/></span><span>[Dro] Elf Thieving<span class="rn-plugin-version">1.0.4</span></span></div>
+<div class="rn-plugin-body"><p>Pickpockets elves in Prifddinas. When you start it, it picks one elf and one bank and keeps them for the whole session. It eats, opens coin pouches, keeps a Dodgy necklace on and restocks at the bank. It walks Prifddinas with its own route planner, opens doors on the way, and turns run back on once your energy has recovered. Shadow Veil and breaks are optional settings.</p></div>
+</div>
+<div class="rn-plugin">
+<div class="rn-plugin-name"><span class="rn-plugin-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.57/thieving.png"/></span><span>[Dro] Pyramid Plunder<span class="rn-plugin-version">1.0.0</span></span></div>
+<div class="rn-plugin-body"><p>Runs Pyramid Plunder in Sophanem. It finds the Guardian mummy's door and hops to world 493 by default. In each room it gets past the spear trap, loots the urns in the last two rooms your Thieving level allows and the Grand Gold Chest, opens sarcophagi from room 4 if you want, and picks a tomb door to the next room. With 81 Thieving or more, Better XP mode (on by default) only loots urns in rooms 7 and 8. It prays Protect from Melee while a scarab swarm or mummy is on you, eats, cures poison, and restocks at the temple altar and the Sophanem bank. Breaks wait until you leave the timed game. An overlay shows your runs, Thieving XP per hour, the room, the time left and the urns left.</p></div>
+</div>
+<div class="rn-plugin">
+<div class="rn-plugin-name"><span class="rn-plugin-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.57/prayer.png"/></span><span>[Dro] Inferno Prayers<span class="rn-plugin-version">1.0.11</span></span></div>
+<div class="rn-plugin-body"><p>Switches your protection and offensive prayers in the Inferno while you play everything else. Enter the Inferno and turn it on. A tile pack shows on the floor by default, and you can switch it off in the settings.</p></div>
+</div>
+<div class="rn-plugin">
+<div class="rn-plugin-name"><span class="rn-plugin-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.57/prayer.png"/></span><span>[Dro] Colosseum Prayers<span class="rn-plugin-version">1.0.100</span></span></div>
+<div class="rn-plugin-body"><p>The same idea for the Fortis Colosseum: it switches protection and offensive prayers, and you do the rest. Enter the Colosseum and turn it on. The tile pack can be switched off in the settings.</p></div>
+</div>
+</div>
+<h2 id="bossing">Bossing and combat</h2>
+<ul class="rn-iconlist">
+<li><span class="rn-li-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.57/ranged.png"/></span><strong>CG Prep 1.8.3:</strong> prep could stall at the start-room door with a full inventory, because the plugin went home to brew with only empty vials. That loop is gone, and it no longer flips between two goals. It now lights an unlit room when going through it is clearly shorter, and cooks your fish on every trip home instead of only at the end. In the Hunllef fight it uses the weapons you actually made: with no bow or staff it keeps the sceptre and melees from the boss's side tile so the Hunllef still switches prayer. It also eats and drinks at the barrier before going in if you are low.</li>
+<li><span class="rn-li-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.57/slayer.png"/></span><strong>Tormented Demons 1.2.5:</strong> when a demon bound you and threw its fire bomb, the plugin clicked away once while you could not move, never tried again, and you took the hit. One player was hit on 4 of 4 binds while the log said "Successfully dodged" each time. It now clicks every tick until you are off the bomb tile, picks a tile that is not next to the bomb, holds attacking and looting while the bomb is within 2 tiles, and keeps eating and praying meanwhile. The log now says what really happened.</li>
+<li><span class="rn-li-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.57/prayer.png"/></span><strong>Fourtifys Phosani's Nightmare 1.0.1:</strong> protection prayers are clicked on the tick the game reads them while husks or a parasite are up, instead of one tick early. Sleepwalkers are planned with your weapon's real reach, so dragon knives get 4 tiles on Rapid rather than a blisterwood stake's 6, and the plugin picks Rapid or Longrange per phase. A sleepwalker that walked out of view is no longer treated as dealt with, and the plugin keeps clear of her claws. The plugin page now recommends blisterwood stakes.</li>
+<li><span class="rn-li-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.57/magic.png"/></span><strong>Prayer Helper 1.5.1:</strong> with some powered staves the plugin turned on Piety instead of Augury, because its built-in weapon table was out of date. It now reads attack styles from the game cache, the same way the client's Attack Styles plugin does, so a game update can't put it out of date again.</li>
+<li><span class="rn-li-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.57/magic.png"/></span><strong>Zulrah Slayer:</strong> in melee phases the bot stayed next to Zulrah and got hit and stunned by the tail slam. Every melee position now has a dodge tile two tiles away, and the bot steps there when the tail swings. After a full rotation the phase tracker also stays in sync for the next cycle.</li>
+<li><span class="rn-li-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.57/prayer.png"/></span><strong>[Dro] Zulrah:</strong> one player ran out of food and prayer on a long kill with no Ring of dueling left. The bot turned off protection prayers, tried to log out in combat, which the game refuses, and died next to Zulrah. Prayers now only go off once a teleport is actually sent. With a Zul-andra teleport it teleports out, and with neither item it keeps praying and fighting and tells you that you need a charged Ring of dueling to leave safely.</li>
+<li><span class="rn-li-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.57/slayer.png"/></span><strong>AIO Fighter 2.2.15:</strong> on a slayer task that needs an item you don't have, such as a bag of salt or earmuffs, the bot went to the Grand Exchange, bought nothing, went back to the bank and repeated that forever. It now buys those items at the slayer shop. Adding an NPC to the attack list works properly, the fight centre is set after you log in, and restocking works outside slayer mode too.</li>
+<li><span class="rn-li-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.57/attack.png"/></span><strong>Giant Mole 0.0.7:</strong> if you don't use the QoL plugin, your character stood in Falador with a full setup and never walked to the mole hole. The setting it looked for doesn't exist without QoL, and the error stopped every loop. It now walks and hunts. Eating is unchanged: at about half HP, unless Use rock cake is on.</li>
+<li><span class="rn-li-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.57/prayer.png"/></span><strong>[Dro] Firecape 0.3.85:</strong> now matches the Dro client's version. It flicks prayers one tick at a time like the Inferno and Colosseum plugins, covers Tok-Xil and Ket-Zek melee, can freeze big melees and bats with ice spells, uses weapon specials, walks to TzHaar when the grouping teleport is on cooldown, and logs out when supplies run out. A Prayers only mode handles prayers and leaves the rest to you.</li>
+</ul>
+<h2 id="skilling">Skilling</h2>
+<ul class="rn-iconlist">
+<li><span class="rn-li-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.57/smithing.png"/></span><strong>Giants' Foundry 1.0.10:</strong> say the crucible already held 14 steel bars when you started. The plugin still took out 14 iron and 14 steel, the iron filled the crucible, and after the pour the 14 steel left in your inventory stopped it from picking up the preform, so it stood still. It now only takes out what the crucible is missing, checks each fill went in, and banks any leftovers before picking up.</li>
+<li><span class="rn-li-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.57/firemaking.png"/></span><strong>Wintertodt 2.2.7:</strong> during a loading screen, teleport or world hop on the way to Wintertodt, the plugin hit an error and reported the start as failed. A moment without a known position now just means "not there yet".</li>
+<li><span class="rn-li-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.57/woodcutting.png"/></span><strong>Auto Woodcutting 1.8.16 and 1.8.17:</strong> in Burn logs mode at the Draynor willows, the game kept saying "You can't light a fire here." and the plugin kept trying the same tile. It now remembers tiles that refuse a fire and moves to another one within 10 tiles. The struggling sapling Forestry event also no longer errors during a hop or region load.</li>
+<li><span class="rn-li-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.57/mining.png"/></span><strong>Motherlode Mine 1.9.13:</strong> with Anti Crash on, the bot counted itself as another player, so it walked up to a vein, waited about 10 seconds and wandered off to a farther one, over and over. It now only skips veins with someone else next to them. It also no longer stands still by the sack when the waterwheel breaks while your inventory is full of ore.</li>
+<li><span class="rn-li-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.57/farming.png"/></span><strong>Herb Run 1.2.3:</strong> when raking took longer than the plugin waited, it moved on and left the patch weedy and unplanted, along with the flower and allotment next to it. It now keeps raking, and only skips a patch after 5 failed tries. Without Making Friends with My Arm, it no longer teleports to Trollheim and tries to reach the Weiss patch 31 times in one run. Weiss and Trollheim are skipped until you have the quest, the log names the quest and the setting to turn off, and an unreachable patch no longer stops the run.</li>
+<li><span class="rn-li-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.57/farming.png"/></span><strong>Tithe Farming 1.1.19:</strong> on a full lane it planted about nine patches, then ran back to water patch 1 while the rest of the lane was still empty, and later went 9-10-7-8. It now plants along the lane in order, and only breaks off to water a plant that would grow within 30 seconds.</li>
+<li><span class="rn-li-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.57/hunter.png"/></span><strong>Pitfall Hunter 0.1.53:</strong> stopping the plugin while it waited at a pit could end in an error about a missing pit. Your pit and NPC choice now stay set until the plugin has fully stopped.</li>
+<li><span class="rn-li-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.57/construction.png"/></span><strong>Construction 1.3.4:</strong> when the demon butler left to un-note planks, the plugin called him again right away, got "The servant is not back yet." and stopped with "No demon butler answered Call Servant". It now waits for him to come back, just like after a bank trip.</li>
+</ul>
+<h2 id="minigames">Thieving and minigames</h2>
+<ul class="rn-iconlist">
+<li><span class="rn-li-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.57/thieving.png"/></span><strong>Blackjack 1.1.31:</strong> after the second pickpocket of a knock-out, the plugin clicked Pickpocket once more, the thug woke up and you were stunned. That happened in 11 of 44 knock-outs in one player's session. It now stops pickpocketing from the second attempt, and the overlay says "Wait for target to stand before next Knock-Out".</li>
+<li><span class="rn-li-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.57/thieving.png"/></span><strong>Thieving 2.2.1:</strong> when it needed to bank and couldn't find a bank it could reach, the plugin threw an error on every tick, 1,247 times in 15 minutes for one player. It now tries 3 times, shows "Looking for a bank..." meanwhile, then stops with "Couldn't find a route to a bank you can use from here. Walk to a bank you can use yourself, then start the script again."</li>
+<li><span class="rn-li-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.57/attack.png"/></span><strong>Moons of Peril 1.0.10:</strong> after a death, the plugin walked to the Lunar Chest and clicked Claim again and again while the game said it was sealed, even with you on low HP and no food. It now reads that reply, goes to resupply and fights the next moon, and the overlay says the chest is sealed until a moon can be fought.</li>
+<li><span class="rn-li-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.57/runecraft.png"/></span><strong>Guardians of the Rift 1.5.16:</strong> after running out of cells mid-round, the bot took more from the table and then stood there for 80 to 90 seconds holding guardian stones until the next portal. It now walks back and powers up the Great Guardian. Between rounds it also tops up a partial stack, so a round no longer starts with 4 cells.</li>
+<li><span class="rn-li-icon"><img alt="" class="rn-sprite" src="../images/releases/2.6.57/construction.png"/></span><strong>Mahogany Homes:</strong> with an out-of-date contract, for example one you finished while the plugin was off, it stood in an Ardougne home talking to a homeowner with no reward to give, forever. After 2 talks with no reward it now drops that contract and gets a new one.</li>
+</ul>
+<h2 id="developers">For script developers</h2>
+<ul>
+<li>A speed manager set on the natural mouse <code>nature</code> now survives later moves. <code>NaturalMouse.getFactory()</code> caches its factory again and only rebuilds it when activity intensity, <code>simulateFatigue</code>, <code>simulateMistakes</code> or the fatigue step from time since login changes. A rebuild replaces any override, so set it again if you need it after a settings change.</li>
+<li>The 2.6.56 release was merged back into <code>development</code>, with no change for players.</li>
+</ul>
+<h2 id="update">How to update</h2>
+<p><img alt="" class="rn-sprite rn-inline-icon" src="../images/releases/2.6.57/microbot-hub.png"/>Restart Microbot to get client 2.6.57. The four new Dro plugins and the updated plugins show up in the Microbot Hub panel inside the client, and plugins you already have update from their row in the plugin list.</p>
+<p class="rn-credit">Game images © Jagex Ltd., via the <a href="https://oldschool.runescape.wiki" rel="noopener" target="_blank">Old School RuneScape Wiki</a>.</p>
+
+<nav class="rn-pager" aria-label="More releases">
+    <a class="rn-pager-prev" href="2.6.55.html"><small>Previous release</small><span>2.6.55</span></a>
+</nav>
+        </article>
+        </div>
+    </div>
+</main>
+
+<footer class="c-footer pt-5">
+    <div class="container">
+        <div class="row justify-content-center align-items-start g-4">
+            <div class="text-center" style="width:20rem">
+                <img src="../microbot/logo.png" class="c-footer--logo" loading="lazy" alt="footer">
+                <div class="c-content-divider mt-3 mb-3"></div>
+                <ul class="d-flex align-items-center justify-content-center gap-4 m-auto text-center">
+                    <li>
+                        <a href="https://discord.gg/zaGrfqFEWE" target="_blank" rel="noreferrer noopener">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24px" viewBox="0 0 71 55"><title>logo
+                                discord</title>
+                                <g fill="none" class="nc-icon-wrapper">
+                                    <g clip-path="url(#clip0)">
+                                        <path d="M60.105 4.898A58.55 58.55 0 0 0 45.653.415a.22.22 0 0 0-.233.11 40.784 40.784 0 0 0-1.8 3.697c-5.456-.817-10.886-.817-16.23 0-.485-1.164-1.201-2.587-1.828-3.697a.228.228 0 0 0-.233-.11 58.386 58.386 0 0 0-14.451 4.483.207.207 0 0 0-.095.082C1.578 18.73-.944 32.144.293 45.39a.244.244 0 0 0 .093.167c6.073 4.46 11.955 7.167 17.729 8.962a.23.23 0 0 0 .249-.082 42.08 42.08 0 0 0 3.627-5.9.225.225 0 0 0-.123-.312 38.772 38.772 0 0 1-5.539-2.64.228.228 0 0 1-.022-.378c.372-.279.744-.569 1.1-.862a.22.22 0 0 1 .23-.03c11.619 5.304 24.198 5.304 35.68 0a.219.219 0 0 1 .233.027c.356.293.728.586 1.103.865a.228.228 0 0 1-.02.378 36.384 36.384 0 0 1-5.54 2.637.227.227 0 0 0-.121.315 47.249 47.249 0 0 0 3.624 5.897.225.225 0 0 0 .249.084c5.801-1.794 11.684-4.502 17.757-8.961a.228.228 0 0 0 .092-.164c1.48-15.315-2.48-28.618-10.497-40.412a.18.18 0 0 0-.093-.084zm-36.38 32.427c-3.497 0-6.38-3.211-6.38-7.156 0-3.944 2.827-7.156 6.38-7.156 3.583 0 6.438 3.24 6.382 7.156 0 3.945-2.827 7.156-6.381 7.156zm23.593 0c-3.498 0-6.38-3.211-6.38-7.156 0-3.944 2.826-7.156 6.38-7.156 3.582 0 6.437 3.24 6.38 7.156 0 3.945-2.798 7.156-6.38 7.156z"
+                                              fill="currentColor"></path>
+                                    </g>
+                                    <defs>
+                                        <clippath id="clip0">
+                                            <path fill="currentColor" d="M0 0h71v55H0z"></path>
+                                        </clippath>
+                                    </defs>
+                                </g>
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/chsami/microbot/releases" target="_blank" rel="noreferrer noopener">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24px" viewBox="0 0 16 16"><title>data
+                                download</title>
+                                <g fill="currentColor" class="nc-icon-wrapper">
+                                    <path d="M14,10a1,1,0,0,0-1,1v2H3V11a1,1,0,0,0-2,0v2a2,2,0,0,0,2,2H13a2,2,0,0,0,2-2V11A1,1,0,0,0,14,10Z"></path>
+                                    <path data-color="color-2"
+                                          d="M7.293,10.707a1,1,0,0,0,1.414,0l4-4a1,1,0,1,0-1.414-1.414L9,7.586V2A1,1,0,0,0,7,2V7.586L4.707,5.293A1,1,0,0,0,3.293,6.707Z"></path>
+                                </g>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="c-footer-cc py-2 mt-5">
+        <div class="container">
+            <p class="text-center c-text-faded mb-0">Microbot © 2026. All Rights Reserved. - <a href="../privacy.html"
+                                                                                                target="_blank">Privacy
+                Policy</a> -
+                <a href="../terms.html"
+                   target="_blank">Terms of service</a></p>
+        </div>
+    </div>
+</footer>
+<script>
+    document.querySelectorAll('.rn-article img, .rn-article video').forEach(function (m) {
+        function hide() {
+            var box = m.closest('.rn-gallery') && m.closest('.rn-gallery').children.length > 1 ? m : (m.closest('figure') || m);
+            box.style.display = 'none';
+        }
+        if (m.tagName === 'IMG' && m.complete && m.naturalWidth === 0 && m.getAttribute('src')) hide();
+        m.addEventListener('error', hide);
+    });
+</script>
+</body>
+</html>

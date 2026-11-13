@@ -1,12 +1,12 @@
 # Microbot - robots.txt
-# https://microbot.cloud
+# https://www.themicrobot.com
 
 User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://microbot.cloud/sitemap.xml
+Sitemap: https://www.themicrobot.com/sitemap.xml
 
 # LLMs.txt for AI crawlers
-# See: https://microbot.cloud/llms.txt
+# See: https://www.themicrobot.com/llms.txt
 

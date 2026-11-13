@@ -6,6 +6,10 @@
  * Page contract (see SITE_PAGES.md): <html class="mb">, the shared <header class="c-header"> block and
  * <footer class="mb-footer">. Fonts: Montserrat for everything, Cinzel only for the MICROBOT wordmark.
  */
+
+/* Self-hosted so no visitor contacts Google before giving consent. Licences: fonts/*-OFL.txt */
+@font-face { font-family: Montserrat; font-weight: 400 800; font-display: swap; src: url(fonts/montserrat-latin.woff2) format('woff2'); }
+@font-face { font-family: Cinzel; font-weight: 700; font-display: swap; src: url(fonts/cinzel-latin.woff2) format('woff2'); }
 :root {
   --bg: #0c0a08;
   --surface: #15110d;
@@ -16,7 +20,7 @@
   --text: #d6cfc2;
   --text-strong: #f5efe4;
   --muted: #9b9384;
-  --faint: #6f685d;
+  --faint: #8a8376;
   --gold: #ffb13b;
   --gold-hover: #ffc35c;
   --gold-soft: #e9c98f;
@@ -30,6 +34,7 @@
   --radius: 8px;
   --radius-sm: 6px;
   --wrap: 1180px;
+  --sticky-gap: 124px; /* clears the sticky header */
   color-scheme: dark;
 }
 
@@ -134,5 +139,7 @@ html.mb { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
 .mb .cookie-banner .mb-btn { min-height: 38px; }
 
 /* Inside the launcher the site sits under the launcher's own brand bar: no sticky header, no strip. */
-.mb.mb-in-launcher .c-header { position: static; backdrop-filter: none; }
+/* relative, not static: the open menu must still paint above the page. */
+.mb.mb-in-launcher { --sticky-gap: 24px; }
+.mb.mb-in-launcher .c-header { position: relative; backdrop-filter: none; }
 .mb.mb-in-launcher .c-events-block, .mb.mb-in-launcher .c-border-red.mb-2 { display: none; }

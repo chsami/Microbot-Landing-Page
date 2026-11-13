@@ -29,7 +29,6 @@ Microbot is a free, open-source Old School RuneScape (OSRS) client built on top 
 
 ## Documentation
 
-- API Documentation: https://microbot.cloud/docs.html
 - Queryable API Guide: Fluent interface for querying NPCs, items, players, and tile objects
 - Plugin Development: Create custom plugins using the Microbot API
 
@@ -57,16 +56,16 @@ Available caches:
 
 ## Links
 
-- Website: https://microbot.cloud
+- Website: https://www.themicrobot.com
 - GitHub: https://github.com/chsami/microbot
 - Discord: https://discord.gg/zaGrfqFEWE
-- Plugins: https://microbot.cloud/plugins.html
-- Releases: https://microbot.cloud/releases.html
+- Plugins: https://www.themicrobot.com/plugins.html
+- Releases: https://www.themicrobot.com/releases.html
 - ChatGPT Assistant: https://chatgpt.com/g/g-LM0fGeeXB-microbot-documentation
 
 ## Getting Started
 
-1. Download the launcher from https://microbot.cloud
+1. Download the launcher from https://www.themicrobot.com
 2. Available for Windows (.exe), Linux (.AppImage), and macOS (.dmg)
 3. Join the Discord community for support and plugin sharing
 

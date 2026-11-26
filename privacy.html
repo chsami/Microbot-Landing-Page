@@ -103,7 +103,7 @@
             <h1>Privacy Policy</h1>
             <p class="rn-tagline">What we collect, why, and how long we keep it</p>
             <div class="rn-meta">
-                <span>Last updated <strong>November 1, 2026</strong></span>
+                <span>Last updated <strong>November 26, 2026</strong></span>
             </div>
             <div class="rn-actions">
                 <a class="c-button" href="terms.html">Terms of Service</a>
@@ -122,6 +122,7 @@
                 <li><a href="#summary">The short version</a></li>
                 <li><a href="#website">This website</a></li>
                 <li><a href="#client">The Microbot client</a></li>
+                <li><a href="#ban-reports">Ban reports and script runtime</a></li>
                 <li><a href="#bug-reports">Bug reports</a></li>
                 <li><a href="#cloud">Microbot Cloud accounts</a></li>
                 <li><a href="#linked">Linked clients and launchers</a></li>
@@ -145,6 +146,7 @@
                 <li><a href="#summary">The short version</a></li>
                 <li><a href="#website">This website</a></li>
                 <li><a href="#client">The Microbot client</a></li>
+                <li><a href="#ban-reports">Ban reports and script runtime</a></li>
                 <li><a href="#bug-reports">Bug reports</a></li>
                 <li><a href="#cloud">Microbot Cloud accounts</a></li>
                 <li><a href="#linked">Linked clients and launchers</a></li>
@@ -176,6 +178,7 @@
 <li>You don't need an account to use Microbot. Without one, the client only sends anonymous technical data, and you can turn most of it off.</li>
 <li>Google Analytics only runs on this website if you click <strong>Accept</strong> on the cookie banner.</li>
 <li>Bug reports are only sent when you send one, and you choose what goes in them.</li>
+<li>If you play through a proxy and leave ban reports on, we record the proxy's IP address with a scrambled account ID, to see which proxies get accounts banned. Your home IP address is not recorded this way.</li>
 <li>If you create a Microbot Cloud account and link a client, we store your email address and the in-game status your client reports, so the dashboard can show it to you.</li>
 <li>We never receive your Jagex or RuneScape password, bank PIN or authenticator codes.</li>
 <li>We don't sell your data and we don't use it for advertising.</li>
@@ -201,6 +204,14 @@
 </ul>
 <p>To count how many different players hit the same error without storing who they are, the server makes a short code from a shortened version of your IP address and the current date. Because the date is part of it, the code changes every day and can't be traced back to your IP address.</p>
 <p><strong>Turning it off.</strong> Turn on <strong>Disable telemetry</strong> in the Microbot settings, or start the client with <code>-Dmicrobot.disableTelemetry=true</code>. This stops the update check, the tip of the day, session pings, error reports, freeze logs, bug reports and Microbot Cloud linking. Plugin install counts are still sent, because the Plugin Hub's install numbers depend on them. Some changes take effect after you restart the client.</p>
+
+<h2 id="ban-reports">Ban reports and script runtime</h2>
+<p>The <strong>Ban reports and script runtime</strong> setting in the Microbot settings controls this. It has three choices: <strong>Ask me</strong> (the default), <strong>Always send</strong> and <strong>Never send</strong>. With <strong>Never send</strong>, or with <strong>Disable telemetry</strong> on, the client sends none of it.</p>
+<ul>
+<li><strong>Script runtime.</strong> About once an hour the client sends which scripts ran and for how many minutes, with its session ID. We add these up per script and per day to work out ban rates per script. Without a proxy, this contains no account information.</li>
+<li><strong>Ban reports.</strong> When an account you botted shows the "account disabled" screen, the client asks whether to send a report (or sends it without asking if you chose <strong>Always send</strong>). The report contains the scripts that account ran in the last 30 days and for how long, membership, total level, how many days were tracked and active, the longest session, whether the break handler was used, how long ago it last botted, the ban type, your client version and a scrambled account ID. The scrambled ID is a one-way code made from the game's internal account number and scrambled again on our server; it can't be turned back into your account name. If your client is linked to Microbot Cloud, the report is also linked to your account.</li>
+<li><strong>Playing through a proxy.</strong> If the client runs through a SOCKS proxy, its runtime totals and ban reports also carry the scrambled account ID and say that a proxy is in use. Our server then records the proxy's IP address, as our server sees it, together with the scrambled account ID, so we can tell which proxy IPs get accounts banned. The IP address is stored encrypted. Your home IP address is not recorded this way. If your client is linked to Microbot Cloud, the record is linked to your account too. Right now only Microbot administrators can see this data.</li>
+</ul>
 
 <h2 id="bug-reports">Bug reports</h2>
 <p>When you send a bug report from the client, it contains your description plus the parts you leave ticked:</p>
@@ -249,7 +260,7 @@
 <ul>
 <li><strong>Your consent:</strong> Google Analytics on this website. You can withdraw consent at any time.</li>
 <li><strong>Providing a service you asked for:</strong> your Microbot Cloud account, linked clients and launchers, alerts, and bug reports you send.</li>
-<li><strong>Legitimate interests:</strong> anonymous client data (update checks, session pings, error reports, freeze logs and install counts), dashboard usage counts and server logs. We use these to fix bugs, keep the service running and protect it from abuse, and we've designed them to collect as little as possible.</li>
+<li><strong>Legitimate interests:</strong> anonymous client data (update checks, session pings, error reports, freeze logs and install counts), ban reports, script runtime and proxy IP records, dashboard usage counts and server logs. We use these to fix bugs, keep the service running and protect it from abuse, and we've designed them to collect as little as possible.</li>
 </ul>
 
 <h2 id="providers">Service providers</h2>
@@ -270,6 +281,9 @@
 <li><strong>Session pings:</strong> deleted once the client stops pinging.</li>
 <li><strong>Error reports:</strong> deleted 180 days after the error was last seen, or after 30 days if only one player reported it. The daily codes used to count players are deleted after a day.</li>
 <li><strong>Freeze logs:</strong> 14 days.</li>
+<li><strong>Ban reports:</strong> 2 years. The scrambled account ID is removed from a report after 30 days.</li>
+<li><strong>Script runtime totals:</strong> 2 years, as daily totals per script with no identifier.</li>
+<li><strong>Proxy IP records:</strong> 30 days after the proxy was last seen. Links between a ban report and the proxy IPs the account used are kept for 180 days.</li>
 <li><strong>Bug reports:</strong> screenshots, logs, game state, plugin settings and diagnostics are deleted after 30 days. The description, status and our replies are kept for 180 days.</li>
 <li><strong>Progress samples:</strong> 31 days.</li>
 <li><strong>Alert history:</strong> 30 days.</li>
